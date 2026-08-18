@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: TROCAR_POR_URL_REAL/sitemap.xml
