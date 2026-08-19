@@ -62,9 +62,11 @@ section{padding:100px 6%}
 /* SERVICES */
 .services{background:var(--card)}
 .svc__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1200px;margin:0 auto}
-.svc{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:36px 28px;transition:all .3s}
-.svc:hover{border-color:var(--accent);transform:translateY(-4px)}
-.svc__ico{width:48px;height:48px;border-radius:8px;background:rgba(201,169,110,.1);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.svc{border-radius:8px;padding:36px 28px;transition:all .3s;position:relative;overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center}
+.svc::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,15,26,.92) 0%,rgba(15,15,26,.5) 50%,rgba(15,15,26,.3) 100%);z-index:1}
+.svc>*{position:relative;z-index:2}
+.svc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.svc__ico{width:48px;height:48px;border-radius:8px;background:rgba(201,169,110,.15);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
 .svc__ico svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.5}
 .svc h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;margin-bottom:10px;color:var(--white)}
 .svc p{color:var(--muted);font-size:.92rem;margin-bottom:16px;line-height:1.6}
@@ -200,19 +202,19 @@ section{padding:60px 5%}
 <h2 class="st" style="text-align:center">Do projeto à entrega</h2>
 <p class="ss" style="text-align:center;margin-left:auto;margin-right:auto">Cuidamos de cada etapa com atenção aos detalhes, garantindo que o resultado final supere suas expectativas.</p>
 <div class="svc__grid">
-<div class="svc">
+<div class="svc" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80')">
 <div class="svc__ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
 <h3>Projeto Residencial</h3>
 <p>Casas, apartamentos e coberturas projetados sob medida para o seu estilo de vida.</p>
 <div class="svc__price">A partir de R$ 8.500</div>
 </div>
-<div class="svc">
+<div class="svc" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80')">
 <div class="svc__ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="2"/><line x1="15" y1="22" x2="15" y2="2"/><line x1="4" y1="12" x2="20" y2="12"/></svg></div>
 <h3>Projeto Comercial</h3>
 <p>Escritórios, lojas e espaços corporativos que transmitem a identidade da sua marca.</p>
 <div class="svc__price">A partir de R$ 12.000</div>
 </div>
-<div class="svc">
+<div class="svc" style="background-image:url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80')">
 <div class="svc__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
 <h3>Design de Interiores</h3>
 <p>Ambientação completa com mobiliário, iluminação e acabamentos personalizados.</p>
