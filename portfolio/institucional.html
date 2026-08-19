@@ -9,94 +9,154 @@
 <link rel="icon" type="image/svg+xml" href="../src/images/favicon.svg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--primary:#6c5ce7;--accent:#0984e3;--dark:#0a0a1a;--card:#12122a;--text:#e0e0f0;--muted:#8888aa;--grad:linear-gradient(135deg,#6c5ce7,#0984e3)}
+:root{--primary:#1a1a2e;--accent:#c9a96e;--dark:#0f0f1a;--card:#16162a;--text:#e8e8f0;--muted:#9a9ab0;--white:#ffffff;--border:rgba(201,169,110,.15)}
 html{scroll-behavior:smooth}
-body{font-family:'Space Grotesk',sans-serif;background:var(--dark);color:var(--text);line-height:1.6;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--text);line-height:1.7;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-.banner{position:fixed;top:0;left:0;right:0;z-index:9999;background:var(--grad);color:#fff;text-align:center;padding:8px 16px;font-size:.8rem;font-weight:600;letter-spacing:.5px}
-section{padding:80px 5%}
-.st{font-size:2.2rem;font-weight:700;text-align:center;margin-bottom:12px}
-.ss{text-align:center;color:var(--muted);max-width:600px;margin:0 auto 48px;font-size:1.05rem}
-.nav{position:fixed;top:32px;left:0;right:0;z-index:1000;padding:12px 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,26,.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(108,92,231,.15)}
-.nav__logo{font-size:1.4rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav__menu{display:flex;gap:24px;list-style:none}
-.nav__menu a{font-size:.95rem;color:var(--muted);transition:color .3s}
-.nav__menu a:hover{color:#fff}
+img{max-width:100%;display:block}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(15,15,26,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav__logo{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--accent);letter-spacing:1px}
+.nav__menu{display:flex;gap:32px;list-style:none}
+.nav__menu a{font-size:.88rem;color:var(--muted);transition:color .3s;letter-spacing:.5px;text-transform:uppercase;font-weight:500}
+.nav__menu a:hover{color:var(--accent)}
 .ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .ham span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding-top:120px;background:radial-gradient(ellipse at 50% 30%,rgba(108,92,231,.15),transparent 60%)}
-.hero__badge{display:inline-block;padding:6px 16px;border-radius:20px;border:1px solid rgba(108,92,231,.4);color:var(--primary);font-size:.85rem;margin-bottom:24px}
-.hero h1{font-size:3.5rem;font-weight:700;line-height:1.15;margin-bottom:20px}
-.hero h1 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:1.15rem;color:var(--muted);margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto}
-.btn{display:inline-block;padding:14px 32px;background:var(--grad);color:#fff;font-weight:600;border-radius:8px;transition:transform .3s,box-shadow .3s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(108,92,231,.4)}
-.about{background:rgba(18,18,42,.5)}
-.about__grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1100px;margin:0 auto}
-.about__text h3{font-size:1.6rem;margin-bottom:16px}
-.about__text p{color:var(--muted);margin-bottom:16px}
-.features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
-.feat{display:flex;align-items:center;gap:10px;font-size:.95rem}
-.feat svg{flex-shrink:0;width:20px;height:20px;color:var(--primary)}
-.about__vis{background:var(--grad);border-radius:16px;height:360px;display:flex;align-items:center;justify-content:center;font-size:4rem;color:rgba(255,255,255,.3)}
-.svc__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
-.svc{background:var(--card);border:1px solid rgba(108,92,231,.12);border-radius:12px;padding:32px 24px;text-align:center;transition:transform .3s,border-color .3s}
-.svc:hover{transform:translateY(-4px);border-color:var(--primary)}
-.svc__ico{width:56px;height:56px;border-radius:12px;background:rgba(108,92,231,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.6rem}
-.svc h3{font-size:1.15rem;font-weight:600;margin-bottom:10px}
-.svc p{color:var(--muted);font-size:.9rem;margin-bottom:16px}
-.svc__price{font-size:1.3rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.proj{background:rgba(18,18,42,.5)}
-.proj__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
-.proj__card{border-radius:12px;overflow:hidden;position:relative;height:260px}
-.proj__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,26,.9),transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px}
-.proj__tag{font-size:.75rem;color:var(--accent);font-weight:600;text-transform:uppercase;margin-bottom:4px}
-.proj__name{font-size:1.05rem;font-weight:600}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero__bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&q=80') center/cover no-repeat}
+.hero__overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,15,26,.88),rgba(15,15,26,.6))}
+.hero__content{position:relative;z-index:2;padding:0 6%;max-width:700px}
+.hero__badge{display:inline-block;padding:8px 20px;border:1px solid var(--accent);color:var(--accent);font-size:.78rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;font-weight:500}
+.hero h1{font-family:'Playfair Display',serif;font-size:3.8rem;font-weight:700;line-height:1.12;margin-bottom:24px;color:var(--white)}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero p{font-size:1.1rem;color:var(--muted);margin-bottom:36px;max-width:520px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:var(--accent);color:var(--primary);font-weight:600;border-radius:4px;transition:all .3s;font-size:.9rem;letter-spacing:.5px;text-transform:uppercase}
+.btn:hover{background:#d4b87a;transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,169,110,.3)}
+.btn--outline{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+.btn--outline:hover{background:var(--accent);color:var(--primary)}
+
+/* SECTIONS */
+section{padding:100px 6%}
+.section-label{font-size:.75rem;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;font-weight:500}
+.st{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;margin-bottom:16px;color:var(--white)}
+.ss{color:var(--muted);max-width:560px;font-size:1.05rem;margin-bottom:48px}
+
+/* ABOUT */
+.about{background:var(--dark)}
+.about__grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto}
+.about__img{position:relative;border-radius:8px;overflow:hidden;height:480px}
+.about__img img{width:100%;height:100%;object-fit:cover}
+.about__img::after{content:'';position:absolute;bottom:-12px;right:-12px;width:120px;height:120px;border:2px solid var(--accent);border-radius:8px;z-index:-1}
+.about__text h3{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:20px;color:var(--white)}
+.about__text p{color:var(--muted);margin-bottom:16px;font-size:.98rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px;padding-top:32px;border-top:1px solid var(--border)}
+.stat__num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--accent)}
+.stat__label{font-size:.82rem;color:var(--muted);margin-top:4px}
+
+/* SERVICES */
+.services{background:var(--card)}
+.svc__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1200px;margin:0 auto}
+.svc{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:36px 28px;transition:all .3s}
+.svc:hover{border-color:var(--accent);transform:translateY(-4px)}
+.svc__ico{width:48px;height:48px;border-radius:8px;background:rgba(201,169,110,.1);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.svc__ico svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.5}
+.svc h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;margin-bottom:10px;color:var(--white)}
+.svc p{color:var(--muted);font-size:.92rem;margin-bottom:16px;line-height:1.6}
+.svc__price{font-size:1rem;font-weight:600;color:var(--accent)}
+
+/* PROJECTS */
+.projects{background:var(--dark)}
+.proj__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto}
+.proj__card{border-radius:8px;overflow:hidden;position:relative;height:300px;cursor:pointer}
+.proj__card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.proj__card:hover img{transform:scale(1.05)}
+.proj__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,15,26,.9) 0%,rgba(15,15,26,.1) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;transition:background .3s}
+.proj__card:hover .proj__ov{background:linear-gradient(to top,rgba(15,15,26,.95) 0%,rgba(15,15,26,.4) 60%,rgba(15,15,26,.2) 100%)}
+.proj__tag{font-size:.72rem;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+.proj__name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--white)}
+.proj__desc{font-size:.85rem;color:var(--muted);margin-top:6px;opacity:0;transform:translateY(8px);transition:all .3s}
+.proj__card:hover .proj__desc{opacity:1;transform:translateY(0)}
+
+/* TEAM */
+.team{background:var(--card)}
+.team__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:900px;margin:0 auto}
+.team__card{text-align:center}
+.team__photo{width:140px;height:140px;border-radius:50%;margin:0 auto 20px;overflow:hidden;border:3px solid var(--border)}
+.team__photo img{width:100%;height:100%;object-fit:cover}
+.team__name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--white);margin-bottom:4px}
+.team__role{font-size:.85rem;color:var(--accent)}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--dark)}
+.test__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:1000px;margin:0 auto}
+.test{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:32px}
+.test__stars{color:var(--accent);font-size:1rem;margin-bottom:12px;letter-spacing:2px}
+.test__text{font-size:.95rem;color:var(--muted);margin-bottom:20px;line-height:1.7;font-style:italic}
+.test__author{display:flex;align-items:center;gap:12px}
+.test__avatar{width:44px;height:44px;border-radius:50%;overflow:hidden}
+.test__avatar img{width:100%;height:100%;object-fit:cover}
+.test__name{font-weight:600;font-size:.9rem;color:var(--white)}
+.test__info{font-size:.8rem;color:var(--muted)}
+
+/* FAQ */
 .faq{max-width:800px;margin:0 auto}
-.faq__item{border-bottom:1px solid rgba(108,92,231,.12);padding:20px 0}
-.faq__q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:1.05rem;gap:12px}
-.faq__q::after{content:'+';font-size:1.4rem;color:var(--primary);transition:transform .3s}
+.faq__item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq__q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:1.02rem;gap:12px;color:var(--white)}
+.faq__q::after{content:'+';font-size:1.4rem;color:var(--accent);transition:transform .3s;flex-shrink:0}
 .faq__item.open .faq__q::after{transform:rotate(45deg)}
-.faq__a{max-height:0;overflow:hidden;transition:max-height .3s;color:var(--muted);font-size:.95rem;line-height:1.7}
+.faq__a{max-height:0;overflow:hidden;transition:max-height .4s,color .3s;color:var(--muted);font-size:.95rem;line-height:1.7}
 .faq__item.open .faq__a{max-height:200px;padding-top:12px}
-.contact{background:rgba(18,18,42,.5)}
-.contact__wrap{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.contact__info h3{font-size:1.4rem;margin-bottom:16px}
-.contact__info p{color:var(--muted);margin-bottom:24px}
-.ch{display:flex;align-items:center;gap:12px;font-size:.95rem;color:var(--muted);margin-bottom:12px}
-.ch svg{width:20px;height:20px;color:var(--primary);flex-shrink:0}
-.contact__form{display:flex;flex-direction:column;gap:16px}
-.contact__form input,.contact__form textarea{background:var(--card);border:1px solid rgba(108,92,231,.15);border-radius:8px;padding:12px 16px;color:var(--text);font-family:inherit;font-size:.95rem;outline:none}
-.contact__form input:focus,.contact__form textarea:focus{border-color:var(--primary)}
+
+/* CONTACT */
+.contact{background:var(--card)}
+.contact__wrap{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact__info h3{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:16px;color:var(--white)}
+.contact__info>p{color:var(--muted);margin-bottom:28px;font-size:.95rem}
+.ch{display:flex;align-items:center;gap:12px;font-size:.92rem;color:var(--muted);margin-bottom:16px}
+.ch svg{width:20px;height:20px;color:var(--accent);flex-shrink:0;stroke:var(--accent);fill:none;stroke-width:1.5}
+.contact__form{display:flex;flex-direction:column;gap:14px}
+.contact__form input,.contact__form textarea{background:var(--dark);border:1px solid var(--border);border-radius:6px;padding:14px 18px;color:var(--text);font-family:'Inter',sans-serif;font-size:.92rem;outline:none;transition:border-color .3s}
+.contact__form input:focus,.contact__form textarea:focus{border-color:var(--accent)}
 .contact__form textarea{resize:vertical;min-height:120px}
-.footer{text-align:center;padding:40px 5%;border-top:1px solid rgba(108,92,231,.1);font-size:.85rem;color:var(--muted)}
-.footer span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:600}
+.contact__form input::placeholder,.contact__form textarea::placeholder{color:var(--muted)}
+
+/* FOOTER */
+.footer{text-align:center;padding:48px 6%;border-top:1px solid var(--border)}
+.footer p{font-size:.85rem;color:var(--muted)}
+.footer span{color:var(--accent);font-weight:600}
+
+/* RESPONSIVE */
 @media(max-width:768px){
-.nav__menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(10,10,26,.95);padding:16px;gap:12px;border-bottom:1px solid rgba(108,92,231,.15)}
+.nav__menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(15,15,26,.97);padding:20px;gap:16px;border-bottom:1px solid var(--border)}
 .nav__menu.open{display:flex}
 .ham{display:flex}
-.hero h1{font-size:2.2rem}
+.hero h1{font-size:2.4rem}
 .about__grid,.contact__wrap{grid-template-columns:1fr}
-.svc__grid,.proj__grid{grid-template-columns:1fr}
+.svc__grid,.proj__grid,.team__grid{grid-template-columns:1fr}
+.test__grid{grid-template-columns:1fr}
 section{padding:60px 5%}
-.banner{font-size:.7rem;padding:6px 12px}
-.nav{top:28px}
+.about__img{height:300px}
+.stats{grid-template-columns:repeat(3,1fr);gap:16px}
 }
 </style>
 </head>
 <body>
-<div class="banner">Projeto Demonstrativo — Criado por Lucas Designer Web</div>
 
 <nav class="nav" role="navigation" aria-label="Menu principal">
-<a href="#home" class="nav__logo">Arcos</a>
+<a href="#home" class="nav__logo">ARCOS</a>
 <ul class="nav__menu" id="menu">
 <li><a href="#home">Home</a></li>
 <li><a href="#sobre">Sobre</a></li>
 <li><a href="#servicos">Serviços</a></li>
 <li><a href="#projetos">Projetos</a></li>
+<li><a href="#equipe">Equipe</a></li>
+<li><a href="#depoimentos">Depoimentos</a></li>
 <li><a href="#faq">FAQ</a></li>
 <li><a href="#contato">Contato</a></li>
 </ul>
@@ -104,49 +164,57 @@ section{padding:60px 5%}
 </nav>
 
 <section class="hero" id="home">
-<div>
+<div class="hero__bg" aria-hidden="true"></div>
+<div class="hero__overlay" aria-hidden="true"></div>
+<div class="hero__content">
 <span class="hero__badge">Arquitetura &amp; Design de Interiores</span>
-<h1>Transformamos <span>espaços</span> em experiências</h1>
+<h1>Transformamos espaços em <em>experiências</em></h1>
 <p>Escritório de arquitetura em São Paulo especializado em projetos residenciais, comerciais e de interiores com design contemporâneo.</p>
+<div style="display:flex;gap:16px;flex-wrap:wrap">
 <a href="#contato" class="btn">Solicite um Orçamento</a>
+<a href="#projetos" class="btn btn--outline">Ver Projetos</a>
+</div>
 </div>
 </section>
 
 <section class="about" id="sobre">
 <div class="about__grid">
+<div class="about__img">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Projeto residencial Arcos Projetos" loading="lazy"/>
+</div>
 <div class="about__text">
-<h3>Sobre a Arcos</h3>
+<span class="section-label">Sobre Nós</span>
+<h3>Arquitetura que inspira</h3>
 <p>Fundada em 2018, a Arcos Projetos &amp; Design nasceu da paixão por criar ambientes que unem funcionalidade e estética. Nosso time de arquitetos e designers trabalha lado a lado com cada cliente para materializar suas ideias.</p>
 <p>Acreditamos que bom design vai além da aparência — ele transforma a forma como as pessoas vivem, trabalham e interagem com os espaços ao redor.</p>
-<div class="features">
-<div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><strong>+120 projetos entregues</strong></div>
-<div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><strong>São Paulo e Grande SP</strong></div>
-<div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><strong>Certificação CAU/A</strong></div>
-<div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><strong>Projetos 3D realistas</strong></div>
+<div class="stats">
+<div><div class="stat__num">120+</div><div class="stat__label">Projetos Entregues</div></div>
+<div><div class="stat__num">8</div><div class="stat__label">Anos de Experiência</div></div>
+<div><div class="stat__num">98%</div><div class="stat__label">Clientes Satisfeitos</div></div>
 </div>
 </div>
-<div class="about__vis" aria-hidden="true">📐</div>
 </div>
 </section>
 
-<section id="servicos">
-<h2 class="st">Nossos Serviços</h2>
-<p class="ss">Do projeto à entrega, cuidamos de cada etapa com atenção aos detalhes.</p>
+<section class="services" id="servicos">
+<span class="section-label" style="display:block;text-align:center">Nossos Serviços</span>
+<h2 class="st" style="text-align:center">Do projeto à entrega</h2>
+<p class="ss" style="text-align:center;margin-left:auto;margin-right:auto">Cuidamos de cada etapa com atenção aos detalhes, garantindo que o resultado final supere suas expectativas.</p>
 <div class="svc__grid">
 <div class="svc">
-<div class="svc__ico">🏠</div>
+<div class="svc__ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
 <h3>Projeto Residencial</h3>
 <p>Casas, apartamentos e coberturas projetados sob medida para o seu estilo de vida.</p>
 <div class="svc__price">A partir de R$ 8.500</div>
 </div>
 <div class="svc">
-<div class="svc__ico">🏢</div>
+<div class="svc__ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="2"/><line x1="15" y1="22" x2="15" y2="2"/><line x1="4" y1="12" x2="20" y2="12"/></svg></div>
 <h3>Projeto Comercial</h3>
 <p>Escritórios, lojas e espaços corporativos que transmitem a identidade da sua marca.</p>
 <div class="svc__price">A partir de R$ 12.000</div>
 </div>
 <div class="svc">
-<div class="svc__ico">🛋️</div>
+<div class="svc__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
 <h3>Design de Interiores</h3>
 <p>Ambientação completa com mobiliário, iluminação e acabamentos personalizados.</p>
 <div class="svc__price">A partir de R$ 6.000</div>
@@ -154,24 +222,91 @@ section{padding:60px 5%}
 </div>
 </section>
 
-<section class="proj" id="projetos">
+<section class="projects" id="projetos">
+<span class="section-label">Portfólio</span>
 <h2 class="st">Projetos em Destaque</h2>
 <p class="ss">Conheça alguns dos nossos trabalhos mais recentes.</p>
 <div class="proj__grid">
-<div class="proj__card" style="background:linear-gradient(135deg,#2d3436,#636e72)"><div class="proj__ov"><span class="proj__tag">Residencial</span><span class="proj__name">Casa Jardim Europa</span></div></div>
-<div class="proj__card" style="background:linear-gradient(135deg,#0c2461,#6c5ce7)"><div class="proj__ov"><span class="proj__tag">Comercial</span><span class="proj__name">Escritório Faria Lima</span></div></div>
-<div class="proj__card" style="background:linear-gradient(135deg,#6c5ce7,#0984e3)"><div class="proj__ov"><span class="proj__tag">Interiores</span><span class="proj__name">Apartamento Vila Nova</span></div></div>
-<div class="proj__card" style="background:linear-gradient(135deg,#00b894,#00cec9)"><div class="proj__ov"><span class="proj__tag">Residencial</span><span class="proj__name">Condomínio Morumbi</span></div></div>
-<div class="proj__card" style="background:linear-gradient(135deg,#e17055,#d63031)"><div class="proj__ov"><span class="proj__tag">Comercial</span><span class="proj__name">Loja Paulista</span></div></div>
-<div class="proj__card" style="background:linear-gradient(135deg,#fdcb6e,#e17055)"><div class="proj__ov"><span class="proj__tag">Interiores</span><span class="proj__name">Flat Pinheiros</span></div></div>
+<div class="proj__card">
+<img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Casa Jardim Europa" loading="lazy"/>
+<div class="proj__ov"><span class="proj__tag">Residencial</span><span class="proj__name">Casa Jardim Europa</span><span class="proj__desc">Projeto residencial de 320m² com áreas integradas e paisagismo</span></div>
+</div>
+<div class="proj__card">
+<img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Escritório Faria Lima" loading="lazy"/>
+<div class="proj__ov"><span class="proj__tag">Comercial</span><span class="proj__name">Escritório Faria Lima</span><span class="proj__desc">Coworking moderno com 450m² e design minimalista</span></div>
+</div>
+<div class="proj__card">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Apartamento Vila Nova" loading="lazy"/>
+<div class="proj__ov"><span class="proj__tag">Interiores</span><span class="proj__name">Apartamento Vila Nova</span><span class="proj__desc">Retrofit completo de apartamento de 180m²</span></div>
+</div>
+<div class="proj__card">
+<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Condomínio Morumbi" loading="lazy"/>
+<div class="proj__ov"><span class="proj__tag">Residencial</span><span class="proj__name">Condomínio Morumbi</span><span class="proj__desc">12 unidades residenciais com lazer completo</span></div>
+</div>
+<div class="proj__card">
+<img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80" alt="Loja Paulista" loading="lazy"/>
+<div class="proj__ov"><span class="proj__tag">Comercial</span><span class="proj__name">Loja Paulista</span><span class="proj__desc">Loja de conceito com 200m² e vitrines interativas</span></div>
+</div>
+<div class="proj__card">
+<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Flat Pinheiros" loading="lazy"/>
+<div class="proj__ov"><span class="proj__tag">Interiores</span><span class="proj__name">Flat Pinheiros</span><span class="proj__desc">Studio de 65m² com mobiliário planejado</span></div>
+</div>
+</div>
+</section>
+
+<section class="team" id="equipe">
+<span class="section-label" style="display:block;text-align:center">Nossa Equipe</span>
+<h2 class="st" style="text-align:center">Quem faz acontecer</h2>
+<p class="ss" style="text-align:center;margin-left:auto;margin-right:auto">Profissionais comprometidos com a excelência em cada projeto.</p>
+<div class="team__grid">
+<div class="team__card">
+<div class="team__photo"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80" alt="Rafael Mendes" loading="lazy"/></div>
+<div class="team__name">Rafael Mendes</div>
+<div class="team__role">Arquiteto Sócio-Fundador</div>
+</div>
+<div class="team__card">
+<div class="team__photo"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" alt="Camila Costa" loading="lazy"/></div>
+<div class="team__name">Camila Costa</div>
+<div class="team__role">Designer de Interiores</div>
+</div>
+<div class="team__card">
+<div class="team__photo"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" alt="Lucas Ferreira" loading="lazy"/></div>
+<div class="team__name">Lucas Ferreira</div>
+<div class="team__role">Arquiteto de Projetos</div>
+</div>
+</div>
+</section>
+
+<section class="testimonials" id="depoimentos">
+<span class="section-label" style="display:block;text-align:center">Depoimentos</span>
+<h2 class="st" style="text-align:center">O que dizem nossos clientes</h2>
+<p class="ss" style="text-align:center;margin-left:auto;margin-right:auto">A satisfação dos nossos clientes é a nossa maior conquista.</p>
+<div class="test__grid">
+<div class="test">
+<div class="test__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<p class="test__text">"A Arcos transformou nosso apartamento em um lugar que não imaginávamos ser possível. O cuidado com cada detalhe e a atenção às nossas necessidades foram incríveis."</p>
+<div class="test__author">
+<div class="test__avatar"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Ana Paula" loading="lazy"/></div>
+<div><div class="test__name">Ana Paula Ribeiro</div><div class="test__info">Apartamento Vila Nova — São Paulo</div></div>
+</div>
+</div>
+<div class="test">
+<div class="test__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<p class="test__text">"Profissionalismo do início ao fim. O projeto do nosso escritório ficou exatamente como planejamos, dentro do prazo e do orçamento."</p>
+<div class="test__author">
+<div class="test__avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Marcos Oliveira" loading="lazy"/></div>
+<div><div class="test__name">Marcos Oliveira</div><div class="test__info">Escritório Faria Lima — São Paulo</div></div>
+</div>
+</div>
 </div>
 </section>
 
 <section id="faq">
-<h2 class="st">Perguntas Frequentes</h2>
-<p class="ss">Tire suas dúvidas sobre nossos serviços.</p>
+<span class="section-label" style="display:block;text-align:center">Dúvidas</span>
+<h2 class="st" style="text-align:center">Perguntas Frequentes</h2>
+<p class="ss" style="text-align:center;margin-left:auto;margin-right:auto">Tire suas dúvidas sobre nossos serviços.</p>
 <div class="faq">
-<div class="faq__item"><div class="faq__q">Qual o prazo médio de entrega de um projeto?</div><div class="faq__a">Projetos residenciais levar em média 45 a 90 dias. Projetos comerciais podem variar de 60 a 120 dias, dependendo da complexidade e escopo contratado.</div></div>
+<div class="faq__item"><div class="faq__q">Qual o prazo médio de entrega de um projeto?</div><div class="faq__a">Projetos residenciais levam em média 45 a 90 dias. Projetos comerciais podem variar de 60 a 120 dias, dependendo da complexidade e escopo contratado.</div></div>
 <div class="faq__item"><div class="faq__q">Vocês trabalham com projetos em outras cidades?</div><div class="faq__a">Sim, atendemos projetos em todo o estado de São Paulo e também em outras localidades do Brasil, com encontros presenciais ou remotos conforme a necessidade.</div></div>
 <div class="faq__item"><div class="faq__q">O que está incluído no projeto de interiores?</div><div class="faq__a">Inclui projeto executivo, layout de mobiliário, seleção de materiais, projetos de iluminação, paleta de cores e acompanhamento na fase de execução.</div></div>
 <div class="faq__item"><div class="faq__q">Como funciona o orçamento?</div><div class="faq__a">Após o primeiro contato, realizamos uma reunião de escopo gratuita. Com base nas necessidades, enviamos uma proposta detalhada com valores e prazos.</div></div>
@@ -183,18 +318,19 @@ section{padding:60px 5%}
 <section class="contact" id="contato">
 <div class="contact__wrap">
 <div class="contact__info">
+<span class="section-label">Contato</span>
 <h3>Entre em Contato</h3>
 <p>Pronto para transformar seu espaço? Fale conosco e receba uma proposta personalizada.</p>
 <div class="ch">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
 <span>(11) 99876-5432</span>
 </div>
 <div class="ch">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+<svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
 <span>contato@arcosprojetos.com.br</span>
 </div>
 <div class="ch">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+<svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
 <span>Av. Paulista, 1000 — São Paulo, SP</span>
 </div>
 </div>
@@ -202,13 +338,13 @@ section{padding:60px 5%}
 <input type="text" placeholder="Seu nome" aria-label="Nome"/>
 <input type="email" placeholder="Seu email" aria-label="Email"/>
 <textarea placeholder="Mensagem" aria-label="Mensagem"></textarea>
-<button type="submit" class="btn">Enviar Mensagem</button>
+<button type="submit" class="btn" style="justify-content:center">Enviar Mensagem</button>
 </form>
 </div>
 </section>
 
 <footer class="footer">
-<p><span>Arcos Projetos &amp; Design</span> — Projeto demonstrativo criado por Lucas Designer Web</p>
+<p><span>Arcos Projetos &amp; Design</span> — Arquitetura &amp; Design de Interiores</p>
 </footer>
 
 <script>
