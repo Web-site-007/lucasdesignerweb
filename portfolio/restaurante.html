@@ -195,9 +195,10 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
-            padding: 20px;
+            padding: 0;
             transition: all var(--transition);
             position: relative;
+            overflow: hidden;
         }
 
         .menu-item:hover {
@@ -206,11 +207,19 @@
             box-shadow: var(--shadow);
         }
 
+        .menu-item__img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .menu-item__body { padding: 16px; }
+
         .menu-item-top {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .menu-item h3 { font-size: 0.95rem; font-weight: 600; flex: 1; }
@@ -634,24 +643,36 @@
                 <h3 class="category-title"><span>Entradas</span></h3>
                 <div class="menu-grid">
                     <div class="menu-item" data-id="1" data-name="Bolinho de Bacalhau" data-price="22">
-                        <div class="menu-item-top"><h3>Bolinho de Bacalhau</h3><span class="menu-price">R$22</span></div>
-                        <p>6 unidades crocantes por fora e macias por dentro, com molho tartaro.</p>
-                        <button class="menu-add">Adicionar ao Pedido</button>
+                        <img src="../src/images/food-1.jpg" alt="Bolinho de Bacalhau" class="menu-item__img" loading="lazy"/>
+                        <div class="menu-item__body">
+                            <div class="menu-item-top"><h3>Bolinho de Bacalhau</h3><span class="menu-price">R$22</span></div>
+                            <p>6 unidades crocantes por fora e macias por dentro, com molho t&aacute;rtaro.</p>
+                            <button class="menu-add">Adicionar ao Pedido</button>
+                        </div>
                     </div>
                     <div class="menu-item" data-id="2" data-name="Bruschetta Caprese" data-price="19">
-                        <div class="menu-item-top"><h3>Bruschetta Caprese</h3><span class="menu-price">R$19</span></div>
-                        <p>Pao artesanal com tomate, mucarela de bufala e manjericao fresco.</p>
-                        <button class="menu-add">Adicionar ao Pedido</button>
+                        <img src="../src/images/food-2.jpg" alt="Bruschetta Caprese" class="menu-item__img" loading="lazy"/>
+                        <div class="menu-item__body">
+                            <div class="menu-item-top"><h3>Bruschetta Caprese</h3><span class="menu-price">R$19</span></div>
+                            <p>P&atilde;o artesanal com tomate, mu&ccedil;arela de bufala e manjericao fresco.</p>
+                            <button class="menu-add">Adicionar ao Pedido</button>
+                        </div>
                     </div>
                     <div class="menu-item" data-id="3" data-name="Carpaccio de Carne" data-price="28">
-                        <div class="menu-item-top"><h3>Carpaccio de Carne</h3><span class="menu-price">R$28</span></div>
-                        <p>Fatias finas de file mignon com rucula, parmesao e molho especial.</p>
-                        <button class="menu-add">Adicionar ao Pedido</button>
+                        <img src="../src/images/food-3.jpg" alt="Carpaccio de Carne" class="menu-item__img" loading="lazy"/>
+                        <div class="menu-item__body">
+                            <div class="menu-item-top"><h3>Carpaccio de Carne</h3><span class="menu-price">R$28</span></div>
+                            <p>Fatias finas de fil&eacute; mignon com r&uacute;cula, parmes&atilde;o e molho especial.</p>
+                            <button class="menu-add">Adicionar ao Pedido</button>
+                        </div>
                     </div>
                     <div class="menu-item" data-id="4" data-name="Ceviche de Peixe" data-price="32">
-                        <div class="menu-item-top"><h3>Ceviche de Peixe</h3><span class="menu-price">R$32</span></div>
-                        <p>Peixe fresco marinado com limao, cebola roxa e coentro.</p>
-                        <button class="menu-add">Adicionar ao Pedido</button>
+                        <img src="../src/images/food-4.jpg" alt="Ceviche de Peixe" class="menu-item__img" loading="lazy"/>
+                        <div class="menu-item__body">
+                            <div class="menu-item-top"><h3>Ceviche de Peixe</h3><span class="menu-price">R$32</span></div>
+                            <p>Peixe fresco marinado com lim&atilde;o, cebola roxa e coentro.</p>
+                            <button class="menu-add">Adicionar ao Pedido</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -660,24 +681,36 @@
                 <h3 class="category-title"><span>Pratos Principais</span></h3>
                 <div class="menu-grid">
                     <div class="menu-item" data-id="5" data-name="Picanha na Brasa" data-price="68">
-                        <div class="menu-item-top"><h3>Picanha na Brasa</h3><span class="menu-price">R$68</span></div>
-                        <p>Picanha grelhada com arroz, farofa, vinagrete e mandioca frita.</p>
-                        <button class="menu-add">Adicionar ao Pedido</button>
+                        <img src="../src/images/food-5.jpg" alt="Picanha na Brasa" class="menu-item__img" loading="lazy"/>
+                        <div class="menu-item__body">
+                            <div class="menu-item-top"><h3>Picanha na Brasa</h3><span class="menu-price">R$68</span></div>
+                            <p>Picanha grelhada com arroz, farofa, vinagrete e mandioca frita.</p>
+                            <button class="menu-add">Adicionar ao Pedido</button>
+                        </div>
                     </div>
                     <div class="menu-item" data-id="6" data-name="Moqueca Baiana" data-price="58">
-                        <div class="menu-item-top"><h3>Moqueca Baiana</h3><span class="menu-price">R$58</span></div>
-                        <p>Peixe fresco cozido no leite de coco com dende e pimentao.</p>
-                        <button class="menu-add">Adicionar ao Pedido</button>
+                        <img src="../src/images/food-6.jpg" alt="Moqueca Baiana" class="menu-item__img" loading="lazy"/>
+                        <div class="menu-item__body">
+                            <div class="menu-item-top"><h3>Moqueca Baiana</h3><span class="menu-price">R$58</span></div>
+                            <p>Peixe fresco cozido no leite de coco com dend&ecirc; e piment&atilde;o.</p>
+                            <button class="menu-add">Adicionar ao Pedido</button>
+                        </div>
                     </div>
                     <div class="menu-item" data-id="7" data-name="Frango ao Molho Mostarda" data-price="48">
-                        <div class="menu-item-top"><h3>Frango ao Molho Mostarda</h3><span class="menu-price">R$48</span></div>
-                        <p>Peito de frango grelhado com pure de batata e legumes assados.</p>
-                        <button class="menu-add">Adicionar ao Pedido</button>
+                        <img src="../src/images/food-7.jpg" alt="Frango ao Molho Mostarda" class="menu-item__img" loading="lazy"/>
+                        <div class="menu-item__body">
+                            <div class="menu-item-top"><h3>Frango ao Molho Mostarda</h3><span class="menu-price">R$48</span></div>
+                            <p>Peito de frango grelhado com pur&ecirc; de batata e legumes assados.</p>
+                            <button class="menu-add">Adicionar ao Pedido</button>
+                        </div>
                     </div>
                     <div class="menu-item" data-id="8" data-name="Risoto de Cogumelos" data-price="52">
-                        <div class="menu-item-top"><h3>Risoto de Cogumelos</h3><span class="menu-price">R$52</span></div>
-                        <p>Arroz arvoreo cremoso com mix de cogumelos frescos e parmesao.</p>
-                        <button class="menu-add">Adicionar ao Pedido</button>
+                        <img src="../src/images/food-8.jpg" alt="Risoto de Cogumelos" class="menu-item__img" loading="lazy"/>
+                        <div class="menu-item__body">
+                            <div class="menu-item-top"><h3>Risoto de Cogumelos</h3><span class="menu-price">R$52</span></div>
+                            <p>Arroz arborio cremoso com mix de cogumelos frescos e parmes&atilde;o.</p>
+                            <button class="menu-add">Adicionar ao Pedido</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -686,24 +719,36 @@
                 <h3 class="category-title"><span>Sobremesas</span></h3>
                 <div class="menu-grid">
                     <div class="menu-item" data-id="9" data-name="Pudim de Leite" data-price="18">
-                        <div class="menu-item-top"><h3>Pudim de Leite</h3><span class="menu-price">R$18</span></div>
-                        <p>Receita da vofo, cremoso com calda de caramelo perfeita.</p>
-                        <button class="menu-add">Adicionar ao Pedido</button>
+                        <img src="../src/images/food-9.jpg" alt="Pudim de Leite" class="menu-item__img" loading="lazy"/>
+                        <div class="menu-item__body">
+                            <div class="menu-item-top"><h3>Pudim de Leite</h3><span class="menu-price">R$18</span></div>
+                            <p>Receita da v&oacute;, cremoso com calda de caramelo perfeita.</p>
+                            <button class="menu-add">Adicionar ao Pedido</button>
+                        </div>
                     </div>
-                    <div class="menu-item" data-id="10" data-name="Mousse de Maracuja" data-price="16">
-                        <div class="menu-item-top"><h3>Mousse de Maracuja</h3><span class="menu-price">R$16</span></div>
-                        <p>Leve e refrescante, feito com maracuja fresco.</p>
-                        <button class="menu-add">Adicionar ao Pedido</button>
+                    <div class="menu-item" data-id="10" data-name="Mousse de Maracuj&aacute;" data-price="16">
+                        <img src="../src/images/food-10.jpg" alt="Mousse de Maracujá" class="menu-item__img" loading="lazy"/>
+                        <div class="menu-item__body">
+                            <div class="menu-item-top"><h3>Mousse de Maracuj&aacute;</h3><span class="menu-price">R$16</span></div>
+                            <p>Leve e refrescante, feito com maracuj&aacute; fresco.</p>
+                            <button class="menu-add">Adicionar ao Pedido</button>
+                        </div>
                     </div>
                     <div class="menu-item" data-id="11" data-name="Brownie com Sorvete" data-price="22">
-                        <div class="menu-item-top"><h3>Brownie com Sorvete</h3><span class="menu-price">R$22</span></div>
-                        <p>Brownie quente de chocolate belga com bola de sorvete de creme.</p>
-                        <button class="menu-add">Adicionar ao Pedido</button>
+                        <img src="../src/images/food-11.jpg" alt="Brownie com Sorvete" class="menu-item__img" loading="lazy"/>
+                        <div class="menu-item__body">
+                            <div class="menu-item-top"><h3>Brownie com Sorvete</h3><span class="menu-price">R$22</span></div>
+                            <p>Brownie quente de chocolate belga com bola de sorvete de creme.</p>
+                            <button class="menu-add">Adicionar ao Pedido</button>
+                        </div>
                     </div>
-                    <div class="menu-item" data-id="12" data-name="Acai na Tigela" data-price="24">
-                        <div class="menu-item-top"><h3>Acai na Tigela</h3><span class="menu-price">R$24</span></div>
-                        <p>Acai batido com banana, granola, mel e frutas frescas.</p>
-                        <button class="menu-add">Adicionar ao Pedido</button>
+                    <div class="menu-item" data-id="12" data-name="A&ccedil;a&iacute; na Tigela" data-price="24">
+                        <img src="../src/images/food-12.jpg" alt="Açaí na Tigela" class="menu-item__img" loading="lazy"/>
+                        <div class="menu-item__body">
+                            <div class="menu-item-top"><h3>A&ccedil;a&iacute; na Tigela</h3><span class="menu-price">R$24</span></div>
+                            <p>A&ccedil;a&iacute; batido com banana, granola, mel e frutas frescas.</p>
+                            <button class="menu-add">Adicionar ao Pedido</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -714,19 +759,19 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-text">
-                    <p class="section-tag">Sobre Nos</p>
+                    <p class="section-tag">Sobre N&oacute;s</p>
                     <div class="section-title">
-                        <h2>Uma historia de sabor e tradicao</h2>
+                        <h2>Uma hist&oacute;ria de sabor e tradi&ccedil;&atilde;o</h2>
                         <p>O Sabor da Terra nasceu do sonho de reunir familiares em torno da mesa, com comida de verdade e aquele gostinho de casa.</p>
                     </div>
-                    <p>Desde 2015, servimos pratos que respeitam a culinaria brasileira com toques modernos. Nosso compromisso e com qualidade, frescor e a experiencia de cada cliente.</p>
-                    <p>Tudo e preparado na hora, com ingredientes selecionados de produtores locais. Acreditamos que boa comida e uma forma de carinho.</p>
+                    <p>Desde 2015, servimos pratos que respeitam a culin&aacute;ria brasileira com toques modernos. Nosso compromisso &eacute; com qualidade, frescor e a experi&ecirc;ncia de cada cliente.</p>
+                    <p>Tudo &eacute; preparado na hora, com ingredientes selecionados de produtores locais. Acreditamos que boa comida &eacute; uma forma de carinho.</p>
                 </div>
                 <div class="about-features">
                     <div class="about-feat"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Ingredientes Locais</span></div>
                     <div class="about-feat"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Preparo Artesanal</span></div>
-                    <div class="about-feat"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="23 7 16 12 23 17 23 7"/></svg><span>Entrega Rapida</span></div>
-                    <div class="about-feat"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><span>Opcoes Veganas</span></div>
+                    <div class="about-feat"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="23 7 16 12 23 17 23 7"/></svg><span>Entrega R&aacute;pida</span></div>
+                    <div class="about-feat"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><span>Op&ccedil;&otilde;es Veganas</span></div>
                 </div>
             </div>
         </div>
@@ -735,7 +780,7 @@
     <section class="hours" id="horarios">
         <div class="container">
             <div class="section-title" style="text-align:center;">
-                <p class="section-tag">Horario de Funcionamento</p>
+                <p class="section-tag">Hor&aacute;rio de Funcionamento</p>
                 <h2>Quando estamos abertos</h2>
             </div>
             <div class="hours-box">
@@ -744,13 +789,13 @@
                     Sabor da Terra
                 </div>
                 <div class="hours-body">
-                    <div class="hours-row"><span class="hours-day">Segunda-feira</span><span class="hours-time">11h — 23h</span></div>
-                    <div class="hours-row"><span class="hours-day">Terca-feira</span><span class="hours-time">11h — 23h</span></div>
-                    <div class="hours-row"><span class="hours-day">Quarta-feira</span><span class="hours-time">11h — 23h</span></div>
-                    <div class="hours-row"><span class="hours-day">Quinta-feira</span><span class="hours-time">11h — 23h</span></div>
-                    <div class="hours-row"><span class="hours-day">Sexta-feira</span><span class="hours-time">11h — 00h</span></div>
-                    <div class="hours-row"><span class="hours-day">Sabado</span><span class="hours-time">11h — 00h</span></div>
-                    <div class="hours-row"><span class="hours-day">Domingo</span><span class="hours-time">11h — 22h</span></div>
+                    <div class="hours-row"><span class="hours-day">Segunda-feira</span><span class="hours-time">11h &mdash; 23h</span></div>
+                    <div class="hours-row"><span class="hours-day">Ter&ccedil;a-feira</span><span class="hours-time">11h &mdash; 23h</span></div>
+                    <div class="hours-row"><span class="hours-day">Quarta-feira</span><span class="hours-time">11h &mdash; 23h</span></div>
+                    <div class="hours-row"><span class="hours-day">Quinta-feira</span><span class="hours-time">11h &mdash; 23h</span></div>
+                    <div class="hours-row"><span class="hours-day">Sexta-feira</span><span class="hours-time">11h &mdash; 00h</span></div>
+                    <div class="hours-row"><span class="hours-day">S&aacute;bado</span><span class="hours-time">11h &mdash; 00h</span></div>
+                    <div class="hours-row"><span class="hours-day">Domingo</span><span class="hours-time">11h &mdash; 22h</span></div>
                 </div>
             </div>
         </div>
@@ -759,8 +804,8 @@
     <section class="contact" id="contato">
         <div class="container">
             <div class="contact-cta">
-                <h2>Faca seu pedido agora</h2>
-                <p>Faca seu pedido pelo WhatsApp ou pelo cardapio acima. Entregamos em toda a regiao!</p>
+                <h2>Fa&ccedil;a seu pedido agora</h2>
+                <p>Fa&ccedil;a seu pedido pelo WhatsApp ou pelo card&aacute;pio acima. Entregamos em toda a regi&atilde;o!</p>
                 <div class="contact-methods">
                     <span class="contact-method">
                         <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
