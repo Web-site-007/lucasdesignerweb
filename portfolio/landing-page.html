@@ -7,6 +7,7 @@
     <title>FitPro Academy — Curso Online | Demonstrativo</title>
     <meta name="description" content="Curso online de fitness - Projeto demonstrativo criado por Lucas Designer Web."/>
     <link rel="icon" type="image/svg+xml" href="../src/images/favicon.svg"/>
+    <link rel="apple-touch-icon" href="../src/images/apple-touch-icon.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -34,6 +35,8 @@
 
         html { scroll-behavior: smooth; }
         body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .skip-link{position:absolute;top:-100%;left:16px;background:var(--primary);color:#fff;padding:12px 24px;border-radius:var(--radius-sm);font-weight:600;z-index:10000;transition:top .3s}
+        .skip-link:focus{top:44px}
         a { text-decoration: none; color: inherit; }
 
         .banner { background: linear-gradient(135deg, #a855f7, #7c3aed); color: #fff; text-align: center; padding: 10px 16px; font-size: .85rem; font-weight: 500; }
@@ -236,6 +239,7 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Pular para o conteudo principal</a>
 
     <div class="banner">
         Projeto Demonstrativo — Criado por <a href="../index.html">Lucas Designer Web</a>
@@ -249,7 +253,7 @@
                 </div>
                 FitPro Academy
             </a>
-            <nav>
+            <nav role="navigation" aria-label="Menu principal">
                 <ul class="nav-links">
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#modulos">Modulos</a></li>
@@ -260,7 +264,7 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="main-content">
         <div class="container">
             <div class="hero-grid">
                 <div>
@@ -496,23 +500,23 @@
             </div>
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-item__q">Quanto tempo tenho acesso ao curso?<span>&#9662;</span></button>
+                    <button class="faq-item__q" aria-expanded="false">Quanto tempo tenho acesso ao curso?<span>&#9662;</span></button>
                     <div class="faq-item__a"><p>O acesso e vitalicio. Voce paga uma vez e pode assistir as aulas quantas vezes quiser, para sempre.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-item__q">Recebo certificado ao terminar?<span>&#9662;</span></button>
+                    <button class="faq-item__q" aria-expanded="false">Recebo certificado ao terminar?<span>&#9662;</span></button>
                     <div class="faq-item__a"><p>Sim! Ao completar todos os modulos do plano Completo, voce recebe um certificado digital reconhecido.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-item__q">Posso parcelar o pagamento?<span>&#9662;</span></button>
+                    <button class="faq-item__q" aria-expanded="false">Posso parcelar o pagamento?<span>&#9662;</span></button>
                     <div class="faq-item__a"><p>Sim! Aceitamos PIX (com desconto), cartao de credito em ate 6x e boleto bancario.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-item__q">Tem garantia de devolucao?<span>&#9662;</span></button>
+                    <button class="faq-item__q" aria-expanded="false">Tem garantia de devolucao?<span>&#9662;</span></button>
                     <div class="faq-item__a"><p>Sim! Voce tem 7 dias de garantia incondicional. Se nao gostar, devolvemos 100% do valor.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-item__q">Preciso ter experiencia prévia?<span>&#9662;</span></button>
+                    <button class="faq-item__q" aria-expanded="false">Preciso ter experiencia prévia?<span>&#9662;</span></button>
                     <div class="faq-item__a"><p>Nao! O curso foi pensado para iniciantes e tambem para quem ja atua na area e quer se especializar.</p></div>
                 </div>
             </div>
@@ -699,8 +703,8 @@ document.querySelectorAll('.faq-item__q').forEach(function(btn){
     btn.onclick=function(){
         var item=btn.closest('.faq-item');
         var wasOpen=item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
-        if(!wasOpen) item.classList.add('open');
+        document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-item__q').setAttribute('aria-expanded','false')});
+        if(!wasOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true')}
     };
 });
 </script>

@@ -7,6 +7,7 @@
     <title>AgendaFácil — Sistema de Agendamento | Demonstrativo</title>
     <meta name="description" content="Sistema de agendamento online - Projeto demonstrativo criado por Lucas Designer Web."/>
     <link rel="icon" type="image/svg+xml" href="../src/images/favicon.svg"/>
+    <link rel="apple-touch-icon" href="../src/images/apple-touch-icon.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -33,6 +34,8 @@
 
         html { scroll-behavior: smooth; }
         body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .skip-link{position:absolute;top:-100%;left:16px;background:var(--primary);color:#fff;padding:12px 24px;border-radius:var(--radius-sm);font-weight:600;z-index:10000;transition:top .3s}
+        .skip-link:focus{top:44px}
         a { text-decoration: none; color: inherit; }
 
         .banner { background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; text-align: center; padding: 10px 16px; font-size: .85rem; font-weight: 500; }
@@ -211,6 +214,7 @@
     </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Pular para o conteudo principal</a>
 
     <div class="banner">
         Projeto Demonstrativo — Criado por <a href="../index.html">Lucas Designer Web</a>
@@ -224,7 +228,7 @@
                 </div>
                 AgendaFacil
             </a>
-            <nav>
+            <nav role="navigation" aria-label="Menu principal">
                 <ul class="nav-links">
                     <li><a href="#features">Funcionalidades</a></li>
                     <li><a href="#demo">Demo</a></li>
@@ -235,7 +239,7 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="main-content">
         <div class="container">
             <div class="hero-grid">
                 <div>
