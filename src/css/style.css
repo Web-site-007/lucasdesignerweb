@@ -287,8 +287,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
   :root{--nav-height:80px}
   .navbar__menu{display:none;position:fixed;top:var(--nav-height);left:0;right:0;bottom:0;background:var(--primary);flex-direction:column;padding:var(--space-xl);gap:var(--space-sm);z-index:1001;opacity:1}
   .navbar__menu.open{display:flex}
-  .navbar__menu.open .navbar__link{background:rgba(255,255,255,0.15);color:#fff}
-  .navbar__menu.open .navbar__link:hover,.navbar__menu.open .navbar__link.active{background:rgba(255,255,255,0.25)}
+  .navbar__menu.open .navbar__link{background:var(--primary);color:#fff}
+  .navbar__menu.open .navbar__link:hover,.navbar__menu.open .navbar__link.active{background:var(--primary-hover)}
   .navbar__link{width:100%;padding:var(--space-md);font-size:var(--text-lg)}
   .hamburger{display:flex}
   .navbar__logo{height:60px}
