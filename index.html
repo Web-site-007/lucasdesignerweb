@@ -2,20 +2,30 @@
 <html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
-  <title>Lucas — Designer / Desenvolvedor Web</title>
-  <meta name="description" content="Crio sites modernos, rápidos e profissionais para empresas, empreendedores e profissionais que querem fortalecer sua presença na Internet."/>
-  <meta name="keywords" content="criacao de sites, landing page, e-commerce, desenvolvimento web, consultoria digital"/>
-  <meta property="og:title" content="Lucas — Designer / Desenvolvedor Web"/>
-  <meta property="og:description" content="Crio sites modernos, rápidos e profissionais para empresas, empreendedores e profissionais que querem fortalecer sua presença na Internet."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:locale" content="pt_BR"/>
-  <meta property="og:site_name" content="Lucas - Designer / Desenvolvedor Web"/>
-  <meta property="og:image" content="https://lucasdesignerweb.com.br/src/images/og-image.jpg"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:image" content="https://lucasdesignerweb.com.br/src/images/og-image.jpg"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lucas — Designer &amp; Desenvolvedor Web | Sites Profissionais</title>
+  <meta name="description" content="Crio sites modernos, rápidos e profissionais para empresas, empreendedores e profissionais que querem fortalecer sua presença na Internet. Orçamento grátis."/>
+  <meta name="keywords" content="criação de sites, desenvolvimento web, landing page, e-commerce, loja virtual, consultoria digital, Marabá, Pará"/>
+  <meta name="author" content="Lucas"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://lucasdesignerweb.com.br"/>
+  <meta property="og:title" content="Lucas — Designer &amp; Desenvolvedor Web"/>
+  <meta property="og:description" content="Crio sites modernos, rápidos e profissionais para empresas e empreendedores que querem crescer online."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta property="og:site_name" content="Lucas Designer Web"/>
+  <meta property="og:url" content="https://lucasdesignerweb.com.br"/>
+  <meta property="og:image" content="https://lucasdesignerweb.com.br/src/images/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Lucas — Designer &amp; Desenvolvedor Web"/>
+  <meta name="twitter:description" content="Crio sites modernos, rápidos e profissionais para empresas e empreendedores."/>
+  <meta name="twitter:image" content="https://lucasdesignerweb.com.br/src/images/og-image.jpg"/>
+  <link rel="icon" type="image/svg+xml" href="src/images/favicon.svg"/>
+  <link rel="apple-touch-icon" href="src/images/logo-lucas.svg"/>
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
@@ -31,7 +41,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Lucas — Designer / Desenvolvedor Web",
+    "name": "Lucas — Designer & Desenvolvedor Web",
     "description": "Crio sites modernos, rápidos e profissionais para empresas, empreendedores e profissionais que querem fortalecer sua presença na Internet.",
     "url": "https://lucasdesignerweb.com.br",
     "image": "https://lucasdesignerweb.com.br/src/images/og-image.jpg",
@@ -39,11 +49,12 @@
     "email": "inteligencia20072000@gmail.com",
     "priceRange": "$$",
     "areaServed": {
-      "@type": "Country",
-      "name": "Brasil"
+      "@type": "City",
+      "name": "Marabá",
+      "addressRegion": "PA",
+      "addressCountry": "BR"
     },
-    "serviceType": ["Criação de Sites", "Landing Pages", "Lojas Virtuais", "Sistemas Web", "Apps Mobile", "Consultoria Digital"],
-    "sameAs": [],
+    "serviceType": ["Criação de Sites", "Landing Pages", "Lojas Virtuais", "Sistemas Web", "Consultoria Digital"],
     "founder": {
       "@type": "Person",
       "name": "Lucas"
@@ -52,43 +63,28 @@
   </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
-  <!-- NAVBAR -->
   <nav class="navbar" role="navigation" aria-label="Menu principal">
     <div class="navbar__inner">
       <div class="navbar__actions navbar__actions--left">
-        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema"></button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema escuro/claro" type="button"></button>
       </div>
-
-      <a href="#" class="navbar__brand" aria-label="Início">
-        <svg class="navbar__logo" viewBox="0 0 700 160">
+      <a href="#" class="navbar__brand" aria-label="Lucas Designer Web — Página inicial">
+        <svg class="navbar__logo" viewBox="0 0 700 160" aria-hidden="true">
           <defs>
             <linearGradient id="navGrad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" style="stop-color:#3b82f6"/>
               <stop offset="100%" style="stop-color:#8b5cf6"/>
             </linearGradient>
-            <filter id="navGlow" x="-20%" y="-30%" width="140%" height="160%">
-              <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur1"/>
-              <feFlood flood-color="#3b82f6" flood-opacity="0.9" result="c1"/>
-              <feComposite in="c1" in2="blur1" operator="in" result="s1"/>
-              <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur2"/>
-              <feFlood flood-color="#8b5cf6" flood-opacity="0.7" result="c2"/>
-              <feComposite in="c2" in2="blur2" operator="in" result="s2"/>
-              <feMerge>
-                <feMergeNode in="s2"/>
-                <feMergeNode in="s1"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
           </defs>
           <text x="100" y="70" font-family="'Courier New', monospace" font-size="60" font-weight="bold" fill="#3b82f6">&lt;</text>
           <text x="155" y="70" font-family="'Arial Black', 'Impact', sans-serif" font-size="72" font-weight="900" fill="url(#navGrad)" letter-spacing="5">LUCAS</text>
           <text x="445" y="70" font-family="'Courier New', monospace" font-size="60" font-weight="bold" fill="#3b82f6">/&gt;</text>
           <rect x="155" y="82" width="290" height="4" fill="url(#navGrad)" rx="2"/>
-          <text class="logo-subtitle" x="350" y="132" font-family="Arial, sans-serif" font-size="26" font-weight="600" text-anchor="middle" letter-spacing="4" filter="url(#navGlow)">DESIGNER / DESENVOLVEDOR WEB</text>
+          <text class="logo-subtitle" x="350" y="132" font-family="Arial, sans-serif" font-size="26" font-weight="600" text-anchor="middle" letter-spacing="4">DESIGNER / DESENVOLVEDOR WEB</text>
         </svg>
       </a>
-
       <div class="navbar__right">
         <div class="navbar__menu" id="navMenu" role="menubar">
           <a href="#servicos" class="navbar__link" role="menuitem">Serviços</a>
@@ -98,448 +94,433 @@
           <a href="#faq" class="navbar__link" role="menuitem">FAQ</a>
           <a href="#contato" class="navbar__link" role="menuitem">Contato</a>
         </div>
-        <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+        <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- CAPA -->
-  <section class="cover" id="inicio">
-    <img src="src/images/capa-do-site.png" alt="Lucas - Designer e Desenvolvedor Web - Crio sites modernos e profissionais" class="cover__img" width="1920" height="1080"/>
-  </section>
+  <main id="main-content">
+    <section class="cover" id="inicio" aria-hidden="true">
+      <img src="src/images/capa-do-site.png" alt="" class="cover__img" width="1920" height="1080" fetchpriority="high"/>
+    </section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero__content fade-in">
-        <span class="badge hero__badge">Criação de Sites Profissionais</span>
-        <h1 class="hero__title">
-          Seu negócio merece um site que <span>converte visitantes em clientes</span>
-        </h1>
-        <p class="hero__desc">
-          Crio sites modernos, rápidos e profissionais para empresas, empreendedores e profissionais que querem fortalecer sua presença na Internet.
-        </p>
-        <div class="hero__actions">
-          <a href="#contato" class="btn btn--primary btn--lg">Solicitar Orçamento Grátis</a>
-          <a href="#portfolio" class="btn btn--outline btn--lg">Ver Portfólio</a>
-        </div>
-        <div class="hero__stats">
-          <div>
-            <div class="hero__stat-value">+2.500</div>
-            <div class="hero__stat-label">Sites Entregues</div>
-          </div>
-          <div>
-            <div class="hero__stat-value">100%</div>
-            <div class="hero__stat-label">Clientes Satisfeitos</div>
-          </div>
-          <div>
-            <div class="hero__stat-value">+8</div>
-            <div class="hero__stat-label">Anos de Experiência</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICOS -->
-  <section class="section section--alt" id="servicos">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="badge section-header__badge">Nossos Serviços</span>
-        <h2 class="section-header__title">Soluções completas para sua presença digital</h2>
-        <p class="section-header__desc">Do site institucional ao sistema completo. Tudo que você precisa para crescer online.</p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card fade-in">
-          <div class="service-card__icon">&#128187;</div>
-          <h3 class="service-card__title">Sites Profissionais</h3>
-          <p class="service-card__desc">Site institucional moderno, rápido e responsivo. Design único, otimizado para Google e pronto para converter visitantes em clientes.</p>
-          <div class="service-card__price">A partir de R$497</div>
-        </div>
-
-        <div class="service-card fade-in">
-          <div class="service-card__icon">&#128722;</div>
-          <h3 class="service-card__title">Lojas Virtuais</h3>
-          <p class="service-card__desc">E-commerce completo com catálogo, carrinho, pagamentos integrados (Pix, cartão, boleto) e painel de gerenciamento facílimo.</p>
-          <div class="service-card__price">A partir de R$997</div>
-        </div>
-
-        <div class="service-card fade-in">
-          <div class="service-card__icon">&#128640;</div>
-          <h3 class="service-card__title">Landing Pages</h3>
-          <p class="service-card__desc">Páginas focadas em conversão para seus lançamentos, campanhas de ads e captação de leads. Alta taxa de conversão.</p>
-          <div class="service-card__price">A partir de R$297</div>
-        </div>
-
-        <div class="service-card fade-in">
-          <div class="service-card__icon">&#9881;</div>
-          <h3 class="service-card__title">Sistemas Web</h3>
-          <p class="service-card__desc">Sistemas sob demanda para gerenciar seu negócio: CRM, agendamentos, controle financeiro, dashboards e mais.</p>
-          <div class="service-card__price">Sob consulta</div>
-        </div>
-
-        <div class="service-card fade-in">
-          <div class="service-card__icon">&#128241;</div>
-          <h3 class="service-card__title">Apps Mobile</h3>
-          <p class="service-card__desc">Aplicativos para iOS e Android que conectam seu negócio aos seus clientes a qualquer hora, em qualquer lugar.</p>
-          <div class="service-card__price">Sob consulta</div>
-        </div>
-
-        <div class="service-card fade-in">
-          <div class="service-card__icon">&#128161;</div>
-          <h3 class="service-card__title">Consultoria Digital</h3>
-          <p class="service-card__desc">Estratégia completa para sua presença online: SEO, Google Ads, redes sociais, performance e crescimento digital.</p>
-          <div class="service-card__price">Sob consulta</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section class="section" id="portfolio">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="badge section-header__badge">Portfólio</span>
-        <h2 class="section-header__title">Projetos que geram resultados</h2>
-        <p class="section-header__desc">Conheça alguns dos sites que criamos para nossos clientes.</p>
-      </div>
-
-      <div class="portfolio-grid">
-        <div class="portfolio-item fade-in">
-          <img src="src/images/portfolio-1.jpg" alt="Clínica Odontológica Sorriso - Site institucional moderno" class="portfolio-img" width="800" height="500" loading="lazy"/>
-          <div class="portfolio-item__overlay">
-            <span class="portfolio-item__tag">Site Institucional</span>
-            <h3 class="portfolio-item__title">Clínica Odontológica Sorriso</h3>
-          </div>
-        </div>
-        <div class="portfolio-item fade-in">
-          <img src="src/images/portfolio-2.jpg" alt="Loja Virtual Moda Fitness - E-commerce completo" class="portfolio-img" width="800" height="500" loading="lazy"/>
-          <div class="portfolio-item__overlay">
-            <span class="portfolio-item__tag">E-commerce</span>
-            <h3 class="portfolio-item__title">Loja Virtual Moda Fitness</h3>
-          </div>
-        </div>
-        <div class="portfolio-item fade-in">
-          <img src="src/images/portfolio-3.jpg" alt="Landing Page Curso de Marketing - Alta conversão" class="portfolio-img" width="800" height="500" loading="lazy"/>
-          <div class="portfolio-item__overlay">
-            <span class="portfolio-item__tag">Landing Page</span>
-            <h3 class="portfolio-item__title">Lançamento Curso de Marketing</h3>
-          </div>
-        </div>
-        <div class="portfolio-item fade-in">
-          <img src="src/images/portfolio-4.jpg" alt="Sistema de Agendamento - Dashboard web" class="portfolio-img" width="800" height="500" loading="lazy"/>
-          <div class="portfolio-item__overlay">
-            <span class="portfolio-item__tag">Sistema Web</span>
-            <h3 class="portfolio-item__title">Sistema de Agendamento</h3>
-          </div>
-        </div>
-        <div class="portfolio-item fade-in">
-          <img src="src/images/portfolio-5.jpg" alt="Escritório de Advocacia - Site profissional" class="portfolio-img" width="800" height="500" loading="lazy"/>
-          <div class="portfolio-item__overlay">
-            <span class="portfolio-item__tag">Site Institucional</span>
-            <h3 class="portfolio-item__title">Escritório de Advocacia</h3>
-          </div>
-        </div>
-        <div class="portfolio-item fade-in">
-          <img src="src/images/portfolio-6.jpg" alt="Restaurante Delivery - E-commerce gastronômico" class="portfolio-img" width="800" height="500" loading="lazy"/>
-          <div class="portfolio-item__overlay">
-            <span class="portfolio-item__tag">E-commerce</span>
-            <h3 class="portfolio-item__title">Restaurante Delivery</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DEPOIMENTOS -->
-  <section class="section section--alt" id="depoimentos">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="badge section-header__badge">Depoimentos</span>
-        <h2 class="section-header__title">O que nossos clientes dizem</h2>
-        <p class="section-header__desc">Resultados reais de quem confiou no nosso trabalho.</p>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-card__text">"Meu faturamento triplicou depois que lancei o site novo. O Lucas e profissional e entregou antes do prazo. Recomendo demais!"</p>
-          <div class="testimonial-card__author">
-            <img src="src/images/avatar-1.jpg" alt="Marcos Costa" class="testimonial-card__avatar" width="44" height="44" loading="lazy"/>
-            <div>
-              <div class="testimonial-card__name">Marcos Costa</div>
-              <div class="testimonial-card__role">CEO — Costa Consultoria</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-card__text">"A loja virtual ficou exatamente como eu imaginava. Meus clientes elogiam a facilidade de compra e as vendas aumentaram 40%."</p>
-          <div class="testimonial-card__author">
-            <img src="src/images/avatar-2.jpg" alt="Ana Silva" class="testimonial-card__avatar" width="44" height="44" loading="lazy"/>
-            <div>
-              <div class="testimonial-card__name">Ana Silva</div>
-              <div class="testimonial-card__role">Owner — Boutique Floral</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-card__text">"Profissionalismo do início ao fim. O site ficou rápido no celular e no computador. Já indiquei para 3 amigos."</p>
-          <div class="testimonial-card__author">
-            <img src="src/images/avatar-3.jpg" alt="Ricardo Pereira" class="testimonial-card__avatar" width="44" height="44" loading="lazy"/>
-            <div>
-              <div class="testimonial-card__name">Ricardo Pereira</div>
-              <div class="testimonial-card__role">Diretor — RP Engenharia</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section class="section" id="sobre">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about__image fade-in-left">
-          &#128187;
-        </div>
-        <div class="about__content fade-in-right">
-          <span class="badge">Quem Sou</span>
-          <h2 class="about__title">Transformo ideias em sites que vendem</h2>
-          <p class="about__text">
-            Sou o Lucas, Designer e Desenvolvedor Web. Crio sites modernos, rápidos e profissionais para empresas, empreendedores e profissionais que querem fortalecer sua presença na Internet. Cada pixel tem um propósito: converter visitantes em clientes.
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content fade-in">
+          <span class="badge hero__badge">Criação de Sites Profissionais</span>
+          <h1 class="hero__title">
+            Seu negócio merece um site que <span>converte visitantes em clientes</span>
+          </h1>
+          <p class="hero__desc">
+            Eu sou o Lucas, Designer e Desenvolvedor Web. Crio sites modernos, rápidos e profissionais para empresas, empreendedores e profissionais que querem fortalecer sua presença na Internet.
           </p>
-          <div class="about__features">
-            <div class="about__feature">
-              <div class="about__feature-icon">&#9889;</div>
-              <div class="about__feature-text">
-                <strong>Entrega Rápida</strong>
-                <span>Seu site pronto em até 15 dias úteis</span>
-              </div>
-            </div>
-            <div class="about__feature">
-              <div class="about__feature-icon">&#128276;</div>
-              <div class="about__feature-text">
-                <strong>Suporte Dedicado</strong>
-                <span>Alterações e suporte pós-lançamento incluídos</span>
-              </div>
-            </div>
-            <div class="about__feature">
-              <div class="about__feature-icon">&#128200;</div>
-              <div class="about__feature-text">
-                <strong>Foco em Resultados</strong>
-                <span>Design estratégico pensado para conversão</span>
-              </div>
-            </div>
-            <div class="about__feature">
-              <div class="about__feature-icon">&#128737;</div>
-              <div class="about__feature-text">
-                <strong>Segurança</strong>
-                <span>Sites com HTTPS, backup e proteção contra ataques</span>
-              </div>
-            </div>
+          <div class="hero__actions">
+            <a href="#contato" class="btn btn--primary btn--lg">Solicitar Criação do Meu Site</a>
+            <a href="#portfolio" class="btn btn--outline btn--lg">Ver Projetos</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ -->
-  <section class="section section--alt" id="faq">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="badge section-header__badge">Perguntas Frequentes</span>
-        <h2 class="section-header__title">Dúvidas? A gente responde</h2>
-      </div>
-
-      <div class="faq-list">
-        <div class="faq-item fade-in">
-          <button class="faq-item__question" aria-expanded="false">
-            Quanto tempo leva para criar meu site?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer" role="region">
-            <p>Depende da complexidade. Uma landing page fica pronta em 5-7 dias úteis. Um site institucional leva 10-15 dias. Lojas virtuais e sistemas personalizados podem levar de 20-40 dias. Sempre entregamos dentro do prazo acordado.</p>
-          </div>
+    <section class="section section--alt" id="servicos">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="badge section-header__badge">Serviços</span>
+          <h2 class="section-header__title">Soluções completas para sua presença digital</h2>
+          <p class="section-header__desc">Do site institucional ao sistema completo. Tudo que você precisa para crescer online.</p>
         </div>
-
-        <div class="faq-item fade-in">
-          <button class="faq-item__question" aria-expanded="false">
-            O site fica responsivo (funciona no celular)?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer" role="region">
-            <p>Sim! Todos os nossos sites são desenvolvidos mobile-first, ou seja, são pensados primeiro para celulares e depois adaptados para computadores. Seu site vai ficar perfeito em qualquer tela.</p>
-          </div>
-        </div>
-
-        <div class="faq-item fade-in">
-          <button class="faq-item__question" aria-expanded="false">
-            Posso atualizar o conteudo sozinho depois?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer" role="region">
-            <p>Depende do tipo de projeto. Para sites estáticos, fazemos as alterações que você precisar sem custo adicional nos primeiros 3 meses. Para lojas virtuais e sistemas, fornecemos painel de gerenciamento intuitivo.</p>
-          </div>
-        </div>
-
-        <div class="faq-item fade-in">
-          <button class="faq-item__question" aria-expanded="false">
-            O site aparece no Google?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer" role="region">
-            <p>Sim! Todos os nossos sites são desenvolvidos com as melhores práticas de SEO: meta tags, velocidade de carregamento, semântica HTML, sitemap e mais. Seu site fica pronto para ser indexado pelo Google.</p>
-          </div>
-        </div>
-
-        <div class="faq-item fade-in">
-          <button class="faq-item__question" aria-expanded="false">
-            Vocês oferecem hospedagem e domínio?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer" role="region">
-            <p>Sim! Podemos cuidar de tudo: registro de domínio, hospedagem rápida e segura, certificado SSL (HTTPS) e configuração completa. Também ensinamos você a gerenciar tudo sozinho se preferir.</p>
-          </div>
-        </div>
-
-        <div class="faq-item fade-in">
-          <button class="faq-item__question" aria-expanded="false">
-            Qual a forma de pagamento?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer" role="region">
-            <p>Aceitamos Pix, cartão de crédito (até 12x), boleto e transferência bancária. O pagamento é dividido em: 50% no início do projeto e 50% na entrega. Projetos maiores podem ter parcelas adicionais.</p>
-          </div>
+        <div class="services-grid">
+          <article class="service-card fade-in">
+            <div class="service-card__icon" aria-hidden="true">&#128187;</div>
+            <h3 class="service-card__title">Sites Profissionais</h3>
+            <p class="service-card__desc">Site institucional moderno, rápido e responsivo. Design único, otimizado para Google e pronto para converter visitantes em clientes.</p>
+            <div class="service-card__price">A partir de R$497</div>
+            <a href="#contato" class="btn btn--sm btn--outline service-card__cta">Solicitar</a>
+          </article>
+          <article class="service-card fade-in">
+            <div class="service-card__icon" aria-hidden="true">&#128722;</div>
+            <h3 class="service-card__title">Lojas Virtuais</h3>
+            <p class="service-card__desc">E-commerce completo com catálogo, carrinho, pagamentos integrados (Pix, cartão, boleto) e painel de gerenciamento facílimo.</p>
+            <div class="service-card__price">A partir de R$997</div>
+            <a href="#contato" class="btn btn--sm btn--outline service-card__cta">Solicitar</a>
+          </article>
+          <article class="service-card fade-in">
+            <div class="service-card__icon" aria-hidden="true">&#128640;</div>
+            <h3 class="service-card__title">Landing Pages</h3>
+            <p class="service-card__desc">Páginas focadas em conversão para seus lançamentos, campanhas de ads e captação de leads. Alta taxa de conversão.</p>
+            <div class="service-card__price">A partir de R$297</div>
+            <a href="#contato" class="btn btn--sm btn--outline service-card__cta">Solicitar</a>
+          </article>
+          <article class="service-card fade-in">
+            <div class="service-card__icon" aria-hidden="true">&#9881;</div>
+            <h3 class="service-card__title">Sistemas Web</h3>
+            <p class="service-card__desc">Sistemas sob demanda para gerenciar seu negócio: CRM, agendamentos, controle financeiro, dashboards e mais.</p>
+            <div class="service-card__price">Sob consulta</div>
+            <a href="#contato" class="btn btn--sm btn--outline service-card__cta">Solicitar</a>
+          </article>
+          <article class="service-card fade-in">
+            <div class="service-card__icon" aria-hidden="true">&#128241;</div>
+            <h3 class="service-card__title">Apps Mobile</h3>
+            <p class="service-card__desc">Aplicativos para iOS e Android que conectam seu negócio aos seus clientes a qualquer hora, em qualquer lugar.</p>
+            <div class="service-card__price">Sob consulta</div>
+            <a href="#contato" class="btn btn--sm btn--outline service-card__cta">Solicitar</a>
+          </article>
+          <article class="service-card fade-in">
+            <div class="service-card__icon" aria-hidden="true">&#128161;</div>
+            <h3 class="service-card__title">Consultoria Digital</h3>
+            <p class="service-card__desc">Estratégia completa para sua presença online: SEO, Google Ads, redes sociais, performance e crescimento digital.</p>
+            <div class="service-card__price">Sob consulta</div>
+            <a href="#contato" class="btn btn--sm btn--outline service-card__cta">Solicitar</a>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTATO -->
-  <section class="section" id="contato">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="badge section-header__badge">Contato</span>
-        <h2 class="section-header__title">Vamos conversar?</h2>
-        <p class="section-header__desc">Conte-nos sobre seu projeto e retornamos em até 24 horas.</p>
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="badge section-header__badge">Portfólio</span>
+          <h2 class="section-header__title">Projetos que geram resultados</h2>
+          <p class="section-header__desc">Conheça alguns dos tipos de sites que posso criar para você.</p>
+        </div>
+        <div class="portfolio-grid">
+          <a href="portfolio/institucional.html" target="_blank" class="portfolio-item fade-in" rel="noopener noreferrer">
+            <img src="src/images/portfolio-1.jpg" alt="Site institucional para escritório de arquitetura" class="portfolio-img" width="800" height="500" loading="lazy"/>
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__tag">Projeto Demonstrativo</span>
+              <h3 class="portfolio-item__title">Arcos Projetos &amp; Design</h3>
+              <span class="portfolio-item__cta">Ver projeto &rarr;</span>
+            </div>
+          </a>
+          <a href="portfolio/landing-page.html" target="_blank" class="portfolio-item fade-in" rel="noopener noreferrer">
+            <img src="src/images/portfolio-3.jpg" alt="Landing page para curso online de fitness" class="portfolio-img" width="800" height="500" loading="lazy"/>
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__tag">Projeto Demonstrativo</span>
+              <h3 class="portfolio-item__title">FitPro Academy</h3>
+              <span class="portfolio-item__cta">Ver projeto &rarr;</span>
+            </div>
+          </a>
+          <a href="portfolio/ecommerce.html" target="_blank" class="portfolio-item fade-in" rel="noopener noreferrer">
+            <img src="src/images/portfolio-2.jpg" alt="E-commerce de produtos orgânicos" class="portfolio-img" width="800" height="500" loading="lazy"/>
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__tag">Projeto Demonstrativo</span>
+              <h3 class="portfolio-item__title">Natureza Viva</h3>
+              <span class="portfolio-item__cta">Ver projeto &rarr;</span>
+            </div>
+          </a>
+          <a href="portfolio/sistema-web.html" target="_blank" class="portfolio-item fade-in" rel="noopener noreferrer">
+            <img src="src/images/portfolio-4.jpg" alt="Sistema web de agendamento" class="portfolio-img" width="800" height="500" loading="lazy"/>
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__tag">Projeto Demonstrativo</span>
+              <h3 class="portfolio-item__title">Sistema AgendaFácil</h3>
+              <span class="portfolio-item__cta">Ver projeto &rarr;</span>
+            </div>
+          </a>
+          <a href="portfolio/advocacia.html" target="_blank" class="portfolio-item fade-in" rel="noopener noreferrer">
+            <img src="src/images/portfolio-5.jpg" alt="Site institucional para escritório de advocacia" class="portfolio-img" width="800" height="500" loading="lazy"/>
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__tag">Projeto Demonstrativo</span>
+              <h3 class="portfolio-item__title">Mendes &amp; Souza Advocacia</h3>
+              <span class="portfolio-item__cta">Ver projeto &rarr;</span>
+            </div>
+          </a>
+          <a href="portfolio/restaurante.html" target="_blank" class="portfolio-item fade-in" rel="noopener noreferrer">
+            <img src="src/images/portfolio-6.jpg" alt="E-commerce de restaurante com pedidos online" class="portfolio-img" width="800" height="500" loading="lazy"/>
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__tag">Projeto Demonstrativo</span>
+              <h3 class="portfolio-item__title">Sabor da Terra</h3>
+              <span class="portfolio-item__cta">Ver projeto &rarr;</span>
+            </div>
+          </a>
+        </div>
       </div>
+    </section>
 
-      <div class="contact-grid">
-        <div class="contact__info fade-in-left">
-          <h3 class="contact__info-title">Fale com a gente</h3>
-          <p class="contact__info-desc">Escolha a forma que preferir. Estamos prontos para transformar sua ideia em um site profissional.</p>
-
-          <div class="contact__methods">
-            <a href="https://wa.me/5591981504951" target="_blank" class="contact__method" rel="noopener">
-              <div class="contact__method-icon">&#128172;</div>
+    <section class="section section--alt" id="depoimentos">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="badge section-header__badge">Depoimentos</span>
+          <h2 class="section-header__title">O que dizem sobre o trabalho</h2>
+          <p class="section-header__desc">Exemplos do tipo de resultado que posso entregar para o seu negócio.</p>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card fade-in">
+            <div class="testimonial-card__stars" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="testimonial-card__text">
+              "Meu faturamento triplicou depois que lancei o site novo. Profissional e entregou antes do prazo. Recomendo demais!"
+            </blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">MC</div>
               <div>
-                <div class="contact__method-label">WhatsApp</div>
-                <div class="contact__method-value">(91) 98150-4951</div>
+                <div class="testimonial-card__name">Marcos Costa</div>
+                <div class="testimonial-card__role">CEO — Costa Consultoria</div>
               </div>
-            </a>
-
-            <a href="mailto:inteligencia20072000@gmail.com" class="contact__method">
-              <div class="contact__method-icon">&#9993;</div>
+            </div>
+          </article>
+          <article class="testimonial-card fade-in">
+            <div class="testimonial-card__stars" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="testimonial-card__text">
+              "A loja virtual ficou exatamente como eu imaginava. Meus clientes elogiam a facilidade de compra e as vendas aumentaram 40%."
+            </blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">AS</div>
               <div>
-                <div class="contact__method-label">E-mail</div>
-                <div class="contact__method-value">inteligencia20072000@gmail.com</div>
+                <div class="testimonial-card__name">Ana Silva</div>
+                <div class="testimonial-card__role">Owner — Boutique Floral</div>
               </div>
-            </a>
-          </div>
+            </div>
+          </article>
+          <article class="testimonial-card fade-in">
+            <div class="testimonial-card__stars" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="testimonial-card__text">
+              "Profissionalismo do início ao fim. O site ficou rápido no celular e no computador. Já indiquei para vários amigos."
+            </blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">RP</div>
+              <div>
+                <div class="testimonial-card__name">Ricardo Pereira</div>
+                <div class="testimonial-card__role">Diretor — RP Engenharia</div>
+              </div>
+            </div>
+          </article>
         </div>
+      </div>
+    </section>
 
-        <div class="contact__form fade-in-right">
-          <form id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Nome *</label>
-                <input type="text" id="name" name="name" placeholder="Seu nome" required/>
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about__image fade-in-left" aria-hidden="true">
+            <svg viewBox="0 0 200 200" class="about__svg">
+              <defs>
+                <linearGradient id="aboutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#3b82f6"/>
+                  <stop offset="100%" style="stop-color:#8b5cf6"/>
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="90" fill="none" stroke="url(#aboutGrad)" stroke-width="2" opacity="0.3"/>
+              <text x="100" y="90" text-anchor="middle" font-family="'Courier New', monospace" font-size="24" fill="#3b82f6">&lt;/&gt;</text>
+              <text x="100" y="120" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="16" font-weight="900" fill="url(#aboutGrad)">LUCAS</text>
+            </svg>
+          </div>
+          <div class="about__content fade-in-right">
+            <span class="badge">Quem Sou</span>
+            <h2 class="about__title">Transformo ideias em sites que vendem</h2>
+            <p class="about__text">
+              Sou o Lucas, Designer e Desenvolvedor Web. Crio sites modernos, rápidos e profissionais para empresas, empreendedores e profissionais que querem fortalecer sua presença na Internet. Cada pixel tem um propósito: converter visitantes em clientes.
+            </p>
+            <div class="about__features">
+              <div class="about__feature">
+                <div class="about__feature-icon" aria-hidden="true">&#9889;</div>
+                <div class="about__feature-text">
+                  <strong>Entrega Rápida</strong>
+                  <span>Seu site pronto em até 15 dias úteis</span>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="email">E-mail *</label>
-                <input type="email" id="email" name="email" placeholder="seu@email.com" required/>
+              <div class="about__feature">
+                <div class="about__feature-icon" aria-hidden="true">&#128276;</div>
+                <div class="about__feature-text">
+                  <strong>Suporte Dedicado</strong>
+                  <span>Alterações e suporte pós-lançamento incluídos</span>
+                </div>
+              </div>
+              <div class="about__feature">
+                <div class="about__feature-icon" aria-hidden="true">&#128200;</div>
+                <div class="about__feature-text">
+                  <strong>Foco em Resultados</strong>
+                  <span>Design estratégico pensado para conversão</span>
+                </div>
+              </div>
+              <div class="about__feature">
+                <div class="about__feature-icon" aria-hidden="true">&#128737;</div>
+                <div class="about__feature-text">
+                  <strong>Segurança</strong>
+                  <span>Sites com HTTPS, backup e proteção</span>
+                </div>
               </div>
             </div>
-            <div class="form-group">
-              <label for="phone">WhatsApp</label>
-              <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000"/>
-            </div>
-            <div class="form-group">
-              <label for="service">Servico desejado</label>
-              <select id="service" name="service">
-                <option value="">Selecione...</option>
-                <option value="site">Site Institucional</option>
-                <option value="loja">Loja Virtual</option>
-                <option value="landing">Landing Page</option>
-                <option value="sistema">Sistema Web</option>
-                <option value="app">App Mobile</option>
-                <option value="consultoria">Consultoria Digital</option>
-                <option value="outro">Outro</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Mensagem *</label>
-              <textarea id="message" name="message" placeholder="Descreva brevemente seu projeto..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary" style="width:100%">Enviar Mensagem</button>
-          </form>
-          <div class="form-success" id="formSuccess">
-            <div class="form-success__icon">&#10004;</div>
-            <h4 class="form-success__title">Mensagem enviada!</h4>
-            <p class="form-success__desc">Retornaremos em até 24 horas. Enquanto isso, nos siga nas redes sociais.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <div class="container">
-      <h2 class="cta__title fade-in">Pronto para ter o site que seu negócio merece?</h2>
-      <p class="cta__desc fade-in">Solicite seu orçamento gratuito e descubra como podemos ajudar você a crescer online.</p>
-      <a href="#contato" class="btn btn--primary btn--lg fade-in">Começar Agora</a>
-    </div>
-  </section>
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="badge section-header__badge">Perguntas Frequentes</span>
+          <h2 class="section-header__title">Dúvidas? A gente responde</h2>
+        </div>
+        <div class="faq-list" role="list">
+          <div class="faq-item fade-in" role="listitem">
+            <button class="faq-item__question" aria-expanded="false" type="button">
+              Quanto tempo leva para criar meu site?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer" role="region">
+              <p>Depende da complexidade. Uma landing page fica pronta em 5-7 dias úteis. Um site institucional leva 10-15 dias. Lojas virtuais e sistemas personalizados podem levar de 20-40 dias. Sempre entregamos dentro do prazo acordado.</p>
+            </div>
+          </div>
+          <div class="faq-item fade-in" role="listitem">
+            <button class="faq-item__question" aria-expanded="false" type="button">
+              O site fica responsivo (funciona no celular)?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer" role="region">
+              <p>Sim! Todos os sites são desenvolvidos mobile-first, ou seja, são pensados primeiro para celulares e depois adaptados para computadores. Seu site vai ficar perfeito em qualquer tela.</p>
+            </div>
+          </div>
+          <div class="faq-item fade-in" role="listitem">
+            <button class="faq-item__question" aria-expanded="false" type="button">
+              Posso atualizar o conteúdo sozinho depois?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer" role="region">
+              <p>Depende do tipo de projeto. Para sites estáticos, fazemos as alterações que você precisar sem custo adicional nos primeiros 3 meses. Para lojas virtuais e sistemas, fornecemos painel de gerenciamento intuitivo.</p>
+            </div>
+          </div>
+          <div class="faq-item fade-in" role="listitem">
+            <button class="faq-item__question" aria-expanded="false" type="button">
+              O site aparece no Google?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer" role="region">
+              <p>Sim! Todos os sites são desenvolvidos com as melhores práticas de SEO: meta tags, velocidade de carregamento, semântica HTML, sitemap e mais. Seu site fica pronto para ser indexado pelo Google.</p>
+            </div>
+          </div>
+          <div class="faq-item fade-in" role="listitem">
+            <button class="faq-item__question" aria-expanded="false" type="button">
+              Vocês oferecem hospedagem e domínio?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer" role="region">
+              <p>Sim! Podemos cuidar de tudo: registro de domínio, hospedagem rápida e segura, certificado SSL (HTTPS) e configuração completa. Também ensinamos você a gerenciar tudo sozinho se preferir.</p>
+            </div>
+          </div>
+          <div class="faq-item fade-in" role="listitem">
+            <button class="faq-item__question" aria-expanded="false" type="button">
+              Qual a forma de pagamento?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer" role="region">
+              <p>Aceitamos Pix, cartão de crédito (até 12x), boleto e transferência bancária. O pagamento é dividido em: 50% no início do projeto e 50% na entrega. Projetos maiores podem ter parcelas adicionais.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- FOOTER -->
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="badge section-header__badge">Contato</span>
+          <h2 class="section-header__title">Vamos conversar?</h2>
+          <p class="section-header__desc">Conte-nos sobre seu projeto e retornamos em até 24 horas.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact__info fade-in-left">
+            <h3 class="contact__info-title">Fale comigo</h3>
+            <p class="contact__info-desc">Escolha a forma que preferir. Estou pronto para transformar sua ideia em um site profissional.</p>
+            <div class="contact__methods">
+              <a href="https://wa.me/5591981504951?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento" target="_blank" class="contact__method" rel="noopener noreferrer">
+                <div class="contact__method-icon" aria-hidden="true">&#128172;</div>
+                <div>
+                  <div class="contact__method-label">WhatsApp</div>
+                  <div class="contact__method-value">(91) 98150-4951</div>
+                </div>
+              </a>
+              <a href="mailto:inteligencia20072000@gmail.com" class="contact__method">
+                <div class="contact__method-icon" aria-hidden="true">&#9993;</div>
+                <div>
+                  <div class="contact__method-label">E-mail</div>
+                  <div class="contact__method-value">inteligencia20072000@gmail.com</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="contact__form fade-in-right">
+            <form id="contactForm" novalidate>
+              <input type="hidden" name="access_key" value="03e6252f-b384-405e-ad34-fd949c9a83f8"/>
+              <input type="checkbox" name="botcheck" class="honeypot" aria-hidden="true" tabindex="-1" autocomplete="off" style="display:none"/>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Nome *</label>
+                  <input type="text" id="name" name="name" placeholder="Seu nome" required autocomplete="name"/>
+                </div>
+                <div class="form-group">
+                  <label for="email">E-mail *</label>
+                  <input type="email" id="email" name="email" placeholder="seu@email.com" required autocomplete="email"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="phone">WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000" autocomplete="tel"/>
+              </div>
+              <div class="form-group">
+                <label for="service">Serviço desejado</label>
+                <select id="service" name="service">
+                  <option value="">Selecione...</option>
+                  <option value="site">Site Institucional</option>
+                  <option value="loja">Loja Virtual</option>
+                  <option value="landing">Landing Page</option>
+                  <option value="sistema">Sistema Web</option>
+                  <option value="app">App Mobile</option>
+                  <option value="consultoria">Consultoria Digital</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Mensagem *</label>
+                <textarea id="message" name="message" placeholder="Descreva brevemente seu projeto..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary form-submit" style="width:100%">
+                <span class="form-submit__text">Enviar Mensagem</span>
+                <span class="form-submit__loading" aria-hidden="true">Enviando...</span>
+              </button>
+            </form>
+            <div class="form-success" id="formSuccess">
+              <div class="form-success__icon">&#10004;</div>
+              <h4 class="form-success__title">Mensagem enviada!</h4>
+              <p class="form-success__desc">Retornaremos em até 24 horas. Enquanto isso, fale direto no WhatsApp:</p>
+              <a href="https://wa.me/5591981504951?text=Ol%C3%A1%2C%20enviei%20um%20formul%C3%A1rio%20pelo%20site" target="_blank" class="btn btn--whatsapp" rel="noopener noreferrer">Falar no WhatsApp</a>
+            </div>
+            <div class="form-error" id="formError">
+              <div class="form-error__icon">&#9888;</div>
+              <h4 class="form-error__title">Erro ao enviar</h4>
+              <p class="form-error__desc">Ocorreu um problema. Tente novamente ou fale direto no WhatsApp.</p>
+              <a href="https://wa.me/5591981504951?text=Ol%C3%A1%2C%20tive%20problemas%20com%20o%20formul%C3%A1rio" target="_blank" class="btn btn--whatsapp" rel="noopener noreferrer">Falar no WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2 class="cta__title fade-in">Pronto para ter o site que seu negócio merece?</h2>
+        <p class="cta__desc fade-in">Solicite seu orçamento gratuito e descubra como podemos ajudar você a crescer online.</p>
+        <a href="#contato" class="btn btn--primary btn--lg fade-in">Começar Agora</a>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <svg class="footer__logo" viewBox="0 0 500 80">
+          <svg class="footer__logo" viewBox="0 0 500 80" aria-hidden="true">
             <defs>
               <linearGradient id="footGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" style="stop-color:#3b82f6"/>
                 <stop offset="100%" style="stop-color:#8b5cf6"/>
               </linearGradient>
-              <filter id="footGlow" x="-20%" y="-30%" width="140%" height="160%">
-                <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur1"/>
-                <feFlood flood-color="#3b82f6" flood-opacity="0.9" result="c1"/>
-                <feComposite in="c1" in2="blur1" operator="in" result="s1"/>
-                <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur2"/>
-                <feFlood flood-color="#8b5cf6" flood-opacity="0.7" result="c2"/>
-                <feComposite in="c2" in2="blur2" operator="in" result="s2"/>
-                <feMerge>
-                  <feMergeNode in="s2"/>
-                  <feMergeNode in="s1"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
             </defs>
             <text x="130" y="32" font-family="'Courier New', monospace" font-size="28" font-weight="bold" fill="#3b82f6">&lt;</text>
             <text x="150" y="32" font-family="'Arial Black', 'Impact', sans-serif" font-size="32" font-weight="900" fill="url(#footGrad)" letter-spacing="2">LUCAS</text>
             <text x="262" y="32" font-family="'Courier New', monospace" font-size="28" font-weight="bold" fill="#3b82f6">/&gt;</text>
             <rect x="150" y="38" width="112" height="2" fill="url(#footGrad)" rx="1"/>
-            <text class="logo-subtitle" x="250" y="58" font-family="Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="1.5" filter="url(#footGlow)">DESIGNER / DESENVOLVEDOR WEB</text>
+            <text class="logo-subtitle" x="250" y="58" font-family="Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="1.5">DESIGNER / DESENVOLVEDOR WEB</text>
           </svg>
         </div>
         <div class="footer__links">
@@ -555,8 +536,7 @@
     </div>
   </footer>
 
-  <!-- SCROLL TO TOP -->
-  <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">&#8593;</button>
+  <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo" type="button">&#8593;</button>
 
   <script src="src/js/main.js"></script>
 </body>

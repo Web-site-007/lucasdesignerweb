@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <title>AgendaFácil — Sistema de Agendamento | Demonstrativo</title>
+    <meta name="description" content="Sistema de gerenciamento de agendamentos - Projeto demonstrativo criado por Lucas Designer Web."/>
+    <link rel="icon" type="image/svg+xml" href="../src/images/favicon.svg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0b0f1a;
+            --bg-card: #111827;
+            --bg-card-hover: #1a2236;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --primary-light: rgba(59, 130, 246, 0.15);
+            --primary-lighter: rgba(59, 130, 246, 0.08);
+            --border: #1e293b;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.3);
+            --transition: 0.3s ease;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .banner {
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            color: #fff;
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .banner a { color: #fff; text-decoration: underline; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        .header {
+            background: rgba(11, 15, 26, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+
+        .nav-links a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span { color: var(--primary); }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: var(--radius-sm);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Dashboard Mockup */
+        .dashboard { padding: 60px 0; }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .dashboard-mockup {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .mockup-toolbar {
+            background: #1a2236;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mockup-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .mockup-dot.red { background: #ef4444; }
+        .mockup-dot.yellow { background: #f59e0b; }
+        .mockup-dot.green { background: #22c55e; }
+
+        .mockup-body { padding: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+        .stat-card {
+            background: var(--primary-lighter);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-card .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .mockup-charts {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .chart-bar {
+            background: var(--primary-lighter);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .chart-bar-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .chart-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            height: 100px;
+        }
+
+        .bar {
+            flex: 1;
+            background: var(--primary);
+            border-radius: 4px 4px 0 0;
+            opacity: 0.8;
+            transition: opacity var(--transition);
+        }
+
+        .bar:hover { opacity: 1; }
+
+        .donut {
+            background: var(--primary-lighter);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .donut-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 12px solid var(--border);
+            border-top-color: var(--primary);
+            border-right-color: var(--success);
+            border-bottom-color: var(--warning);
+            position: relative;
+        }
+
+        .donut-label {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .donut-legend {
+            margin-top: 12px;
+            display: flex;
+            gap: 16px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 4px;
+        }
+
+        /* Features */
+        .features { padding: 60px 0; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: all var(--transition);
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-light);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Pricing */
+        .pricing { padding: 60px 0; }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .price-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            text-align: center;
+            transition: all var(--transition);
+            position: relative;
+        }
+
+        .price-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+        }
+
+        .price-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: #fff;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .price-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .price-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 16px 0;
+        }
+
+        .price-value span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .price-features {
+            list-style: none;
+            text-align: left;
+            margin: 24px 0;
+        }
+
+        .price-features li {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        /* FAQ */
+        .faq { padding: 60px 0; }
+
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background var(--transition);
+        }
+
+        .faq-question:hover { background: var(--bg-card-hover); }
+
+        .faq-arrow {
+            font-size: 0.8rem;
+            transition: transform var(--transition);
+            color: var(--text-muted);
+        }
+
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding: 0 20px 18px;
+        }
+
+        .faq-answer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* CTA */
+        .cta {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(124, 58, 237, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: var(--radius);
+            padding: 48px 32px;
+        }
+
+        .cta-box h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .cta-box p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer a { color: var(--primary); }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact a {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            transition: color var(--transition);
+        }
+
+        .footer-contact a:hover { color: var(--primary); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mockup-body { grid-template-columns: repeat(2, 1fr); }
+            .mockup-charts { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .mockup-body { grid-template-columns: 1fr; }
+            .hero { padding: 48px 0 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        Projeto Demonstrativo — Criado por <a href="../index.html">Lucas Designer Web</a>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon">📅</div>
+                AgendaFácil
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#features">Funcionalidades</a></li>
+                    <li><a href="#pricing">Planos</a></li>
+                    <li><a href="#faq">Dúvidas</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <span class="hero-badge">Sistema de Agendamento Online</span>
+            <h1>Gerencie seus agendamentos<br/>com <span>AgendaFácil</span></h1>
+            <p>Um sistema personalizado para salões, clínicas, consultórios e qualquer negócio que precisa de agendamento. Simples, rápido e eficiente.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/5591981504951?text=Olá! Quero saber mais sobre o sistema AgendaFácil." class="btn btn-primary" target="_blank" rel="noopener">
+                    💬 Falar no WhatsApp
+                </a>
+                <a href="#dashboard" class="btn btn-outline">Ver Demonstração</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="dashboard" id="dashboard">
+        <div class="container">
+            <div class="section-title">
+                <h2>Painel de Controle</h2>
+                <p>Veja como fica o dashboard do sistema</p>
+            </div>
+            <div class="dashboard-mockup">
+                <div class="mockup-toolbar">
+                    <div class="mockup-dot red"></div>
+                    <div class="mockup-dot yellow"></div>
+                    <div class="mockup-dot green"></div>
+                </div>
+                <div class="mockup-body">
+                    <div class="stat-card">
+                        <div class="stat-value">247</div>
+                        <div class="stat-label">Agendamentos Hoje</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">89%</div>
+                        <div class="stat-label">Taxa de Comparecimento</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">1.2k</div>
+                        <div class="stat-label">Clientes Ativos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">R$12k</div>
+                        <div class="stat-label">Faturamento Mensal</div>
+                    </div>
+                    <div class="mockup-charts">
+                        <div class="chart-bar">
+                            <div class="chart-bar-title">Agendamentos por Dia</div>
+                            <div class="chart-bars">
+                                <div class="bar" style="height:60%"></div>
+                                <div class="bar" style="height:80%"></div>
+                                <div class="bar" style="height:45%"></div>
+                                <div class="bar" style="height:90%"></div>
+                                <div class="bar" style="height:70%"></div>
+                                <div class="bar" style="height:55%"></div>
+                                <div class="bar" style="height:85%"></div>
+                            </div>
+                        </div>
+                        <div class="donut">
+                            <div class="donut-circle">
+                                <div class="donut-label">100%</div>
+                            </div>
+                            <div class="donut-legend">
+                                <span><span class="legend-dot" style="background:var(--primary)"></span>Confirmados</span>
+                                <span><span class="legend-dot" style="background:var(--warning)"></span>Pendentes</span>
+                                <span><span class="legend-dot" style="background:var(--success)"></span>Concluídos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Funcionalidades</h2>
+                <p>Tudo que você precisa em um só lugar</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📆</div>
+                    <h3>Agendamento Online</h3>
+                    <p>Seus clientes agendam pelo celular ou computador, 24 horas por dia. Sem ligações, sem filas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Lembretes Automáticos</h3>
+                    <p>Envio de lembretes por WhatsApp e SMS antes do horário. Reduza faltas em até 70%.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Painel de Clientes</h3>
+                    <p>Cadastro completo com histórico de atendimentos, preferências e dados de contato.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Relatórios</h3>
+                    <p>Gráficos e indicadores para você tomar decisões baseadas em dados reais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Planos e Preços</h2>
+                <p>Escolha o plano ideal para o seu negócio</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Plano Básico</h3>
+                    <div class="price-value">R$49<span>/mês</span></div>
+                    <ul class="price-features">
+                        <li>Agendamento online</li>
+                        <li>Lembretes por SMS</li>
+                        <li>Painel de clientes</li>
+                        <li>Relatórios básicos</li>
+                        <li>Suporte por email</li>
+                    </ul>
+                    <a href="https://wa.me/5591981504951?text=Olá! Quero assinar o Plano Básico do AgendaFácil." class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;justify-content:center;">
+                        Assinar Básico
+                    </a>
+                </div>
+                <div class="price-card featured">
+                    <span class="price-badge">Mais Popular</span>
+                    <h3>Plano Pro</h3>
+                    <div class="price-value">R$99<span>/mês</span></div>
+                    <ul class="price-features">
+                        <li>Agendamento online</li>
+                        <li>Lembretes por WhatsApp</li>
+                        <li>Painel de clientes</li>
+                        <li>Relatórios avançados</li>
+                        <li>Múltiplos profissionais</li>
+                        <li>Suporte prioritário</li>
+                    </ul>
+                    <a href="https://wa.me/5591981504951?text=Olá! Quero assinar o Plano Pro do AgendaFácil." class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;justify-content:center;">
+                        Assinar Pro
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+                <p>Respostas para as dúvidas mais comuns</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Preciso saber programar para usar?
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não! O AgendaFácil é totalmente visual. Você configura tudo pelo painel de controle, sem precisar escrever uma única linha de código.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Posso personalizar o sistema para meu negócio?
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! O sistema é totalmente personalizável. Adaptamos cores, horários, serviços e tudo mais para se encaixar na sua marca.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Os clientes precisam baixar um app?
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não. O AgendaFácil funciona pelo navegador do celular ou computador. Seu cliente acessa um link e agenda direto, sem instalação.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Posso cancelar quando quiser?
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, sem burocracia. Cancele a qualquer momento pela configuração da conta, sem multa ou taxa adicional.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Tem período de teste gratuito?
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Oferecemos 14 dias de teste gratuito em qualquer plano. Experimente antes de assinar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Pronto para modernizar seus agendamentos?</h2>
+                <p>Fale com a gente e descubra como o AgendaFácil pode transformar seu negócio.</p>
+                <a href="https://wa.me/5591981504951?text=Olá! Quero saber mais sobre o sistema AgendaFácil." class="btn btn-primary" target="_blank" rel="noopener">
+                    💬 Falar com Lucas no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 AgendaFácil — Projeto Demonstrativo</p>
+            <div class="footer-contact">
+                <a href="mailto:inteligencia20072000@gmail.com">inteligencia20072000@gmail.com</a>
+                <a href="https://wa.me/5591981504951" target="_blank" rel="noopener">WhatsApp: (91) 98150-4951</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(el) {
+            el.parentElement.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

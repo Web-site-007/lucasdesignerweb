@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <title>Mendes & Souza Advocacia | Demonstrativo</title>
+    <meta name="description" content="Escritório de advocacia - Projeto demonstrativo criado por Lucas Designer Web."/>
+    <link rel="icon" type="image/svg+xml" href="../src/images/favicon.svg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0c0a09;
+            --bg-card: #1c1917;
+            --bg-card-hover: #292524;
+            --text: #fafaf9;
+            --text-muted: #a8a29e;
+            --primary: #d4a574;
+            --primary-hover: #c49460;
+            --primary-light: rgba(212, 165, 116, 0.12);
+            --primary-lighter: rgba(212, 165, 116, 0.06);
+            --border: #292524;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.4);
+            --transition: 0.3s ease;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .banner {
+            background: linear-gradient(135deg, #d4a574, #a16207);
+            color: #fff;
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .banner a { color: #fff; text-decoration: underline; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(12, 10, 9, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .firm-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .firm-icon {
+            width: 38px;
+            height: 38px;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .nav-cta {
+            padding: 8px 20px;
+            background: var(--primary);
+            color: #fff !important;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            transition: background var(--transition);
+        }
+
+        .nav-cta:hover { background: var(--primary-hover); }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            display: flex;
+            align-items: center;
+            min-height: 70vh;
+        }
+
+        .hero-content { max-width: 600px; }
+
+        .hero-tag {
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span { color: var(--primary); }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: var(--radius-sm);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .btn-gold {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-gold:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 165, 116, 0.3);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* About */
+        .about {
+            padding: 80px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .about-visual {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .about-stat-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .about-stat {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background: var(--primary-lighter);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+        }
+
+        .about-stat .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .about-stat .label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .about-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .timeline-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 50%;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+
+        .timeline-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .timeline-item strong {
+            color: var(--text);
+        }
+
+        .section-tag {
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 32px;
+        }
+
+        /* Areas */
+        .areas {
+            padding: 80px 0;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .area-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: all var(--transition);
+        }
+
+        .area-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .area-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-light);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+
+        .area-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .area-card p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        /* Team */
+        .team {
+            padding: 80px 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            text-align: center;
+            transition: all var(--transition);
+        }
+
+        .team-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            border: 2px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .team-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .team-role {
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .team-card p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+        }
+
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background var(--transition);
+        }
+
+        .faq-question:hover { background: var(--bg-card-hover); }
+
+        .faq-arrow {
+            font-size: 0.8rem;
+            transition: transform var(--transition);
+            color: var(--text-muted);
+        }
+
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding: 0 20px 18px;
+        }
+
+        .faq-answer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 80px 0;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            text-align: center;
+            transition: all var(--transition);
+        }
+
+        .contact-card:hover {
+            border-color: var(--primary);
+        }
+
+        .contact-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin: 0 auto 16px;
+        }
+
+        .contact-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .contact-card a:hover { text-decoration: underline; }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer a { color: var(--primary); }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            transition: color var(--transition);
+        }
+
+        .footer-links a:hover { color: var(--primary); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero { min-height: 50vh; padding: 48px 0 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        Projeto Demonstrativo — Criado por <a href="../index.html">Lucas Designer Web</a>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="firm-name">
+                <div class="firm-icon">MS</div>
+                Mendes & Souza
+            </a>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#areas">Áreas de Atuação</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#faq">Dúvidas</a></li>
+                <li><a href="#contato" class="nav-cta">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-tag">Mendes & Souza Advocacia</p>
+                <h1>Soluções jurídicas com <span>seriedade</span> e <span>compromisso</span></h1>
+                <p>Há mais de 15 anos atuando com excelência nas áreas Civil, Trabalhista, Empresarial e de Família. Escritório referência em Belo Horizonte.</p>
+                <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                    <a href="https://wa.me/5591981504951?text=Olá! Preciso de assistência jurídica." class="btn btn-gold" target="_blank" rel="noopener">
+                        💬 Consulta via WhatsApp
+                    </a>
+                    <a href="#areas" class="btn btn-ghost">Áreas de Atuação</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <p class="section-tag">Sobre o Escritório</p>
+                    <div class="section-title">
+                        <h2>Tradição e inovação no direito</h2>
+                        <p>Fundado em 2008, o Mendes & Souza Advocacia nasceu do compromisso de oferecer assessoria jurídica de alto nível com atendimento personalizado.</p>
+                    </div>
+                    <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.7;margin-bottom:24px;">
+                        Nossa equipe combina experiência consolidada com as melhores práticas do mercado jurídico. Acreditamos que cada cliente merece atenção dedicada e soluções sob medida para sua situação.
+                    </p>
+                    <a href="https://wa.me/5591981504951?text=Olá! Gostaria de agendar uma consulta jurídica." class="btn btn-gold" target="_blank" rel="noopener">
+                        Agendar Consulta
+                    </a>
+                </div>
+                <div class="about-visual">
+                    <div class="about-stat-row">
+                        <div class="about-stat">
+                            <div class="number">15+</div>
+                            <div class="label">Anos de Experiência</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="number">5.000+</div>
+                            <div class="label">Casos Atendidos</div>
+                        </div>
+                    </div>
+                    <div class="about-stat-row">
+                        <div class="about-stat">
+                            <div class="number">98%</div>
+                            <div class="label">Clientes Satisfeitos</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="number">20+</div>
+                            <div class="label">Advogados</div>
+                        </div>
+                    </div>
+                    <div class="about-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <p><strong>2008</strong> — Fundação do escritório em Belo Horizonte</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <p><strong>2014</strong> — Expansão para direito empresarial</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <p><strong>2020</strong> — Certificação ISO e mais de 3.000 casos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="areas" id="areas">
+        <div class="container">
+            <p class="section-tag">Áreas de Atuação</p>
+            <div class="section-title">
+                <h2>Especialidades jurídicas</h2>
+                <p>Atuamos em diversas áreas do direito para oferecer o melhor suporte legal.</p>
+            </div>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <div class="area-icon">⚖️</div>
+                    <h3>Direito Civil</h3>
+                    <p>Contratos, indenizações, responsabilidade civil, cobranças e questões patrimoniais. Defendemos seus direitos com rigor técnico.</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">👷</div>
+                    <h3>Direito Trabalhista</h3>
+                    <p>Reclamações trabalhistas, demissão, verbas rescisórias, assédio moral e acordos. Tanto para empregados quanto empregadores.</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">🏢</div>
+                    <h3>Direito Empresarial</h3>
+                    <p>Constituição de empresas, contratos societários, compliance, fusões e aquisições. Suporte completo para seu negócio.</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Direito de Família</h3>
+                    <p>Divórcio, pensão alimentícia, guarda de filhos, inventário e planejamento patrimonial familiar. Com empatia e discrição.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team" id="equipe">
+        <div class="container">
+            <div class="section-title" style="text-align:center;">
+                <p class="section-tag">Nossa Equipe</p>
+                <h2>Profissionais dedicados</h2>
+                <p>Conheça os advogados que cuidam do seu caso com dedicação e competência.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar">RM</div>
+                    <h3>Dr. Ricardo Mendes</h3>
+                    <p class="team-role">Sócio-Fundador — OAB/MG 123.456</p>
+                    <p>Especialista em Direito Civil e Empresarial com mais de 20 anos de experiência. Mestre em Direito pela UFMG.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">AS</div>
+                    <h3>Dra. Ana Souza</h3>
+                    <p class="team-role">Sócia — OAB/MG 234.567</p>
+                    <p>Referência em Direito de Família e Trabalhista. Pós-graduada em Direito Processual pela PUC Minas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title" style="text-align:center;">
+                <p class="section-tag">Dúvidas Frequentes</p>
+                <h2>Perguntas e Respostas</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Como funciona a primeira consulta?
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A primeira consulta pode ser presencial ou online. Nela, analisamos sua situação e orientamos sobre as melhores alternativas jurídicas. A consulta inicial tem valor acessível.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Vocês atendem em todo o Brasil?
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nosso escritório é baseado em Belo Horizonte, mas atendemos clientes de todo o Brasil por videoconferência. Para questões que exigem presença física, temos parcerias em outras cidades.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Como são definidos os honorários?
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Os honorários são definidos após a análise do caso na primeira consulta. Trabalhamos com transparência e oferecemos diferentes modalidades: honorários fixos, parcelados ou êxito.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Posso acompanhar meu caso pelo WhatsApp?
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Mantemos nosso clientes informados sobre cada etapa do processo por WhatsApp, email ou telefone, conforme sua preferência.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contato">
+        <div class="container">
+            <div class="section-title" style="text-align:center;">
+                <p class="section-tag">Contato</p>
+                <h2>Fale conosco</h2>
+                <p>Estamos prontos para ajudar. Entre em contato agora mesmo.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/5591981504951?text=Olá! Preciso de assistência jurídica." target="_blank" rel="noopener">(91) 98150-4951</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:inteligencia20072000@gmail.com">inteligencia20072000@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Endereço</h3>
+                    <p>Belo Horizonte, MG — Centro</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Mendes & Souza Advocacia — Projeto Demonstrativo</p>
+            <div class="footer-links">
+                <a href="mailto:inteligencia20072000@gmail.com">inteligencia20072000@gmail.com</a>
+                <a href="https://wa.me/5591981504951" target="_blank" rel="noopener">WhatsApp: (91) 98150-4951</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(el) {
+            el.parentElement.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

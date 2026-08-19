@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <title>Sabor da Terra — Restaurante | Demonstrativo</title>
+    <meta name="description" content="Restaurante com pedidos online - Projeto demonstrativo criado por Lucas Designer Web."/>
+    <link rel="icon" type="image/svg+xml" href="../src/images/favicon.svg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #1a1210;
+            --bg-card: #231b18;
+            --bg-card-hover: #2e241f;
+            --text: #faf5f2;
+            --text-muted: #b0a096;
+            --primary: #e17055;
+            --primary-hover: #d35f45;
+            --primary-light: rgba(225, 112, 85, 0.12);
+            --primary-lighter: rgba(225, 112, 85, 0.06);
+            --border: #2e241f;
+            --accent2: #f0a500;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.4);
+            --transition: 0.3s ease;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .banner {
+            background: linear-gradient(135deg, #e17055, #d63031);
+            color: #fff;
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .banner a { color: #fff; text-decoration: underline; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        .header {
+            background: rgba(26, 18, 16, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+
+        .nav-links a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .btn-fire {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-fire:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(225, 112, 85, 0.3);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: radial-gradient(ellipse at center bottom, rgba(225, 112, 85, 0.1) 0%, transparent 60%);
+        }
+
+        .hero-emoji {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span { color: var(--primary); }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 550px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+        /* Menu */
+        .menu {
+            padding: 60px 0;
+        }
+
+        .section-tag {
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 32px;
+        }
+
+        .menu-category {
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .category-title span {
+            color: var(--primary);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .menu-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            transition: all var(--transition);
+            cursor: default;
+        }
+
+        .menu-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .menu-item-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .menu-item h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .menu-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1rem;
+            white-space: nowrap;
+            margin-left: 8px;
+        }
+
+        .menu-item p {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            line-height: 1.4;
+        }
+
+        /* About */
+        .about {
+            padding: 60px 0;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .about-feat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+        }
+
+        .about-feat-icon {
+            font-size: 1.3rem;
+        }
+
+        .about-feat span {
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        /* Hours */
+        .hours {
+            padding: 60px 0;
+        }
+
+        .hours-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .hours-header {
+            background: var(--primary);
+            color: #fff;
+            padding: 20px 24px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .hours-body { padding: 0; }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 24px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .hours-row:last-child { border-bottom: none; }
+
+        .hours-day { font-weight: 500; }
+
+        .hours-time { color: var(--primary); font-weight: 600; }
+
+        .hours-row:nth-child(even) {
+            background: var(--primary-lighter);
+        }
+
+        /* Contact */
+        .contact {
+            padding: 60px 0;
+        }
+
+        .contact-cta {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(225, 112, 85, 0.12), rgba(214, 48, 49, 0.08));
+            border: 1px solid rgba(225, 112, 85, 0.2);
+            border-radius: var(--radius);
+            padding: 48px 32px;
+        }
+
+        .contact-cta h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .contact-cta p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 1rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-method a {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .contact-method a:hover { text-decoration: underline; }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer a { color: var(--primary); }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            transition: color var(--transition);
+        }
+
+        .footer-links a:hover { color: var(--primary); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero { min-height: 50vh; padding: 48px 0 40px; }
+            .about-features { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .menu-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        Projeto Demonstrativo — Criado por <a href="../index.html">Lucas Designer Web</a>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="brand">
+                <div class="brand-icon">🍽️</div>
+                Sabor da Terra
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#cardapio">Cardápio</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#horarios">Horários</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li>
+                        <a href="https://wa.me/5591981504951?text=Olá! Gostaria de fazer um pedido." class="btn btn-fire" target="_blank" rel="noopener" style="padding:8px 20px;font-size:0.85rem;">
+                            Pedir Agora
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-emoji">🌿</div>
+            <h1>Sabor que <span>aquece</span><br/>a alma</h1>
+            <p>Cozinha brasileira com ingredientes frescos e receitas de família. Feito com carinho, servido com amor.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/5591981504951?text=Olá! Gostaria de fazer um pedido pelo WhatsApp." class="btn btn-fire" target="_blank" rel="noopener">
+                    🔥 Fazer Pedido
+                </a>
+                <a href="#cardapio" class="btn btn-ghost">Ver Cardápio</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="cardapio">
+        <div class="container">
+            <p class="section-tag">Nosso Cardápio</p>
+            <div class="section-title">
+                <h2>Sabores que encantam</h2>
+                <p>Pratos preparados com ingredientes frescos e receitas tradicionais.</p>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="category-title"><span>🥗</span> Entradas</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-top">
+                            <h3>Bolinho de Bacalhau</h3>
+                            <span class="menu-price">R$22</span>
+                        </div>
+                        <p>6 unidades crocantes por fora e macias por dentro, com molho tartaro.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-top">
+                            <h3>Bruschetta Caprese</h3>
+                            <span class="menu-price">R$19</span>
+                        </div>
+                        <p>Pão artesanal com tomate, muçarela de búfala e manjericão fresco.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-top">
+                            <h3>Carpaccio de Carne</h3>
+                            <span class="menu-price">R$28</span>
+                        </div>
+                        <p>Fatias finas de filé mignon com rúcula, parmesão e molho especial.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-top">
+                            <h3>Ceviche de Peixe</h3>
+                            <span class="menu-price">R$32</span>
+                        </div>
+                        <p>Peixe fresco marinado com limão, cebola roxa e coentro.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="category-title"><span>🥩</span> Pratos Principais</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-top">
+                            <h3>Picanha na Brasa</h3>
+                            <span class="menu-price">R$68</span>
+                        </div>
+                        <p>Picanha grelhada com arroz, farofa, vinagrete e mandioca frita.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-top">
+                            <h3>Moqueca Baiana</h3>
+                            <span class="menu-price">R$58</span>
+                        </div>
+                        <p>Peixe fresco cozido no leite de coco com dendê e pimentão.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-top">
+                            <h3>Frango ao Molho Mostarda</h3>
+                            <span class="menu-price">R$48</span>
+                        </div>
+                        <p>Peito de frango grelhado com purê de batata e legumes assados.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-top">
+                            <h3>Risoto de Cogumelos</h3>
+                            <span class="menu-price">R$52</span>
+                        </div>
+                        <p>Arroz arbóreo cremoso com mix de cogumelos frescos e parmesão.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="category-title"><span>🍰</span> Sobremesas</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-top">
+                            <h3>Pudim de Leite</h3>
+                            <span class="menu-price">R$18</span>
+                        </div>
+                        <p>Receita da vovó, cremoso com calda de caramelo perfeita.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-top">
+                            <h3>Mousse de Maracujá</h3>
+                            <span class="menu-price">R$16</span>
+                        </div>
+                        <p>Leve e refrescante, feito com maracujá fresco.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-top">
+                            <h3>Brownie com Sorvete</h3>
+                            <span class="menu-price">R$22</span>
+                        </div>
+                        <p>Brownie quente de chocolate belga com bola de sorvete de creme.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-top">
+                            <h3>Açaí na Tigela</h3>
+                            <span class="menu-price">R$24</span>
+                        </div>
+                        <p>Açaí batido com banana, granola, mel e frutas frescas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="section-tag">Sobre Nós</p>
+                    <div class="section-title">
+                        <h2>Uma história de sabor e tradição</h2>
+                        <p>O Sabor da Terra nasceu do sonho de reunir familiares em torno da mesa, com comida de verdade e aquele gostinho de casa.</p>
+                    </div>
+                    <p>
+                        Desde 2015, servimos pratos que respeitam a culinária brasileira com toques modernos. Nosso compromisso é com qualidade, frescor e a experiência de cada cliente.
+                    </p>
+                    <p>
+                        Tudo é preparado na hora, com ingredientes selecionados de produtores locais. Acreditamos que boa comida é uma forma de carinho.
+                    </p>
+                </div>
+                <div class="about-features">
+                    <div class="about-feat">
+                        <span class="about-feat-icon">🌾</span>
+                        <span>Ingredientes Locais</span>
+                    </div>
+                    <div class="about-feat">
+                        <span class="about-feat-icon">👨‍🍳</span>
+                        <span>Preparo Artesanal</span>
+                    </div>
+                    <div class="about-feat">
+                        <span class="about-feat-icon">🛵</span>
+                        <span>Entrega Rápida</span>
+                    </div>
+                    <div class="about-feat">
+                        <span class="about-feat-icon">💚</span>
+                        <span>Opções Veganas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hours" id="horarios">
+        <div class="container">
+            <div class="section-title" style="text-align:center;">
+                <p class="section-tag">Horário de Funcionamento</p>
+                <h2>Quando estamos abertos</h2>
+            </div>
+            <div class="hours-box">
+                <div class="hours-header">🕐 Sabor da Terra</div>
+                <div class="hours-body">
+                    <div class="hours-row">
+                        <span class="hours-day">Segunda-feira</span>
+                        <span class="hours-time">11h — 23h</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Terça-feira</span>
+                        <span class="hours-time">11h — 23h</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Quarta-feira</span>
+                        <span class="hours-time">11h — 23h</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Quinta-feira</span>
+                        <span class="hours-time">11h — 23h</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Sexta-feira</span>
+                        <span class="hours-time">11h — 00h</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Sábado</span>
+                        <span class="hours-time">11h — 00h</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Domingo</span>
+                        <span class="hours-time">11h — 22h</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contato">
+        <div class="container">
+            <div class="contact-cta">
+                <h2>Fome de quê? 😋</h2>
+                <p>Faça seu pedido pelo WhatsApp ou entre em contato por email. Entregamos em toda a região!</p>
+                <a href="https://wa.me/5591981504951?text=Olá! Gostaria de fazer um pedido pelo WhatsApp." class="btn btn-fire" target="_blank" rel="noopener">
+                    🔥 Pedir pelo WhatsApp
+                </a>
+                <div class="contact-methods">
+                    <span class="contact-method">
+                        📧 <a href="mailto:inteligencia20072000@gmail.com">inteligencia20072000@gmail.com</a>
+                    </span>
+                    <span class="contact-method">
+                        💬 <a href="https://wa.me/5591981504951" target="_blank" rel="noopener">(91) 98150-4951</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Sabor da Terra — Projeto Demonstrativo</p>
+            <div class="footer-links">
+                <a href="mailto:inteligencia20072000@gmail.com">inteligencia20072000@gmail.com</a>
+                <a href="https://wa.me/5591981504951" target="_blank" rel="noopener">WhatsApp: (91) 98150-4951</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

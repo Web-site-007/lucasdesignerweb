@@ -4,15 +4,15 @@
   // ============================================
   // THEME
   // ============================================
-  const html = document.documentElement;
-  const themeBtn = document.getElementById('themeToggle');
-  const storedTheme = localStorage.getItem('theme') || 'dark';
+  var html = document.documentElement;
+  var themeBtn = document.getElementById('themeToggle');
+  var storedTheme = localStorage.getItem('theme') || 'dark';
   html.setAttribute('data-theme', storedTheme);
   updateThemeIcon(storedTheme);
 
   if (themeBtn) {
     themeBtn.addEventListener('click', function() {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
       updateThemeIcon(next);
@@ -28,15 +28,16 @@
   // ============================================
   // MOBILE MENU
   // ============================================
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('navMenu');
+  var hamburger = document.getElementById('hamburger');
+  var navMenu = document.getElementById('navMenu');
 
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', function() {
       hamburger.classList.toggle('active');
       navMenu.classList.toggle('open');
-      const isOpen = navMenu.classList.contains('open');
+      var isOpen = navMenu.classList.contains('open');
       hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     navMenu.querySelectorAll('.navbar__link').forEach(function(link) {
@@ -44,6 +45,7 @@
         hamburger.classList.remove('active');
         navMenu.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       });
     });
   }
@@ -51,17 +53,14 @@
   // ============================================
   // NAVBAR SCROLL
   // ============================================
-  const navbar = document.querySelector('.navbar');
-  var lastScroll = 0;
+  var navbar = document.querySelector('.navbar');
 
   window.addEventListener('scroll', function() {
-    var scrollY = window.scrollY;
-    if (scrollY > 100) {
+    if (window.scrollY > 100) {
       navbar.style.boxShadow = 'var(--shadow-md)';
     } else {
       navbar.style.boxShadow = 'none';
     }
-    lastScroll = scrollY;
   });
 
   // Active nav link on scroll
@@ -105,9 +104,14 @@
   // ============================================
   // INTERSECTION OBSERVER — ANIMATIONS
   // ============================================
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
 
-  if ('IntersectionObserver' in window) {
+  if (prefersReducedMotion) {
+    animatedElements.forEach(function(el) {
+      el.classList.add('visible');
+    });
+  } else if ('IntersectionObserver' in window) {
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -147,34 +151,61 @@
   });
 
   // ============================================
-  // CONTACT FORM
+  // CONTACT FORM — Web3Forms
   // ============================================
   var contactForm = document.getElementById('contactForm');
   var formSuccess = document.getElementById('formSuccess');
+  var formError = document.getElementById('formError');
 
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
+
+      // Honeypot check
+      var honeypot = contactForm.querySelector('[name="botcheck"]');
+      if (honeypot && honeypot.checked) {
+        return;
+      }
 
       var name = contactForm.querySelector('[name="name"]').value.trim();
       var email = contactForm.querySelector('[name="email"]').value.trim();
       var message = contactForm.querySelector('[name="message"]').value.trim();
 
       if (!name || !email || !message) {
-        alert('Preencha todos os campos obrigatorios.');
+        alert('Preencha todos os campos obrigatórios.');
         return;
       }
 
-      var submitBtn = contactForm.querySelector('.btn');
-      submitBtn.textContent = 'Enviando...';
+      // Email validation
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Por favor, insira um e-mail válido.');
+        return;
+      }
+
+      var submitBtn = contactForm.querySelector('.form-submit');
+      submitBtn.classList.add('is-loading');
       submitBtn.disabled = true;
 
-      setTimeout(function() {
-        contactForm.style.display = 'none';
-        if (formSuccess) {
-          formSuccess.classList.add('show');
+      var formData = new FormData(contactForm);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(function(response) { return response.json(); })
+      .then(function(data) {
+        if (data.success) {
+          contactForm.style.display = 'none';
+          if (formSuccess) formSuccess.classList.add('show');
+        } else {
+          throw new Error('Submission failed');
         }
-      }, 1200);
+      })
+      .catch(function() {
+        contactForm.style.display = 'none';
+        if (formError) formError.classList.add('show');
+      });
     });
   }
 
@@ -192,8 +223,8 @@
       e.preventDefault();
       var target = document.querySelector(href);
       if (target) {
-        var offset = 80;
-        var top = target.getBoundingClientRect().top + window.scrollY - offset;
+        var navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) || 120;
+        var top = target.getBoundingClientRect().top + window.scrollY - navHeight;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }
     });

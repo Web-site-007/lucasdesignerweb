@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: lucasdesignerweb.com.br/sitemap.xml
+Sitemap: https://lucasdesignerweb.com.br/sitemap.xml
