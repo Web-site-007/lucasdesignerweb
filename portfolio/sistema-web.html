@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="robots" content="noindex, nofollow"/>
     <title>AgendaFácil — Sistema de Agendamento | Demonstrativo</title>
-    <meta name="description" content="Sistema de gerenciamento de agendamentos - Projeto demonstrativo criado por Lucas Designer Web."/>
+    <meta name="description" content="Sistema de agendamento online - Projeto demonstrativo criado por Lucas Designer Web."/>
     <link rel="icon" type="image/svg+xml" href="../src/images/favicon.svg"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -14,576 +14,199 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #0b0f1a;
-            --bg-card: #111827;
-            --bg-card-hover: #1a2236;
-            --text: #e2e8f0;
+            --bg: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #273549;
+            --text: #f1f5f9;
             --text-muted: #94a3b8;
             --primary: #3b82f6;
             --primary-hover: #2563eb;
-            --primary-light: rgba(59, 130, 246, 0.15);
-            --primary-lighter: rgba(59, 130, 246, 0.08);
-            --border: #1e293b;
+            --primary-light: rgba(59,130,246,.12);
+            --border: #334155;
             --success: #22c55e;
-            --warning: #f59e0b;
             --danger: #ef4444;
             --radius: 12px;
             --radius-sm: 8px;
-            --shadow: 0 4px 24px rgba(0,0,0,0.3);
+            --shadow: 0 4px 24px rgba(0,0,0,.3);
             --transition: 0.3s ease;
         }
 
         html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
+        body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
         a { text-decoration: none; color: inherit; }
 
-        .banner {
-            background: linear-gradient(135deg, var(--primary), #7c3aed);
-            color: #fff;
-            text-align: center;
-            padding: 10px 16px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-
+        .banner { background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; text-align: center; padding: 10px 16px; font-size: .85rem; font-weight: 500; }
         .banner a { color: #fff; text-decoration: underline; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-        /* Header */
-        .header {
-            background: rgba(11, 15, 26, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+        .header { background: rgba(15,23,42,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+        .header .container { display: flex; align-items: center; justify-content: space-between; }
 
-        .header .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+        .brand { font-size: 1.3rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .brand-icon { width: 36px; height: 36px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .brand-icon svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 1.5; }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--primary);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1rem;
-        }
-
-        .nav-links { display: flex; gap: 28px; list-style: none; }
-
-        .nav-links a {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color var(--transition);
-        }
-
+        .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-muted); font-size: .9rem; font-weight: 500; transition: color var(--transition); }
         .nav-links a:hover { color: var(--primary); }
 
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius-sm); font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: .95rem; border: none; cursor: pointer; transition: all var(--transition); }
+        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(59,130,246,.3); }
+        .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+        .btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
+
         /* Hero */
-        .hero {
-            padding: 80px 0 60px;
-            text-align: center;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: var(--primary-light);
-            color: var(--primary);
-            padding: 6px 18px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 700;
-            margin-bottom: 16px;
-            line-height: 1.2;
-        }
-
+        .hero { padding: 80px 0 60px; min-height: 60vh; display: flex; align-items: center; background: radial-gradient(ellipse at center top, rgba(59,130,246,.08), transparent 60%); }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
         .hero h1 span { color: var(--primary); }
-
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 32px;
-        }
-
-        .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-
-        .btn {
-            padding: 12px 28px;
-            border-radius: var(--radius-sm);
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: none;
-            cursor: pointer;
-            transition: all var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        /* Dashboard Mockup */
-        .dashboard { padding: 60px 0; }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .section-title h2 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .section-title p {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        .dashboard-mockup {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .mockup-toolbar {
-            background: #1a2236;
-            padding: 10px 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .mockup-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .mockup-dot.red { background: #ef4444; }
-        .mockup-dot.yellow { background: #f59e0b; }
-        .mockup-dot.green { background: #22c55e; }
-
-        .mockup-body { padding: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-
-        .stat-card {
-            background: var(--primary-lighter);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 20px;
-            text-align: center;
-        }
-
-        .stat-card .stat-value {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .stat-card .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
-
-        .mockup-charts {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 16px;
-            margin-top: 16px;
-        }
-
-        .chart-bar {
-            background: var(--primary-lighter);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 20px;
-            min-height: 160px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-
-        .chart-bar-title {
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .chart-bars {
-            display: flex;
-            align-items: flex-end;
-            gap: 8px;
-            height: 100px;
-        }
-
-        .bar {
-            flex: 1;
-            background: var(--primary);
-            border-radius: 4px 4px 0 0;
-            opacity: 0.8;
-            transition: opacity var(--transition);
-        }
-
-        .bar:hover { opacity: 1; }
-
-        .donut {
-            background: var(--primary-lighter);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .donut-circle {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 12px solid var(--border);
-            border-top-color: var(--primary);
-            border-right-color: var(--success);
-            border-bottom-color: var(--warning);
-            position: relative;
-        }
-
-        .donut-label {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .donut-legend {
-            margin-top: 12px;
-            display: flex;
-            gap: 16px;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .legend-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 4px;
-        }
+        .hero p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 28px; }
+        .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+        .hero-visual { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+        .hero-visual__header { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); background: var(--bg); }
+        .hero-visual__dot { width: 10px; height: 10px; border-radius: 50%; }
+        .hero-visual__body { padding: 16px; }
+        .mock-cal { display: grid; grid-template-columns: repeat(7,1fr); gap: 4px; }
+        .mock-cal span { text-align: center; font-size: .7rem; color: var(--text-muted); padding: 6px 0; }
+        .mock-day { background: var(--bg); border-radius: 4px; padding: 8px 0; text-align: center; font-size: .75rem; color: var(--text-muted); }
+        .mock-day.active { background: var(--primary); color: #fff; font-weight: 600; }
+        .mock-day.booked { background: rgba(239,68,68,.15); color: var(--danger); }
+        .mock-slots { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+        .mock-slot { padding: 6px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; font-size: .7rem; color: var(--text-muted); }
+        .mock-slot.taken { opacity: .4; text-decoration: line-through; }
+        .mock-slot.avail { border-color: var(--primary); color: var(--primary); }
 
         /* Features */
         .features { padding: 60px 0; }
+        .section-tag { color: var(--primary); font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+        .section-title h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 8px; }
+        .section-title p { color: var(--text-muted); font-size: 1rem; margin-bottom: 32px; }
+        .feat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+        .feat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 28px 24px; transition: all var(--transition); }
+        .feat-card:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: var(--shadow); }
+        .feat-card svg { width: 32px; height: 32px; stroke: var(--primary); fill: none; stroke-width: 1.5; margin-bottom: 14px; }
+        .feat-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+        .feat-card p { color: var(--text-muted); font-size: .85rem; line-height: 1.5; }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
+        /* Demo */
+        .demo { padding: 60px 0; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .demo-mock { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+        .demo-mock__top { padding: 14px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: .9rem; }
+        .demo-mock__top svg { width: 18px; height: 18px; stroke: var(--primary); fill: none; stroke-width: 1.5; }
+        .demo-mock__body { padding: 18px; }
 
-        .feature-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px;
-            transition: all var(--transition);
-        }
+        .demo-appt { display: flex; gap: 12px; padding: 12px; background: var(--bg-card); border-radius: 6px; margin-bottom: 8px; align-items: center; border: 1px solid var(--border); }
+        .demo-appt__time { font-size: .75rem; color: var(--primary); font-weight: 600; min-width: 50px; }
+        .demo-appt__info { flex: 1; }
+        .demo-appt__name { font-size: .85rem; font-weight: 600; }
+        .demo-appt__service { font-size: .75rem; color: var(--text-muted); }
+        .demo-appt__status { font-size: .7rem; padding: 3px 8px; border-radius: 4px; font-weight: 600; }
+        .demo-appt__status.confirmed { background: rgba(34,197,94,.15); color: var(--success); }
+        .demo-appt__status.pending { background: rgba(251,191,36,.15); color: #f59e0b; }
 
-        .feature-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
-        }
-
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--primary-light);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            margin-bottom: 16px;
-        }
-
-        .feature-card h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
+        .demo-desc { margin-top: 20px; }
+        .demo-desc h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .demo-desc p { color: var(--text-muted); font-size: .9rem; line-height: 1.6; }
+        .demo-desc ul { list-style: none; margin-top: 14px; }
+        .demo-desc li { display: flex; align-items: center; gap: 8px; padding: 6px 0; color: var(--text-muted); font-size: .88rem; }
+        .demo-desc li svg { width: 18px; height: 18px; stroke: var(--success); fill: none; stroke-width: 2; flex-shrink: 0; }
 
         /* Pricing */
         .pricing { padding: 60px 0; }
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 860px; margin: 0 auto; }
+        .price-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 28px; transition: all var(--transition); position: relative; }
+        .price-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+        .price-card.featured { border-color: var(--primary); }
+        .price-card.featured::before { content: 'Mais Popular'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #fff; padding: 4px 14px; border-radius: 20px; font-size: .75rem; font-weight: 600; }
+        .price-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+        .price-card .price { font-size: 2rem; font-weight: 700; color: var(--primary); margin: 12px 0; }
+        .price-card .price small { font-size: .85rem; color: var(--text-muted); font-weight: 400; }
+        .price-card .price-desc { font-size: .85rem; color: var(--text-muted); margin-bottom: 20px; }
+        .price-features { list-style: none; margin-bottom: 24px; }
+        .price-features li { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: .88rem; color: var(--text-muted); }
+        .price-features li svg { width: 16px; height: 16px; stroke: var(--success); fill: none; stroke-width: 2; flex-shrink: 0; }
+        .price-features li.disabled { opacity: .4; }
+        .price-features li.disabled svg { stroke: var(--text-muted); }
+        .price-btn { width: 100%; padding: 12px; border-radius: 8px; font-family: 'Space Grotesk', sans-serif; font-size: .95rem; font-weight: 600; cursor: pointer; border: none; transition: all var(--transition); }
+        .price-btn.primary { background: var(--primary); color: #fff; }
+        .price-btn.primary:hover { background: var(--primary-hover); }
+        .price-btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+        .price-btn.ghost:hover { border-color: var(--primary); color: var(--primary); }
 
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+        /* Contact */
+        .contact { padding: 60px 0; }
+        .contact-cta { text-align: center; max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, rgba(59,130,246,.1), rgba(37,99,235,.05)); border: 1px solid rgba(59,130,246,.2); border-radius: var(--radius); padding: 48px 32px; }
+        .contact-cta h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+        .contact-cta p { color: var(--text-muted); margin-bottom: 24px; }
+        .contact-methods { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+        .contact-method { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: .9rem; }
+        .contact-method svg { width: 18px; height: 18px; stroke: var(--primary); fill: none; stroke-width: 1.5; }
+        .contact-method a { color: var(--primary); font-weight: 600; }
+        .contact-method a:hover { text-decoration: underline; }
 
-        .price-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 32px 28px;
-            text-align: center;
-            transition: all var(--transition);
-            position: relative;
-        }
-
-        .price-card.featured {
-            border-color: var(--primary);
-            box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
-        }
-
-        .price-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: #fff;
-            padding: 4px 16px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .price-card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .price-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 16px 0;
-        }
-
-        .price-value span {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .price-features {
-            list-style: none;
-            text-align: left;
-            margin: 24px 0;
-        }
-
-        .price-features li {
-            padding: 8px 0;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .price-features li::before {
-            content: '✓';
-            color: var(--success);
-            font-weight: 700;
-        }
-
-        /* FAQ */
-        .faq { padding: 60px 0; }
-
-        .faq-list {
-            max-width: 700px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .faq-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 18px 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background var(--transition);
-        }
-
-        .faq-question:hover { background: var(--bg-card-hover); }
-
-        .faq-arrow {
-            font-size: 0.8rem;
-            transition: transform var(--transition);
-            color: var(--text-muted);
-        }
-
-        .faq-item.open .faq-arrow { transform: rotate(180deg); }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-item.open .faq-answer {
-            max-height: 300px;
-            padding: 0 20px 18px;
-        }
-
-        .faq-answer p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* CTA */
-        .cta {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(124, 58, 237, 0.1));
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-radius: var(--radius);
-            padding: 48px 32px;
-        }
-
-        .cta-box h2 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .cta-box p {
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            font-size: 1rem;
-        }
-
-        /* Footer */
-        .footer {
-            border-top: 1px solid var(--border);
-            padding: 32px 0;
-            text-align: center;
-        }
-
-        .footer p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
+        .footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+        .footer p { color: var(--text-muted); font-size: .85rem; }
         .footer a { color: var(--primary); }
 
-        .footer-contact {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-top: 12px;
-            flex-wrap: wrap;
-        }
+        /* CHECKOUT */
+        .checkout-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 10001; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .3s; }
+        .checkout-overlay.open { opacity: 1; pointer-events: all; }
+        .checkout-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; width: 480px; max-width: 95vw; max-height: 90vh; overflow-y: auto; padding: 32px; }
+        .checkout-modal h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
+        .checkout-modal .subtitle { color: var(--text-muted); font-size: .9rem; margin-bottom: 24px; }
+        .checkout-step { display: none; }
+        .checkout-step.active { display: block; }
+        .checkout-back { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: .9rem; display: flex; align-items: center; gap: 4px; margin-bottom: 16px; padding: 0; }
+        .checkout-back:hover { color: #fff; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: .85rem; color: var(--text-muted); margin-bottom: 4px; }
+        .form-group input, .form-group select { width: 100%; padding: 12px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'Space Grotesk', sans-serif; font-size: .95rem; outline: none; }
+        .form-group input:focus { border-color: var(--primary); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-        .footer-contact a {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            transition: color var(--transition);
-        }
+        .plan-selected { background: var(--primary-light); border: 1px solid var(--primary); border-radius: 8px; padding: 14px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .plan-selected__name { font-weight: 600; }
+        .plan-selected__price { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+        .plan-selected__period { font-size: .8rem; color: var(--text-muted); }
 
-        .footer-contact a:hover { color: var(--primary); }
+        .pay-methods { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+        .pay-method { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 2px solid var(--border); border-radius: 10px; cursor: pointer; transition: all .2s; }
+        .pay-method:hover { border-color: rgba(59,130,246,.3); }
+        .pay-method.selected { border-color: var(--primary); background: var(--primary-light); }
+        .pay-method svg { width: 24px; height: 24px; stroke: var(--primary); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+        .pay-method__info { flex: 1; }
+        .pay-method__name { font-weight: 600; font-size: .95rem; }
+        .pay-method__desc { font-size: .8rem; color: var(--text-muted); }
+        .pay-method .radio { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .pay-method.selected .radio { border-color: var(--primary); }
+        .pay-method.selected .radio::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--primary); }
 
-        /* Responsive */
+        .order-summary { background: var(--bg); border-radius: 10px; padding: 16px; margin-bottom: 20px; }
+        .order-summary h4 { font-size: .9rem; font-weight: 600; margin-bottom: 10px; }
+        .order-line { display: flex; justify-content: space-between; font-size: .85rem; color: var(--text-muted); padding: 4px 0; }
+        .order-line.total { border-top: 1px solid var(--border); margin-top: 8px; padding-top: 8px; font-weight: 700; color: var(--text); font-size: 1rem; }
+
+        .btn-pay { width: 100%; padding: 14px; background: var(--primary); color: #fff; border: none; border-radius: 8px; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform .2s; }
+        .btn-pay:hover { transform: translateY(-2px); }
+        .btn-pay:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+        .loading-spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .6s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .success-box { text-align: center; padding: 20px 0; }
+        .success-icon { width: 80px; height: 80px; border-radius: 50%; background: rgba(34,197,94,.12); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+        .success-icon svg { width: 40px; height: 40px; stroke: var(--success); fill: none; stroke-width: 2; }
+        .success-box h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+        .success-box p { color: var(--text-muted); font-size: .95rem; margin-bottom: 12px; }
+        .success-box .order-id { font-family: monospace; color: var(--primary); font-size: .85rem; background: var(--bg); padding: 8px 16px; border-radius: 6px; display: inline-block; margin-bottom: 20px; border: 1px solid var(--border); }
+
         @media (max-width: 768px) {
-            .mockup-body { grid-template-columns: repeat(2, 1fr); }
-            .mockup-charts { grid-template-columns: 1fr; }
+            .hero-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
-        }
-
-        @media (max-width: 480px) {
-            .mockup-body { grid-template-columns: 1fr; }
-            .hero { padding: 48px 0 40px; }
+            .demo-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -595,17 +218,18 @@
 
     <header class="header">
         <div class="container">
-            <a href="#" class="logo">
-                <div class="logo-icon">📅</div>
-                AgendaFácil
+            <a href="#" class="brand">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                AgendaFacil
             </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#dashboard">Dashboard</a></li>
                     <li><a href="#features">Funcionalidades</a></li>
+                    <li><a href="#demo">Demo</a></li>
                     <li><a href="#pricing">Planos</a></li>
-                    <li><a href="#faq">Dúvidas</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -613,69 +237,41 @@
 
     <section class="hero">
         <div class="container">
-            <span class="hero-badge">Sistema de Agendamento Online</span>
-            <h1>Gerencie seus agendamentos<br/>com <span>AgendaFácil</span></h1>
-            <p>Um sistema personalizado para salões, clínicas, consultórios e qualquer negócio que precisa de agendamento. Simples, rápido e eficiente.</p>
-            <div class="hero-btns">
-                <a href="https://wa.me/5591981504951?text=Olá! Quero saber mais sobre o sistema AgendaFácil." class="btn btn-primary" target="_blank" rel="noopener">
-                    💬 Falar no WhatsApp
-                </a>
-                <a href="#dashboard" class="btn btn-outline">Ver Demonstração</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="dashboard" id="dashboard">
-        <div class="container">
-            <div class="section-title">
-                <h2>Painel de Controle</h2>
-                <p>Veja como fica o dashboard do sistema</p>
-            </div>
-            <div class="dashboard-mockup">
-                <div class="mockup-toolbar">
-                    <div class="mockup-dot red"></div>
-                    <div class="mockup-dot yellow"></div>
-                    <div class="mockup-dot green"></div>
+            <div class="hero-grid">
+                <div>
+                    <p class="section-tag">Sistema de Agendamento</p>
+                    <h1>Agendamentos <span>simplificados</span></h1>
+                    <p>Organize a agenda do seu negocio de forma inteligente. Seus clientes agendam 24h sem precisar ligar. Reduza faltas, aumente a recorrencia.</p>
+                    <div class="hero-btns">
+                        <a href="#pricing" class="btn btn-primary">Ver Planos</a>
+                        <a href="#demo" class="btn btn-ghost">Ver Demo</a>
+                    </div>
                 </div>
-                <div class="mockup-body">
-                    <div class="stat-card">
-                        <div class="stat-value">247</div>
-                        <div class="stat-label">Agendamentos Hoje</div>
+                <div class="hero-visual">
+                    <div class="hero-visual__header">
+                        <div class="hero-visual__dot" style="background:#ef4444"></div>
+                        <div class="hero-visual__dot" style="background:#f59e0b"></div>
+                        <div class="hero-visual__dot" style="background:#22c55e"></div>
+                        <span style="font-size:.75rem;color:var(--text-muted);margin-left:8px">Agenda — Agosto 2026</span>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-value">89%</div>
-                        <div class="stat-label">Taxa de Comparecimento</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">1.2k</div>
-                        <div class="stat-label">Clientes Ativos</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">R$12k</div>
-                        <div class="stat-label">Faturamento Mensal</div>
-                    </div>
-                    <div class="mockup-charts">
-                        <div class="chart-bar">
-                            <div class="chart-bar-title">Agendamentos por Dia</div>
-                            <div class="chart-bars">
-                                <div class="bar" style="height:60%"></div>
-                                <div class="bar" style="height:80%"></div>
-                                <div class="bar" style="height:45%"></div>
-                                <div class="bar" style="height:90%"></div>
-                                <div class="bar" style="height:70%"></div>
-                                <div class="bar" style="height:55%"></div>
-                                <div class="bar" style="height:85%"></div>
-                            </div>
+                    <div class="hero-visual__body">
+                        <div class="mock-cal">
+                            <span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sab</span><span>Dom</span>
                         </div>
-                        <div class="donut">
-                            <div class="donut-circle">
-                                <div class="donut-label">100%</div>
-                            </div>
-                            <div class="donut-legend">
-                                <span><span class="legend-dot" style="background:var(--primary)"></span>Confirmados</span>
-                                <span><span class="legend-dot" style="background:var(--warning)"></span>Pendentes</span>
-                                <span><span class="legend-dot" style="background:var(--success)"></span>Concluídos</span>
-                            </div>
+                        <div class="mock-cal" style="margin-top:4px">
+                            <div class="mock-day"></div><div class="mock-day"></div><div class="mock-day"></div><div class="mock-day active">1</div><div class="mock-day">2</div><div class="mock-day booked">3</div><div class="mock-day">4</div>
+                            <div class="mock-day">5</div><div class="mock-day">6</div><div class="mock-day">7</div><div class="mock-day">8</div><div class="mock-day active">9</div><div class="mock-day booked">10</div><div class="mock-day">11</div>
+                            <div class="mock-day">12</div><div class="mock-day">13</div><div class="mock-day">14</div><div class="mock-day">15</div><div class="mock-day active">16</div><div class="mock-day">17</div><div class="mock-day">18</div>
+                        </div>
+                        <div class="mock-slots">
+                            <div class="mock-slot taken">09:00</div>
+                            <div class="mock-slot taken">10:00</div>
+                            <div class="mock-slot avail">11:00</div>
+                            <div class="mock-slot avail">13:00</div>
+                            <div class="mock-slot avail">14:00</div>
+                            <div class="mock-slot taken">15:00</div>
+                            <div class="mock-slot avail">16:00</div>
+                            <div class="mock-slot avail">17:00</div>
                         </div>
                     </div>
                 </div>
@@ -685,30 +281,93 @@
 
     <section class="features" id="features">
         <div class="container">
+            <p class="section-tag">Funcionalidades</p>
             <div class="section-title">
-                <h2>Funcionalidades</h2>
-                <p>Tudo que você precisa em um só lugar</p>
+                <h2>Seu sistema completo de agendamento</h2>
+                <p>Tudo que voce precisa para organizar sua agenda em um so lugar.</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📆</div>
+            <div class="feat-grid">
+                <div class="feat-card">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     <h3>Agendamento Online</h3>
-                    <p>Seus clientes agendam pelo celular ou computador, 24 horas por dia. Sem ligações, sem filas.</p>
+                    <p>Seus clientes agendam pelo site ou WhatsApp a qualquer hora.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔔</div>
-                    <h3>Lembretes Automáticos</h3>
-                    <p>Envio de lembretes por WhatsApp e SMS antes do horário. Reduza faltas em até 70%.</p>
+                <div class="feat-card">
+                    <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    <h3>Lembretes Automaticos</h3>
+                    <p>SMS e WhatsApp enviados automaticamente antes do horario.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3>Painel de Clientes</h3>
-                    <p>Cadastro completo com histórico de atendimentos, preferências e dados de contato.</p>
+                <div class="feat-card">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    <h3>Multi-profissional</h3>
+                    <p>Gerencie a agenda de varios profissionais ao mesmo tempo.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Relatórios</h3>
-                    <p>Gráficos e indicadores para você tomar decisões baseadas em dados reais.</p>
+                <div class="feat-card">
+                    <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                    <h3>Pagamento Online</h3>
+                    <p>Cobranca antecipada ou no local. PIX, cartao e boleto.</p>
+                </div>
+                <div class="feat-card">
+                    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    <h3>Chat Integrado</h3>
+                    <p>Converse com clientes pelo WhatsApp direto do sistema.</p>
+                </div>
+                <div class="feat-card">
+                    <svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg>
+                    <h3>Relatorios</h3>
+                    <p>Acompanhe faturamento, ocupacao e desempenho por profissional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo" id="demo">
+        <div class="container">
+            <p class="section-tag">Demonstracao</p>
+            <div class="section-title">
+                <h2>Veja como funciona</h2>
+                <p>Painel intuitivo que qualquer pessoa consegue usar.</p>
+            </div>
+            <div class="demo-grid">
+                <div class="demo-mock">
+                    <div class="demo-mock__top">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+                        Agenda — Hoje, 18 de Agosto
+                    </div>
+                    <div class="demo-mock__body">
+                        <div class="demo-appt">
+                            <div class="demo-appt__time">09:00</div>
+                            <div class="demo-appt__info"><div class="demo-appt__name">Maria Silva</div><div class="demo-appt__service">Corte + Escova</div></div>
+                            <span class="demo-appt__status confirmed">Confirmado</span>
+                        </div>
+                        <div class="demo-appt">
+                            <div class="demo-appt__time">10:30</div>
+                            <div class="demo-appt__info"><div class="demo-appt__name">Joao Santos</div><div class="demo-appt__service">Barba</div></div>
+                            <span class="demo-appt__status confirmed">Confirmado</span>
+                        </div>
+                        <div class="demo-appt">
+                            <div class="demo-appt__time">11:00</div>
+                            <div class="demo-appt__info"><div class="demo-appt__name">Ana Oliveira</div><div class="demo-appt__service">Manicure</div></div>
+                            <span class="demo-appt__status pending">Pendente</span>
+                        </div>
+                        <div class="demo-appt">
+                            <div class="demo-appt__time">14:00</div>
+                            <div class="demo-appt__info"><div class="demo-appt__name">Carlos Lima</div><div class="demo-appt__service">Corte Masculino</div></div>
+                            <span class="demo-appt__status confirmed">Confirmado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-desc">
+                    <h3>Gerencie tudo em um painel</h3>
+                    <p>Visualize a agenda do dia, confirme agendamentos, reagende ou cancele com poucos cliques.</p>
+                    <ul>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Calendario diario, semanal e mensal</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Notificacoes em tempo real</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Controle de faltas e cancelamentos</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Bloqueio de horarios manual</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Lista de espera automatica</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Historico completo de cada cliente</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -716,127 +375,232 @@
 
     <section class="pricing" id="pricing">
         <div class="container">
-            <div class="section-title">
-                <h2>Planos e Preços</h2>
-                <p>Escolha o plano ideal para o seu negócio</p>
+            <div class="section-title" style="text-align:center">
+                <p class="section-tag">Planos</p>
+                <h2>Escolha o plano ideal</h2>
+                <p>Comece gratis e escale conforme seu negocio cresce.</p>
             </div>
-            <div class="pricing-grid">
+            <div class="price-grid">
                 <div class="price-card">
-                    <h3>Plano Básico</h3>
-                    <div class="price-value">R$49<span>/mês</span></div>
+                    <h3>Basico</h3>
+                    <p class="price-desc">Para quem esta comecando</p>
+                    <div class="price">R$0 <small>/mes</small></div>
                     <ul class="price-features">
-                        <li>Agendamento online</li>
-                        <li>Lembretes por SMS</li>
-                        <li>Painel de clientes</li>
-                        <li>Relatórios básicos</li>
-                        <li>Suporte por email</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 1 profissional</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 50 agendamentos/mes</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Agendamento online</li>
+                        <li class="disabled"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Lembretes por WhatsApp</li>
+                        <li class="disabled"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Pagamento online</li>
+                        <li class="disabled"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Relatorios</li>
                     </ul>
-                    <a href="https://wa.me/5591981504951?text=Olá! Quero assinar o Plano Básico do AgendaFácil." class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;justify-content:center;">
-                        Assinar Básico
-                    </a>
+                    <button class="price-btn ghost" onclick="openCheckout('Basico',0)">Comecar Gratis</button>
                 </div>
+
                 <div class="price-card featured">
-                    <span class="price-badge">Mais Popular</span>
-                    <h3>Plano Pro</h3>
-                    <div class="price-value">R$99<span>/mês</span></div>
+                    <h3>Profissional</h3>
+                    <p class="price-desc">Para negócios em crescimento</p>
+                    <div class="price">R$79 <small>/mes</small></div>
                     <ul class="price-features">
-                        <li>Agendamento online</li>
-                        <li>Lembretes por WhatsApp</li>
-                        <li>Painel de clientes</li>
-                        <li>Relatórios avançados</li>
-                        <li>Múltiplos profissionais</li>
-                        <li>Suporte prioritário</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 5 profissionais</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Agendamentos ilimitados</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Agendamento online</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Lembretes por WhatsApp</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Pagamento online</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Relatorios</li>
                     </ul>
-                    <a href="https://wa.me/5591981504951?text=Olá! Quero assinar o Plano Pro do AgendaFácil." class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;justify-content:center;">
-                        Assinar Pro
-                    </a>
+                    <button class="price-btn primary" onclick="openCheckout('Profissional',79)">Assinar Agora</button>
+                </div>
+
+                <div class="price-card">
+                    <h3>Enterprise</h3>
+                    <p class="price-desc">Para redes e franquias</p>
+                    <div class="price">R$199 <small>/mes</small></div>
+                    <ul class="price-features">
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Profissionais ilimitados</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Agendamentos ilimitados</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Agendamento online</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Lembretes por WhatsApp</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Pagamento online</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Relatorios + API</li>
+                    </ul>
+                    <button class="price-btn ghost" onclick="openCheckout('Enterprise',199)">Falar com Vendas</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="faq" id="faq">
+    <section class="contact" id="contato">
         <div class="container">
-            <div class="section-title">
-                <h2>Perguntas Frequentes</h2>
-                <p>Respostas para as dúvidas mais comuns</p>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Preciso saber programar para usar?
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Não! O AgendaFácil é totalmente visual. Você configura tudo pelo painel de controle, sem precisar escrever uma única linha de código.</p>
-                    </div>
+            <div class="contact-cta">
+                <h2>Pronto para comecar?</h2>
+                <p>Fale com a gente e comece a organizar sua agenda hoje mesmo.</p>
+                <div class="contact-methods">
+                    <span class="contact-method">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:inteligencia20072000@gmail.com">inteligencia20072000@gmail.com</a>
+                    </span>
+                    <span class="contact-method">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <a href="https://wa.me/5591981504951" target="_blank" rel="noopener">(91) 98150-4951</a>
+                    </span>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Posso personalizar o sistema para meu negócio?
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Sim! O sistema é totalmente personalizável. Adaptamos cores, horários, serviços e tudo mais para se encaixar na sua marca.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Os clientes precisam baixar um app?
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Não. O AgendaFácil funciona pelo navegador do celular ou computador. Seu cliente acessa um link e agenda direto, sem instalação.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Posso cancelar quando quiser?
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Sim, sem burocracia. Cancele a qualquer momento pela configuração da conta, sem multa ou taxa adicional.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Tem período de teste gratuito?
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Sim! Oferecemos 14 dias de teste gratuito em qualquer plano. Experimente antes de assinar.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta" id="contact">
-        <div class="container">
-            <div class="cta-box">
-                <h2>Pronto para modernizar seus agendamentos?</h2>
-                <p>Fale com a gente e descubra como o AgendaFácil pode transformar seu negócio.</p>
-                <a href="https://wa.me/5591981504951?text=Olá! Quero saber mais sobre o sistema AgendaFácil." class="btn btn-primary" target="_blank" rel="noopener">
-                    💬 Falar com Lucas no WhatsApp
-                </a>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 AgendaFácil — Projeto Demonstrativo</p>
-            <div class="footer-contact">
-                <a href="mailto:inteligencia20072000@gmail.com">inteligencia20072000@gmail.com</a>
-                <a href="https://wa.me/5591981504951" target="_blank" rel="noopener">WhatsApp: (91) 98150-4951</a>
+            <p>&copy; 2026 AgendaFacil — Projeto Demonstrativo</p>
+            <div style="margin-top:10px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap">
+                <a href="mailto:inteligencia20072000@gmail.com" style="color:var(--text-muted);font-size:.85rem">inteligencia20072000@gmail.com</a>
+                <a href="https://wa.me/5591981504951" target="_blank" rel="noopener" style="color:var(--text-muted);font-size:.85rem">WhatsApp: (91) 98150-4951</a>
             </div>
         </div>
     </footer>
 
-    <script>
-        function toggleFaq(el) {
-            el.parentElement.classList.toggle('open');
-        }
-    </script>
+    <!-- Checkout -->
+    <div class="checkout-overlay" id="checkoutOverlay">
+        <div class="checkout-modal">
+            <div class="checkout-step active" id="step1">
+                <button class="checkout-back" onclick="closeCheckout()">&larr; Voltar</button>
+                <h2>Assinar Plano</h2>
+                <p class="subtitle">Preencha seus dados para criar sua conta</p>
+                <div class="plan-selected" id="planBox">
+                    <div><div class="plan-selected__name" id="planName">Profissional</div><div class="plan-selected__period">Cobranca mensal — cancele quando quiser</div></div>
+                    <div class="plan-selected__price" id="planPrice">R$79<small>/mes</small></div>
+                </div>
+                <div class="form-group"><label>Nome completo</label><input type="text" id="fname" placeholder="Seu nome"/></div>
+                <div class="form-group"><label>E-mail</label><input type="email" id="femail" placeholder="seu@email.com"/></div>
+                <div class="form-group"><label>Telefone</label><input type="tel" id="fphone" placeholder="(00) 00000-0000"/></div>
+                <div class="form-group"><label>Nome do Negocio</label><input type="text" id="fbiz" placeholder="Ex: Barbearia do Joao"/></div>
+                <button class="btn-pay" onclick="showStep(2)">Continuar para Pagamento</button>
+            </div>
+
+            <div class="checkout-step" id="step2">
+                <button class="checkout-back" onclick="showStep(1)">&larr; Voltar</button>
+                <h2>Forma de Pagamento</h2>
+                <p class="subtitle">Escolha como deseja pagar a assinatura</p>
+                <div class="pay-methods">
+                    <div class="pay-method selected" data-method="pix" onclick="selectPay(this)">
+                        <div class="radio"></div>
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M7 7l10 10M17 7L7 17"/></svg>
+                        <div class="pay-method__info"><div class="pay-method__name">PIX</div><div class="pay-method__desc">Aprovacao instantanea — 10% de desconto</div></div>
+                    </div>
+                    <div class="pay-method" data-method="card" onclick="selectPay(this)">
+                        <div class="radio"></div>
+                        <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        <div class="pay-method__info"><div class="pay-method__name">Cartao de Credito</div><div class="pay-method__desc">Visa, Mastercard, Elo — parcelamento em ate 6x</div></div>
+                    </div>
+                    <div class="pay-method" data-method="boleto" onclick="selectPay(this)">
+                        <div class="radio"></div>
+                        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3h-8l-2 4h12z"/></svg>
+                        <div class="pay-method__info"><div class="pay-method__name">Boleto Bancario</div><div class="pay-method__desc">Vencimento em 3 dias uteis</div></div>
+                    </div>
+                </div>
+
+                <div id="pixBox" style="background:var(--primary-light);border:1px dashed var(--primary);border-radius:10px;padding:20px;text-align:center;margin-bottom:16px">
+                    <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:12px">Escaneie o QR Code ou copie o codigo PIX</p>
+                    <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;font-family:monospace;font-size:.72rem;color:var(--primary);word-break:break-all;cursor:pointer" id="pixCode">00020126580014br.gov.bcb.pix0136agenda@facil.com52040000530398654050.905802BR5913AgendaFacil6009SAO PAULO62070503***6304ABCD</div>
+                    <p style="font-size:.8rem;color:var(--primary);font-weight:600;margin-top:8px;cursor:pointer" id="pixCopy">Clique para copiar</p>
+                </div>
+
+                <div id="cardForm" style="display:none">
+                    <div class="form-group"><label>Numero do Cartao</label><input type="text" id="cnumber" placeholder="0000 0000 0000 0000" maxlength="19"/></div>
+                    <div class="form-group"><label>Nome no Cartao</label><input type="text" id="cname" placeholder="Nome impresso"/></div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Validade</label><input type="text" id="cexp" placeholder="MM/AA" maxlength="5"/></div>
+                        <div class="form-group"><label>CVV</label><input type="text" id="ccvv" placeholder="000" maxlength="4"/></div>
+                    </div>
+                </div>
+
+                <div id="boletoBox" style="display:none;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;margin-bottom:16px">
+                    <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:10px">O boleto sera gerado apos a confirmacao. Prazo de vencimento: 3 dias uteis.</p>
+                    <div style="font-family:monospace;font-size:.8rem;color:var(--text);background:var(--bg-card);padding:12px;border-radius:6px;border:1px solid var(--border)">34191.09082 00000.000009 00000.000400 1 84240000024710</div>
+                    <p style="font-size:.8rem;color:var(--text-muted);margin-top:8px">Boleto sera enviado por e-mail apos a geracao.</p>
+                </div>
+
+                <div class="order-summary" id="orderSummary"></div>
+                <button class="btn-pay" id="payBtn" onclick="processPay()">
+                    <span id="payBtnText">Confirmar Assinatura</span>
+                    <span id="payBtnLoading" style="display:none"><span class="loading-spinner"></span></span>
+                </button>
+            </div>
+
+            <div class="checkout-step" id="step3">
+                <div class="success-box">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Assinatura Ativa!</h3>
+                    <p>Seu plano <strong id="planConfirm">Profissional</strong> foi ativado com sucesso. Bem-vindo ao AgendaFacil!</p>
+                    <div class="order-id" id="orderId">Conta #AF-00000</div>
+                    <p style="font-size:.85rem">Voce recebera os dados de acesso por e-mail em instantes.</p>
+                    <button class="btn btn-primary" onclick="closeCheckout()" style="margin-top:8px">Voltar ao Site</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+var planName='', planPrice=0, selectedMethod='pix';
+function fmt(v){return 'R$ '+v.toFixed(2).replace('.',',')}
+
+function openCheckout(name,price){
+    planName=name; planPrice=price;
+    document.getElementById('planName').textContent=name;
+    document.getElementById('planPrice').innerHTML=price===0?'Gratis':fmt(price)+'<small>/mes</small>';
+    document.getElementById('checkoutOverlay').classList.add('open');
+    showStep(1); renderSummary();
+}
+function closeCheckout(){document.getElementById('checkoutOverlay').classList.remove('open')}
+
+function showStep(n){document.querySelectorAll('.checkout-step').forEach(function(s){s.classList.remove('active')});document.getElementById('step'+n).classList.add('active')}
+
+function selectPay(el){
+    document.querySelectorAll('.pay-method').forEach(function(m){m.classList.remove('selected')});
+    el.classList.add('selected');
+    selectedMethod=el.dataset.method;
+    document.getElementById('pixBox').style.display=selectedMethod==='pix'?'block':'none';
+    document.getElementById('cardForm').style.display=selectedMethod==='card'?'block':'none';
+    document.getElementById('boletoBox').style.display=selectedMethod==='boleto'?'block':'none';
+    renderSummary();
+}
+
+function renderSummary(){
+    var sub=planPrice, disc=selectedMethod==='pix'?sub*0.1:0, tot=sub-disc;
+    var el=document.getElementById('orderSummary');
+    var html='<h4>Resumo da Assinatura</h4>';
+    html+='<div class="order-line"><span>Plano '+planName+'</span><span>'+fmt(sub)+'/mes</span></div>';
+    if(disc>0) html+='<div class="order-line" style="color:var(--primary)"><span>Desconto PIX (10%)</span><span>-'+fmt(disc)+'</span></div>';
+    html+='<div class="order-line total"><span>Total Mensal</span><span>'+(tot===0?'Gratis':fmt(tot)+'/mes')+'</span></div>';
+    el.innerHTML=html;
+    document.getElementById('payBtnText').textContent=planPrice===0?'Criar Conta Gratuita':'Confirmar Assinatura';
+}
+
+function processPay(){
+    var btn=document.getElementById('payBtn');
+    var txt=document.getElementById('payBtnText');
+    var ld=document.getElementById('payBtnLoading');
+    btn.disabled=true;txt.style.display='none';ld.style.display='inline-block';
+    setTimeout(function(){
+        btn.disabled=false;txt.style.display='inline';ld.style.display='none';
+        var oid='AF-'+String(Math.floor(10000+Math.random()*90000));
+        document.getElementById('orderId').textContent='Conta #'+oid;
+        document.getElementById('planConfirm').textContent=planName;
+        showStep(3);
+    },2000);
+}
+
+document.getElementById('pixCode').onclick=function(){
+    var t=document.getElementById('pixCode').textContent;
+    if(navigator.clipboard)navigator.clipboard.writeText(t);
+    document.getElementById('pixCopy').textContent='Codigo copiado!';
+    setTimeout(function(){document.getElementById('pixCopy').textContent='Clique para copiar'},2000);
+};
+
+document.getElementById('cnumber').oninput=function(){var v=this.value.replace(/\D/g,'').substring(0,16);this.value=v.replace(/(.{4})/g,'$1 ').trim()};
+document.getElementById('cexp').oninput=function(){var v=this.value.replace(/\D/g,'').substring(0,4);if(v.length>=3)v=v.substring(0,2)+'/'+v.substring(2);this.value=v};
+document.getElementById('ccvv').oninput=function(){this.value=this.value.replace(/\D/g,'').substring(0,4)};
+</script>
 </body>
 </html>

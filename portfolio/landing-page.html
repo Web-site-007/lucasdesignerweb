@@ -1,326 +1,676 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="robots" content="noindex, nofollow"/>
-<meta name="description" content="FitPro Academy — Curso online de treinamento funcional"/>
-<title>FitPro Academy — Transforme seu Corpo</title>
-<link rel="icon" type="image/svg+xml" href="../src/images/favicon.svg"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--primary:#00b894;--primary-h:#00a381;--dark:#0a0a1a;--card:#12122a;--text:#e0e0f0;--muted:#8888aa;--grad:linear-gradient(135deg,#00b894,#00cec9);--border:rgba(0,184,148,.12)}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--text);line-height:1.6;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <title>FitPro Academy — Curso Online | Demonstrativo</title>
+    <meta name="description" content="Curso online de fitness - Projeto demonstrativo criado por Lucas Designer Web."/>
+    <link rel="icon" type="image/svg+xml" href="../src/images/favicon.svg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,26,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.nav__logo{font-size:1.3rem;font-weight:800;color:var(--primary);letter-spacing:-.5px}
-.nav__menu{display:flex;gap:28px;list-style:none}
-.nav__menu a{font-size:.88rem;color:var(--muted);transition:color .3s;font-weight:500}
-.nav__menu a:hover{color:var(--primary)}
-.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.ham span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
+        :root {
+            --bg: #111317;
+            --bg-card: #1c1f26;
+            --bg-card-hover: #252830;
+            --text: #f0f2f5;
+            --text-muted: #9ca3af;
+            --primary: #a855f7;
+            --primary-hover: #9333ea;
+            --primary-light: rgba(168,85,247,.12);
+            --accent: #22d3ee;
+            --border: #2a2d35;
+            --success: #22c55e;
+            --danger: #ef4444;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --shadow: 0 4px 24px rgba(0,0,0,.3);
+            --transition: 0.3s ease;
+        }
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:100px}
-.hero__bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80') center/cover no-repeat}
-.hero__overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,26,.92),rgba(10,10,26,.7))}
-.hero__content{position:relative;z-index:2;padding:0 6%;max-width:700px}
-.hero__badge{display:inline-block;padding:8px 20px;border:1px solid rgba(0,184,148,.4);color:var(--primary);font-size:.8rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px;font-weight:600;border-radius:24px}
-.hero h1{font-size:3.6rem;font-weight:800;line-height:1.1;margin-bottom:20px}
-.hero h1 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:1.1rem;color:var(--muted);margin-bottom:32px;max-width:540px}
-.hero__cta{display:flex;gap:16px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:var(--grad);color:#fff;font-weight:600;border-radius:8px;transition:all .3s;font-size:.95rem;border:none;cursor:pointer;font-family:'Inter',sans-serif}
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,184,148,.4)}
-.btn--outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}
-.btn--outline:hover{background:rgba(0,184,148,.1)}
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
 
-/* SECTIONS */
-section{padding:100px 6%;scroll-margin-top:70px}
-.section-label{font-size:.75rem;color:var(--primary);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-weight:600;display:block;text-align:center}
-.st{font-size:2.4rem;font-weight:800;text-align:center;margin-bottom:16px}
-.ss{text-align:center;color:var(--muted);max-width:560px;margin:0 auto 48px;font-size:1.05rem}
+        .banner { background: linear-gradient(135deg, #a855f7, #7c3aed); color: #fff; text-align: center; padding: 10px 16px; font-size: .85rem; font-weight: 500; }
+        .banner a { color: #fff; text-decoration: underline; }
 
-/* PROBLEMS */
-.problem{background:var(--card)}
-.prob__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
-.prob{background:var(--dark);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .3s}
-.prob:hover{transform:translateY(-4px)}
-.prob__img{height:180px;background-size:cover;background-position:center;position:relative}
-.prob__img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--dark),transparent 60%)}
-.prob__body{padding:24px}
-.prob__ico{width:40px;height:40px;border-radius:8px;background:rgba(0,184,148,.12);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-.prob__ico svg{width:20px;height:20px;stroke:var(--primary);fill:none;stroke-width:2}
-.prob h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
-.prob p{color:var(--muted);font-size:.9rem;line-height:1.6}
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-/* SOLUTION */
-.solution{display:flex;align-items:center;gap:56px;max-width:1100px;margin:0 auto}
-.solution__visual{flex:1;border-radius:12px;overflow:hidden;height:400px;flex-shrink:0}
-.solution__visual img{width:100%;height:100%;object-fit:cover}
-.solution__text{flex:1}
-.solution__text h3{font-size:1.8rem;font-weight:800;margin-bottom:16px}
-.solution__text p{color:var(--muted);margin-bottom:16px;font-size:.98rem;line-height:1.7}
-.solution__text .btn{margin-top:8px}
+        .header { background: rgba(17,19,23,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+        .header .container { display: flex; align-items: center; justify-content: space-between; }
+        .brand { font-size: 1.3rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .brand-icon { width: 36px; height: 36px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .brand-icon svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 1.5; }
 
-/* BENEFITS */
-.benefits{background:var(--card)}
-.ben__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1000px;margin:0 auto}
-.ben{display:flex;align-items:flex-start;gap:16px;background:var(--dark);border:1px solid var(--border);border-radius:12px;padding:24px;transition:border-color .3s}
-.ben:hover{border-color:var(--primary)}
-.ben__ico{width:44px;height:44px;border-radius:8px;background:rgba(0,184,148,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.ben__ico svg{width:22px;height:22px;stroke:var(--primary);fill:none;stroke-width:1.5}
-.ben h3{font-size:1rem;font-weight:700;margin-bottom:4px}
-.ben p{color:var(--muted);font-size:.88rem;line-height:1.5}
+        .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-muted); font-size: .9rem; font-weight: 500; transition: color var(--transition); }
+        .nav-links a:hover { color: var(--primary); }
 
-/* STEPS */
-.steps{max-width:800px;margin:0 auto}
-.steps__list{display:flex;flex-direction:column;gap:24px}
-.step{display:flex;align-items:flex-start;gap:20px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px}
-.step__num{width:48px;height:48px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;flex-shrink:0;color:var(--dark)}
-.step h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
-.step p{color:var(--muted);font-size:.9rem}
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius-sm); font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: .95rem; border: none; cursor: pointer; transition: all var(--transition); }
+        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(168,85,247,.3); }
+        .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+        .btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
+        .btn-accent { background: var(--accent); color: #111; }
+        .btn-accent:hover { background: #06b6d4; transform: translateY(-2px); }
 
-/* TESTIMONIALS */
-.testimonials{background:var(--card)}
-.test__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
-.test{background:var(--dark);border:1px solid var(--border);border-radius:12px;padding:28px}
-.test__stars{color:#f9ca24;font-size:.9rem;margin-bottom:12px;letter-spacing:2px}
-.test__text{font-size:.92rem;color:var(--muted);margin-bottom:20px;line-height:1.7;font-style:italic}
-.test__author{display:flex;align-items:center;gap:12px}
-.test__avatar{width:44px;height:44px;border-radius:50%;overflow:hidden}
-.test__avatar img{width:100%;height:100%;object-fit:cover}
-.test__name{font-weight:700;font-size:.9rem}
-.test__info{font-size:.78rem;color:var(--muted)}
+        /* Hero */
+        .hero { padding: 80px 0 60px; min-height: 70vh; display: flex; align-items: center; background: radial-gradient(ellipse at 70% 20%, rgba(168,85,247,.1), transparent 60%); }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+        .hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 28px; max-width: 480px; }
+        .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
 
-/* FAQ */
-.faq{max-width:800px;margin:0 auto}
-.faq__item{border-bottom:1px solid var(--border);padding:20px 0}
-.faq__q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:1.02rem;gap:12px}
-.faq__q::after{content:'+';font-size:1.4rem;color:var(--primary);transition:transform .3s;flex-shrink:0}
-.faq__item.open .faq__q::after{transform:rotate(45deg)}
-.faq__a{max-height:0;overflow:hidden;transition:max-height .4s,color .3s;color:var(--muted);font-size:.95rem;line-height:1.7}
-.faq__item.open .faq__a{max-height:200px;padding-top:12px}
+        .hero-visual { position: relative; }
+        .hero-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+        .hero-card__img { width: 100%; aspect-ratio: 16/10; background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80') center/cover; }
+        .hero-card__body { padding: 20px; }
+        .hero-card__title { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+        .hero-card__sub { font-size: .85rem; color: var(--text-muted); margin-bottom: 12px; }
+        .hero-card__stats { display: flex; gap: 20px; }
+        .hero-stat { font-size: .8rem; color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
+        .hero-stat strong { color: var(--accent); font-size: 1rem; }
+        .hero-stat svg { width: 14px; height: 14px; stroke: var(--accent); fill: none; stroke-width: 2; }
 
-/* CTA */
-.cta-bottom{text-align:center;padding:120px 6%;background:radial-gradient(ellipse at 50% 50%,rgba(0,184,148,.1),transparent 60%)}
-.cta-bottom h2{font-size:2.6rem;font-weight:800;margin-bottom:16px}
-.cta-bottom p{color:var(--muted);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+        .hero-badge { position: absolute; top: -10px; right: -10px; background: var(--accent); color: #111; padding: 6px 14px; border-radius: 20px; font-size: .78rem; font-weight: 700; }
 
-/* WHATSAPP */
-.whatsapp{position:fixed;bottom:24px;right:24px;z-index:9998;width:60px;height:60px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .3s}
-.whatsapp:hover{transform:scale(1.1)}
-.whatsapp svg{width:32px;height:32px;fill:#fff}
+        /* About */
+        .about { padding: 60px 0; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+        .section-tag { color: var(--primary); font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+        .section-title h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 8px; }
+        .section-title p { color: var(--text-muted); font-size: 1rem; margin-bottom: 24px; }
+        .about-text p { color: var(--text-muted); font-size: .95rem; line-height: 1.7; margin-bottom: 14px; }
 
-/* FOOTER */
-.footer{text-align:center;padding:40px 6%;border-top:1px solid var(--border);font-size:.85rem;color:var(--muted)}
-.footer span{color:var(--primary);font-weight:700}
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .about-feat { display: flex; align-items: center; gap: 10px; padding: 14px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); }
+        .about-feat svg { width: 20px; height: 20px; stroke: var(--primary); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+        .about-feat span { font-size: .88rem; font-weight: 500; }
 
-@media(max-width:768px){
-.nav__menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(10,10,26,.97);padding:20px;gap:16px;border-bottom:1px solid var(--border)}
-.nav__menu.open{display:flex}
-.ham{display:flex}
-.hero{padding-top:120px}
-.hero h1{font-size:2.2rem}
-.prob__grid,.ben__grid,.test__grid{grid-template-columns:1fr}
-.solution{flex-direction:column}
-.solution__visual{width:100%;height:260px}
-section{padding:60px 5%}
-.cta-bottom h2{font-size:1.8rem}
-}
-</style>
+        /* Modules */
+        .modules { padding: 60px 0; }
+        .modules-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+        .module-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 24px; transition: all var(--transition); }
+        .module-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+        .module-card__num { color: var(--primary); font-size: .8rem; font-weight: 700; margin-bottom: 6px; }
+        .module-card h3 { font-size: .95rem; font-weight: 600; margin-bottom: 4px; }
+        .module-card p { font-size: .82rem; color: var(--text-muted); line-height: 1.4; }
+        .module-card__dur { font-size: .75rem; color: var(--text-muted); margin-top: 10px; display: flex; align-items: center; gap: 4px; }
+        .module-card__dur svg { width: 12px; height: 12px; stroke: var(--primary); fill: none; stroke-width: 2; }
+
+        /* Results */
+        .results { padding: 60px 0; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
+        .result-item { padding: 24px; }
+        .result-item strong { display: block; font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+        .result-item span { font-size: .88rem; color: var(--text-muted); }
+
+        /* Pricing */
+        .pricing { padding: 60px 0; }
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 700px; margin: 0 auto; }
+        .price-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 28px; transition: all var(--transition); position: relative; }
+        .price-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+        .price-card.featured { border-color: var(--primary); }
+        .price-card.featured::before { content: 'Mais Vendido'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #fff; padding: 4px 14px; border-radius: 20px; font-size: .75rem; font-weight: 600; white-space: nowrap; }
+        .price-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+        .price-card .price-desc { font-size: .85rem; color: var(--text-muted); margin-bottom: 12px; }
+        .price-card .price { font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+        .price-card .price small { font-size: .85rem; color: var(--text-muted); font-weight: 400; }
+        .price-card .price-old { font-size: .9rem; color: var(--text-muted); text-decoration: line-through; margin-bottom: 16px; }
+        .price-features { list-style: none; margin-bottom: 24px; }
+        .price-features li { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: .88rem; color: var(--text-muted); }
+        .price-features li svg { width: 16px; height: 16px; stroke: var(--success); fill: none; stroke-width: 2; flex-shrink: 0; }
+        .price-btn { width: 100%; padding: 12px; border-radius: 8px; font-family: 'Space Grotesk', sans-serif; font-size: .95rem; font-weight: 600; cursor: pointer; border: none; transition: all var(--transition); }
+        .price-btn.primary { background: var(--primary); color: #fff; }
+        .price-btn.primary:hover { background: var(--primary-hover); }
+        .price-btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+        .price-btn.ghost:hover { border-color: var(--primary); color: var(--primary); }
+
+        /* Testimonials */
+        .testimonials { padding: 60px 0; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+        .test-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 24px; }
+        .test-card__stars { color: #f59e0b; font-size: .9rem; margin-bottom: 10px; letter-spacing: 2px; }
+        .test-card p { font-size: .88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px; font-style: italic; }
+        .test-card__author { display: flex; align-items: center; gap: 10px; }
+        .test-card__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--primary-light); display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 700; font-size: .8rem; }
+        .test-card__name { font-size: .85rem; font-weight: 600; }
+        .test-card__role { font-size: .75rem; color: var(--text-muted); }
+
+        /* FAQ */
+        .faq { padding: 60px 0; }
+        .faq-list { max-width: 700px; margin: 0 auto; }
+        .faq-item { border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 10px; overflow: hidden; }
+        .faq-item__q { width: 100%; background: var(--bg-card); border: none; color: var(--text); font-family: 'Space Grotesk', sans-serif; font-size: .95rem; font-weight: 600; text-align: left; padding: 16px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background var(--transition); }
+        .faq-item__q:hover { background: var(--bg-card-hover); }
+        .faq-item__q span { transition: transform .3s; }
+        .faq-item.open .faq-item__q span { transform: rotate(180deg); }
+        .faq-item__a { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height .3s, padding .3s; background: var(--bg-card); }
+        .faq-item.open .faq-item__a { max-height: 200px; padding: 0 20px 16px; }
+        .faq-item__a p { font-size: .9rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* Contact */
+        .contact { padding: 60px 0; }
+        .contact-cta { text-align: center; max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, rgba(168,85,247,.1), rgba(34,211,238,.05)); border: 1px solid rgba(168,85,247,.2); border-radius: var(--radius); padding: 48px 32px; }
+        .contact-cta h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+        .contact-cta p { color: var(--text-muted); margin-bottom: 24px; }
+        .contact-methods { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+        .contact-method { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: .9rem; }
+        .contact-method svg { width: 18px; height: 18px; stroke: var(--primary); fill: none; stroke-width: 1.5; }
+        .contact-method a { color: var(--primary); font-weight: 600; }
+        .contact-method a:hover { text-decoration: underline; }
+
+        .footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+        .footer p { color: var(--text-muted); font-size: .85rem; }
+        .footer a { color: var(--primary); }
+
+        /* CHECKOUT */
+        .checkout-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 10001; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .3s; }
+        .checkout-overlay.open { opacity: 1; pointer-events: all; }
+        .checkout-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; width: 480px; max-width: 95vw; max-height: 90vh; overflow-y: auto; padding: 32px; }
+        .checkout-modal h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
+        .checkout-modal .subtitle { color: var(--text-muted); font-size: .9rem; margin-bottom: 24px; }
+        .checkout-step { display: none; }
+        .checkout-step.active { display: block; }
+        .checkout-back { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: .9rem; display: flex; align-items: center; gap: 4px; margin-bottom: 16px; padding: 0; }
+        .checkout-back:hover { color: #fff; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: .85rem; color: var(--text-muted); margin-bottom: 4px; }
+        .form-group input, .form-group select { width: 100%; padding: 12px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'Space Grotesk', sans-serif; font-size: .95rem; outline: none; }
+        .form-group input:focus { border-color: var(--primary); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+        .plan-selected { background: var(--primary-light); border: 1px solid var(--primary); border-radius: 8px; padding: 14px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .plan-selected__name { font-weight: 600; }
+        .plan-selected__price { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+        .plan-selected__period { font-size: .8rem; color: var(--text-muted); }
+
+        .pay-methods { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+        .pay-method { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 2px solid var(--border); border-radius: 10px; cursor: pointer; transition: all .2s; }
+        .pay-method:hover { border-color: rgba(168,85,247,.3); }
+        .pay-method.selected { border-color: var(--primary); background: var(--primary-light); }
+        .pay-method svg { width: 24px; height: 24px; stroke: var(--primary); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+        .pay-method__info { flex: 1; }
+        .pay-method__name { font-weight: 600; font-size: .95rem; }
+        .pay-method__desc { font-size: .8rem; color: var(--text-muted); }
+        .pay-method .radio { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .pay-method.selected .radio { border-color: var(--primary); }
+        .pay-method.selected .radio::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--primary); }
+
+        .order-summary { background: var(--bg); border-radius: 10px; padding: 16px; margin-bottom: 20px; border: 1px solid var(--border); }
+        .order-summary h4 { font-size: .9rem; font-weight: 600; margin-bottom: 10px; }
+        .order-line { display: flex; justify-content: space-between; font-size: .85rem; color: var(--text-muted); padding: 4px 0; }
+        .order-line.total { border-top: 1px solid var(--border); margin-top: 8px; padding-top: 8px; font-weight: 700; color: var(--text); font-size: 1rem; }
+
+        .btn-pay { width: 100%; padding: 14px; background: var(--primary); color: #fff; border: none; border-radius: 8px; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform .2s; }
+        .btn-pay:hover { transform: translateY(-2px); }
+        .btn-pay:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+        .loading-spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .6s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .success-box { text-align: center; padding: 20px 0; }
+        .success-icon { width: 80px; height: 80px; border-radius: 50%; background: rgba(34,197,94,.12); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+        .success-icon svg { width: 40px; height: 40px; stroke: var(--success); fill: none; stroke-width: 2; }
+        .success-box h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+        .success-box p { color: var(--text-muted); font-size: .95rem; margin-bottom: 12px; }
+        .success-box .order-id { font-family: monospace; color: var(--primary); font-size: .85rem; background: var(--bg); padding: 8px 16px; border-radius: 6px; display: inline-block; margin-bottom: 20px; border: 1px solid var(--border); }
+
+        @media (max-width: 768px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .about-features { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .hero-visual { order: -1; }
+        }
+
+        @media (max-width: 480px) {
+            .modules-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-<nav class="nav" role="navigation" aria-label="Menu principal">
-<a href="#home" class="nav__logo">FITPRO</a>
-<ul class="nav__menu" id="menu">
-<li><a href="#home">Home</a></li>
-<li><a href="#problema">Problema</a></li>
-<li><a href="#solucao">Solução</a></li>
-<li><a href="#beneficios">Benefícios</a></li>
-<li><a href="#depoimentos">Depoimentos</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#inscreva">Inscreva-se</a></li>
-</ul>
-<button class="ham" id="ham" aria-label="Abrir menu"><span></span><span></span><span></span></button>
-</nav>
+    <div class="banner">
+        Projeto Demonstrativo — Criado por <a href="../index.html">Lucas Designer Web</a>
+    </div>
 
-<section class="hero" id="home">
-<div class="hero__bg" aria-hidden="true"></div>
-<div class="hero__overlay" aria-hidden="true"></div>
-<div class="hero__content">
-<span class="hero__badge">Treinamento Funcional Online</span>
-<h1>Transforme seu corpo com <span>ciência e método</span></h1>
-<p>O programa FitPro Academy foi desenhado por profissionais de educação física para te guiar do zero ao avançado, com treinos práticos e acompanhamento personalizado.</p>
-<div class="hero__cta">
-<a href="#inscreva" class="btn">Quero Começar Agora</a>
-<a href="#como-funciona" class="btn btn--outline">Como Funciona</a>
-</div>
-</div>
-</section>
+    <header class="header">
+        <div class="container">
+            <a href="#" class="brand">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                </div>
+                FitPro Academy
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#modulos">Modulos</a></li>
+                    <li><a href="#planos">Planos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<section class="problem" id="problema">
-<span class="section-label">O Problema</span>
-<h2 class="st">Você se identifica?</h2>
-<p class="ss">A maioria das pessoas enfrenta esses obstáculos todos os dias.</p>
-<div class="prob__grid">
-<div class="prob">
-<div class="prob__img" style="background-image:url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80')"></div>
-<div class="prob__body">
-<div class="prob__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-<h3>Falta de tempo</h3>
-<p>Rotina corrida e dificuldade para encaixar treinos na agenda semanal.</p>
-</div>
-</div>
-<div class="prob">
-<div class="prob__img" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80')"></div>
-<div class="prob__body">
-<div class="prob__ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-<h3>Não sabe por onde começar</h3>
-<p>Excesso de informação na internet gera confusão e falta de direção.</p>
-</div>
-</div>
-<div class="prob">
-<div class="prob__img" style="background-image:url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=600&q=80')"></div>
-<div class="prob__body">
-<div class="prob__ico"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-<h3>Resultados inconsistentes</h3>
-<p>Treinar sem método leva a estagnação e perda da motivação.</p>
-</div>
-</div>
-</div>
-</section>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <p class="section-tag">Curso Online de Fitness</p>
+                    <h1>Transforme seu corpo e sua <span>carreira</span></h1>
+                    <p>Aprenda treinos, nutricao e como construir uma carreira de sucesso como personal trainer. Conteudo pratico com especialistas do mercado.</p>
+                    <div class="hero-btns">
+                        <a href="#planos" class="btn btn-primary">Quero Comecar</a>
+                        <a href="#modulos" class="btn btn-ghost">Ver Modulos</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-badge">Novo!</div>
+                    <div class="hero-card">
+                        <div class="hero-card__img"></div>
+                        <div class="hero-card__body">
+                            <div class="hero-card__title">Formacao Personal Trainer</div>
+                            <div class="hero-card__sub">12 modulos + certificado incluso</div>
+                            <div class="hero-card__stats">
+                                <span class="hero-stat"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><strong>1.240</strong> alunos</span>
+                                <span class="hero-stat"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><strong>4.9</strong> avaliacao</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="solution" id="solucao">
-<div class="solution__visual">
-<img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=80" alt="Treino FitPro Academy" loading="lazy"/>
-</div>
-<div class="solution__text">
-<span class="section-label" style="text-align:left;display:block">A Solução</span>
-<h3>FitPro Academy</h3>
-<p>Um programa completo com treinos periodizados, plano nutricional e suporte de coaches certificados. Tudo acessível pela internet, no seu ritmo.</p>
-<p>Cada módulo foi construído com base em evidências científicas, garantindo segurança e eficácia em cada exercício proposto.</p>
-<a href="#inscreva" class="btn">Comece Hoje</a>
-</div>
-</section>
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="section-tag">Sobre o Curso</p>
+                    <div class="section-title">
+                        <h2>Aprenda com quem vive o mercado</h2>
+                        <p>Um programa completo para quem quer atuar ou crescer na area de fitness.</p>
+                    </div>
+                    <p>O FitPro Academy foi criado por profissionais com mais de 10 anos de experiencia. O conteudo e 100% pratico, com aulas gravadas, material complementar e suporte direto com os instrutores.</p>
+                    <p>Voce vai aprender desde tecnicas de treino e montagem de periodizacao ate marketing pessoal, atendimento ao cliente e como precificar seus servicos.</p>
+                </div>
+                <div class="about-features">
+                    <div class="about-feat"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Certificado</span></div>
+                    <div class="about-feat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span>Aulas em Video</span></div>
+                    <div class="about-feat"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span>Suporte</span></div>
+                    <div class="about-feat"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Acesso Vitalicio</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="benefits" id="beneficios">
-<span class="section-label">Benefícios</span>
-<h2 class="st">Tudo que você precisa</h2>
-<p class="ss">Um programa completo sem enrolação, do início ao fim.</p>
-<div class="ben__grid">
-<div class="ben">
-<div class="ben__ico"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
-<div><h3>+200 videoaulas</h3><p>Treinos para todos os níveis com explicação detalhada de cada movimento.</p></div>
-</div>
-<div class="ben">
-<div class="ben__ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-<div><h3>Planilha personalizada</h3><p>Treinos montados de acordo com seu objetivo e nível de condicionamento.</p></div>
-</div>
-<div class="ben">
-<div class="ben__ico"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-<div><h3>Guia nutricional</h3><p>Planos alimentares adaptados para cada fase do programa.</p></div>
-</div>
-<div class="ben">
-<div class="ben__ico"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-<div><h3>Acesso pelo celular</h3><p>Assista aulas e acompanhe treinos de qualquer lugar pelo aplicativo.</p></div>
-</div>
-<div class="ben">
-<div class="ben__ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-<div><h3>Suporte de coaches</h3><p>Tire dúvidas diretamente com nossos profissionais certificados.</p></div>
-</div>
-<div class="ben">
-<div class="ben__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
-<div><h3>Certificado digital</h3><p>Receba seu certificado ao concluir cada módulo do programa.</p></div>
-</div>
-</div>
-</section>
+    <section class="modules" id="modulos">
+        <div class="container">
+            <p class="section-tag">Modulos do Curso</p>
+            <div class="section-title">
+                <h2>Conteudo programatico</h2>
+                <p>12 modulos completos para voce dominar a area.</p>
+            </div>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-card__num">Modulo 01</div>
+                    <h3>Fundamentos da Anatomia</h3>
+                    <p>Musculos, articulacoes e biomecanica basica para treinos seguros.</p>
+                    <div class="module-card__dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4h de aula</div>
+                </div>
+                <div class="module-card">
+                    <div class="module-card__num">Modulo 02</div>
+                    <h3>Periodizacao de Treinos</h3>
+                    <p>Como montar treinos para diferentes objetivos: forca, hipertrofia, resistencia.</p>
+                    <div class="module-card__dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6h de aula</div>
+                </div>
+                <div class="module-card">
+                    <div class="module-card__num">Modulo 03</div>
+                    <h3>Nutricao Esportiva</h3>
+                    <p>Macros, suplementacao e planos alimentares para seus clientes.</p>
+                    <div class="module-card__dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5h de aula</div>
+                </div>
+                <div class="module-card">
+                    <div class="module-card__num">Modulo 04</div>
+                    <h3>Treino Funcional</h3>
+                    <p>Montagem de aulas de funcional em grupo e personalizado.</p>
+                    <div class="module-card__dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4h de aula</div>
+                </div>
+                <div class="module-card">
+                    <div class="module-card__num">Modulo 05</div>
+                    <h3>Avaliacao Fisica</h3>
+                    <p>Protocolos de avaliacao antropometrica e funcional.</p>
+                    <div class="module-card__dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3h de aula</div>
+                </div>
+                <div class="module-card">
+                    <div class="module-card__num">Modulo 06</div>
+                    <h3>Lesoes e Prevencao</h3>
+                    <p>Como identificar e prevenir lesoes comuns no treinamento.</p>
+                    <div class="module-card__dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3h de aula</div>
+                </div>
+                <div class="module-card">
+                    <div class="module-card__num">Modulo 07</div>
+                    <h3>Atendimento ao Cliente</h3>
+                    <p>Comunicacao, empatia e retencao de alunos.</p>
+                    <div class="module-card__dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3h de aula</div>
+                </div>
+                <div class="module-card">
+                    <div class="module-card__num">Modulo 08</div>
+                    <h3>Marketing Pessoal</h3>
+                    <p>Como divulgar seu trabalho e atrair clientes nas redes sociais.</p>
+                    <div class="module-card__dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4h de aula</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="como-funciona">
-<span class="section-label">Como Funciona</span>
-<h2 class="st">Três passos simples</h2>
-<p class="ss">Comece sua transformação em poucos minutos.</p>
-<div class="steps">
-<div class="steps__list">
-<div class="step"><div class="step__num">1</div><div><h3>Escolha seu plano</h3><p>Selecione o plano ideal para o seu objetivo e orçamento.</p></div></div>
-<div class="step"><div class="step__num">2</div><div><h3>Receba seu programa</h3><p>Em até 24h você recebe o acesso completo com treinos e material.</p></div></div>
-<div class="step"><div class="step__num">3</div><div><h3>Comece a treinar</h3><p>Siga o plano, acompanhe seus resultados e conte com nosso suporte.</p></div></div>
-</div>
-</div>
-</section>
+    <section class="results">
+        <div class="container">
+            <p class="section-tag" style="text-align:center">Resultados</p>
+            <div class="section-title" style="text-align:center">
+                <h2>O que nossos alunos alcancam</h2>
+            </div>
+            <div class="results-grid">
+                <div class="result-item"><strong>+1.240</strong><span>Alunos formados</span></div>
+                <div class="result-item"><strong>93%</strong><span>Empregabilidade</span></div>
+                <div class="result-item"><strong>+R$3.500</strong><span>Aumento medio de renda</span></div>
+                <div class="result-item"><strong>4.9/5</strong><span>Avaliacao media</span></div>
+            </div>
+        </div>
+    </section>
 
-<section class="testimonials" id="depoimentos">
-<span class="section-label">Depoimentos</span>
-<h2 class="st">O que dizem nossos alunos</h2>
-<p class="ss">Mais de 5.000 alunos já transformaram seus corpos com a FitPro.</p>
-<div class="test__grid">
-<div class="test">
-<div class="test__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-<p class="test__text">"Em 3 meses já via resultados incríveis. O método é claro, os treinos são variados e o suporte faz toda diferença."</p>
-<div class="test__author">
-<div class="test__avatar"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Mariana Santos" loading="lazy"/></div>
-<div><div class="test__name">Mariana Santos</div><div class="test__info">Perdeu 12kg em 4 meses</div></div>
-</div>
-</div>
-<div class="test">
-<div class="test__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-<p class="test__text">"Nunca havia treinado antes. O programa é perfeito para quem começa do zero. Hoje me sinto muito mais disposto."</p>
-<div class="test__author">
-<div class="test__avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Pedro Henrique" loading="lazy"/></div>
-<div><div class="test__name">Pedro Henrique</div><div class="test__info">Ganhou 8kg de massa muscular</div></div>
-</div>
-</div>
-<div class="test">
-<div class="test__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-<p class="test__text">"O guia nutricional mudou minha vida. Aprendi a comer bem sem passar fome e os treinos cabem na minha agenda corrida."</p>
-<div class="test__author">
-<div class="test__avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Ana Carolina" loading="lazy"/></div>
-<div><div class="test__name">Ana Carolina</div><div class="test__info">Aluna há 6 meses</div></div>
-</div>
-</div>
-</div>
-</section>
+    <section class="pricing" id="planos">
+        <div class="container">
+            <div class="section-title" style="text-align:center">
+                <p class="section-tag">Investimento</p>
+                <h2>Escolha seu plano</h2>
+                <p>Acesso vitalicio — pague uma vez e tenha para sempre.</p>
+            </div>
+            <div class="price-grid">
+                <div class="price-card">
+                    <h3>Essencial</h3>
+                    <p class="price-desc">Conteudo principal</p>
+                    <div class="price">R$197</div>
+                    <p class="price-old">de R$397</p>
+                    <ul class="price-features">
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 8 modulos em video</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Material complementar</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Acesso vitalicio</li>
+                        <li style="opacity:.4"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Certificado</li>
+                        <li style="opacity:.4"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Comunidade exclusiva</li>
+                        <li style="opacity:.4"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Mentoria em grupo</li>
+                    </ul>
+                    <button class="price-btn ghost" onclick="openCheckout('Essencial',197,397)">Escolher Essencial</button>
+                </div>
 
-<section id="faq">
-<span class="section-label">Dúvidas</span>
-<h2 class="st">Perguntas Frequentes</h2>
-<p class="ss">Respostas para as dúvidas mais comuns sobre o programa.</p>
-<div class="faq">
-<div class="faq__item"><div class="faq__q">Preciso de equipamentos para treinar?</div><div class="faq__a">Não necessariamente. O programa oferece opções de treino com e sem equipamentos, permitindo que você escolha a melhor modalidade para sua realidade.</div></div>
-<div class="faq__item"><div class="faq__q">Por quanto tempo terei acesso?</div><div class="faq__a">O acesso é vitalício para o conteúdo comprado. Você pode assistir as aulas e baixar os materiais quantas vezes quiser.</div></div>
-<div class="faq__item"><div class="faq__q">Tem garantia de resultado?</div><div class="faq__a">Sim, oferecemos garantia de 30 dias. Se não gostar do programa, devolvemos 100% do valor investido sem perguntas.</div></div>
-<div class="faq__item"><div class="faq__q">Preciso ter experiência prévia?</div><div class="faq__a">O programa é escalonado e começa do básico. Pessoas de qualquer nível condicional podem participar com segurança.</div></div>
-<div class="faq__item"><div class="faq__q">O suporte é individual?</div><div class="faq__a">Sim, o plano premium inclui atendimento individual com um coach dedicado para ajustar seu treino e responder dúvidas.</div></div>
-<div class="faq__item"><div class="faq__q">Posso cancelar a qualquer momento?</div><div class="faq__a">Planos mensais podem ser cancelados sem multa. Para planos anuais, oferecemos reembolso proporcional nos primeiros 60 dias.</div></div>
-</div>
-</section>
+                <div class="price-card featured">
+                    <h3>Completo</h3>
+                    <p class="price-desc">Tudo incluso + certificado</p>
+                    <div class="price">R$297</div>
+                    <p class="price-old">de R$597</p>
+                    <ul class="price-features">
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 12 modulos em video</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Material complementar</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Acesso vitalicio</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Certificado digital</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Comunidade exclusiva</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Mentoria em grupo</li>
+                    </ul>
+                    <button class="price-btn primary" onclick="openCheckout('Completo',297,597)">Escolher Completo</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="cta-bottom" id="inscreva">
-<h2>Pronto para começar?</h2>
-<p>Junte-se a mais de 5.000 alunos que já transformaram seus corpos com a FitPro Academy.</p>
-<a href="https://wa.me/5511999999999" class="btn">Garantir Minha Vaga</a>
-</section>
+    <section class="testimonials">
+        <div class="container">
+            <p class="section-tag" style="text-align:center">Depoimentos</p>
+            <div class="section-title" style="text-align:center">
+                <h2>O que dizem nossos alunos</h2>
+            </div>
+            <div class="test-grid">
+                <div class="test-card">
+                    <div class="test-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Mudou minha vida. Consegui emprego em uma academia 2 meses depois de terminar o curso. O conteudo e muito pratico."</p>
+                    <div class="test-card__author"><div class="test-card__avatar">RS</div><div><div class="test-card__name">Rafael Souza</div><div class="test-card__role">Personal Trainer — SP</div></div></div>
+                </div>
+                <div class="test-card">
+                    <div class="test-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"O modulo de marketing foi um divisor de aguas. Meus clientes triplicaram depois que apliquei as tecnicas de divulgacao."</p>
+                    <div class="test-card__author"><div class="test-card__avatar">CF</div><div><div class="test-card__name">Camila Ferreira</div><div class="test-card__role">Coach Fitness — RJ</div></div></div>
+                </div>
+                <div class="test-card">
+                    <div class="test-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Excelente custo-beneficio. A mentoria em grupo e muito valiosa. Sempre tiro duvidas com os instrutores."</p>
+                    <div class="test-card__author"><div class="test-card__avatar">LM</div><div><div class="test-card__name">Lucas Mendes</div><div class="test-card__role">Personal Trainer — MG</div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<a href="https://wa.me/5511999999999" class="whatsapp" aria-label="WhatsApp">
-<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.318 0-4.478-.663-6.32-1.81l-.44-.27-2.63.879.879-2.63-.27-.44A9.965 9.965 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
-</a>
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title" style="text-align:center">
+                <p class="section-tag">Duvidas</p>
+                <h2>Perguntas Frequentes</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-item__q">Quanto tempo tenho acesso ao curso?<span>&#9662;</span></button>
+                    <div class="faq-item__a"><p>O acesso e vitalicio. Voce paga uma vez e pode assistir as aulas quantas vezes quiser, para sempre.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-item__q">Recebo certificado ao terminar?<span>&#9662;</span></button>
+                    <div class="faq-item__a"><p>Sim! Ao completar todos os modulos do plano Completo, voce recebe um certificado digital reconhecido.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-item__q">Posso parcelar o pagamento?<span>&#9662;</span></button>
+                    <div class="faq-item__a"><p>Sim! Aceitamos PIX (com desconto), cartao de credito em ate 6x e boleto bancario.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-item__q">Tem garantia de devolucao?<span>&#9662;</span></button>
+                    <div class="faq-item__a"><p>Sim! Voce tem 7 dias de garantia incondicional. Se nao gostar, devolvemos 100% do valor.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-item__q">Preciso ter experiencia prévia?<span>&#9662;</span></button>
+                    <div class="faq-item__a"><p>Nao! O curso foi pensado para iniciantes e tambem para quem ja atua na area e quer se especializar.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer class="footer">
-<p><span>FitPro Academy</span> — Treinamento Funcional Online</p>
-</footer>
+    <section class="contact" id="contato">
+        <div class="container">
+            <div class="contact-cta">
+                <h2>Pronto para transformar sua carreira?</h2>
+                <p>Garanta sua vaga agora e comece a aprender hoje mesmo.</p>
+                <div style="margin-bottom:20px">
+                    <button class="btn btn-primary" onclick="openCheckout('Completo',297,597)">Quero Me Inscrever</button>
+                </div>
+                <div class="contact-methods">
+                    <span class="contact-method">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:inteligencia20072000@gmail.com">inteligencia20072000@gmail.com</a>
+                    </span>
+                    <span class="contact-method">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <a href="https://wa.me/5591981504951" target="_blank" rel="noopener">(91) 98150-4951</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 FitPro Academy — Projeto Demonstrativo</p>
+            <div style="margin-top:10px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap">
+                <a href="mailto:inteligencia20072000@gmail.com" style="color:var(--text-muted);font-size:.85rem">inteligencia20072000@gmail.com</a>
+                <a href="https://wa.me/5591981504951" target="_blank" rel="noopener" style="color:var(--text-muted);font-size:.85rem">WhatsApp: (91) 98150-4951</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Checkout -->
+    <div class="checkout-overlay" id="checkoutOverlay">
+        <div class="checkout-modal">
+            <div class="checkout-step active" id="step1">
+                <button class="checkout-back" onclick="closeCheckout()">&larr; Voltar</button>
+                <h2>Finalizar Inscrição</h2>
+                <p class="subtitle">Preencha seus dados para acessar o curso</p>
+                <div class="plan-selected">
+                    <div><div class="plan-selected__name" id="planName">Completo</div><div class="plan-selected__period">Acesso vitalicio — pagamento unico</div></div>
+                    <div><div class="plan-selected__price" id="planPrice">R$297</div><div class="plan-selected__period" id="planOld" style="text-decoration:line-through">de R$597</div></div>
+                </div>
+                <div class="form-group"><label>Nome completo</label><input type="text" id="fname" placeholder="Seu nome"/></div>
+                <div class="form-group"><label>E-mail</label><input type="email" id="femail" placeholder="seu@email.com"/></div>
+                <div class="form-group"><label>Telefone</label><input type="tel" id="fphone" placeholder="(00) 00000-0000"/></div>
+                <button class="btn-pay" onclick="showStep(2)">Continuar para Pagamento</button>
+            </div>
+
+            <div class="checkout-step" id="step2">
+                <button class="checkout-back" onclick="showStep(1)">&larr; Voltar</button>
+                <h2>Forma de Pagamento</h2>
+                <p class="subtitle">Escolha como deseja pagar</p>
+                <div class="pay-methods">
+                    <div class="pay-method selected" data-method="pix" onclick="selectPay(this)">
+                        <div class="radio"></div>
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M7 7l10 10M17 7L7 17"/></svg>
+                        <div class="pay-method__info"><div class="pay-method__name">PIX</div><div class="pay-method__desc">Aprovacao instantanea — 10% de desconto</div></div>
+                    </div>
+                    <div class="pay-method" data-method="card" onclick="selectPay(this)">
+                        <div class="radio"></div>
+                        <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        <div class="pay-method__info"><div class="pay-method__name">Cartao de Credito</div><div class="pay-method__desc">Visa, Mastercard, Elo — parcelamento em ate 6x</div></div>
+                    </div>
+                    <div class="pay-method" data-method="boleto" onclick="selectPay(this)">
+                        <div class="radio"></div>
+                        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3h-8l-2 4h12z"/></svg>
+                        <div class="pay-method__info"><div class="pay-method__name">Boleto Bancario</div><div class="pay-method__desc">Vencimento em 3 dias uteis</div></div>
+                    </div>
+                </div>
+
+                <div id="pixBox" style="background:var(--primary-light);border:1px dashed var(--primary);border-radius:10px;padding:20px;text-align:center;margin-bottom:16px">
+                    <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:12px">Escaneie o QR Code ou copie o codigo PIX</p>
+                    <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;font-family:monospace;font-size:.72rem;color:var(--primary);word-break:break-all;cursor:pointer" id="pixCode">00020126580014br.gov.bcb.pix0136fitpro@academy.com52040000530398654050.905802BR5913FitPro Academy6009SAO PAULO62070503***6304XYZW</div>
+                    <p style="font-size:.8rem;color:var(--primary);font-weight:600;margin-top:8px;cursor:pointer" id="pixCopy">Clique para copiar</p>
+                </div>
+
+                <div id="cardForm" style="display:none">
+                    <div class="form-group"><label>Numero do Cartao</label><input type="text" id="cnumber" placeholder="0000 0000 0000 0000" maxlength="19"/></div>
+                    <div class="form-group"><label>Nome no Cartao</label><input type="text" id="cname" placeholder="Nome impresso"/></div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Validade</label><input type="text" id="cexp" placeholder="MM/AA" maxlength="5"/></div>
+                        <div class="form-group"><label>CVV</label><input type="text" id="ccvv" placeholder="000" maxlength="4"/></div>
+                    </div>
+                </div>
+
+                <div id="boletoBox" style="display:none;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;margin-bottom:16px">
+                    <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:10px">O boleto sera gerado apos a confirmacao. Prazo de vencimento: 3 dias uteis.</p>
+                    <div style="font-family:monospace;font-size:.8rem;color:var(--text);background:var(--bg-card);padding:12px;border-radius:6px;border:1px solid var(--border)">34191.09082 00000.000009 00000.000500 1 84250000024710</div>
+                    <p style="font-size:.8rem;color:var(--text-muted);margin-top:8px">Boleto sera enviado por e-mail apos a geracao.</p>
+                </div>
+
+                <div class="order-summary" id="orderSummary"></div>
+                <button class="btn-pay" id="payBtn" onclick="processPay()">
+                    <span id="payBtnText">Confirmar Compra</span>
+                    <span id="payBtnLoading" style="display:none"><span class="loading-spinner"></span></span>
+                </button>
+            </div>
+
+            <div class="checkout-step" id="step3">
+                <div class="success-box">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Inscricao Confirmada!</h3>
+                    <p>Seu acesso ao plano <strong id="planConfirm">Completo</strong> foi ativado. Bem-vindo ao FitPro Academy!</p>
+                    <div class="order-id" id="orderId">Compra #FP-00000</div>
+                    <p style="font-size:.85rem">Voce recebera os dados de acesso por e-mail em instantes.</p>
+                    <button class="btn btn-primary" onclick="closeCheckout()" style="margin-top:8px">Voltar ao Site</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <script>
-window.scrollTo(0,0);
-document.getElementById('ham').addEventListener('click',function(){document.getElementById('menu').classList.toggle('open')});
-document.querySelectorAll('.faq__q').forEach(function(q){q.addEventListener('click',function(){this.parentElement.classList.toggle('open')})});
+var planLabel='', planVal=0, planOld=0, selectedMethod='pix';
+function fmt(v){return 'R$ '+v.toFixed(2).replace('.',',')}
+
+function openCheckout(name,price,old){
+    planLabel=name; planVal=price; planOld=old;
+    document.getElementById('planName').textContent=name;
+    document.getElementById('planPrice').textContent=fmt(price);
+    document.getElementById('planOld').textContent=old?'de '+fmt(old):'';
+    document.getElementById('checkoutOverlay').classList.add('open');
+    showStep(1); renderSummary();
+}
+function closeCheckout(){document.getElementById('checkoutOverlay').classList.remove('open')}
+
+function showStep(n){document.querySelectorAll('.checkout-step').forEach(function(s){s.classList.remove('active')});document.getElementById('step'+n).classList.add('active')}
+
+function selectPay(el){
+    document.querySelectorAll('.pay-method').forEach(function(m){m.classList.remove('selected')});
+    el.classList.add('selected');
+    selectedMethod=el.dataset.method;
+    document.getElementById('pixBox').style.display=selectedMethod==='pix'?'block':'none';
+    document.getElementById('cardForm').style.display=selectedMethod==='card'?'block':'none';
+    document.getElementById('boletoBox').style.display=selectedMethod==='boleto'?'block':'none';
+    renderSummary();
+}
+
+function renderSummary(){
+    var sub=planVal, disc=selectedMethod==='pix'?sub*0.1:0, tot=sub-disc;
+    var el=document.getElementById('orderSummary');
+    var html='<h4>Resumo da Compra</h4>';
+    html+='<div class="order-line"><span>Plano '+planLabel+'</span><span>'+fmt(sub)+'</span></div>';
+    if(disc>0) html+='<div class="order-line" style="color:var(--primary)"><span>Desconto PIX (10%)</span><span>-'+fmt(disc)+'</span></div>';
+    html+='<div class="order-line total"><span>Total</span><span>'+fmt(tot)+'</span></div>';
+    el.innerHTML=html;
+}
+
+function processPay(){
+    var btn=document.getElementById('payBtn');
+    var txt=document.getElementById('payBtnText');
+    var ld=document.getElementById('payBtnLoading');
+    btn.disabled=true;txt.style.display='none';ld.style.display='inline-block';
+    setTimeout(function(){
+        btn.disabled=false;txt.style.display='inline';ld.style.display='none';
+        var oid='FP-'+String(Math.floor(10000+Math.random()*90000));
+        document.getElementById('orderId').textContent='Compra #'+oid;
+        document.getElementById('planConfirm').textContent=planLabel;
+        showStep(3);
+    },2000);
+}
+
+document.getElementById('pixCode').onclick=function(){
+    var t=document.getElementById('pixCode').textContent;
+    if(navigator.clipboard)navigator.clipboard.writeText(t);
+    document.getElementById('pixCopy').textContent='Codigo copiado!';
+    setTimeout(function(){document.getElementById('pixCopy').textContent='Clique para copiar'},2000);
+};
+
+document.getElementById('cnumber').oninput=function(){var v=this.value.replace(/\D/g,'').substring(0,16);this.value=v.replace(/(.{4})/g,'$1 ').trim()};
+document.getElementById('cexp').oninput=function(){var v=this.value.replace(/\D/g,'').substring(0,4);if(v.length>=3)v=v.substring(0,2)+'/'+v.substring(2);this.value=v};
+document.getElementById('ccvv').oninput=function(){this.value=this.value.replace(/\D/g,'').substring(0,4)};
+
+// FAQ
+document.querySelectorAll('.faq-item__q').forEach(function(btn){
+    btn.onclick=function(){
+        var item=btn.closest('.faq-item');
+        var wasOpen=item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+        if(!wasOpen) item.classList.add('open');
+    };
+});
 </script>
 </body>
 </html>

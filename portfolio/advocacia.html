@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="robots" content="noindex, nofollow"/>
     <title>Mendes & Souza Advocacia | Demonstrativo</title>
-    <meta name="description" content="Escritório de advocacia - Projeto demonstrativo criado por Lucas Designer Web."/>
+    <meta name="description" content="Escritorio de advocacia - Projeto demonstrativo criado por Lucas Designer Web."/>
     <link rel="icon" type="image/svg+xml" href="../src/images/favicon.svg"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -41,6 +41,7 @@
         }
 
         a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
 
         .banner {
             background: linear-gradient(135deg, #d4a574, #a16207);
@@ -126,7 +127,23 @@
             display: flex;
             align-items: center;
             min-height: 70vh;
+            position: relative;
+            overflow: hidden;
         }
+
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80') center/cover no-repeat;
+        }
+
+        .hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(12,10,9,.92), rgba(12,10,9,.75));
+        }
+
+        .hero .container { position: relative; z-index: 2; }
 
         .hero-content { max-width: 600px; }
 
@@ -169,10 +186,7 @@
             transition: all var(--transition);
         }
 
-        .btn-gold {
-            background: var(--primary);
-            color: #fff;
-        }
+        .btn-gold { background: var(--primary); color: #fff; }
 
         .btn-gold:hover {
             background: var(--primary-hover);
@@ -186,15 +200,10 @@
             border: 1px solid var(--border);
         }
 
-        .btn-ghost:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
+        .btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
 
         /* About */
-        .about {
-            padding: 80px 0;
-        }
+        .about { padding: 80px 0; }
 
         .about-grid {
             display: grid;
@@ -213,10 +222,7 @@
             gap: 24px;
         }
 
-        .about-stat-row {
-            display: flex;
-            gap: 20px;
-        }
+        .about-stat-row { display: flex; gap: 20px; }
 
         .about-stat {
             flex: 1;
@@ -260,14 +266,8 @@
             flex-shrink: 0;
         }
 
-        .timeline-item p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .timeline-item strong {
-            color: var(--text);
-        }
+        .timeline-item p { font-size: 0.9rem; color: var(--text-muted); }
+        .timeline-item strong { color: var(--text); }
 
         .section-tag {
             color: var(--primary);
@@ -326,26 +326,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
             margin-bottom: 16px;
         }
 
-        .area-card h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
+        .area-icon svg { width: 24px; height: 24px; stroke: var(--primary); fill: none; stroke-width: 1.5; }
 
-        .area-card p {
-            color: var(--text-muted);
-            font-size: 0.88rem;
-            line-height: 1.5;
-        }
+        .area-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
+        .area-card p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; }
 
         /* Team */
-        .team {
-            padding: 80px 0;
-        }
+        .team { padding: 80px 0; }
 
         .team-grid {
             display: grid;
@@ -369,26 +359,18 @@
             transform: translateY(-4px);
         }
 
-        .avatar {
-            width: 80px;
-            height: 80px;
+        .team-photo {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            background: var(--primary-light);
-            border: 2px solid var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
             margin: 0 auto 16px;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--primary);
+            border: 3px solid var(--primary);
         }
 
-        .team-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
+        .team-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+        .team-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 4px; }
 
         .team-role {
             color: var(--primary);
@@ -397,16 +379,10 @@
             margin-bottom: 12px;
         }
 
-        .team-card p {
-            color: var(--text-muted);
-            font-size: 0.88rem;
-            line-height: 1.5;
-        }
+        .team-card p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; }
 
         /* FAQ */
-        .faq {
-            padding: 80px 0;
-        }
+        .faq { padding: 80px 0; }
 
         .faq-list {
             max-width: 700px;
@@ -455,11 +431,7 @@
             padding: 0 20px 18px;
         }
 
-        .faq-answer p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
+        .faq-answer p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
 
         /* Contact */
         .contact {
@@ -485,9 +457,7 @@
             transition: all var(--transition);
         }
 
-        .contact-card:hover {
-            border-color: var(--primary);
-        }
+        .contact-card:hover { border-color: var(--primary); }
 
         .contact-icon {
             width: 52px;
@@ -497,26 +467,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
             margin: 0 auto 16px;
         }
 
-        .contact-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
+        .contact-icon svg { width: 24px; height: 24px; stroke: var(--primary); fill: none; stroke-width: 1.5; }
 
-        .contact-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .contact-card a {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
+        .contact-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+        .contact-card p { color: var(--text-muted); font-size: 0.9rem; }
+        .contact-card a { color: var(--primary); font-weight: 600; }
         .contact-card a:hover { text-decoration: underline; }
 
         /* Footer */
@@ -526,11 +484,7 @@
             text-align: center;
         }
 
-        .footer p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
+        .footer p { color: var(--text-muted); font-size: 0.85rem; }
         .footer a { color: var(--primary); }
 
         .footer-links {
@@ -571,25 +525,28 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#areas">Áreas de Atuação</a></li>
+                <li><a href="#areas">Areas de Atuacao</a></li>
                 <li><a href="#equipe">Equipe</a></li>
-                <li><a href="#faq">Dúvidas</a></li>
+                <li><a href="#faq">Duvidas</a></li>
                 <li><a href="#contato" class="nav-cta">Contato</a></li>
             </ul>
         </div>
     </nav>
 
     <section class="hero">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="hero__overlay" aria-hidden="true"></div>
         <div class="container">
             <div class="hero-content">
                 <p class="hero-tag">Mendes & Souza Advocacia</p>
-                <h1>Soluções jurídicas com <span>seriedade</span> e <span>compromisso</span></h1>
-                <p>Há mais de 15 anos atuando com excelência nas áreas Civil, Trabalhista, Empresarial e de Família. Escritório referência em Belo Horizonte.</p>
+                <h1>Solucoes juridicas com <span>seriedade</span> e <span>compromisso</span></h1>
+                <p>Ha mais de 15 anos atuando com excelencia nas areas Civil, Trabalhista, Empresarial e de Familia. Escritorio referencia em Belo Horizonte.</p>
                 <div style="display:flex;gap:12px;flex-wrap:wrap;">
-                    <a href="https://wa.me/5591981504951?text=Olá! Preciso de assistência jurídica." class="btn btn-gold" target="_blank" rel="noopener">
-                        💬 Consulta via WhatsApp
+                    <a href="https://wa.me/5591981504951?text=Olá! Preciso de assistencia juridica." class="btn btn-gold" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Consulta via WhatsApp
                     </a>
-                    <a href="#areas" class="btn btn-ghost">Áreas de Atuação</a>
+                    <a href="#areas" class="btn btn-ghost">Areas de Atuacao</a>
                 </div>
             </div>
         </div>
@@ -599,15 +556,15 @@
         <div class="container">
             <div class="about-grid">
                 <div>
-                    <p class="section-tag">Sobre o Escritório</p>
+                    <p class="section-tag">Sobre o Escritorio</p>
                     <div class="section-title">
-                        <h2>Tradição e inovação no direito</h2>
-                        <p>Fundado em 2008, o Mendes & Souza Advocacia nasceu do compromisso de oferecer assessoria jurídica de alto nível com atendimento personalizado.</p>
+                        <h2>Tradicao e inovacao no direito</h2>
+                        <p>Fundado em 2008, o Mendes & Souza Advocacia nasceu do compromisso de oferecer assessoria juridica de alto nivel com atendimento personalizado.</p>
                     </div>
                     <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.7;margin-bottom:24px;">
-                        Nossa equipe combina experiência consolidada com as melhores práticas do mercado jurídico. Acreditamos que cada cliente merece atenção dedicada e soluções sob medida para sua situação.
+                        Nossa equipe combina experiencia consolidada com as melhores praticas do mercado juridico. Acreditamos que cada cliente merece atencao dedicada e solucoes sob medida para sua situacao.
                     </p>
-                    <a href="https://wa.me/5591981504951?text=Olá! Gostaria de agendar uma consulta jurídica." class="btn btn-gold" target="_blank" rel="noopener">
+                    <a href="https://wa.me/5591981504951?text=Olá! Gostaria de agendar uma consulta juridica." class="btn btn-gold" target="_blank" rel="noopener">
                         Agendar Consulta
                     </a>
                 </div>
@@ -615,7 +572,7 @@
                     <div class="about-stat-row">
                         <div class="about-stat">
                             <div class="number">15+</div>
-                            <div class="label">Anos de Experiência</div>
+                            <div class="label">Anos de Experiencia</div>
                         </div>
                         <div class="about-stat">
                             <div class="number">5.000+</div>
@@ -635,15 +592,15 @@
                     <div class="about-timeline">
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <p><strong>2008</strong> — Fundação do escritório em Belo Horizonte</p>
+                            <p><strong>2008</strong> — Fundacao do escritorio em Belo Horizonte</p>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <p><strong>2014</strong> — Expansão para direito empresarial</p>
+                            <p><strong>2014</strong> — Expansao para direito empresarial</p>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <p><strong>2020</strong> — Certificação ISO e mais de 3.000 casos</p>
+                            <p><strong>2020</strong> — Certificacao ISO e mais de 3.000 casos</p>
                         </div>
                     </div>
                 </div>
@@ -653,31 +610,39 @@
 
     <section class="areas" id="areas">
         <div class="container">
-            <p class="section-tag">Áreas de Atuação</p>
+            <p class="section-tag">Areas de Atuacao</p>
             <div class="section-title">
-                <h2>Especialidades jurídicas</h2>
-                <p>Atuamos em diversas áreas do direito para oferecer o melhor suporte legal.</p>
+                <h2>Especialidades juridicas</h2>
+                <p>Atuamos em diversas areas do direito para oferecer o melhor suporte legal.</p>
             </div>
             <div class="areas-grid">
                 <div class="area-card">
-                    <div class="area-icon">⚖️</div>
+                    <div class="area-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
                     <h3>Direito Civil</h3>
-                    <p>Contratos, indenizações, responsabilidade civil, cobranças e questões patrimoniais. Defendemos seus direitos com rigor técnico.</p>
+                    <p>Contratos, indenizacoes, responsabilidade civil, cobrancas e questoes patrimoniais. Defendemos seus direitos com rigor tecnico.</p>
                 </div>
                 <div class="area-card">
-                    <div class="area-icon">👷</div>
+                    <div class="area-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                    </div>
                     <h3>Direito Trabalhista</h3>
-                    <p>Reclamações trabalhistas, demissão, verbas rescisórias, assédio moral e acordos. Tanto para empregados quanto empregadores.</p>
+                    <p>Reclamacoes trabalhistas, demissao, verbas rescisorias, assedio moral e acordos. Tanto para empregados quanto empregadores.</p>
                 </div>
                 <div class="area-card">
-                    <div class="area-icon">🏢</div>
+                    <div class="area-icon">
+                        <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="2"/><line x1="15" y1="22" x2="15" y2="2"/><line x1="4" y1="12" x2="20" y2="12"/></svg>
+                    </div>
                     <h3>Direito Empresarial</h3>
-                    <p>Constituição de empresas, contratos societários, compliance, fusões e aquisições. Suporte completo para seu negócio.</p>
+                    <p>Constituicao de empresas, contratos societarios, compliance, fusoes e aquisicoes. Suporte completo para seu negocio.</p>
                 </div>
                 <div class="area-card">
-                    <div class="area-icon">👨‍👩‍👧‍👦</div>
-                    <h3>Direito de Família</h3>
-                    <p>Divórcio, pensão alimentícia, guarda de filhos, inventário e planejamento patrimonial familiar. Com empatia e discrição.</p>
+                    <div class="area-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h3>Direito de Familia</h3>
+                    <p>Divorcio, pensao alimenticia, guarda de filhos, inventario e planejamento patrimonial familiar. Com empatia e discriao.</p>
                 </div>
             </div>
         </div>
@@ -688,20 +653,24 @@
             <div class="section-title" style="text-align:center;">
                 <p class="section-tag">Nossa Equipe</p>
                 <h2>Profissionais dedicados</h2>
-                <p>Conheça os advogados que cuidam do seu caso com dedicação e competência.</p>
+                <p>Conheca os advogados que cuidam do seu caso com dedicacao e competencia.</p>
             </div>
             <div class="team-grid">
                 <div class="team-card">
-                    <div class="avatar">RM</div>
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80" alt="Dr. Ricardo Mendes" loading="lazy"/>
+                    </div>
                     <h3>Dr. Ricardo Mendes</h3>
-                    <p class="team-role">Sócio-Fundador — OAB/MG 123.456</p>
-                    <p>Especialista em Direito Civil e Empresarial com mais de 20 anos de experiência. Mestre em Direito pela UFMG.</p>
+                    <p class="team-role">Socio-Fundador — OAB/MG 123.456</p>
+                    <p>Especialista em Direito Civil e Empresarial com mais de 20 anos de experiencia. Mestre em Direito pela UFMG.</p>
                 </div>
                 <div class="team-card">
-                    <div class="avatar">AS</div>
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" alt="Dra. Ana Souza" loading="lazy"/>
+                    </div>
                     <h3>Dra. Ana Souza</h3>
-                    <p class="team-role">Sócia — OAB/MG 234.567</p>
-                    <p>Referência em Direito de Família e Trabalhista. Pós-graduada em Direito Processual pela PUC Minas.</p>
+                    <p class="team-role">Socia — OAB/MG 234.567</p>
+                    <p>Referencia em Direito de Familia e Trabalhista. Pos-graduada em Direito Processual pela PUC Minas.</p>
                 </div>
             </div>
         </div>
@@ -710,44 +679,44 @@
     <section class="faq" id="faq">
         <div class="container">
             <div class="section-title" style="text-align:center;">
-                <p class="section-tag">Dúvidas Frequentes</p>
+                <p class="section-tag">Duvidas Frequentes</p>
                 <h2>Perguntas e Respostas</h2>
             </div>
             <div class="faq-list">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         Como funciona a primeira consulta?
-                        <span class="faq-arrow">▼</span>
+                        <span class="faq-arrow">&#9660;</span>
                     </div>
                     <div class="faq-answer">
-                        <p>A primeira consulta pode ser presencial ou online. Nela, analisamos sua situação e orientamos sobre as melhores alternativas jurídicas. A consulta inicial tem valor acessível.</p>
+                        <p>A primeira consulta pode ser presencial ou online. Nela, analisamos sua situacao e orientamos sobre as melhores alternativas juridicas. A consulta inicial tem valor acessivel.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        Vocês atendem em todo o Brasil?
-                        <span class="faq-arrow">▼</span>
+                        Voces atendem em todo o Brasil?
+                        <span class="faq-arrow">&#9660;</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Nosso escritório é baseado em Belo Horizonte, mas atendemos clientes de todo o Brasil por videoconferência. Para questões que exigem presença física, temos parcerias em outras cidades.</p>
+                        <p>Nosso escritorio e baseado em Belo Horizonte, mas atendemos clientes de todo o Brasil por videoconferencia. Para questoes que exigem presenca fisica, temos parcerias em outras cidades.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        Como são definidos os honorários?
-                        <span class="faq-arrow">▼</span>
+                        Como sao definidos os honorarios?
+                        <span class="faq-arrow">&#9660;</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Os honorários são definidos após a análise do caso na primeira consulta. Trabalhamos com transparência e oferecemos diferentes modalidades: honorários fixos, parcelados ou êxito.</p>
+                        <p>Os honorarios sao definidos apos a analise do caso na primeira consulta. Trabalhamos com transparencia e oferecemos diferentes modalidades: honorarios fixos, parcelados ou exito.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         Posso acompanhar meu caso pelo WhatsApp?
-                        <span class="faq-arrow">▼</span>
+                        <span class="faq-arrow">&#9660;</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Sim! Mantemos nosso clientes informados sobre cada etapa do processo por WhatsApp, email ou telefone, conforme sua preferência.</p>
+                        <p>Sim! Mantemos nosso clientes informados sobre cada etapa do processo por WhatsApp, email ou telefone, conforme sua preferencia.</p>
                     </div>
                 </div>
             </div>
@@ -763,18 +732,24 @@
             </div>
             <div class="contact-grid">
                 <div class="contact-card">
-                    <div class="contact-icon">💬</div>
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    </div>
                     <h3>WhatsApp</h3>
-                    <p><a href="https://wa.me/5591981504951?text=Olá! Preciso de assistência jurídica." target="_blank" rel="noopener">(91) 98150-4951</a></p>
+                    <p><a href="https://wa.me/5591981504951?text=Olá! Preciso de assistencia juridica." target="_blank" rel="noopener">(91) 98150-4951</a></p>
                 </div>
                 <div class="contact-card">
-                    <div class="contact-icon">📧</div>
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
                     <h3>Email</h3>
                     <p><a href="mailto:inteligencia20072000@gmail.com">inteligencia20072000@gmail.com</a></p>
                 </div>
                 <div class="contact-card">
-                    <div class="contact-icon">📍</div>
-                    <h3>Endereço</h3>
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>Endereco</h3>
                     <p>Belo Horizonte, MG — Centro</p>
                 </div>
             </div>

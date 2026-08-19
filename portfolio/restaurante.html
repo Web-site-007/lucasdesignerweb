@@ -24,7 +24,7 @@
             --primary-light: rgba(225, 112, 85, 0.12);
             --primary-lighter: rgba(225, 112, 85, 0.06);
             --border: #2e241f;
-            --accent2: #f0a500;
+            --danger: #ef4444;
             --radius: 12px;
             --radius-sm: 8px;
             --shadow: 0 4px 24px rgba(0,0,0,0.4);
@@ -42,6 +42,7 @@
         }
 
         a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
 
         .banner {
             background: linear-gradient(135deg, #e17055, #d63031);
@@ -56,7 +57,6 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-        /* Header */
         .header {
             background: rgba(26, 18, 16, 0.95);
             backdrop-filter: blur(12px);
@@ -90,8 +90,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
         }
+
+        .brand-icon svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 1.5; }
 
         .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
 
@@ -118,10 +119,7 @@
             transition: all var(--transition);
         }
 
-        .btn-fire {
-            background: var(--primary);
-            color: #fff;
-        }
+        .btn-fire { background: var(--primary); color: #fff; }
 
         .btn-fire:hover {
             background: var(--primary-hover);
@@ -135,10 +133,7 @@
             border: 1px solid var(--border);
         }
 
-        .btn-ghost:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
+        .btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
 
         /* Hero */
         .hero {
@@ -148,61 +143,37 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background: radial-gradient(ellipse at center bottom, rgba(225, 112, 85, 0.1) 0%, transparent 60%);
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-emoji {
-            font-size: 3rem;
-            margin-bottom: 16px;
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80') center/cover no-repeat;
         }
 
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 700;
-            margin-bottom: 12px;
-            line-height: 1.2;
+        .hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26,18,16,.9), rgba(26,18,16,.7));
         }
 
+        .hero .container { position: relative; z-index: 2; }
+
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; margin-bottom: 12px; line-height: 1.2; }
         .hero h1 span { color: var(--primary); }
-
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 550px;
-            margin: 0 auto 32px;
-        }
-
+        .hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 550px; margin: 0 auto 32px; }
         .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
         /* Menu */
-        .menu {
-            padding: 60px 0;
-        }
+        .menu { padding: 60px 0; }
 
-        .section-tag {
-            color: var(--primary);
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
+        .section-tag { color: var(--primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+        .section-title h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 8px; }
+        .section-title p { color: var(--text-muted); font-size: 1rem; margin-bottom: 32px; }
 
-        .section-title h2 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .section-title p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-bottom: 32px;
-        }
-
-        .menu-category {
-            margin-bottom: 40px;
-        }
+        .menu-category { margin-bottom: 40px; }
 
         .category-title {
             font-size: 1.2rem;
@@ -210,14 +181,9 @@
             margin-bottom: 16px;
             padding-bottom: 8px;
             border-bottom: 2px solid var(--border);
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .category-title span {
-            color: var(--primary);
-        }
+        .category-title span { color: var(--primary); }
 
         .menu-grid {
             display: grid;
@@ -231,7 +197,7 @@
             border-radius: var(--radius-sm);
             padding: 20px;
             transition: all var(--transition);
-            cursor: default;
+            position: relative;
         }
 
         .menu-item:hover {
@@ -247,11 +213,7 @@
             margin-bottom: 8px;
         }
 
-        .menu-item h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            flex: 1;
-        }
+        .menu-item h3 { font-size: 0.95rem; font-weight: 600; flex: 1; }
 
         .menu-price {
             color: var(--primary);
@@ -261,11 +223,24 @@
             margin-left: 8px;
         }
 
-        .menu-item p {
-            color: var(--text-muted);
-            font-size: 0.82rem;
-            line-height: 1.4;
+        .menu-item p { color: var(--text-muted); font-size: 0.82rem; line-height: 1.4; margin-bottom: 12px; }
+
+        .menu-add {
+            width: 100%;
+            padding: 8px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background var(--transition);
         }
+
+        .menu-add:hover { background: var(--primary-hover); }
+        .menu-add.added { background: #27ae60; }
 
         /* About */
         .about {
@@ -275,25 +250,10 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
-        }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+        .about-text p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 16px; }
 
-        .about-text p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
         .about-feat {
             display: flex;
@@ -305,19 +265,11 @@
             border-radius: var(--radius-sm);
         }
 
-        .about-feat-icon {
-            font-size: 1.3rem;
-        }
-
-        .about-feat span {
-            font-size: 0.88rem;
-            font-weight: 500;
-        }
+        .about-feat svg { width: 20px; height: 20px; stroke: var(--primary); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+        .about-feat span { font-size: 0.88rem; font-weight: 500; }
 
         /* Hours */
-        .hours {
-            padding: 60px 0;
-        }
+        .hours { padding: 60px 0; }
 
         .hours-box {
             max-width: 600px;
@@ -335,32 +287,21 @@
             text-align: center;
             font-weight: 700;
             font-size: 1.1rem;
-        }
-
-        .hours-body { padding: 0; }
-
-        .hours-row {
             display: flex;
-            justify-content: space-between;
-            padding: 14px 24px;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.9rem;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
+        .hours-header svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 1.5; }
+        .hours-row { display: flex; justify-content: space-between; padding: 14px 24px; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
         .hours-row:last-child { border-bottom: none; }
-
         .hours-day { font-weight: 500; }
-
         .hours-time { color: var(--primary); font-weight: 600; }
-
-        .hours-row:nth-child(even) {
-            background: var(--primary-lighter);
-        }
+        .hours-row:nth-child(even) { background: var(--primary-lighter); }
 
         /* Contact */
-        .contact {
-            padding: 60px 0;
-        }
+        .contact { padding: 60px 0; }
 
         .contact-cta {
             text-align: center;
@@ -372,77 +313,161 @@
             padding: 48px 32px;
         }
 
-        .contact-cta h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .contact-cta p {
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            font-size: 1rem;
-        }
-
-        .contact-methods {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-top: 24px;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .contact-method a {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
+        .contact-cta h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+        .contact-cta p { color: var(--text-muted); margin-bottom: 24px; font-size: 1rem; }
+        .contact-methods { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+        .contact-method { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 0.9rem; }
+        .contact-method svg { width: 18px; height: 18px; stroke: var(--primary); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+        .contact-method a { color: var(--primary); font-weight: 600; }
         .contact-method a:hover { text-decoration: underline; }
 
-        /* Footer */
-        .footer {
-            border-top: 1px solid var(--border);
-            padding: 32px 0;
-            text-align: center;
-        }
-
-        .footer p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
+        .footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+        .footer p { color: var(--text-muted); font-size: 0.85rem; }
         .footer a { color: var(--primary); }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-top: 12px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            transition: color var(--transition);
-        }
-
+        .footer-links { display: flex; justify-content: center; gap: 24px; margin-top: 12px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-muted); font-size: 0.85rem; transition: color var(--transition); }
         .footer-links a:hover { color: var(--primary); }
 
-        /* Responsive */
+        /* CART FLOATING */
+        .cart-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(225,112,85,.4);
+            transition: transform .3s;
+        }
+
+        .cart-float:hover { transform: scale(1.1); }
+        .cart-float svg { width: 26px; height: 26px; stroke: #fff; fill: none; stroke-width: 1.5; }
+
+        .cart-float__count {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--danger);
+            color: #fff;
+            font-size: .7rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-float__total {
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2px 8px;
+            font-size: .7rem;
+            font-weight: 600;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+
+        /* CART SIDEBAR */
+        .cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 10001; opacity: 0; pointer-events: none; transition: opacity .3s; }
+        .cart-overlay.open { opacity: 1; pointer-events: all; }
+        .cart-sidebar { position: fixed; top: 0; right: -420px; width: 400px; max-width: 90vw; height: 100vh; background: var(--bg-card); border-left: 1px solid var(--border); z-index: 10002; transition: right .3s ease; display: flex; flex-direction: column; }
+        .cart-sidebar.open { right: 0; }
+        .cart-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid var(--border); }
+        .cart-header h3 { font-size: 1.2rem; font-weight: 700; }
+        .cart-close { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.5rem; padding: 4px; }
+        .cart-close:hover { color: #fff; }
+        .cart-items { flex: 1; overflow-y: auto; padding: 16px 24px; }
+        .cart-empty { text-align: center; color: var(--text-muted); padding: 40px 0; }
+
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+        }
+
+        .cart-item__info { flex: 1; }
+        .cart-item__name { font-size: .9rem; font-weight: 600; margin-bottom: 2px; }
+        .cart-item__price { font-size: .85rem; color: var(--primary); font-weight: 600; }
+
+        .cart-item__qty { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+        .cart-item__qty button { width: 24px; height: 24px; border-radius: 4px; border: 1px solid var(--border); background: transparent; color: var(--text); cursor: pointer; font-size: .85rem; display: flex; align-items: center; justify-content: center; }
+        .cart-item__qty button:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+        .cart-item__qty span { font-size: .9rem; min-width: 20px; text-align: center; }
+        .cart-item__remove { background: none; border: none; color: var(--danger); cursor: pointer; font-size: .8rem; padding: 4px; }
+        .cart-item__remove:hover { text-decoration: underline; }
+
+        .cart-footer { padding: 20px 24px; border-top: 1px solid var(--border); }
+        .cart-total { display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; }
+        .cart-total span:last-child { color: var(--primary); }
+        .cart-checkout { width: 100%; padding: 14px; background: var(--primary); color: #fff; border: none; border-radius: 8px; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform .2s; }
+        .cart-checkout:hover { transform: translateY(-2px); }
+
+        /* CHECKOUT */
+        .checkout-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 10003; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .3s; }
+        .checkout-overlay.open { opacity: 1; pointer-events: all; }
+        .checkout-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; width: 500px; max-width: 95vw; max-height: 90vh; overflow-y: auto; padding: 32px; }
+        .checkout-modal h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+        .checkout-modal .subtitle { color: var(--text-muted); font-size: .9rem; margin-bottom: 24px; }
+        .checkout-step { display: none; }
+        .checkout-step.active { display: block; }
+        .checkout-back { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: .9rem; display: flex; align-items: center; gap: 4px; margin-bottom: 16px; padding: 0; }
+        .checkout-back:hover { color: #fff; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: .85rem; color: var(--text-muted); margin-bottom: 4px; }
+        .form-group input, .form-group select { width: 100%; padding: 12px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'Space Grotesk', sans-serif; font-size: .95rem; outline: none; }
+        .form-group input:focus { border-color: var(--primary); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+        .pay-methods { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+        .pay-method { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 2px solid var(--border); border-radius: 10px; cursor: pointer; transition: all .2s; }
+        .pay-method:hover { border-color: rgba(225,112,85,.3); }
+        .pay-method.selected { border-color: var(--primary); background: var(--primary-lighter); }
+        .pay-method svg { width: 24px; height: 24px; stroke: var(--primary); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+        .pay-method__info { flex: 1; }
+        .pay-method__name { font-weight: 600; font-size: .95rem; }
+        .pay-method__desc { font-size: .8rem; color: var(--text-muted); }
+        .pay-method .radio { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .pay-method.selected .radio { border-color: var(--primary); }
+        .pay-method.selected .radio::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--primary); }
+
+        .order-summary { background: var(--bg); border-radius: 10px; padding: 16px; margin-bottom: 20px; }
+        .order-summary h4 { font-size: .9rem; font-weight: 600; margin-bottom: 10px; }
+        .order-line { display: flex; justify-content: space-between; font-size: .85rem; color: var(--text-muted); padding: 4px 0; }
+        .order-line.total { border-top: 1px solid var(--border); margin-top: 8px; padding-top: 8px; font-weight: 700; color: var(--text); font-size: 1rem; }
+
+        .btn-pay { width: 100%; padding: 14px; background: var(--primary); color: #fff; border: none; border-radius: 8px; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform .2s; }
+        .btn-pay:hover { transform: translateY(-2px); }
+        .btn-pay:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+        .loading-spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .6s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .success-box { text-align: center; padding: 20px 0; }
+        .success-icon { width: 80px; height: 80px; border-radius: 50%; background: rgba(225,112,85,.12); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+        .success-icon svg { width: 40px; height: 40px; stroke: var(--primary); fill: none; stroke-width: 2; }
+        .success-box h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+        .success-box p { color: var(--text-muted); font-size: .95rem; margin-bottom: 12px; }
+        .success-box .order-id { font-family: monospace; color: var(--primary); font-size: .85rem; background: var(--bg); padding: 8px 16px; border-radius: 6px; display: inline-block; margin-bottom: 20px; }
+
         @media (max-width: 768px) {
             .about-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
             .hero { min-height: 50vh; padding: 48px 0 40px; }
             .about-features { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
@@ -459,17 +484,19 @@
     <header class="header">
         <div class="container">
             <a href="#" class="brand">
-                <div class="brand-icon">🍽️</div>
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                </div>
                 Sabor da Terra
             </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#cardapio">Cardápio</a></li>
+                    <li><a href="#cardapio">Cardapio</a></li>
                     <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#horarios">Horários</a></li>
+                    <li><a href="#horarios">Horarios</a></li>
                     <li><a href="#contato">Contato</a></li>
                     <li>
-                        <a href="https://wa.me/5591981504951?text=Olá! Gostaria de fazer um pedido." class="btn btn-fire" target="_blank" rel="noopener" style="padding:8px 20px;font-size:0.85rem;">
+                        <a href="#cardapio" class="btn btn-fire" style="padding:8px 20px;font-size:0.85rem;">
                             Pedir Agora
                         </a>
                     </li>
@@ -478,126 +505,205 @@
         </div>
     </header>
 
+    <!-- Cart Float -->
+    <div class="cart-float" id="cartFloat" title="Ver carrinho">
+        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-float__count" id="cartCount">0</span>
+        <span class="cart-float__total" id="cartTotalFloat" style="display:none">R$ 0,00</span>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Seu Pedido</h3>
+            <button class="cart-close" id="cartClose">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">Adicione itens do cardapio</div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none">
+            <div class="cart-total"><span>Total</span><span id="cartTotal">R$ 0,00</span></div>
+            <button class="cart-checkout" id="checkoutBtn">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-overlay" id="checkoutOverlay">
+        <div class="checkout-modal">
+            <div class="checkout-step active" id="step1">
+                <button class="checkout-back" id="backToCart">&larr; Voltar ao pedido</button>
+                <h2>Finalizar Pedido</h2>
+                <p class="subtitle">Preencha seus dados para entrega</p>
+                <div class="form-group"><label>Nome completo</label><input type="text" id="fname" placeholder="Seu nome"/></div>
+                <div class="form-group"><label>Telefone</label><input type="tel" id="fphone" placeholder="(00) 00000-0000"/></div>
+                <div class="form-group"><label>Endereco completo</label><input type="text" id="faddr" placeholder="Rua, numero — Bairro"/></div>
+                <div class="form-row">
+                    <div class="form-group"><label>Cidade</label><input type="text" id="fcity" placeholder="Cidade"/></div>
+                    <div class="form-group"><label>CEP</label><input type="text" id="fcep" placeholder="00000-000"/></div>
+                </div>
+                <div class="form-group"><label>Observacoes</label><input type="text" id="fobs" placeholder="Ex: sem cebola, trocar batata..."/></div>
+                <div class="order-summary" id="orderSummary1"></div>
+                <button class="btn-pay" id="toStep2">Continuar para Pagamento</button>
+            </div>
+
+            <div class="checkout-step" id="step2">
+                <button class="checkout-back" id="backToStep1">&larr; Voltar</button>
+                <h2>Forma de Pagamento</h2>
+                <p class="subtitle">Escolha como deseja pagar</p>
+                <div class="pay-methods">
+                    <div class="pay-method selected" data-method="pix">
+                        <div class="radio"></div>
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M7 7l10 10M17 7L7 17" stroke-width="1.5"/></svg>
+                        <div class="pay-method__info"><div class="pay-method__name">PIX</div><div class="pay-method__desc">Aprovacao instantanea — 10% de desconto</div></div>
+                    </div>
+                    <div class="pay-method" data-method="card">
+                        <div class="radio"></div>
+                        <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        <div class="pay-method__info"><div class="pay-method__name">Cartao de Credito</div><div class="pay-method__desc">Visa, Mastercard, Elo — parcelamento em ate 3x</div></div>
+                    </div>
+                    <div class="pay-method" data-method="dinheiro">
+                        <div class="radio"></div>
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                        <div class="pay-method__info"><div class="pay-method__name">Dinheiro</div><div class="pay-method__desc">Pagamento na entrega — tenha o troco pronto</div></div>
+                    </div>
+                </div>
+
+                <div id="pixBox" style="background:var(--primary-lighter);border:1px dashed var(--primary);border-radius:10px;padding:20px;text-align:center;margin-bottom:16px">
+                    <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:12px">Escaneie o QR Code ou copie o codigo PIX</p>
+                    <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;font-family:monospace;font-size:.75rem;color:var(--primary);word-break:break-all;cursor:pointer" id="pixCode">00020126580014br.gov.bcb.pix0136sabor.daterra@email.com52040000530398654050.905802BR5913Sabor da Terra6009SAO PAULO62070503***6304EFGH</div>
+                    <p style="font-size:.8rem;color:var(--primary);font-weight:600;margin-top:8px;cursor:pointer" id="pixCopy">Clique para copiar</p>
+                </div>
+
+                <div id="cardForm" style="display:none">
+                    <div class="form-group"><label>Numero do Cartao</label><input type="text" id="cnumber" placeholder="0000 0000 0000 0000" maxlength="19"/></div>
+                    <div class="form-group"><label>Nome no Cartao</label><input type="text" id="cname" placeholder="Nome impresso"/></div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Validade</label><input type="text" id="cexp" placeholder="MM/AA" maxlength="5"/></div>
+                        <div class="form-group"><label>CVV</label><input type="text" id="ccvv" placeholder="000" maxlength="4"/></div>
+                    </div>
+                </div>
+
+                <div class="order-summary" id="orderSummary2"></div>
+                <button class="btn-pay" id="payBtn">
+                    <span id="payBtnText">Confirmar Pagamento</span>
+                    <span id="payBtnLoading" style="display:none"><span class="loading-spinner"></span></span>
+                </button>
+            </div>
+
+            <div class="checkout-step" id="step3">
+                <div class="success-box">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Pedido Confirmado!</h3>
+                    <p>Seu pedido foi realizado com sucesso. Tempo estimado de entrega: <strong>30 a 45 minutos</strong>.</p>
+                    <div class="order-id" id="orderId">Pedido #ST-00000</div>
+                    <p style="font-size:.85rem">Voce recebera atualizacoes por WhatsApp.</p>
+                    <button class="btn btn-fire" id="closeSuccess" style="margin-top:8px">Voltar ao Cardapio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="hero">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="hero__overlay" aria-hidden="true"></div>
         <div class="container">
-            <div class="hero-emoji">🌿</div>
             <h1>Sabor que <span>aquece</span><br/>a alma</h1>
-            <p>Cozinha brasileira com ingredientes frescos e receitas de família. Feito com carinho, servido com amor.</p>
+            <p>Cozinha brasileira com ingredientes frescos e receitas de familia. Feito com carinho, servido com amor.</p>
             <div class="hero-btns">
-                <a href="https://wa.me/5591981504951?text=Olá! Gostaria de fazer um pedido pelo WhatsApp." class="btn btn-fire" target="_blank" rel="noopener">
-                    🔥 Fazer Pedido
+                <a href="#cardapio" class="btn btn-fire">
+                    <svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+                    Fazer Pedido
                 </a>
-                <a href="#cardapio" class="btn btn-ghost">Ver Cardápio</a>
+                <a href="#cardapio" class="btn btn-ghost">Ver Cardapio</a>
             </div>
         </div>
     </section>
 
     <section class="menu" id="cardapio">
         <div class="container">
-            <p class="section-tag">Nosso Cardápio</p>
+            <p class="section-tag">Nosso Cardapio</p>
             <div class="section-title">
                 <h2>Sabores que encantam</h2>
                 <p>Pratos preparados com ingredientes frescos e receitas tradicionais.</p>
             </div>
 
             <div class="menu-category">
-                <h3 class="category-title"><span>🥗</span> Entradas</h3>
+                <h3 class="category-title"><span>Entradas</span></h3>
                 <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-item-top">
-                            <h3>Bolinho de Bacalhau</h3>
-                            <span class="menu-price">R$22</span>
-                        </div>
+                    <div class="menu-item" data-id="1" data-name="Bolinho de Bacalhau" data-price="22">
+                        <div class="menu-item-top"><h3>Bolinho de Bacalhau</h3><span class="menu-price">R$22</span></div>
                         <p>6 unidades crocantes por fora e macias por dentro, com molho tartaro.</p>
+                        <button class="menu-add">Adicionar ao Pedido</button>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-top">
-                            <h3>Bruschetta Caprese</h3>
-                            <span class="menu-price">R$19</span>
-                        </div>
-                        <p>Pão artesanal com tomate, muçarela de búfala e manjericão fresco.</p>
+                    <div class="menu-item" data-id="2" data-name="Bruschetta Caprese" data-price="19">
+                        <div class="menu-item-top"><h3>Bruschetta Caprese</h3><span class="menu-price">R$19</span></div>
+                        <p>Pao artesanal com tomate, mucarela de bufala e manjericao fresco.</p>
+                        <button class="menu-add">Adicionar ao Pedido</button>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-top">
-                            <h3>Carpaccio de Carne</h3>
-                            <span class="menu-price">R$28</span>
-                        </div>
-                        <p>Fatias finas de filé mignon com rúcula, parmesão e molho especial.</p>
+                    <div class="menu-item" data-id="3" data-name="Carpaccio de Carne" data-price="28">
+                        <div class="menu-item-top"><h3>Carpaccio de Carne</h3><span class="menu-price">R$28</span></div>
+                        <p>Fatias finas de file mignon com rucula, parmesao e molho especial.</p>
+                        <button class="menu-add">Adicionar ao Pedido</button>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-top">
-                            <h3>Ceviche de Peixe</h3>
-                            <span class="menu-price">R$32</span>
-                        </div>
-                        <p>Peixe fresco marinado com limão, cebola roxa e coentro.</p>
+                    <div class="menu-item" data-id="4" data-name="Ceviche de Peixe" data-price="32">
+                        <div class="menu-item-top"><h3>Ceviche de Peixe</h3><span class="menu-price">R$32</span></div>
+                        <p>Peixe fresco marinado com limao, cebola roxa e coentro.</p>
+                        <button class="menu-add">Adicionar ao Pedido</button>
                     </div>
                 </div>
             </div>
 
             <div class="menu-category">
-                <h3 class="category-title"><span>🥩</span> Pratos Principais</h3>
+                <h3 class="category-title"><span>Pratos Principais</span></h3>
                 <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-item-top">
-                            <h3>Picanha na Brasa</h3>
-                            <span class="menu-price">R$68</span>
-                        </div>
+                    <div class="menu-item" data-id="5" data-name="Picanha na Brasa" data-price="68">
+                        <div class="menu-item-top"><h3>Picanha na Brasa</h3><span class="menu-price">R$68</span></div>
                         <p>Picanha grelhada com arroz, farofa, vinagrete e mandioca frita.</p>
+                        <button class="menu-add">Adicionar ao Pedido</button>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-top">
-                            <h3>Moqueca Baiana</h3>
-                            <span class="menu-price">R$58</span>
-                        </div>
-                        <p>Peixe fresco cozido no leite de coco com dendê e pimentão.</p>
+                    <div class="menu-item" data-id="6" data-name="Moqueca Baiana" data-price="58">
+                        <div class="menu-item-top"><h3>Moqueca Baiana</h3><span class="menu-price">R$58</span></div>
+                        <p>Peixe fresco cozido no leite de coco com dende e pimentao.</p>
+                        <button class="menu-add">Adicionar ao Pedido</button>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-top">
-                            <h3>Frango ao Molho Mostarda</h3>
-                            <span class="menu-price">R$48</span>
-                        </div>
-                        <p>Peito de frango grelhado com purê de batata e legumes assados.</p>
+                    <div class="menu-item" data-id="7" data-name="Frango ao Molho Mostarda" data-price="48">
+                        <div class="menu-item-top"><h3>Frango ao Molho Mostarda</h3><span class="menu-price">R$48</span></div>
+                        <p>Peito de frango grelhado com pure de batata e legumes assados.</p>
+                        <button class="menu-add">Adicionar ao Pedido</button>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-top">
-                            <h3>Risoto de Cogumelos</h3>
-                            <span class="menu-price">R$52</span>
-                        </div>
-                        <p>Arroz arbóreo cremoso com mix de cogumelos frescos e parmesão.</p>
+                    <div class="menu-item" data-id="8" data-name="Risoto de Cogumelos" data-price="52">
+                        <div class="menu-item-top"><h3>Risoto de Cogumelos</h3><span class="menu-price">R$52</span></div>
+                        <p>Arroz arvoreo cremoso com mix de cogumelos frescos e parmesao.</p>
+                        <button class="menu-add">Adicionar ao Pedido</button>
                     </div>
                 </div>
             </div>
 
             <div class="menu-category">
-                <h3 class="category-title"><span>🍰</span> Sobremesas</h3>
+                <h3 class="category-title"><span>Sobremesas</span></h3>
                 <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-item-top">
-                            <h3>Pudim de Leite</h3>
-                            <span class="menu-price">R$18</span>
-                        </div>
-                        <p>Receita da vovó, cremoso com calda de caramelo perfeita.</p>
+                    <div class="menu-item" data-id="9" data-name="Pudim de Leite" data-price="18">
+                        <div class="menu-item-top"><h3>Pudim de Leite</h3><span class="menu-price">R$18</span></div>
+                        <p>Receita da vofo, cremoso com calda de caramelo perfeita.</p>
+                        <button class="menu-add">Adicionar ao Pedido</button>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-top">
-                            <h3>Mousse de Maracujá</h3>
-                            <span class="menu-price">R$16</span>
-                        </div>
-                        <p>Leve e refrescante, feito com maracujá fresco.</p>
+                    <div class="menu-item" data-id="10" data-name="Mousse de Maracuja" data-price="16">
+                        <div class="menu-item-top"><h3>Mousse de Maracuja</h3><span class="menu-price">R$16</span></div>
+                        <p>Leve e refrescante, feito com maracuja fresco.</p>
+                        <button class="menu-add">Adicionar ao Pedido</button>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-top">
-                            <h3>Brownie com Sorvete</h3>
-                            <span class="menu-price">R$22</span>
-                        </div>
+                    <div class="menu-item" data-id="11" data-name="Brownie com Sorvete" data-price="22">
+                        <div class="menu-item-top"><h3>Brownie com Sorvete</h3><span class="menu-price">R$22</span></div>
                         <p>Brownie quente de chocolate belga com bola de sorvete de creme.</p>
+                        <button class="menu-add">Adicionar ao Pedido</button>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-top">
-                            <h3>Açaí na Tigela</h3>
-                            <span class="menu-price">R$24</span>
-                        </div>
-                        <p>Açaí batido com banana, granola, mel e frutas frescas.</p>
+                    <div class="menu-item" data-id="12" data-name="Acai na Tigela" data-price="24">
+                        <div class="menu-item-top"><h3>Acai na Tigela</h3><span class="menu-price">R$24</span></div>
+                        <p>Acai batido com banana, granola, mel e frutas frescas.</p>
+                        <button class="menu-add">Adicionar ao Pedido</button>
                     </div>
                 </div>
             </div>
@@ -608,35 +714,19 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-text">
-                    <p class="section-tag">Sobre Nós</p>
+                    <p class="section-tag">Sobre Nos</p>
                     <div class="section-title">
-                        <h2>Uma história de sabor e tradição</h2>
+                        <h2>Uma historia de sabor e tradicao</h2>
                         <p>O Sabor da Terra nasceu do sonho de reunir familiares em torno da mesa, com comida de verdade e aquele gostinho de casa.</p>
                     </div>
-                    <p>
-                        Desde 2015, servimos pratos que respeitam a culinária brasileira com toques modernos. Nosso compromisso é com qualidade, frescor e a experiência de cada cliente.
-                    </p>
-                    <p>
-                        Tudo é preparado na hora, com ingredientes selecionados de produtores locais. Acreditamos que boa comida é uma forma de carinho.
-                    </p>
+                    <p>Desde 2015, servimos pratos que respeitam a culinaria brasileira com toques modernos. Nosso compromisso e com qualidade, frescor e a experiencia de cada cliente.</p>
+                    <p>Tudo e preparado na hora, com ingredientes selecionados de produtores locais. Acreditamos que boa comida e uma forma de carinho.</p>
                 </div>
                 <div class="about-features">
-                    <div class="about-feat">
-                        <span class="about-feat-icon">🌾</span>
-                        <span>Ingredientes Locais</span>
-                    </div>
-                    <div class="about-feat">
-                        <span class="about-feat-icon">👨‍🍳</span>
-                        <span>Preparo Artesanal</span>
-                    </div>
-                    <div class="about-feat">
-                        <span class="about-feat-icon">🛵</span>
-                        <span>Entrega Rápida</span>
-                    </div>
-                    <div class="about-feat">
-                        <span class="about-feat-icon">💚</span>
-                        <span>Opções Veganas</span>
-                    </div>
+                    <div class="about-feat"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Ingredientes Locais</span></div>
+                    <div class="about-feat"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Preparo Artesanal</span></div>
+                    <div class="about-feat"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="23 7 16 12 23 17 23 7"/></svg><span>Entrega Rapida</span></div>
+                    <div class="about-feat"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><span>Opcoes Veganas</span></div>
                 </div>
             </div>
         </div>
@@ -645,40 +735,22 @@
     <section class="hours" id="horarios">
         <div class="container">
             <div class="section-title" style="text-align:center;">
-                <p class="section-tag">Horário de Funcionamento</p>
+                <p class="section-tag">Horario de Funcionamento</p>
                 <h2>Quando estamos abertos</h2>
             </div>
             <div class="hours-box">
-                <div class="hours-header">🕐 Sabor da Terra</div>
+                <div class="hours-header">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Sabor da Terra
+                </div>
                 <div class="hours-body">
-                    <div class="hours-row">
-                        <span class="hours-day">Segunda-feira</span>
-                        <span class="hours-time">11h — 23h</span>
-                    </div>
-                    <div class="hours-row">
-                        <span class="hours-day">Terça-feira</span>
-                        <span class="hours-time">11h — 23h</span>
-                    </div>
-                    <div class="hours-row">
-                        <span class="hours-day">Quarta-feira</span>
-                        <span class="hours-time">11h — 23h</span>
-                    </div>
-                    <div class="hours-row">
-                        <span class="hours-day">Quinta-feira</span>
-                        <span class="hours-time">11h — 23h</span>
-                    </div>
-                    <div class="hours-row">
-                        <span class="hours-day">Sexta-feira</span>
-                        <span class="hours-time">11h — 00h</span>
-                    </div>
-                    <div class="hours-row">
-                        <span class="hours-day">Sábado</span>
-                        <span class="hours-time">11h — 00h</span>
-                    </div>
-                    <div class="hours-row">
-                        <span class="hours-day">Domingo</span>
-                        <span class="hours-time">11h — 22h</span>
-                    </div>
+                    <div class="hours-row"><span class="hours-day">Segunda-feira</span><span class="hours-time">11h — 23h</span></div>
+                    <div class="hours-row"><span class="hours-day">Terca-feira</span><span class="hours-time">11h — 23h</span></div>
+                    <div class="hours-row"><span class="hours-day">Quarta-feira</span><span class="hours-time">11h — 23h</span></div>
+                    <div class="hours-row"><span class="hours-day">Quinta-feira</span><span class="hours-time">11h — 23h</span></div>
+                    <div class="hours-row"><span class="hours-day">Sexta-feira</span><span class="hours-time">11h — 00h</span></div>
+                    <div class="hours-row"><span class="hours-day">Sabado</span><span class="hours-time">11h — 00h</span></div>
+                    <div class="hours-row"><span class="hours-day">Domingo</span><span class="hours-time">11h — 22h</span></div>
                 </div>
             </div>
         </div>
@@ -687,17 +759,16 @@
     <section class="contact" id="contato">
         <div class="container">
             <div class="contact-cta">
-                <h2>Fome de quê? 😋</h2>
-                <p>Faça seu pedido pelo WhatsApp ou entre em contato por email. Entregamos em toda a região!</p>
-                <a href="https://wa.me/5591981504951?text=Olá! Gostaria de fazer um pedido pelo WhatsApp." class="btn btn-fire" target="_blank" rel="noopener">
-                    🔥 Pedir pelo WhatsApp
-                </a>
+                <h2>Faca seu pedido agora</h2>
+                <p>Faca seu pedido pelo WhatsApp ou pelo cardapio acima. Entregamos em toda a regiao!</p>
                 <div class="contact-methods">
                     <span class="contact-method">
-                        📧 <a href="mailto:inteligencia20072000@gmail.com">inteligencia20072000@gmail.com</a>
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:inteligencia20072000@gmail.com">inteligencia20072000@gmail.com</a>
                     </span>
                     <span class="contact-method">
-                        💬 <a href="https://wa.me/5591981504951" target="_blank" rel="noopener">(91) 98150-4951</a>
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <a href="https://wa.me/5591981504951" target="_blank" rel="noopener">(91) 98150-4951</a>
                     </span>
                 </div>
             </div>
@@ -714,5 +785,121 @@
         </div>
     </footer>
 
+<script>
+var cart=[];
+var selectedMethod='pix';
+function fmt(v){return 'R$ '+v.toFixed(2).replace('.',',')}
+function getSubtotal(){return cart.reduce(function(s,i){return s+i.price*i.qty},0)}
+function getDiscount(){return selectedMethod==='pix'?getSubtotal()*0.1:0}
+function getTotal(){return getSubtotal()-getDiscount()}
+
+function renderCart(){
+    var el=document.getElementById('cartItems');
+    var footer=document.getElementById('cartFooter');
+    var count=0;var tot=getTotal();
+    if(cart.length===0){el.innerHTML='<div class="cart-empty">Adicione itens do cardapio</div>';footer.style.display='none';document.getElementById('cartCount').textContent='0';document.getElementById('cartTotalFloat').style.display='none';return}
+    footer.style.display='block';
+    document.getElementById('cartTotalFloat').style.display='block';
+    var html='';
+    cart.forEach(function(item,idx){
+        count+=item.qty;
+        html+='<div class="cart-item"><div class="cart-item__info"><div class="cart-item__name">'+item.name+'</div><div class="cart-item__price">'+fmt(item.price)+'</div><div class="cart-item__qty"><button onclick="changeQty('+idx+',-1)">-</button><span>'+item.qty+'</span><button onclick="changeQty('+idx+',1)">+</button></div></div><button class="cart-item__remove" onclick="removeItem('+idx+')">Remover</button></div>';
+    });
+    el.innerHTML=html;
+    document.getElementById('cartCount').textContent=count;
+    document.getElementById('cartTotal').textContent=fmt(tot);
+    document.getElementById('cartTotalFloat').textContent=fmt(tot);
+}
+
+function changeQty(idx,delta){cart[idx].qty+=delta;if(cart[idx].qty<=0)cart.splice(idx,1);renderCart()}
+function removeItem(idx){cart.splice(idx,1);renderCart()}
+
+function addToCart(id,name,price){
+    var existing=cart.find(function(x){return x.id===id});
+    if(existing){existing.qty++}else{cart.push({id:id,name:name,price:price,qty:1})}
+    renderCart();
+}
+
+function renderOrderSummary(elId){
+    var el=document.getElementById(elId);
+    var sub=getSubtotal();var disc=getDiscount();var tot=getTotal();
+    var html='<h4>Resumo do Pedido</h4>';
+    cart.forEach(function(i){html+='<div class="order-line"><span>'+i.name+' x'+i.qty+'</span><span>'+fmt(i.price*i.qty)+'</span></div>'});
+    html+='<div class="order-line"><span>Subtotal</span><span>'+fmt(sub)+'</span></div>';
+    if(disc>0)html+='<div class="order-line" style="color:var(--primary)"><span>Desconto PIX (10%)</span><span>-'+fmt(disc)+'</span></div>';
+    html+='<div class="order-line"><span>Taxa de Entrega</span><span style="color:var(--primary)">Gratis</span></div>';
+    html+='<div class="order-line total"><span>Total</span><span>'+fmt(tot)+'</span></div>';
+    el.innerHTML=html;
+}
+
+// Cart open/close
+document.getElementById('cartFloat').onclick=function(){document.getElementById('cartOverlay').classList.add('open');document.getElementById('cartSidebar').classList.add('open')};
+document.getElementById('cartClose').onclick=function(){document.getElementById('cartOverlay').classList.remove('open');document.getElementById('cartSidebar').classList.remove('open')};
+document.getElementById('cartOverlay').onclick=function(){document.getElementById('cartClose').click()};
+
+// Checkout
+document.getElementById('checkoutBtn').onclick=function(){
+    document.getElementById('cartOverlay').classList.remove('open');
+    document.getElementById('cartSidebar').classList.remove('open');
+    document.getElementById('checkoutOverlay').classList.add('open');
+    showStep(1);renderOrderSummary('orderSummary1');renderOrderSummary('orderSummary2');
+};
+document.getElementById('backToCart').onclick=function(){document.getElementById('checkoutOverlay').classList.remove('open');document.getElementById('cartOverlay').classList.add('open');document.getElementById('cartSidebar').classList.add('open')};
+document.getElementById('backToStep1').onclick=function(){showStep(1)};
+function showStep(n){document.querySelectorAll('.checkout-step').forEach(function(s){s.classList.remove('active')});document.getElementById('step'+n).classList.add('active')}
+
+// Pay methods
+document.querySelectorAll('.pay-method').forEach(function(m){
+    m.onclick=function(){
+        document.querySelectorAll('.pay-method').forEach(function(x){x.classList.remove('selected')});
+        m.classList.add('selected');
+        selectedMethod=m.dataset.method;
+        document.getElementById('pixBox').style.display=selectedMethod==='pix'?'block':'none';
+        document.getElementById('cardForm').style.display=selectedMethod==='card'?'block':'none';
+        renderOrderSummary('orderSummary2');
+    };
+});
+
+document.getElementById('toStep2').onclick=function(){showStep(2);renderOrderSummary('orderSummary2')};
+
+document.getElementById('payBtn').onclick=function(){
+    var btn=document.getElementById('payBtn');
+    var txt=document.getElementById('payBtnText');
+    var ld=document.getElementById('payBtnLoading');
+    btn.disabled=true;txt.style.display='none';ld.style.display='inline-block';
+    setTimeout(function(){
+        btn.disabled=false;txt.style.display='inline';ld.style.display='none';
+        var oid='ST-'+String(Math.floor(10000+Math.random()*90000));
+        document.getElementById('orderId').textContent='Pedido #'+oid;
+        showStep(3);
+        cart=[];renderCart();
+    },2000);
+};
+
+document.getElementById('closeSuccess').onclick=function(){document.getElementById('checkoutOverlay').classList.remove('open')};
+
+document.getElementById('pixCode').onclick=function(){
+    var t=document.getElementById('pixCode').textContent;
+    if(navigator.clipboard)navigator.clipboard.writeText(t);
+    document.getElementById('pixCopy').textContent='Codigo copiado!';
+    setTimeout(function(){document.getElementById('pixCopy').textContent='Clique para copiar'},2000);
+};
+
+// Format card inputs
+document.getElementById('cnumber').oninput=function(){var v=this.value.replace(/\D/g,'').substring(0,16);this.value=v.replace(/(.{4})/g,'$1 ').trim()};
+document.getElementById('cexp').oninput=function(){var v=this.value.replace(/\D/g,'').substring(0,4);if(v.length>=3)v=v.substring(0,2)+'/'+v.substring(2);this.value=v};
+document.getElementById('ccvv').oninput=function(){this.value=this.value.replace(/\D/g,'').substring(0,4)};
+
+// Add to cart buttons
+document.querySelectorAll('.menu-add').forEach(function(btn){
+    btn.onclick=function(){
+        var card=btn.closest('.menu-item');
+        addToCart(parseInt(card.dataset.id),card.dataset.name,parseFloat(card.dataset.price));
+        btn.textContent='Adicionado!';
+        btn.classList.add('added');
+        setTimeout(function(){btn.textContent='Adicionar ao Pedido';btn.classList.remove('added')},1200);
+    };
+});
+</script>
 </body>
 </html>
