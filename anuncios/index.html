@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Criação de Sites Profissionais — Lucas Designer Web</title>
+  <meta name="description" content="Crio sites modernos, rápidos e profissionais que convertem visitantes em clientes. Orçamento grátis em 24h."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --primary-light: rgba(59,130,246,0.1);
+      --primary-glow: rgba(59,130,246,0.3);
+      --bg: #0a0a0a;
+      --bg-card: #161616;
+      --text: #f5f5f5;
+      --text-secondary: #a0a0a0;
+      --border: rgba(255,255,255,0.08);
+      --success: #22c55e;
+      --font: 'Space Grotesk', sans-serif;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--font); background:var(--bg); color:var(--text); line-height:1.6; }
+
+    .lp-hero {
+      min-height:100vh;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;padding:40px 20px;
+      background:radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.15) 0%, transparent 60%);
+    }
+    .lp-hero__content { max-width:700px; }
+    .lp-badge {
+      display:inline-block;padding:8px 20px;
+      background:var(--primary-light);color:var(--primary);
+      font-size:0.8rem;font-weight:600;border-radius:999px;
+      text-transform:uppercase;letter-spacing:1px;margin-bottom:24px;
+    }
+    .lp-hero h1 {
+      font-size:3rem;font-weight:700;line-height:1.15;margin-bottom:20px;
+    }
+    .lp-hero h1 span {
+      background:linear-gradient(135deg,var(--primary),#8b5cf6);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+    .lp-hero p { font-size:1.1rem;color:var(--text-secondary);margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto; }
+
+    .lp-stats {
+      display:flex;justify-content:center;gap:48px;margin-bottom:40px;
+    }
+    .lp-stat-value { font-size:2rem;font-weight:700; }
+    .lp-stat-label { font-size:0.75rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1px; }
+
+    .lp-ctas { display:flex;gap:16px;justify-content:center;flex-wrap:wrap; }
+    .btn {
+      display:inline-flex;align-items:center;gap:8px;
+      padding:16px 32px;font-size:1rem;font-weight:600;
+      border-radius:12px;transition:all 0.25s ease;text-decoration:none;cursor:pointer;border:none;
+    }
+    .btn--primary { background:var(--primary);color:#fff;box-shadow:0 4px 16px var(--primary-glow); }
+    .btn--primary:hover { background:var(--primary-hover);transform:translateY(-2px);color:#fff; }
+    .btn--whatsapp { background:#25d366;color:#fff; }
+    .btn--whatsapp:hover { background:#1da851;transform:translateY(-2px);color:#fff; }
+    .btn--outline { background:transparent;color:var(--text);border:2px solid var(--border); }
+    .btn--outline:hover { border-color:var(--primary);color:var(--primary); }
+
+    .lp-section { padding:80px 20px; }
+    .lp-section--alt { background:rgba(255,255,255,0.02); }
+    .lp-section h2 { text-align:center;font-size:2rem;font-weight:700;margin-bottom:12px; }
+    .lp-section .subtitle { text-align:center;color:var(--text-secondary);margin-bottom:48px; }
+
+    .lp-services { display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto; }
+    .lp-service {
+      background:var(--bg-card);border:1px solid var(--border);border-radius:12px;
+      padding:28px;text-align:center;transition:all 0.25s ease;
+    }
+    .lp-service:hover { border-color:var(--primary);transform:translateY(-4px); }
+    .lp-service__icon { font-size:2rem;margin-bottom:12px; }
+    .lp-service__title { font-size:1.1rem;font-weight:600;margin-bottom:8px; }
+    .lp-service__desc { font-size:0.85rem;color:var(--text-secondary); }
+    .lp-service__price { margin-top:12px;font-size:0.9rem;color:var(--primary);font-weight:600; }
+
+    .lp-benefits { max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:16px; }
+    .lp-benefit {
+      display:flex;align-items:center;gap:16px;padding:16px;
+      background:var(--bg-card);border:1px solid var(--border);border-radius:12px;
+    }
+    .lp-benefit__icon { width:44px;height:44px;border-radius:8px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem; }
+    .lp-benefit__text strong { display:block;font-size:0.95rem;margin-bottom:2px; }
+    .lp-benefit__text span { font-size:0.85rem;color:var(--text-secondary); }
+
+    .lp-testimonials { display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:800px;margin:0 auto; }
+    .lp-testimonial {
+      background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;
+    }
+    .lp-testimonial__stars { color:#f59e0b;font-size:0.9rem;margin-bottom:8px; }
+    .lp-testimonial__text { font-size:0.9rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;font-style:italic; }
+    .lp-testimonial__name { font-size:0.85rem;font-weight:600; }
+    .lp-testimonial__role { font-size:0.75rem;color:var(--text-secondary); }
+
+    .lp-form-section { max-width:600px;margin:0 auto; }
+    .lp-form {
+      background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;
+    }
+    .form-group { margin-bottom:16px; }
+    .form-group label { display:block;font-size:0.75rem;color:var(--text-secondary);margin-bottom:6px;font-weight:500;text-transform:uppercase;letter-spacing:0.5px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width:100%;padding:12px 16px;border-radius:8px;border:1px solid var(--border);
+      background:#1a1a1a;color:var(--text);font-size:0.9rem;font-family:var(--font);
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color:var(--primary);outline:none; }
+    .form-group textarea { resize:vertical;min-height:100px; }
+    .form-row { display:grid;grid-template-columns:1fr 1fr;gap:12px; }
+    .form-success { display:none;text-align:center;padding:40px; }
+    .form-success.show { display:block; }
+    .form-success__icon { font-size:3rem;margin-bottom:12px; }
+    .form-success__title { font-size:1.2rem;font-weight:700;margin-bottom:8px; }
+    .form-success__desc { font-size:0.9rem;color:var(--text-secondary); }
+
+    .lp-cta-bottom {
+      text-align:center;padding:80px 20px;
+      background:radial-gradient(ellipse at 50% 100%, rgba(59,130,246,0.1) 0%, transparent 60%);
+    }
+    .lp-cta-bottom h2 { font-size:2.2rem;font-weight:700;margin-bottom:12px; }
+    .lp-cta-bottom p { color:var(--text-secondary);margin-bottom:24px; }
+
+    .lp-guarantee {
+      display:flex;align-items:center;justify-content:center;gap:12px;
+      margin-top:20px;font-size:0.85rem;color:var(--text-secondary);
+    }
+
+    .lp-whatsapp-float {
+      position:fixed;bottom:24px;right:24px;width:60px;height:60px;
+      background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      font-size:1.8rem;color:#fff;box-shadow:0 4px 24px rgba(37,211,102,0.4);
+      text-decoration:none;z-index:999;transition:transform 0.25s ease;
+    }
+    .lp-whatsapp-float:hover { transform:scale(1.1); }
+
+    @media(max-width:768px) {
+      .lp-hero h1 { font-size:2rem; }
+      .lp-stats { flex-direction:column;gap:16px; }
+      .lp-services { grid-template-columns:1fr; }
+      .lp-testimonials { grid-template-columns:1fr; }
+      .form-row { grid-template-columns:1fr; }
+      .lp-ctas { flex-direction:column;align-items:center; }
+      .lp-ctas .btn { width:100%;max-width:300px;justify-content:center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="lp-hero">
+    <div class="lp-hero__content">
+      <span class="lp-badge">Criação de Sites Profissionais</span>
+      <h1>Seu negócio merece um site que <span>converte visitantes em clientes</span></h1>
+      <p>Crio sites modernos, rápidos e profissionais para empresas e empreendedores que querem crescer online.</p>
+
+      <div class="lp-stats">
+        <div>
+          <div class="lp-stat-value">+2.500</div>
+          <div class="lp-stat-label">Sites Entregues</div>
+        </div>
+        <div>
+          <div class="lp-stat-value">100%</div>
+          <div class="lp-stat-label">Satisfação</div>
+        </div>
+        <div>
+          <div class="lp-stat-value">+8</div>
+          <div class="lp-stat-label">Anos de Experiência</div>
+        </div>
+      </div>
+
+      <div class="lp-ctas">
+        <a href="#contato" class="btn btn--primary">Solicitar Orçamento Grátis</a>
+        <a href="https://wa.me/5591981504951?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20e%20quero%20um%20or%C3%A7amento%20de%20site" target="_blank" class="btn btn--whatsapp">Falar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="lp-section lp-section--alt">
+    <h2>O que posso fazer por você</h2>
+    <p class="subtitle">Soluções completas para sua presença digital</p>
+    <div class="lp-services">
+      <div class="lp-service">
+        <div class="lp-service__icon">&#128187;</div>
+        <div class="lp-service__title">Sites Profissionais</div>
+        <div class="lp-service__desc">Site institucional moderno, rápido e responsivo. Design único e otimizado para Google.</div>
+        <div class="lp-service__price">A partir de R$497</div>
+      </div>
+      <div class="lp-service">
+        <div class="lp-service__icon">&#128722;</div>
+        <div class="lp-service__title">Lojas Virtuais</div>
+        <div class="lp-service__desc">E-commerce completo com catálogo, carrinho e pagamentos integrados.</div>
+        <div class="lp-service__price">A partir de R$997</div>
+      </div>
+      <div class="lp-service">
+        <div class="lp-service__icon">&#128640;</div>
+        <div class="lp-service__title">Landing Pages</div>
+        <div class="lp-service__desc">Páginas focadas em conversão para seus lançamentos e campanhas de ads.</div>
+        <div class="lp-service__price">A partir de R$297</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="lp-section">
+    <h2>Por que me escolher</h2>
+    <p class="subtitle">Resultados reais que geram crescimento</p>
+    <div class="lp-benefits">
+      <div class="lp-benefit">
+        <div class="lp-benefit__icon">&#9889;</div>
+        <div class="lp-benefit__text">
+          <strong>Entrega em até 15 dias</strong>
+          <span>Seu site pronto rápido, sem enrolação</span>
+        </div>
+      </div>
+      <div class="lp-benefit">
+        <div class="lp-benefit__icon">&#128200;</div>
+        <div class="lp-benefit__text">
+          <strong>Otimizado para Google (SEO)</strong>
+          <span>Seu site aparece nas buscas do Google</span>
+        </div>
+      </div>
+      <div class="lp-benefit">
+        <div class="lp-benefit__icon">&#128241;</div>
+        <div class="lp-benefit__text">
+          <strong>100% Responsivo</strong>
+          <span>Perfeito no celular, tablet e computador</span>
+        </div>
+      </div>
+      <div class="lp-benefit">
+        <div class="lp-benefit__icon">&#128276;</div>
+        <div class="lp-benefit__text">
+          <strong>Suporte pós-lançamento</strong>
+          <span>Alterações e suporte incluídos por 3 meses</span>
+        </div>
+      </div>
+      <div class="lp-benefit">
+        <div class="lp-benefit__icon">&#128737;</div>
+        <div class="lp-benefit__text">
+          <strong>Segurança (HTTPS)</strong>
+          <span>Seu site com certificado SSL e proteção</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="lp-section lp-section--alt">
+    <h2>O que meus clientes dizem</h2>
+    <p class="subtitle">Resultados reais de quem confiou no meu trabalho</p>
+    <div class="lp-testimonials">
+      <div class="lp-testimonial">
+        <div class="lp-testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="lp-testimonial__text">"Meu faturamento triplicou depois que lancei o site novo. Profissional e entregou antes do prazo. Recomendo demais!"</p>
+        <div class="lp-testimonial__name">Marcos Costa</div>
+        <div class="lp-testimonial__role">CEO — Costa Consultoria</div>
+      </div>
+      <div class="lp-testimonial">
+        <div class="lp-testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="lp-testimonial__text">"A loja virtual ficou exatamente como eu imaginava. Meus clientes elogiam a facilidade de compra e as vendas aumentaram 40%."</p>
+        <div class="lp-testimonial__name">Ana Silva</div>
+        <div class="lp-testimonial__role">Owner — Boutique Floral</div>
+      </div>
+      <div class="lp-testimonial">
+        <div class="lp-testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="lp-testimonial__text">"Profissionalismo do início ao fim. O site ficou rápido no celular e no computador. Já indiquei para 3 amigos."</p>
+        <div class="lp-testimonial__name">Ricardo Pereira</div>
+        <div class="lp-testimonial__role">Diretor — RP Engenharia</div>
+      </div>
+      <div class="lp-testimonial">
+        <div class="lp-testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="lp-testimonial__text">"Precisava de um site rápido e bonito pro meu escritório. O Lucas entregou tudo antes do prazo. Estou muito satisfeito!"</p>
+        <div class="lp-testimonial__name">Fernanda Lima</div>
+        <div class="lp-testimonial__role">Advogada — FL Advocacia</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section class="lp-section" id="contato">
+    <div class="lp-form-section">
+      <h2>Solicite seu orçamento grátis</h2>
+      <p class="subtitle">Preencha o formulário e retorno em até 24 horas</p>
+      <div class="lp-form">
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nome *</label>
+              <input type="text" id="name" name="name" placeholder="Seu nome" required/>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone">WhatsApp</label>
+            <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000"/>
+          </div>
+          <div class="form-group">
+            <label for="service">Servico desejado</label>
+            <select id="service" name="service">
+              <option value="">Selecione...</option>
+              <option value="site">Site Institucional</option>
+              <option value="loja">Loja Virtual</option>
+              <option value="landing">Landing Page</option>
+              <option value="sistema">Sistema Web</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem *</label>
+            <textarea id="message" name="message" placeholder="Descreva brevemente seu projeto..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;">Enviar Mensagem</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="form-success__icon">&#10004;</div>
+          <h4 class="form-success__title">Mensagem enviada!</h4>
+          <p class="form-success__desc">Retornaremos em até 24 horas. Enquanto isso, fale direto no WhatsApp!</p>
+          <a href="https://wa.me/5591981504951?text=Ol%C3%A1%2C%20enviei%20um%20formul%C3%A1rio%20e%20quero%20um%20or%C3%A7amento" target="_blank" class="btn btn--whatsapp" style="margin-top:16px;">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="lp-cta-bottom">
+    <h2>Pronto para ter o site que seu negócio merece?</h2>
+    <p>Solicite seu orçamento gratuito agora mesmo.</p>
+    <a href="#contato" class="btn btn--primary">Começar Agora</a>
+    <div class="lp-guarantee">
+      &#128737; Orçamento 100% gratuito sem compromisso
+    </div>
+  </section>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/5591981504951?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20e%20quero%20um%20or%C3%A7amento%20de%20site" target="_blank" class="lp-whatsapp-float" aria-label="Falar no WhatsApp">&#128172;</a>
+
+  <!-- META PIXEL -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'SEU_PIXEL_ID_AQUI');
+    fbq('track', 'PageView');
+    fbq('track', 'Lead');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1"/></noscript>
+
+  <script>
+    var contactForm = document.getElementById('contactForm');
+    var formSuccess = document.getElementById('formSuccess');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = contactForm.querySelector('[name="name"]').value.trim();
+        var email = contactForm.querySelector('[name="email"]').value.trim();
+        var message = contactForm.querySelector('[name="message"]').value.trim();
+        if (!name || !email || !message) {
+          alert('Preencha todos os campos obrigatorios.');
+          return;
+        }
+        var submitBtn = contactForm.querySelector('.btn');
+        submitBtn.textContent = 'Enviando...';
+        submitBtn.disabled = true;
+        if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+        setTimeout(function() {
+          contactForm.style.display = 'none';
+          if (formSuccess) { formSuccess.classList.add('show'); }
+        }, 1200);
+      });
+    }
+  </script>
+</body>
+</html>

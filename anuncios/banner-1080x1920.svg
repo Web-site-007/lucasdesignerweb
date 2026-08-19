@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#111111"/>
+    </linearGradient>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="gradBtn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#25d366"/>
+      <stop offset="100%" style="stop-color:#128c7e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+
+  <!-- Top accent -->
+  <rect x="80" y="200" width="120" height="4" rx="2" fill="url(#grad)"/>
+
+  <!-- Badge -->
+  <rect x="80" y="220" width="280" height="40" rx="20" fill="rgba(59,130,246,0.1)"/>
+  <text x="220" y="246" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="600" fill="#3b82f6" letter-spacing="2">CRIAÇÃO DE SITES</text>
+
+  <!-- Main title -->
+  <text x="80" y="340" font-family="Arial,sans-serif" font-size="64" font-weight="bold" fill="#ffffff">Seu negócio</text>
+  <text x="80" y="420" font-family="Arial,sans-serif" font-size="64" font-weight="bold" fill="#ffffff">merece um site</text>
+  <text x="80" y="500" font-family="Arial,sans-serif" font-size="64" font-weight="bold" fill="#ffffff">que converte em</text>
+  <text x="80" y="580" font-family="Arial,sans-serif" font-size="64" font-weight="bold" fill="url(#grad)">clientes</text>
+
+  <!-- Description -->
+  <text x="80" y="660" font-family="Arial,sans-serif" font-size="22" fill="#a0a0a0">Crio sites modernos, rápidos e profissionais</text>
+  <text x="80" y="700" font-family="Arial,sans-serif" font-size="22" fill="#a0a0a0">para empresas e empreendedores.</text>
+
+  <!-- Divider -->
+  <line x1="80" y1="760" x2="1000" y2="760" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- Stats -->
+  <text x="80" y="840" font-family="Arial,sans-serif" font-size="52" font-weight="bold" fill="#ffffff">+2.500</text>
+  <text x="80" y="875" font-family="Arial,sans-serif" font-size="14" fill="#a0a0a0" letter-spacing="2">SITES ENTREGUES</text>
+
+  <text x="80" y="960" font-family="Arial,sans-serif" font-size="52" font-weight="bold" fill="#ffffff">100%</text>
+  <text x="80" y="995" font-family="Arial,sans-serif" font-size="14" fill="#a0a0a0" letter-spacing="2">CLIENTES SATISFEITOS</text>
+
+  <text x="80" y="1080" font-family="Arial,sans-serif" font-size="52" font-weight="bold" fill="#ffffff">+8</text>
+  <text x="80" y="1115" font-family="Arial,sans-serif" font-size="14" fill="#a0a0a0" letter-spacing="2">ANOS DE EXPERIÊNCIA</text>
+
+  <!-- Divider -->
+  <line x1="80" y1="1160" x2="1000" y2="1160" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- Services list -->
+  <text x="80" y="1230" font-family="Arial,sans-serif" font-size="18" font-weight="600" fill="#ffffff">O que eu faço:</text>
+  <text x="80" y="1280" font-family="Arial,sans-serif" font-size="18" fill="#3b82f6">&#10003;</text>
+  <text x="115" y="1280" font-family="Arial,sans-serif" font-size="18" fill="#a0a0a0">Sites Profissionais — a partir de R$497</text>
+  <text x="80" y="1330" font-family="Arial,sans-serif" font-size="18" fill="#3b82f6">&#10003;</text>
+  <text x="115" y="1330" font-family="Arial,sans-serif" font-size="18" fill="#a0a0a0">Lojas Virtuais — a partir de R$997</text>
+  <text x="80" y="1380" font-family="Arial,sans-serif" font-size="18" fill="#3b82f6">&#10003;</text>
+  <text x="115" y="1380" font-family="Arial,sans-serif" font-size="18" fill="#a0a0a0">Landing Pages — a partir de R$297</text>
+  <text x="80" y="1430" font-family="Arial,sans-serif" font-size="18" fill="#3b82f6">&#10003;</text>
+  <text x="115" y="1430" font-family="Arial,sans-serif" font-size="18" fill="#a0a0a0">Sistemas Web — sob consulta</text>
+
+  <!-- Price highlight -->
+  <rect x="80" y="1500" width="400" height="100" rx="16" fill="rgba(59,130,246,0.1)"/>
+  <text x="100" y="1545" font-family="Arial,sans-serif" font-size="16" fill="#a0a0a0">A partir de</text>
+  <text x="100" y="1585" font-family="Arial,sans-serif" font-size="40" font-weight="bold" fill="url(#grad)">R$297</text>
+
+  <!-- CTA WhatsApp -->
+  <rect x="80" y="1650" width="920" height="70" rx="14" fill="url(#gradBtn)"/>
+  <text x="540" y="1693" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#ffffff">&#128172; FALE COMIGO NO WHATSAPP</text>
+
+  <!-- Bottom CTA -->
+  <rect x="80" y="1740" width="920" height="60" rx="12" fill="url(#grad)"/>
+  <text x="540" y="1777" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#ffffff">SOLICITAR ORÇAMENTO GRÁTIS</text>
+
+  <!-- Guarantee -->
+  <text x="540" y="1860" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="#666666">&#128737; Orçamento 100% gratuito sem compromisso</text>
+</svg>
