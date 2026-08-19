@@ -28,7 +28,7 @@ img{max-width:100%;display:block}
 .ham span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:80px}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:120px}
 .hero__bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&q=80') center/cover no-repeat}
 .hero__overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,15,26,.88),rgba(15,15,26,.6))}
 .hero__content{position:relative;z-index:2;padding:0 6%;max-width:700px}
@@ -343,6 +343,7 @@ section{padding:60px 5%}
 </footer>
 
 <script>
+window.scrollTo(0,0);
 document.getElementById('ham').addEventListener('click',function(){document.getElementById('menu').classList.toggle('open')});
 document.querySelectorAll('.faq__q').forEach(function(q){q.addEventListener('click',function(){this.parentElement.classList.toggle('open')})});
 </script>
