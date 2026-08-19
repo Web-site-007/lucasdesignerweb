@@ -58,7 +58,7 @@
   --transition-slow: 0.4s ease;
   --container: 1200px;
   --container-narrow: 800px;
-  --nav-height: 72px;
+  --nav-height: 120px;
 }
 [data-theme="light"] {
   --bg: #f8f9fa;
@@ -105,14 +105,17 @@ input,textarea,select{font-family:inherit;outline:none}
 /* NAVBAR */
 .navbar{position:fixed;top:0;left:0;right:0;height:var(--nav-height);background:rgba(10,10,10,0.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:1000;transition:background var(--transition-base)}
 [data-theme="light"] .navbar{background:rgba(248,249,250,0.85)}
-.navbar__inner{max-width:var(--container);margin:0 auto;padding:0 var(--space-lg);height:100%;display:flex;align-items:center;justify-content:space-between}
-.navbar__brand{display:flex;align-items:center}
-.navbar__logo{height:50px;width:auto}
+.navbar__inner{margin:0 auto;padding:0 var(--space-lg);height:100%;display:flex;align-items:center;justify-content:space-between;position:relative}
+.navbar__brand{position:absolute;left:50%;transform:translateX(-50%)}
+.navbar__logo{height:110px;width:auto}
 .navbar__brand:hover{opacity:0.8}
-.navbar__menu{display:flex;align-items:center;gap:var(--space-xs)}
+.logo-subtitle{fill:#111111;transition:fill var(--transition-base)}
+[data-theme="dark"] .logo-subtitle{fill:#e0e0e0}
+.navbar__right{display:flex;align-items:center;gap:var(--space-sm)}
+.navbar__menu{display:flex;align-items:center;gap:var(--space-sm)}
 .navbar__link{padding:8px 16px;color:var(--text-secondary);font-size:var(--text-sm);font-weight:var(--weight-medium);border-radius:var(--radius-md);transition:all var(--transition-fast)}
 .navbar__link:hover,.navbar__link.active{color:var(--text);background:var(--primary-light)}
-.navbar__actions{display:flex;align-items:center;gap:var(--space-sm)}
+.navbar__actions--left{display:flex;align-items:center;gap:var(--space-sm)}
 .theme-toggle{width:40px;height:40px;border-radius:50%;background:var(--bg-card);color:var(--text);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all var(--transition-fast)}
 .theme-toggle:hover{background:var(--bg-card-hover);border-color:var(--border-hover);transform:scale(1.05)}
 .hamburger{display:none;width:40px;height:40px;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:transparent;border:none;cursor:pointer}
@@ -230,10 +233,12 @@ input,textarea,select{font-family:inherit;outline:none}
 
 /* FOOTER */
 .footer{border-top:1px solid var(--border);padding:var(--space-2xl) 0 var(--space-lg)}
-.footer__inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-md)}
-.footer__brand{display:flex;align-items:center}
-.footer__logo{height:50px;width:auto}
+.footer__inner{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--space-md);text-align:center}
+.footer__brand{display:flex;align-items:center;justify-content:center}
+.footer__logo{height:70px;width:auto}
 .footer__brand:hover{opacity:0.8}
+.logo-subtitle{fill:#111111;transition:fill var(--transition-base)}
+[data-theme="dark"] .logo-subtitle{fill:#e0e0e0}
 .footer__links{display:flex;gap:var(--space-lg)}
 .footer__link{font-size:var(--text-sm);color:var(--text-muted);transition:color var(--transition-fast)}
 .footer__link:hover{color:var(--primary)}
@@ -264,6 +269,7 @@ input,textarea,select{font-family:inherit;outline:none}
   .navbar__menu.open .navbar__link:hover,.navbar__menu.open .navbar__link.active{background:var(--primary-hover)}
   .navbar__link{width:100%;padding:var(--space-md);font-size:var(--text-lg)}
   .hamburger{display:flex}
+  .navbar__logo{height:60px}
   .hero__title{font-size:var(--text-3xl)}
   .hero__stats{flex-direction:column;gap:var(--space-lg)}
   .services-grid,.portfolio-grid,.testimonials-grid{grid-template-columns:1fr}
@@ -271,9 +277,9 @@ input,textarea,select{font-family:inherit;outline:none}
   .section-header__title{font-size:var(--text-3xl)}
   .form-row{grid-template-columns:1fr}
   .cta__title{font-size:var(--text-3xl)}
-  .footer__inner{flex-direction:column;text-align:center}
 }
 @media(max-width:480px){
+  .navbar__logo{height:48px}
   .hero__title{font-size:var(--text-2xl)}
   .hero__actions{flex-direction:column}
   .hero__actions .btn{width:100%}
