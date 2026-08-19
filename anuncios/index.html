@@ -344,6 +344,15 @@
   <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/5591981504951?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20e%20quero%20um%20or%C3%A7amento%20de%20site" target="_blank" class="lp-whatsapp-float" aria-label="Falar no WhatsApp">&#128172;</a>
 
+  <!-- GOOGLE ANALYTICS -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXNPQDS5EB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YXNPQDS5EB');
+  </script>
+
   <!-- META PIXEL -->
   <script>
     !function(f,b,e,v,n,t,s)
@@ -378,9 +387,8 @@
         submitBtn.disabled = true;
         if (typeof fbq === 'function') { fbq('track', 'Lead'); }
         setTimeout(function() {
-          contactForm.style.display = 'none';
-          if (formSuccess) { formSuccess.classList.add('show'); }
-        }, 1200);
+          window.location.href = 'obrigado.html';
+        }, 800);
       });
     }
   </script>
