@@ -73,9 +73,8 @@ section{padding:100px 6%}
 /* PROJECTS */
 .projects{background:var(--dark)}
 .proj__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto}
-.proj__card{border-radius:8px;overflow:hidden;position:relative;height:300px;cursor:pointer}
-.proj__card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.proj__card:hover img{transform:scale(1.05)}
+.proj__card{border-radius:8px;overflow:hidden;position:relative;height:300px;cursor:pointer;background-size:cover;background-position:center;transition:transform .5s}
+.proj__card:hover{transform:scale(1.02)}
 .proj__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,15,26,.9) 0%,rgba(15,15,26,.1) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;transition:background .3s}
 .proj__card:hover .proj__ov{background:linear-gradient(to top,rgba(15,15,26,.95) 0%,rgba(15,15,26,.4) 60%,rgba(15,15,26,.2) 100%)}
 .proj__tag{font-size:.72rem;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
@@ -227,28 +226,22 @@ section{padding:60px 5%}
 <h2 class="st">Projetos em Destaque</h2>
 <p class="ss">Conheça alguns dos nossos trabalhos mais recentes.</p>
 <div class="proj__grid">
-<div class="proj__card">
-<img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Casa Jardim Europa" loading="lazy"/>
+<div class="proj__card" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80')">
 <div class="proj__ov"><span class="proj__tag">Residencial</span><span class="proj__name">Casa Jardim Europa</span><span class="proj__desc">Projeto residencial de 320m² com áreas integradas e paisagismo</span></div>
 </div>
-<div class="proj__card">
-<img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Escritório Faria Lima" loading="lazy"/>
+<div class="proj__card" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80')">
 <div class="proj__ov"><span class="proj__tag">Comercial</span><span class="proj__name">Escritório Faria Lima</span><span class="proj__desc">Coworking moderno com 450m² e design minimalista</span></div>
 </div>
-<div class="proj__card">
-<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Apartamento Vila Nova" loading="lazy"/>
+<div class="proj__card" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80')">
 <div class="proj__ov"><span class="proj__tag">Interiores</span><span class="proj__name">Apartamento Vila Nova</span><span class="proj__desc">Retrofit completo de apartamento de 180m²</span></div>
 </div>
-<div class="proj__card">
-<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Condomínio Morumbi" loading="lazy"/>
+<div class="proj__card" style="background-image:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80')">
 <div class="proj__ov"><span class="proj__tag">Residencial</span><span class="proj__name">Condomínio Morumbi</span><span class="proj__desc">12 unidades residenciais com lazer completo</span></div>
 </div>
-<div class="proj__card">
-<img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80" alt="Loja Paulista" loading="lazy"/>
+<div class="proj__card" style="background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80')">
 <div class="proj__ov"><span class="proj__tag">Comercial</span><span class="proj__name">Loja Paulista</span><span class="proj__desc">Loja de conceito com 200m² e vitrines interativas</span></div>
 </div>
-<div class="proj__card">
-<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Flat Pinheiros" loading="lazy"/>
+<div class="proj__card" style="background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80')">
 <div class="proj__ov"><span class="proj__tag">Interiores</span><span class="proj__name">Flat Pinheiros</span><span class="proj__desc">Studio de 65m² com mobiliário planejado</span></div>
 </div>
 </div>
