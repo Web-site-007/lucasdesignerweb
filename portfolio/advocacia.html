@@ -521,10 +521,12 @@
             .ham { display: flex; z-index: 1002; }
             .hero { min-height: 50vh; padding: 48px 0 40px; }
         }
-    </style>
+    
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+</style>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Pular para o conteudo principal</a>
+<a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
     <div class="banner">
         Projeto Demonstrativo — Criado por <a href="../index.html">Lucas Designer Web</a>
@@ -543,7 +545,7 @@
                 <li><a href="#faq">Duvidas</a></li>
                 <li><a href="#contato" class="nav-cta">Contato</a></li>
             </ul>
-            <button class="ham" id="ham" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+            <button class="ham" id="ham" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
     </nav>
 

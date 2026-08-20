@@ -150,10 +150,12 @@ section{padding:60px 5%}
 .about__img{height:300px}
 .stats{grid-template-columns:repeat(3,1fr);gap:16px}
 }
+
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 </style>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Pular para o conteudo principal</a>
+<a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 <div class="banner">
     Projeto Demonstrativo &mdash; Criado por <a href="../index.html">Lucas Designer Web</a>
 </div>
@@ -170,7 +172,7 @@ section{padding:60px 5%}
 <li><a href="#faq">FAQ</a></li>
 <li><a href="#contato">Contato</a></li>
 </ul>
-<button class="ham" id="ham" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<button class="ham" id="ham" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <section class="hero" id="main-content">
@@ -353,7 +355,8 @@ section{padding:60px 5%}
 
 <script>
 window.scrollTo(0,0);
-document.getElementById('ham').addEventListener('click',function(){document.getElementById('menu').classList.toggle('open')});
+document.getElementById('ham').addEventListener('click',function(){this.classList.toggle('active');var m=document.getElementById('menu');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))});
+document.querySelectorAll('#menu a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){var h=document.getElementById('ham');var m=document.getElementById('menu');if(m.classList.contains('open')){h.classList.remove('active');m.classList.remove('open');h.setAttribute('aria-expanded','false')}})});
 document.querySelectorAll('.faq__q').forEach(function(q){q.addEventListener('click',function(){this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))});q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();this.click()}})});
 </script>
 </body>
