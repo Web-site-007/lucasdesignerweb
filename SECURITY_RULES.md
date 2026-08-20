@@ -11,10 +11,8 @@ Variáveis sensíveis devem ficar apenas no `.env` (já no `.gitignore`):
 
 ```
 # Exemplo — NUNCA coloque valores reais aqui
-MP_ACCESS_TOKEN=
-MP_PUBLIC_KEY=
-MP_WEBHOOK_SECRET=
-CONTACT_FORM_SECRET=
+GMAIL_USER=
+GMAIL_APP_PASSWORD=
 ```
 
 O arquivo `.env.example` deve conter apenas as chaves sem valores.

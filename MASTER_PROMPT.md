@@ -1,9 +1,9 @@
 # MASTER PROMPT
 
 ## Identidade do Projeto
-- **Nome**: (definir — ex: "DevStudio", "WebAgency", etc.)
+- **Nome**: Lucas Designer Web
 - **Nichro**: Criação de sites e serviços digitais
-- **URL**: (definir após deploy)
+- **URL**: lucasdesignerweb.com.br
 
 ## Instruções para IA
 Ao trabalhar neste repositório, siga estas regras:
@@ -22,7 +22,7 @@ Ao trabalhar neste repositório, siga estas regras:
 - Border radius: consistente (8px para cards, 12px para botões, 16px para seções)
 - Sombras: sutis, apenas para elevação
 - Animações: apenas fade-in e slide-up (IntersectionObserver)
-- Fonte principal: Poppins ou Inter (Google Fonts)
+- Fonte principal: Space Grotesk (Google Fonts)
 
 ### Estrutura de Arquivos
 - `src/css/` — estilos organizados por componente
@@ -45,9 +45,9 @@ Ao trabalhar neste repositório, siga estas regras:
 - Sitemap básico
 
 ### Deploy
-- Plataforma: Vercel
-- Domínio customizado: (definir)
-- Variáveis de ambiente: configurar no painel Vercel
+- Plataforma: GitHub Pages
+- Domínio customizado: lucasdesignerweb.com.br
+- Variáveis de ambiente: configurar no painel Vercel (API)
 - Deploy automático via GitHub (branch main)
 
 ## Tom de Voz do Site
