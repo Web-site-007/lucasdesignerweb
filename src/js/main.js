@@ -170,11 +170,13 @@
 
   faqItems.forEach(function(item) {
     var question = item.querySelector('.faq-item__question');
+    if (!question) return;
     question.addEventListener('click', function() {
       var isActive = item.classList.contains('active');
       faqItems.forEach(function(i) {
         i.classList.remove('active');
-        i.querySelector('.faq-item__question').setAttribute('aria-expanded', 'false');
+        var q = i.querySelector('.faq-item__question');
+        if (q) q.setAttribute('aria-expanded', 'false');
       });
       if (!isActive) {
         item.classList.add('active');
@@ -217,8 +219,10 @@
       }
 
       var submitBtn = contactForm.querySelector('.form-submit');
-      submitBtn.classList.add('is-loading');
-      submitBtn.disabled = true;
+      if (submitBtn) {
+        submitBtn.classList.add('is-loading');
+        submitBtn.disabled = true;
+      }
 
       var formData = new FormData(contactForm);
 
