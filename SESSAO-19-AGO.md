@@ -40,7 +40,7 @@
 - [ ] Usar textos e banners nos anúncios
 
 ## Contato
-- **Email:** inteligencia20072000@gmail.com
+- **Email:** contato.lucasdesignerweb@gmail.com
 - **WhatsApp:** (91) 98150-4951
 - **Domínio:** lucasdesignerweb.com.br
 - **GitHub:** Web-site-007/lucas-dev-agency
