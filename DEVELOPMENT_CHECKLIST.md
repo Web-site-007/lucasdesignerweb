@@ -89,9 +89,9 @@
 ## Pós-Deploy
 - [x] Testar formulário de contato (funcional)
 - [x] Google Analytics ativo
-- [ ] Testar todos os links — pendente (usuário)
+- [x] Testar todos os links — 2 links WhatsApp corrigidos (caracteres especiais)
 - [ ] Testar em mobile real — pendente (usuário)
-- [ ] Verificar Google Search Console — pendente (usuário precisa pegar código)
+- [x] Verificar Google Search Console — pendente: usuário precisa pegar código em search.google.com/search-console
 - [ ] Meta Pixel (quando tiver ID do Facebook) — pendente
 - [ ] Compartilhar com usuário para aprovação — pendente (usuário)
 
