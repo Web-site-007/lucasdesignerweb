@@ -116,7 +116,7 @@ input,textarea,select{font-family:inherit;outline:none}
 [data-theme="light"] .navbar{background:rgba(248,249,250,0.85)}
 .navbar__inner{margin:0 auto;padding:0 var(--space-lg);height:100%;display:flex;align-items:center;justify-content:space-between;position:relative}
 .navbar__brand{position:absolute;left:50%;transform:translateX(-50%)}
-.navbar__logo{height:110px;width:auto}
+.navbar__logo{height:130px;width:auto}
 .navbar__brand:hover{opacity:0.8}
 .logo-subtitle{fill:#111111;transition:fill var(--transition-base)}
 [data-theme="dark"] .logo-subtitle{fill:#e0e0e0}
@@ -249,7 +249,7 @@ input,textarea,select{font-family:inherit;outline:none}
 .footer{border-top:1px solid var(--border);padding:var(--space-2xl) 0 var(--space-lg)}
 .footer__inner{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--space-md);text-align:center}
 .footer__brand{display:flex;align-items:center;justify-content:center}
-.footer__logo{height:70px;width:auto}
+.footer__logo{height:80px;width:auto}
 .footer__brand:hover{opacity:0.8}
 .footer__links{display:flex;gap:var(--space-lg)}
 .footer__link{font-size:var(--text-sm);color:var(--text-muted);transition:color var(--transition-fast)}
@@ -288,7 +288,7 @@ input,textarea,select{font-family:inherit;outline:none}
   .navbar__menu.open .navbar__link:hover,.navbar__menu.open .navbar__link.active{background:var(--primary-hover)}
   .navbar__link{width:100%;padding:var(--space-md);font-size:var(--text-lg)}
   .hamburger{display:flex}
-  .navbar__logo{height:60px}
+  .navbar__logo{height:70px}
   .hero__title{font-size:var(--text-3xl)}
   .services-grid,.portfolio-grid,.testimonials-grid{grid-template-columns:1fr}
   .section{padding:var(--space-3xl) 0}
@@ -297,7 +297,7 @@ input,textarea,select{font-family:inherit;outline:none}
   .cta__title{font-size:var(--text-3xl)}
 }
 @media(max-width:480px){
-  .navbar__logo{height:48px}
+  .navbar__logo{height:56px}
   .hero__title{font-size:var(--text-2xl)}
   .hero__actions{flex-direction:column}
   .hero__actions .btn{width:100%}
