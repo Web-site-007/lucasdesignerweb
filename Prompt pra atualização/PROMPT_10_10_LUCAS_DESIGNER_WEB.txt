@@ -1,0 +1,474 @@
+COMANDO INICIAL OBRIGATÓRIO
+============================
+
+AUDITAR
+
+Ao receber este arquivo, execute imediatamente o comando AUDITAR.
+
+Não faça alterações no projeto durante esta primeira etapa.
+Faça uma varredura completa e profissional de todos os arquivos relevantes
+e do site atual, conforme as instruções abaixo.
+
+Ao terminar a auditoria, entregue o relatório completo solicitado no final
+deste prompt, incluindo notas por categoria, problemas encontrados,
+prioridades e o que precisa ser corrigido para buscar 10/10.
+
+NÃO execute PREPARAR ALTERAÇÕES nem APLICAR ALTERAÇÕES automaticamente.
+Aguarde meu próximo comando depois de apresentar a auditoria.
+
+====================================================
+
+COMANDO INICIAL — AUDITAR
+
+Ao receber este arquivo, execute imediatamente o comando AUDITAR.
+Não faça alterações na produção nesta etapa.
+Faça uma varredura completa do projeto atual, leia os arquivos relevantes,
+identifique problemas e oportunidades de melhoria e produza o relatório
+por prioridade conforme as regras abaixo.
+
+Depois de concluir a auditoria, aguarde um dos comandos:
+PREPARAR ALTERAÇÕES
+APLICAR ALTERAÇÕES
+DESFAZER ÚLTIMA ALTERAÇÃO
+
+============================================================
+PROMPT PRINCIPAL
+============================================================
+
+PROMPT MESTRE — LUCAS DESIGNER WEB
+AUDITORIA + MELHORIA PROFISSIONAL PARA BUSCAR 10/10
+
+Você é meu desenvolvedor web sênior, especialista em HTML5, CSS3, JavaScript, UI/UX, acessibilidade, SEO técnico, performance, segurança de formulários, conversão e arquitetura web.
+
+SITE:
+https://lucasdesignerweb.com.br/
+
+MARCA:
+Lucas Designer Web
+Designer/Desenvolvedor Web
+
+OBJETIVO
+========
+Faça uma auditoria profissional, minuciosa e completa do projeto atual e melhore tudo o que puder para levar o site ao nível de uma vitrine profissional de altíssima qualidade.
+
+Não quero apenas mudanças estéticas. Quero melhorar:
+- confiança;
+- conversão;
+- clareza;
+- experiência do usuário;
+- qualidade visual;
+- portfólio;
+- acessibilidade;
+- SEO;
+- performance;
+- segurança;
+- consistência das informações;
+- qualidade técnica;
+- funcionamento real das funcionalidades.
+
+Não invente clientes, resultados, números, certificações, anos de experiência ou tecnologias.
+
+AUTONOMIA
+=========
+Não fique me perguntando o que fazer. Tome as decisões técnicas necessárias e execute:
+- análise;
+- edição;
+- refatoração;
+- criação de componentes;
+- correção de bugs;
+- melhorias de texto;
+- melhorias de layout;
+- testes;
+- correções.
+
+Só peça informação quando for impossível continuar sem uma senha, token, chave de API ou dado que somente eu possa fornecer. Nunca invente credenciais. Se faltar uma credencial, prepare a integração com variáveis de ambiente e continue o restante.
+
+CONTROLE DE PUBLICAÇÃO
+======================
+NUNCA aplique alterações finais na produção sem meu comando.
+
+AUDITAR
+- Audite tudo.
+- Não altere produção.
+- Entregue relatório por prioridade.
+
+PREPARAR ALTERAÇÕES
+- Implemente as melhorias no ambiente de desenvolvimento/cópia.
+- Teste tudo.
+- Não publique a versão final.
+
+APLICAR ALTERAÇÕES
+- Somente este comando autoriza a aplicação final.
+- Faça backup/snapshot antes, se possível.
+- Valide e teste novamente depois.
+
+DESFAZER ÚLTIMA ALTERAÇÃO
+- Restaure a versão anterior usando o backup/snapshot disponível.
+
+1. AUDITORIA TÉCNICA
+====================
+Leia todos os arquivos relevantes antes de alterar.
+
+Analise HTML, CSS, JavaScript, imagens, fontes, configuração, manifest, robots.txt, sitemap, scripts, endpoints, backend, formulários e integrações.
+
+Procure:
+- bugs;
+- código morto;
+- duplicações;
+- IDs duplicados;
+- listeners duplicados;
+- CSS conflitante;
+- links quebrados;
+- imagens ausentes;
+- problemas de acessibilidade;
+- SEO;
+- performance;
+- segurança;
+- responsividade.
+
+Não faça alterações destrutivas.
+
+2. OFERTA E VERDADE
+===================
+O site oferece:
+- Sites Profissionais;
+- Lojas Virtuais;
+- Landing Pages;
+- Sistemas Web;
+- Apps Mobile;
+- Consultoria Digital.
+
+Preserve esses serviços se realmente fizerem parte da oferta, mas revise cada promessa para que corresponda exatamente ao que consigo entregar.
+
+3. PREÇOS
+========
+Preserve os preços atuais, salvo autorização.
+Deixe claro o que está incluído, o que não está, prazo aproximado, suporte, manutenção e dependências.
+
+4. HERO
+=======
+Mantenha a essência:
+“Seu negócio merece um site que converte visitantes em clientes”
+
+O Hero deve explicar rapidamente:
+- quem é Lucas;
+- o que faz;
+- para quem;
+- benefício;
+- como contratar.
+
+CTA principal:
+“Solicitar Criação do Meu Site”
+
+CTA secundário:
+“Ver Projetos”
+
+5. SERVIÇOS
+===========
+Cada serviço deve ter:
+- título;
+- descrição;
+- benefício;
+- preço ou sob consulta;
+- CTA.
+
+Diferencie claramente site institucional, landing page, loja, sistema, app e consultoria.
+
+6. O QUE ESTÁ INCLUÍDO
+======================
+Crie ou melhore uma seção “O que você recebe”.
+Inclua somente recursos realmente entregues, como responsividade, formulário, WhatsApp, SEO técnico básico, publicação, HTTPS/SSL e suporte, quando forem verdadeiros.
+
+7. COMO FUNCIONA
+================
+Crie uma seção simples:
+01 — Solicitação
+02 — Definição do projeto
+03 — Desenvolvimento
+04 — Revisão
+05 — Publicação e entrega
+
+Adapte à realidade do serviço.
+
+8. PORTFÓLIO
+============
+Preserve a identificação “Projeto Demonstrativo”.
+Nunca apresente demonstrativo como cliente real.
+
+Melhore cada projeto com:
+- categoria;
+- objetivo;
+- recursos demonstrados;
+- tipo de negócio;
+- responsividade;
+- CTA.
+
+Se fizer sentido, crie filtros:
+Todos / Sites / Landing Pages / Lojas / Sistemas / Apps.
+Não crie categorias vazias.
+
+9. CASES
+========
+Transforme os projetos demonstrativos em mini-cases explicando o objetivo e o que demonstram. Isso deve provar competência sem fingir experiência de cliente.
+
+10. DEPOIMENTOS REAIS
+=====================
+Os depoimentos atuais são REAIS.
+NÃO remova nem transforme em fictícios.
+Preserve nomes, cargos, textos e imagens existentes, salvo problema técnico.
+
+Melhore apenas layout, legibilidade, hierarquia, acessibilidade e responsividade.
+
+Não transforme resultados individuais em promessa universal.
+
+11. SOBRE O LUCAS
+=================
+Valorize:
+Lucas — Designer/Desenvolvedor Web.
+Transmita profissionalismo, proximidade, responsabilidade e domínio técnico.
+Não transforme artificialmente o profissional em uma grande agência.
+
+12. PRAZOS
+=========
+Elimine ambiguidades entre “até 15 dias” e os prazos específicos da FAQ.
+Use linguagem coerente com a complexidade do projeto.
+Não prometa um prazo único para todos os projetos.
+
+13. SEO
+=======
+Verifique e implemente:
+- title;
+- meta description;
+- canonical;
+- H1 único;
+- H2/H3;
+- HTML semântico;
+- alt;
+- sitemap.xml;
+- robots.txt;
+- Open Graph;
+- favicon;
+- dados estruturados quando apropriado.
+
+Pode usar Schema.org para Person, ProfessionalService, WebSite, Service e FAQPage somente quando correto e visível.
+
+Não invente avaliações estruturadas.
+Não garanta primeiro lugar no Google.
+Fale em SEO técnico/preparação para indexação.
+
+14. PERFORMANCE
+==============
+Otimize:
+- imagens;
+- formatos modernos;
+- lazy loading;
+- dimensões;
+- fontes;
+- CSS;
+- JavaScript;
+- scripts de terceiros;
+- animações.
+
+Busque excelentes Core Web Vitals.
+Não alegue notas do Lighthouse sem medir.
+
+15. RESPONSIVIDADE
+=================
+Teste 320, 360, 375, 390, 414, 768, 1024, 1280, 1440 e 1920 px.
+Corrija overflow, cortes, menus, cards, imagens e espaçamentos.
+Mobile deve parecer planejado.
+
+16. ACESSIBILIDADE
+=================
+Busque WCAG 2.2 AA quando possível.
+Verifique contraste, foco, teclado, labels, alt, headings, landmarks, ARIA, alvos de toque, mensagens de erro e prefers-reduced-motion.
+
+17. FORMULÁRIO REAL
+==================
+O formulário é REAL e já funciona.
+NÃO substitua por formulário demonstrativo.
+
+DESTINO OFICIAL:
+Inteligencia20072000@gmail.com
+
+Preserve o funcionamento atual.
+Melhore:
+- validação;
+- acessibilidade;
+- spam;
+- prevenção de duplicação;
+- loading;
+- tratamento de erros;
+- segurança.
+
+Fluxo:
+Cliente → formulário → validação → backend → Inteligencia20072000@gmail.com → confirmação.
+
+Nunca coloque senha do Gmail no frontend.
+
+18. WHATSAPP
+===========
+Preserve o WhatsApp existente.
+Os botões devem funcionar em celular e desktop.
+Não invente número.
+Se houver API oficial, nunca exponha token.
+Se não houver integração automática, não quebre o botão atual.
+
+19. SEGURANÇA
+============
+Verifique XSS, injeção, validação server-side, sanitização, secrets, .env, endpoints, CORS quando aplicável, headers, CSP, rate limiting e spam.
+
+Nunca coloque senha, API key, access token ou secret no frontend.
+HTTPS não significa segurança completa.
+Só prometa backup se realmente existir/configurado.
+
+20. PAGAMENTOS E LOJA
+====================
+Diferencie condições comerciais de checkout integrado.
+Não invente integração.
+Na loja, confirme que catálogo, carrinho, pagamento e painel correspondem ao que será realmente entregue.
+
+21. SISTEMAS E APPS
+===================
+Mantenha os serviços, mas deixe claro que são personalizados e têm escopo/orçamento próprios.
+Use demonstrativos quando não houver case real.
+
+22. FAQ
+=======
+Preserve a FAQ atual e melhore respostas sobre prazo, SEO, hospedagem, domínio, suporte, atualização e pagamento.
+Não use respostas absolutas quando houver dependências.
+
+23. CONVERSÃO
+============
+Jornada:
+visita → entende serviço → vê portfólio → confia → entende preço → entende processo → contato.
+
+CTA principal:
+“Solicitar Criação do Meu Site”
+
+CTA secundário:
+“Ver Projetos”
+
+Evite excesso de CTAs.
+
+24. MICROCOPY
+=============
+Melhore botões, placeholders, mensagens de erro/sucesso, menus e textos curtos.
+Evite frases genéricas de IA.
+
+25. RODAPÉ
+=========
+Inclua Lucas Designer Web, navegação, serviços, portfólio, contato, WhatsApp, e-mail e copyright, sem informações falsas.
+
+26. LGPD E PRIVACIDADE
+=====================
+Como o formulário coleta nome, e-mail, WhatsApp e mensagem, avalie política de privacidade, finalidade, armazenamento e consentimento quando aplicável.
+Não invente aconselhamento jurídico.
+Crie uma política informativa adequada e sinalize que revisão jurídica pode ser necessária.
+
+27. ACABAMENTO VISUAL
+====================
+Depois das correções técnicas, refine:
+- tipografia;
+- escala;
+- espaçamento;
+- grid;
+- cards;
+- bordas;
+- sombras;
+- ícones;
+- imagens;
+- botões;
+- hover/focus/active;
+- transições.
+
+Não adicionar efeitos apenas para parecer moderno.
+
+28. TESTES FINAIS
+================
+Teste:
+- páginas;
+- links;
+- botões;
+- menu;
+- formulário;
+- validação;
+- envio;
+- sucesso;
+- erro;
+- WhatsApp;
+- responsividade;
+- teclado;
+- console;
+- imagens;
+- fontes;
+- SEO;
+- sitemap;
+- robots;
+- favicon.
+
+Não diga “testado” sem testar.
+
+29. CHECKLIST 10/10
+===================
+[ ] Design profissional
+[ ] Hero forte
+[ ] Oferta clara
+[ ] Preços claros
+[ ] Serviços coerentes
+[ ] O que está incluso
+[ ] Processo explicado
+[ ] Portfólio organizado
+[ ] Demonstrativos identificados
+[ ] Depoimentos reais preservados
+[ ] Formulário real funcionando
+[ ] E-mail correto
+[ ] WhatsApp funcionando
+[ ] SEO técnico
+[ ] Performance
+[ ] Responsividade
+[ ] Acessibilidade
+[ ] Segurança
+[ ] FAQ coerente
+[ ] LGPD/privacidade considerada
+[ ] Sem promessas falsas
+[ ] Sem informações inventadas
+[ ] Sem links quebrados
+[ ] Sem erros no console
+[ ] Sem código desnecessário
+[ ] Backup antes da aplicação
+[ ] Teste final realizado
+
+RELATÓRIO FINAL
+===============
+Informe:
+1. nota inicial por categoria;
+2. problemas encontrados;
+3. problemas corrigidos;
+4. melhorias implementadas;
+5. arquivos alterados;
+6. funcionalidades testadas;
+7. funcionalidades não testadas;
+8. SEO;
+9. performance;
+10. acessibilidade;
+11. segurança;
+12. conversão;
+13. pendências;
+14. nota final por categoria;
+15. o que ainda impediria 10/10.
+
+Não esconda problemas.
+Se não puder confirmar algo, escreva “Não foi possível confirmar”.
+Não transforme suposição em fato.
+
+REGRA FINAL
+===========
+Você tem autonomia para executar todo o trabalho.
+Não fique perguntando como fazer.
+Analise, implemente, teste e corrija.
+Mas NÃO aplique a versão final até eu enviar:
+
+APLICAR ALTERAÇÕES
+
+FIM DO PROMPT.
