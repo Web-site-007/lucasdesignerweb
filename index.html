@@ -26,10 +26,13 @@
   <link rel="apple-touch-icon" href="src/images/apple-touch-icon.png"/>
   <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
   <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://lucas-devagency-api.vercel.app https://www.google-analytics.com; frame-ancestors 'none';"/>
+  <!-- TODO: Adicionar Meta Pixel quando tiver ID — inserir <script> do Facebook SDK aqui -->
+  <!-- TODO: Adicionar Google Search Console — inserir <meta name="google-site-verification" content="CODIGO_AQUI"/> -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="src/css/style.css"/>
+  <link rel="stylesheet" href="src/css/style.min.css"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXNPQDS5EB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -103,7 +106,10 @@
 
   <main id="main-content">
     <section class="cover" id="inicio" aria-hidden="true">
-      <img src="src/images/capa-do-site.jpg" alt="" class="cover__img" width="1200" height="656" fetchpriority="high"/>
+      <picture>
+        <source srcset="src/images/capa-do-site.webp" type="image/webp"/>
+        <img src="src/images/capa-do-site.jpg" alt="" class="cover__img" width="1200" height="656" fetchpriority="high"/>
+      </picture>
     </section>
 
     <section class="hero">
@@ -133,7 +139,7 @@
         </div>
         <div class="services-grid">
           <article class="service-card service-card--img fade-in">
-            <img src="src/images/service-1.jpg" alt="Sites profissionais - desenvolvimento web" class="service-card__bg" width="600" height="400" loading="lazy"/>
+            <picture><source srcset="src/images/service-1.webp" type="image/webp"/><img src="src/images/service-1.jpg" alt="Sites profissionais - desenvolvimento web" class="service-card__bg" width="600" height="400" loading="lazy"/></picture>
             <div class="service-card__overlay"></div>
             <div class="service-card__content">
               <h3 class="service-card__title">Sites Profissionais</h3>
@@ -143,7 +149,7 @@
             </div>
           </article>
           <article class="service-card service-card--img fade-in">
-            <img src="src/images/service-2.jpg" alt="Lojas virtuais e e-commerce" class="service-card__bg" width="600" height="400" loading="lazy"/>
+            <picture><source srcset="src/images/service-2.webp" type="image/webp"/><img src="src/images/service-2.jpg" alt="Lojas virtuais e e-commerce" class="service-card__bg" width="600" height="400" loading="lazy"/></picture>
             <div class="service-card__overlay"></div>
             <div class="service-card__content">
               <h3 class="service-card__title">Lojas Virtuais</h3>
@@ -153,7 +159,7 @@
             </div>
           </article>
           <article class="service-card service-card--img fade-in">
-            <img src="src/images/service-3.jpg" alt="Landing pages de conversão" class="service-card__bg" width="600" height="400" loading="lazy"/>
+            <picture><source srcset="src/images/service-3.webp" type="image/webp"/><img src="src/images/service-3.jpg" alt="Landing pages de conversão" class="service-card__bg" width="600" height="400" loading="lazy"/></picture>
             <div class="service-card__overlay"></div>
             <div class="service-card__content">
               <h3 class="service-card__title">Landing Pages</h3>
@@ -163,7 +169,7 @@
             </div>
           </article>
           <article class="service-card service-card--img fade-in">
-            <img src="src/images/service-4.jpg" alt="Sistemas web sob demanda" class="service-card__bg" width="600" height="400" loading="lazy"/>
+            <picture><source srcset="src/images/service-4.webp" type="image/webp"/><img src="src/images/service-4.jpg" alt="Sistemas web sob demanda" class="service-card__bg" width="600" height="400" loading="lazy"/></picture>
             <div class="service-card__overlay"></div>
             <div class="service-card__content">
               <h3 class="service-card__title">Sistemas Web</h3>
@@ -173,7 +179,7 @@
             </div>
           </article>
           <article class="service-card service-card--img fade-in">
-            <img src="src/images/service-5.jpg" alt="Apps mobile para iOS e Android" class="service-card__bg" width="600" height="400" loading="lazy"/>
+            <picture><source srcset="src/images/service-5.webp" type="image/webp"/><img src="src/images/service-5.jpg" alt="Apps mobile para iOS e Android" class="service-card__bg" width="600" height="400" loading="lazy"/></picture>
             <div class="service-card__overlay"></div>
             <div class="service-card__content">
               <h3 class="service-card__title">Apps Mobile</h3>
@@ -183,7 +189,7 @@
             </div>
           </article>
           <article class="service-card service-card--img fade-in">
-            <img src="src/images/service-6.jpg" alt="Consultoria digital e marketing" class="service-card__bg" width="600" height="400" loading="lazy"/>
+            <picture><source srcset="src/images/service-6.webp" type="image/webp"/><img src="src/images/service-6.jpg" alt="Consultoria digital e marketing" class="service-card__bg" width="600" height="400" loading="lazy"/></picture>
             <div class="service-card__overlay"></div>
             <div class="service-card__content">
               <h3 class="service-card__title">Consultoria Digital</h3>
@@ -205,7 +211,7 @@
         </div>
         <div class="portfolio-grid">
           <a href="portfolio/institucional.html" target="_blank" class="portfolio-item fade-in" rel="noopener noreferrer">
-            <img src="src/images/portfolio-1.jpg" alt="Site institucional para escritório de arquitetura" class="portfolio-img" width="800" height="500" loading="lazy"/>
+            <picture><source srcset="src/images/portfolio-1.webp" type="image/webp"/><img src="src/images/portfolio-1.jpg" alt="Site institucional para escritório de arquitetura" class="portfolio-img" width="800" height="500" loading="lazy"/></picture>
             <div class="portfolio-item__overlay">
               <span class="portfolio-item__tag">Projeto Demonstrativo</span>
               <h3 class="portfolio-item__title">Arcos Projetos &amp; Design</h3>
@@ -213,7 +219,7 @@
             </div>
           </a>
           <a href="portfolio/landing-page.html" target="_blank" class="portfolio-item fade-in" rel="noopener noreferrer">
-            <img src="src/images/portfolio-3.jpg" alt="Landing page para curso online de fitness" class="portfolio-img" width="800" height="500" loading="lazy"/>
+            <picture><source srcset="src/images/portfolio-3.webp" type="image/webp"/><img src="src/images/portfolio-3.jpg" alt="Landing page para curso online de fitness" class="portfolio-img" width="800" height="500" loading="lazy"/></picture>
             <div class="portfolio-item__overlay">
               <span class="portfolio-item__tag">Projeto Demonstrativo</span>
               <h3 class="portfolio-item__title">FitPro Academy</h3>
@@ -221,7 +227,7 @@
             </div>
           </a>
           <a href="portfolio/ecommerce.html" target="_blank" class="portfolio-item fade-in" rel="noopener noreferrer">
-            <img src="src/images/portfolio-2.jpg" alt="E-commerce de produtos orgânicos" class="portfolio-img" width="800" height="500" loading="lazy"/>
+            <picture><source srcset="src/images/portfolio-2.webp" type="image/webp"/><img src="src/images/portfolio-2.jpg" alt="E-commerce de produtos orgânicos" class="portfolio-img" width="800" height="500" loading="lazy"/></picture>
             <div class="portfolio-item__overlay">
               <span class="portfolio-item__tag">Projeto Demonstrativo</span>
               <h3 class="portfolio-item__title">Natureza Viva</h3>
@@ -229,7 +235,7 @@
             </div>
           </a>
           <a href="portfolio/sistema-web.html" target="_blank" class="portfolio-item fade-in" rel="noopener noreferrer">
-            <img src="src/images/portfolio-4.jpg" alt="Sistema web de agendamento" class="portfolio-img" width="800" height="500" loading="lazy"/>
+            <picture><source srcset="src/images/portfolio-4.webp" type="image/webp"/><img src="src/images/portfolio-4.jpg" alt="Sistema web de agendamento" class="portfolio-img" width="800" height="500" loading="lazy"/></picture>
             <div class="portfolio-item__overlay">
               <span class="portfolio-item__tag">Projeto Demonstrativo</span>
               <h3 class="portfolio-item__title">Sistema AgendaFácil</h3>
@@ -237,7 +243,7 @@
             </div>
           </a>
           <a href="portfolio/advocacia.html" target="_blank" class="portfolio-item fade-in" rel="noopener noreferrer">
-            <img src="src/images/portfolio-5.jpg" alt="Site institucional para escritório de advocacia" class="portfolio-img" width="800" height="500" loading="lazy"/>
+            <picture><source srcset="src/images/portfolio-5.webp" type="image/webp"/><img src="src/images/portfolio-5.jpg" alt="Site institucional para escritório de advocacia" class="portfolio-img" width="800" height="500" loading="lazy"/></picture>
             <div class="portfolio-item__overlay">
               <span class="portfolio-item__tag">Projeto Demonstrativo</span>
               <h3 class="portfolio-item__title">Mendes &amp; Souza Advocacia</h3>
@@ -245,7 +251,7 @@
             </div>
           </a>
           <a href="portfolio/restaurante.html" target="_blank" class="portfolio-item fade-in" rel="noopener noreferrer">
-            <img src="src/images/portfolio-6.jpg" alt="E-commerce de restaurante com pedidos online" class="portfolio-img" width="800" height="500" loading="lazy"/>
+            <picture><source srcset="src/images/portfolio-6.webp" type="image/webp"/><img src="src/images/portfolio-6.jpg" alt="E-commerce de restaurante com pedidos online" class="portfolio-img" width="800" height="500" loading="lazy"/></picture>
             <div class="portfolio-item__overlay">
               <span class="portfolio-item__tag">Projeto Demonstrativo</span>
               <h3 class="portfolio-item__title">Sabor da Terra</h3>
@@ -270,7 +276,7 @@
               "Meu faturamento triplicou depois que lancei o site novo. Profissional e entregou antes do prazo. Recomendo demais!"
             </blockquote>
             <div class="testimonial-card__author">
-              <img src="src/images/depo-1.jpg" alt="Foto de Marcos Costa" class="testimonial-card__avatar" width="44" height="44" loading="lazy"/>
+              <picture><source srcset="src/images/depo-1.webp" type="image/webp"/><img src="src/images/depo-1.jpg" alt="Foto de Marcos Costa" class="testimonial-card__avatar" width="44" height="44" loading="lazy"/></picture>
               <div>
                 <div class="testimonial-card__name">Marcos Costa</div>
                 <div class="testimonial-card__role">CEO — Costa Consultoria</div>
@@ -283,7 +289,7 @@
               "A loja virtual ficou exatamente como eu imaginava. Meus clientes elogiam a facilidade de compra e as vendas aumentaram 40%."
             </blockquote>
             <div class="testimonial-card__author">
-              <img src="src/images/depo-2.jpg" alt="Foto de Ana Silva" class="testimonial-card__avatar" width="44" height="44" loading="lazy"/>
+              <picture><source srcset="src/images/depo-2.webp" type="image/webp"/><img src="src/images/depo-2.jpg" alt="Foto de Ana Silva" class="testimonial-card__avatar" width="44" height="44" loading="lazy"/></picture>
               <div>
                 <div class="testimonial-card__name">Ana Silva</div>
                 <div class="testimonial-card__role">Owner — Boutique Floral</div>
@@ -296,7 +302,7 @@
               "Profissionalismo do início ao fim. O site ficou rápido no celular e no computador. Já indiquei para vários amigos."
             </blockquote>
             <div class="testimonial-card__author">
-              <img src="src/images/depo-3.jpg" alt="Foto de Ricardo Pereira" class="testimonial-card__avatar" width="44" height="44" loading="lazy"/>
+              <picture><source srcset="src/images/depo-3.webp" type="image/webp"/><img src="src/images/depo-3.jpg" alt="Foto de Ricardo Pereira" class="testimonial-card__avatar" width="44" height="44" loading="lazy"/></picture>
               <div>
                 <div class="testimonial-card__name">Ricardo Pereira</div>
                 <div class="testimonial-card__role">Diretor — RP Engenharia</div>
@@ -446,7 +452,6 @@
           </div>
           <div class="contact__form fade-in-right">
             <form id="contactForm" novalidate>
-              <input type="hidden" name="access_key" value="08344ee7-0b46-47e5-a6b8-c234e0e2b886"/>
               <input type="checkbox" name="botcheck" class="honeypot" aria-hidden="true" tabindex="-1" autocomplete="off" style="display:none"/>
               <div class="form-row">
                 <div class="form-group">
@@ -543,6 +548,6 @@
 
   <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo" type="button">&#8593;</button>
 
-  <script src="src/js/main.js"></script>
+  <script src="src/js/main.min.js"></script>
 </body>
 </html>

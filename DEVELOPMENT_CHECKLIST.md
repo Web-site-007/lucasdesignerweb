@@ -12,7 +12,7 @@
 - [x] HTML semântico com headings hierarchy (h1 > h2 > h3)
 - [x] Meta tags (title, description, Open Graph, viewport)
 - [x] Favicon
-- [x] Logo placeholder (usuário troca no final)
+- [x] Logo final (SVG customizado `<LUCAS/>`)
 
 ## Frontend — Seções
 - [x] Navbar responsiva (menu mobile hamburger)
@@ -33,16 +33,16 @@
 - [x] Consistência visual (espacamentos, cores, tipografia)
 
 ## Funcionalidades
-- [x] Formulário de contato funcional (WhatsApp ou webhook)
+- [x] Formulário de contato funcional (Vercel API + nodemailer)
 - [x] Scroll suave entre seções
 - [x] Botão "Voltar ao topo"
-- [ ] Copy dos preços (se aplicável)
 - [x] Lazy load nas imagens
 
 ## Performance
-- [x] Imagens comprimidas (WebP ou JPG otimizado)
-- [ ] CSS minificado
-- [ ] JS minificado
+- [x] Imagens comprimidas (JPG otimizado)
+- [x] Imagens WebP geradas (44 imagens, ~919KB economizados)
+- [x] CSS minificado (style.min.css)
+- [x] JS minificado (main.min.js)
 - [ ] Google Lighthouse score > 90 (Performance)
 - [ ] First Contentful Paint < 1.5s
 - [ ] Largest Contentful Paint < 2.5s
@@ -51,10 +51,12 @@
 - [x] Title tag (50-60 chars)
 - [x] Meta description (150-160 chars)
 - [x] Alt text em todas as imagens
-- [x] Schema.org (LocalBusiness ou ProfessionalService)
+- [x] Schema.org (ProfessionalService)
 - [x] Sitemap.xml
 - [x] Robots.txt
 - [x] Canonical URL
+- [x] Google Analytics (GA4: G-YXNPQDS5EB)
+- [ ] Google Search Console (pendente: usuário precisa pegar código de verificação)
 
 ## Acessibilidade
 - [x] Contraste de cores adequado (WCAG AA)
@@ -62,42 +64,39 @@
 - [x] Labels em todos os campos de formulário
 - [x] Skip navigation link
 - [x] ARIA labels onde necessário
+- [x] Focus trap no menu mobile
+- [x] prefers-reduced-motion
 
 ## Segurança
-- [ ] CORS restrito ao domínio
-- [ ] Validação server-side em formulários
-- [ ] Rate limiting básico
-- [ ] CSP headers
-- [ ] Nenhuma chave exposta no frontend
+- [x] CORS restrito ao domínio (lucasdesignerweb.com.br)
+- [x] Validação server-side robusta (email, tamanho, sanitização)
+- [x] Rate limiting básico (5 req/min por IP)
+- [x] CSP headers (meta tag + vercel.json)
+- [x] X-Content-Type-Options: nosniff
+- [x] X-Frame-Options: DENY
+- [x] Referrer-Policy: strict-origin-when-cross-origin
+- [x] Permissions-Policy (camera, mic, geo desabilitados)
+- [x] Strict-Transport-Security (HSTS)
+- [x] Nenhuma chave exposta no frontend
+- [x] Sanitização de inputs (XSS prevention)
 
 ## Deploy
 - [x] Configurar no GitHub Pages
 - [x] Domínio customizado: lucasdesignerweb.com.br
 - [x] SSL/HTTPS automático (GitHub Pages)
-- [ ] Testar deploy em staging primeiro
+- [x] Vercel API (contato funcional)
 
 ## Pós-Deploy
+- [x] Testar formulário de contato (funcional)
+- [x] Google Analytics ativo
 - [ ] Testar todos os links
-- [ ] Testar formulário de contato
 - [ ] Testar em mobile real
 - [ ] Verificar Google Search Console
-- [ ] Configurar Google Analytics (se aplicável)
+- [ ] Meta Pixel (quando tiver ID)
 - [ ] Compartilhar com usuário para aprovação
 
-## Notas do Usuário
-- Logo será adicionada no final
-- Textos dos serviços serão definidos pelo usuário
-- Fotos do portfólio serão fornecidas pelo usuário
-
-## Concluído
-- [x] Imagem da capa do site (hero background)
-- [x] Imagem para link/compatilhamento (Open Graph)
-- [x] Layout reestruturado: capa no topo, conteúdo abaixo rente
-- [x] Stats atualizados: +2.500 sites, 100% satisfação, +8 anos
-- [x] Menu mobile com fundo azul nas opções
-- [x] Dark/Light mode funcionando
-- [x] Todas as seções implementadas
-- [x] Textos dos serviços atualizados
-- [x] Portfólio com projetos realistas
-- [x] Depoimentos com nomes e empresas reais
-- [x] Contato configurado (WhatsApp + Email)
+## Notas
+- Logo é SVG final (arquivo `logo-placeholder.svg` morto removido)
+- Meta Pixel removido — re-adicionar quando tiver ID do Facebook
+- Portfólios são demonstrativos (noindex, nofollow)
+- CSP: para Meta Pixel, adicionar `https://connect.facebook.net` no script-src

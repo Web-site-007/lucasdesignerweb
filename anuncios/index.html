@@ -6,6 +6,8 @@
   <title>Criação de Sites Profissionais — Lucas Designer Web</title>
   <meta name="description" content="Crio sites modernos, rápidos e profissionais que convertem visitantes em clientes. Orçamento grátis em 24h."/>
   <meta name="robots" content="noindex, nofollow"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://lucas-devagency-api.vercel.app https://www.google-analytics.com; frame-ancestors 'none';"/>
+  <!-- TODO: Meta Pixel — inserir SDK do Facebook aqui quando tiver ID -->
   <link rel="icon" type="image/svg+xml" href="../src/images/favicon.svg"/>
   <link rel="apple-touch-icon" href="../src/images/apple-touch-icon.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -273,7 +275,6 @@
       <p class="subtitle">Preencha o formulário e retorno em até 24 horas</p>
       <div class="lp-form">
         <form id="contactForm" novalidate>
-          <input type="hidden" name="access_key" value="08344ee7-0b46-47e5-a6b8-c234e0e2b886"/>
           <input type="checkbox" name="botcheck" style="display:none" aria-hidden="true" tabindex="-1" autocomplete="off"/>
           <div class="form-row">
             <div class="form-group">
@@ -378,16 +379,22 @@
           submitBtn.classList.add('is-loading');
           submitBtn.disabled = true;
 
-          var formData = new FormData(contactForm);
+          var payload = {
+            name: name,
+            email: email,
+            phone: contactForm.querySelector('[name="phone"]') ? contactForm.querySelector('[name="phone"]').value.trim() : '',
+            service: contactForm.querySelector('[name="service"]') ? contactForm.querySelector('[name="service"]').value : '',
+            message: message
+          };
 
-          fetch('https://api.web3forms.com/submit', {
+          fetch('https://lucas-devagency-api.vercel.app/api/contact', {
             method: 'POST',
-            body: formData
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
           })
           .then(function(response) { return response.json(); })
           .then(function(data) {
             if (data.success) {
-              if (typeof fbq === 'function') { fbq('track', 'Lead'); }
               contactForm.style.display = 'none';
               if (formSuccess) formSuccess.classList.add('show');
             } else {
