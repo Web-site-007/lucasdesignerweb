@@ -1,37 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100">
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#3b82f6"/>
       <stop offset="100%" stop-color="#8b5cf6"/>
     </linearGradient>
-    <linearGradient id="gradV" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="g3v" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#3b82f6"/>
       <stop offset="100%" stop-color="#8b5cf6"/>
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
-
-  <!-- Background -->
-  <rect width="800" height="180" rx="16" fill="#0a0a0a"/>
-
-  <!-- Left bracket < -->
-  <text x="80" y="95" font-family="'Courier New', 'Fira Code', monospace" font-size="72" font-weight="bold" fill="#3b82f6" filter="url(#glow)">&lt;</text>
-
-  <!-- LUCAS -->
-  <text x="145" y="95" font-family="'Arial Black', 'Impact', 'Helvetica Neue', sans-serif" font-size="80" font-weight="900" fill="url(#grad)" letter-spacing="6" filter="url(#glow)">LUCAS</text>
-
-  <!-- Right bracket /> -->
-  <text x="510" y="95" font-family="'Courier New', 'Fira Code', monospace" font-size="72" font-weight="bold" fill="#3b82f6" filter="url(#glow)"/&gt;</text>
-
-  <!-- Accent line -->
-  <rect x="145" y="110" width="370" height="4" fill="url(#gradV)" rx="2"/>
-
+  <!-- Icon: code brackets with L -->
+  <rect x="8" y="18" width="64" height="64" rx="14" fill="none" stroke="url(#g3)" stroke-width="3"/>
+  <text x="40" y="62" font-family="'Arial Black', sans-serif" font-size="38" font-weight="900" fill="url(#g3)" text-anchor="middle">L</text>
+  <!-- Vertical separator -->
+  <rect x="88" y="20" width="2" height="60" fill="url(#g3v)" rx="1"/>
+  <!-- LUCAS text -->
+  <text x="108" y="50" font-family="'Arial Black', 'Impact', sans-serif" font-size="40" font-weight="900" fill="url(#g3)" letter-spacing="2">LUCAS</text>
   <!-- Subtitle -->
-  <text x="330" y="150" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="600" fill="#a0a0a0" text-anchor="middle" letter-spacing="6">DESIGNER / DESENVOLVEDOR WEB</text>
+  <text x="108" y="74" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" fill="#a0a0a0" letter-spacing="1">Designer &amp; Dev Web</text>
 </svg>
