@@ -17,14 +17,11 @@
 ## Landing Page de Conversão
 - **URL:** lucasdesignerweb.com.br/anuncios/
 - **Arquivo:** anuncios/index.html
-- **Recursos:** Formulário, WhatsApp flutuante, Pixel Meta (pendente ID)
+- **Recursos:** Formulário (Vercel API), WhatsApp flutuante
 
-## Banners de Anúncios (SVG)
-- `anuncios/banner-300x250.svg` — Google Ads quadrado
-- `anuncios/banner-728x90.svg` — Google Ads leaderboard
-- `anuncios/banner-1080x1080.svg` — Instagram quadrado
-- `anuncios/banner-1200x628.svg` — Facebook link ad
-- `anuncios/banner-1080x1920.svg` — Instagram Stories/Reels
+## Banners de Anúncios (PNG)
+- `anuncios/banner-300x250.png` — Google Ads quadrado
+- `anuncios/banner-728x90.png` — Google Ads leaderboard
 
 ## Textos para Anúncios
 - **Arquivo:** anuncios/textos-anuncios.md
@@ -36,7 +33,7 @@
 ## Pendências
 - [ ] Criar conta Google Ads (ads.google.com)
 - [ ] Criar conta Meta Ads (business.facebook.com)
-- [ ] Configurar Pixel do Meta (substituir SEU_PIXEL_ID_AQUI no anuncios/index.html)
+- [ ] Configurar Pixel do Meta (quando tiver ID do Facebook)
 - [ ] Usar textos e banners nos anúncios
 
 ## Contato

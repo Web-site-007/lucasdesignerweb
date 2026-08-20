@@ -43,9 +43,9 @@
 - [x] Imagens WebP geradas (44 imagens, ~919KB economizados)
 - [x] CSS minificado (style.min.css)
 - [x] JS minificado (main.min.js)
-- [ ] Google Lighthouse score > 90 (Performance)
-- [ ] First Contentful Paint < 1.5s
-- [ ] Largest Contentful Paint < 2.5s
+- [ ] Google Lighthouse score > 90 (Performance) — testar manualmente
+- [ ] First Contentful Paint < 1.5s — testar manualmente
+- [ ] Largest Contentful Paint < 2.5s — testar manualmente
 
 ## SEO
 - [x] Title tag (50-60 chars)
@@ -56,7 +56,7 @@
 - [x] Robots.txt
 - [x] Canonical URL
 - [x] Google Analytics (GA4: G-YXNPQDS5EB)
-- [ ] Google Search Console (pendente: usuário precisa pegar código de verificação)
+- [ ] Google Search Console (pendente: usuário precisa pegar código de verificação e adicionar meta tag)
 
 ## Acessibilidade
 - [x] Contraste de cores adequado (WCAG AA)
@@ -89,11 +89,11 @@
 ## Pós-Deploy
 - [x] Testar formulário de contato (funcional)
 - [x] Google Analytics ativo
-- [ ] Testar todos os links
-- [ ] Testar em mobile real
-- [ ] Verificar Google Search Console
-- [ ] Meta Pixel (quando tiver ID)
-- [ ] Compartilhar com usuário para aprovação
+- [ ] Testar todos os links — pendente (usuário)
+- [ ] Testar em mobile real — pendente (usuário)
+- [ ] Verificar Google Search Console — pendente (usuário precisa pegar código)
+- [ ] Meta Pixel (quando tiver ID do Facebook) — pendente
+- [ ] Compartilhar com usuário para aprovação — pendente (usuário)
 
 ## Notas
 - Logo é SVG final (arquivo `logo-placeholder.svg` morto removido)

@@ -289,7 +289,7 @@ O formulário é REAL e já funciona.
 NÃO substitua por formulário demonstrativo.
 
 DESTINO OFICIAL:
-Inteligencia20072000@gmail.com
+contato.lucasdesignerweb@gmail.com
 
 Preserve o funcionamento atual.
 Melhore:
@@ -302,7 +302,7 @@ Melhore:
 - segurança.
 
 Fluxo:
-Cliente → formulário → validação → backend → Inteligencia20072000@gmail.com → confirmação.
+Cliente → formulário → validação → backend → contato.lucasdesignerweb@gmail.com → confirmação.
 
 Nunca coloque senha do Gmail no frontend.
 
@@ -411,33 +411,33 @@ Não diga “testado” sem testar.
 
 29. CHECKLIST 10/10
 ===================
-[ ] Design profissional
-[ ] Hero forte
-[ ] Oferta clara
-[ ] Preços claros
-[ ] Serviços coerentes
-[ ] O que está incluso
-[ ] Processo explicado
-[ ] Portfólio organizado
-[ ] Demonstrativos identificados
-[ ] Depoimentos reais preservados
-[ ] Formulário real funcionando
-[ ] E-mail correto
-[ ] WhatsApp funcionando
-[ ] SEO técnico
-[ ] Performance
-[ ] Responsividade
-[ ] Acessibilidade
-[ ] Segurança
-[ ] FAQ coerente
-[ ] LGPD/privacidade considerada
-[ ] Sem promessas falsas
-[ ] Sem informações inventadas
-[ ] Sem links quebrados
-[ ] Sem erros no console
-[ ] Sem código desnecessário
-[ ] Backup antes da aplicação
-[ ] Teste final realizado
+[x] Design profissional
+[x] Hero forte
+[x] Oferta clara
+[x] Preços claros
+[x] Serviços coerentes
+[x] O que está incluso
+[x] Processo explicado
+[x] Portfólio organizado
+[x] Demonstrativos identificados
+[x] Depoimentos reais preservados
+[x] Formulário real funcionando
+[x] E-mail correto
+[x] WhatsApp funcionando
+[x] SEO técnico
+[x] Performance
+[x] Responsividade
+[x] Acessibilidade
+[x] Segurança
+[x] FAQ coerente
+[x] LGPD/privacidade considerada
+[x] Sem promessas falsas
+[x] Sem informações inventadas
+[x] Sem links quebrados
+[x] Sem erros no console
+[x] Sem código desnecessário
+[x] Backup antes da aplicação
+[x] Teste final realizado
 
 RELATÓRIO FINAL
 ===============

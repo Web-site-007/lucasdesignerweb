@@ -51,10 +51,8 @@
 - Escape + focus trap: script compartilhado injetado via Node.js
 
 ## Pendências
-- [ ] Logo final
-- [ ] Meta Pixel (quando tiver ID)
-- [ ] CSS/JS minificados
-- [ ] WebP/AVIF das imagens
+- [ ] Logo final (usuário pode trocar)
+- [ ] Meta Pixel (quando tiver ID do Facebook)
 
 ## Arquivos modificados
 - `index.html` — form display, alt texts, schema telephone, capa JPG

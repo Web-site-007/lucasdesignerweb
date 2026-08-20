@@ -114,6 +114,6 @@ Assim você vê no Google Analytics de onde veio cada visitante.
 - [x] Página de obrigado criada: `https://lucasdesignerweb.com.br/anuncios/obrigado.html`
 - [x] Textos dos anúncios prontos
 - [x] Banners prontos
-- [ ] Criar conta Google Ads
-- [ ] Configurar campanha
-- [ ] Testar formulário e WhatsApp
+- [ ] Criar conta Google Ads — pendente (usuário)
+- [ ] Configurar campanha — pendente (usuário)
+- [ ] Testar formulário e WhatsApp — pendente (usuário)
