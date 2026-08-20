@@ -1,46 +1,46 @@
 # DEVELOPMENT CHECKLIST
 
 ## Setup Inicial
-- [ ] Criar repositório no GitHub (privado)
-- [ ] Configurar `.gitignore` completo
-- [ ] Criar `.env.example` com variáveis listadas
-- [ ] Definir paleta de cores no CSS
-- [ ] Escolher e importar fonte (Google Fonts)
-- [ ] Criar estrutura de pastas
+- [x] Criar repositório no GitHub (privado)
+- [x] Configurar `.gitignore` completo
+- [x] Criar `.env.example` com variáveis listadas
+- [x] Definir paleta de cores no CSS
+- [x] Escolher e importar fonte (Google Fonts)
+- [x] Criar estrutura de pastas
 
 ## Frontend — Estrutura
-- [ ] HTML semântico com headings hierarchy (h1 > h2 > h3)
-- [ ] Meta tags (title, description, Open Graph, viewport)
-- [ ] Favicon
-- [ ] Logo placeholder (usuário troca no final)
+- [x] HTML semântico com headings hierarchy (h1 > h2 > h3)
+- [x] Meta tags (title, description, Open Graph, viewport)
+- [x] Favicon
+- [x] Logo placeholder (usuário troca no final)
 
 ## Frontend — Seções
-- [ ] Navbar responsiva (menu mobile hamburger)
-- [ ] Hero Section com CTA
-- [ ] Serviços (cards com ícones)
-- [ ] Portfólio (galeria com filtros)
-- [ ] Depoimentos (carrossel ou grid)
-- [ ] Sobre / Quem Somos
-- [ ] Contato (formulário + WhatsApp)
-- [ ] FAQ (accordion)
-- [ ] Footer com links e redes sociais
+- [x] Navbar responsiva (menu mobile hamburger)
+- [x] Hero Section com CTA
+- [x] Serviços (cards com ícones)
+- [x] Portfólio (galeria com filtros)
+- [x] Depoimentos (carrossel ou grid)
+- [x] Sobre / Quem Somos
+- [x] Contato (formulário + WhatsApp)
+- [x] FAQ (accordion)
+- [x] Footer com links e redes sociais
 
 ## Frontend — Design
-- [ ] Mobile-first (testar em 320px, 375px, 768px, 1024px, 1440px)
-- [ ] Dark/Light mode (toggle)
-- [ ] Animações de entrada (IntersectionObserver)
-- [ ] Hover states em botões e links
-- [ ] Consistência visual (espacamentos, cores, tipografia)
+- [x] Mobile-first (testar em 320px, 375px, 768px, 1024px, 1440px)
+- [x] Dark/Light mode (toggle)
+- [x] Animações de entrada (IntersectionObserver)
+- [x] Hover states em botões e links
+- [x] Consistência visual (espacamentos, cores, tipografia)
 
 ## Funcionalidades
-- [ ] Formulário de contato funcional (WhatsApp ou webhook)
-- [ ] Scroll suave entre seções
-- [ ] Botão "Voltar ao topo"
+- [x] Formulário de contato funcional (WhatsApp ou webhook)
+- [x] Scroll suave entre seções
+- [x] Botão "Voltar ao topo"
 - [ ] Copy dos preços (se aplicável)
-- [ ] Lazy load nas imagens
+- [x] Lazy load nas imagens
 
 ## Performance
-- [ ] Imagens comprimidas (WebP ou JPG otimizado)
+- [x] Imagens comprimidas (WebP ou JPG otimizado)
 - [ ] CSS minificado
 - [ ] JS minificado
 - [ ] Google Lighthouse score > 90 (Performance)
@@ -48,20 +48,20 @@
 - [ ] Largest Contentful Paint < 2.5s
 
 ## SEO
-- [ ] Title tag (50-60 chars)
-- [ ] Meta description (150-160 chars)
-- [ ] Alt text em todas as imagens
-- [ ] Schema.org (LocalBusiness ou ProfessionalService)
-- [ ] Sitemap.xml
-- [ ] Robots.txt
-- [ ] Canonical URL
+- [x] Title tag (50-60 chars)
+- [x] Meta description (150-160 chars)
+- [x] Alt text em todas as imagens
+- [x] Schema.org (LocalBusiness ou ProfessionalService)
+- [x] Sitemap.xml
+- [x] Robots.txt
+- [x] Canonical URL
 
 ## Acessibilidade
-- [ ] Contraste de cores adequado (WCAG AA)
-- [ ] Navegação por teclado
-- [ ] Labels em todos os campos de formulário
-- [ ] Skip navigation link
-- [ ] ARIA labels onde necessário
+- [x] Contraste de cores adequado (WCAG AA)
+- [x] Navegação por teclado
+- [x] Labels em todos os campos de formulário
+- [x] Skip navigation link
+- [x] ARIA labels onde necessário
 
 ## Segurança
 - [ ] CORS restrito ao domínio
@@ -71,10 +71,9 @@
 - [ ] Nenhuma chave exposta no frontend
 
 ## Deploy
-- [ ] Configurar no Vercel
-- [ ] Variáveis de ambiente no painel Vercel
-- [ ] Domínio customizado (se aplicável)
-- [ ] SSL/HTTPS automático (Vercel)
+- [x] Configurar no GitHub Pages
+- [x] Domínio customizado: lucasdesignerweb.com.br
+- [x] SSL/HTTPS automático (GitHub Pages)
 - [ ] Testar deploy em staging primeiro
 
 ## Pós-Deploy

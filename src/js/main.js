@@ -46,6 +46,14 @@
     });
 
     navMenu.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        hamburger.focus();
+        return;
+      }
       if (e.key !== 'Tab' || !navMenu.classList.contains('open')) return;
       var first = focusableInMenu[0];
       var last = focusableInMenu[focusableInMenu.length - 1];
@@ -74,35 +82,36 @@
   }
 
   // ============================================
-  // NAVBAR SCROLL
+  // NAVBAR SCROLL + ACTIVE LINK (throttled)
   // ============================================
   var navbar = document.querySelector('.navbar');
-
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 100) {
-      navbar.style.boxShadow = 'var(--shadow-md)';
-    } else {
-      navbar.style.boxShadow = 'none';
-    }
-  });
-
-  // Active nav link on scroll
   var sections = document.querySelectorAll('section[id]');
+  var scrollTicking = false;
+
   window.addEventListener('scroll', function() {
-    var scrollY = window.scrollY + 100;
-    sections.forEach(function(section) {
-      var top = section.offsetTop;
-      var height = section.offsetHeight;
-      var id = section.getAttribute('id');
-      var link = document.querySelector('.navbar__link[href="#' + id + '"]');
-      if (link) {
-        if (scrollY >= top && scrollY < top + height) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
+    if (!scrollTicking) {
+      window.requestAnimationFrame(function() {
+        if (navbar) {
+          navbar.style.boxShadow = window.scrollY > 100 ? 'var(--shadow-md)' : 'none';
         }
-      }
-    });
+        var scrollY = window.scrollY + 100;
+        sections.forEach(function(section) {
+          var top = section.offsetTop;
+          var height = section.offsetHeight;
+          var id = section.getAttribute('id');
+          var link = document.querySelector('.navbar__link[href="#' + id + '"]');
+          if (link) {
+            if (scrollY >= top && scrollY < top + height) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          }
+        });
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
   });
 
   // ============================================
@@ -111,6 +120,7 @@
   var scrollTopBtn = document.getElementById('scrollTop');
 
   window.addEventListener('scroll', function() {
+    if (!scrollTopBtn) return;
     if (window.scrollY > 500) {
       scrollTopBtn.classList.add('visible');
     } else {

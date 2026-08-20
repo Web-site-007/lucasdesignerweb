@@ -93,7 +93,6 @@ input,textarea,select{font-family:inherit;outline:none}
 
 /* FOCUS VISIBLE */
 :focus-visible{outline:2px solid var(--primary);outline-offset:2px}
-button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 
 /* UTILS */
 .container{max-width:var(--container);margin:0 auto;padding:0 var(--space-lg)}
@@ -157,7 +156,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg)}
 .service-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-xl);transition:all var(--transition-base);position:relative;overflow:hidden;display:flex;flex-direction:column}
 .service-card:hover{border-color:var(--primary);transform:translateY(-4px);box-shadow:var(--shadow-glow)}
-.service-card__icon{width:56px;height:56px;border-radius:var(--radius-lg);background:var(--primary-light);display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:var(--space-lg)}
 .service-card__title{font-size:var(--text-2xl);font-weight:var(--weight-bold);margin-bottom:var(--space-sm)}
 .service-card__desc{font-size:var(--text-base);color:var(--text);line-height:var(--leading-relaxed);flex:1}
 .service-card__price{margin-top:var(--space-lg);font-size:var(--text-base);color:var(--primary);font-weight:var(--weight-semibold);margin-bottom:var(--space-md)}
@@ -176,7 +174,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .portfolio-item__tag{font-size:var(--text-sm);color:var(--primary);font-weight:var(--weight-bold);margin-bottom:var(--space-xs)}
 .portfolio-item__title{font-size:var(--text-xl);font-weight:var(--weight-bold);color:#fff}
 .portfolio-item__cta{display:inline-block;margin-top:var(--space-sm);font-size:var(--text-base);color:var(--primary);font-weight:var(--weight-semibold)}
-.portfolio-item a.portfolio-item{text-decoration:none;color:inherit}
 .portfolio-item img.portfolio-img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 
 /* TESTIMONIALS */
@@ -280,7 +277,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
 /* RESPONSIVE */
 @media(max-width:1024px){
-  .services-grid,.testimonials-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid,.portfolio-grid,.testimonials-grid{grid-template-columns:repeat(2,1fr)}
   .about-grid,.contact-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
