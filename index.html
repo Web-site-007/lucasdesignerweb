@@ -27,10 +27,27 @@
   <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
   <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)"/>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://lucas-devagency-api.vercel.app https://www.google-analytics.com; frame-ancestors 'none';"/>
-  <!-- Meta Pixel: adicionar connect.facebook.net no script-src ao instalar -->
-  <!-- Google Search Console: adicionar meta tag de verificação quando tiver código -->
+  <!-- Meta Pixel: substituir SEU_PIXEL_ID pelo ID real e descomentar -->
+  <!--
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'SEU_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  -->
+  <!-- Google Search Console: substituir CODIGO_VERIFICACAO pelo código real -->
+  <!-- <meta name="google-site-verification" content="CODIGO_VERIFICACAO" /> -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://images.unsplash.com"/>
+  <link rel="dns-prefetch" href="https://lucas-devagency-api.vercel.app"/>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="src/css/style.min.css"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXNPQDS5EB"></script>

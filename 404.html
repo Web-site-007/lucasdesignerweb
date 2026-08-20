@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página não encontrada — Lucas Designer Web</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="icon" type="image/svg+xml" href="src/images/favicon.svg"/>
+  <link rel="apple-touch-icon" href="src/images/apple-touch-icon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="src/css/style.min.css"/>
+  <style>
+    .error-page{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:2rem}
+    .error-code{font-size:8rem;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--accent,#a855f7));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+    .error-msg{font-size:1.5rem;font-weight:600;margin:1rem 0 .5rem}
+    .error-desc{color:var(--text-muted,#a0a0a0);max-width:400px;margin-bottom:2rem}
+    .error-btn{display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--primary),var(--primary-hover,#2563eb));color:#fff;font-weight:600;border-radius:8px;transition:transform .3s,box-shadow .3s;font-family:inherit;font-size:1rem;text-decoration:none}
+    .error-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,.4)}
+  </style>
+</head>
+<body>
+  <main class="error-page" id="main-content">
+    <div class="error-code">404</div>
+    <h1 class="error-msg">Página não encontrada</h1>
+    <p class="error-desc">O link que você acessou não existe ou foi movido. Volte para a página inicial.</p>
+    <a href="index.html" class="error-btn">Voltar ao Início</a>
+  </main>
+</body>
+</html>
