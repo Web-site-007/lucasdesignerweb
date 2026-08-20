@@ -40,60 +40,96 @@ const SERVICES = {
   outro: 'Projeto Personalizado'
 };
 
+function getClientEmailText(name, service) {
+  const serviceName = SERVICES[service] || 'projeto personalizado';
+  return `Olá, ${name}!
+
+Recebemos sua mensagem e já estamos analisando seu interesse em ${serviceName}.
+
+Em até 24 horas entraremos em contato com um orçamento personalizado.
+
+Enquanto isso, você pode falar diretamente comigo pelo WhatsApp:
+https://wa.me/5591981504951?text=Olá, enviei um formulário pelo site e quero saber sobre ${encodeURIComponent(serviceName)}
+
+Lucas Designer Web
+Marabá, PA
+https://lucasdesignerweb.com.br`;
+}
+
 function getClientEmailHTML(name, service) {
   const serviceName = SERVICES[service] || 'projeto personalizado';
-  return `
-    <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#333">
-      <div style="background:linear-gradient(135deg,#3b82f6,#8b5cf6);padding:30px;text-align:center;border-radius:12px 12px 0 0">
-        <h1 style="color:#fff;margin:0;font-size:24px">Lucas Designer Web</h1>
-        <p style="color:rgba(255,255,255,0.9);margin:8px 0 0;font-size:14px">Designer / Desenvolvedor Web</p>
-      </div>
-      <div style="background:#fff;padding:30px;border:1px solid #e5e7eb;border-top:none;border-radius:0 0 12px 12px">
-        <h2 style="color:#3b82f6;margin-top:0">Olá, ${sanitize(name)}! 👋</h2>
-        <p>Recebemos sua mensagem e já estamos analisando seu interesse em <strong>${sanitize(serviceName)}</strong>.</p>
-        <p>Em até <strong>24 horas</strong> entraremos em contato com um orçamento personalizado.</p>
+  return `<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"></head>
+<body style="margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:#f4f4f4">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:24px 0">
+  <tr><td align="center">
+    <table width="600" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb">
+      <tr>
+        <td style="background:#3b82f6;padding:20px 24px">
+          <h1 style="margin:0;color:#fff;font-size:18px;font-weight:600">Lucas Designer Web</h1>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:24px">
+          <p style="margin:0 0 12px;color:#333;font-size:15px">Olá, ${sanitize(name)}!</p>
+          <p style="margin:0 0 12px;color:#333;font-size:15px">Recebemos sua mensagem sobre <strong>${sanitize(serviceName)}</strong> e entraremos em contato em até 24 horas com um orçamento personalizado.</p>
+          <p style="margin:0 0 12px;color:#333;font-size:15px">Se preferir, fale diretamente comigo pelo WhatsApp:</p>
+          <p style="margin:0 0 20px">
+            <a href="https://wa.me/5591981504951?text=Olá, enviei um formulário pelo site e quero saber sobre ${encodeURIComponent(serviceName)}" style="color:#25d366;font-size:15px;font-weight:600;text-decoration:none">(91) 98150-4951</a>
+          </p>
+          <p style="margin:20px 0 0;color:#666;font-size:13px;border-top:1px solid #e5e7eb;padding-top:16px">Lucas Designer Web — lucasdesignerweb.com.br</p>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+</table>
+</body>
+</html>`;
+}
 
-        <div style="background:#f8fafc;padding:20px;border-radius:8px;margin:20px 0">
-          <h3 style="margin-top:0;color:#3b82f6;font-size:16px">Nossos Serviços:</h3>
-          <ul style="margin:0;padding-left:20px;line-height:2">
-            <li><strong>Sites Institucionais</strong> — Sites profissionais para sua empresa</li>
-            <li><strong>Lojas Virtuais</strong> — E-commerce completo com carrinho e pagamento</li>
-            <li><strong>Landing Pages</strong> — Páginas de conversão para campanhas</li>
-            <li><strong>Sistemas Web</strong> — Sistemas sob medida para seu negócio</li>
-            <li><strong>Aplicativos Mobile</strong> — Apps para Android e iOS</li>
-            <li><strong>Consultoria Digital</strong> — Estratégia e presença online</li>
-          </ul>
-        </div>
+function getOwnerEmailText(data) {
+  const serviceName = SERVICES[data.service] || 'Não especificado';
+  return `Nova mensagem no site
 
-        <p>Enquanto isso, você pode falar diretamente comigo:</p>
-        <a href="https://wa.me/5591981504951?text=Olá, enviei um formulário pelo site e quero saber sobre ${encodeURIComponent(serviceName)}" style="display:inline-block;padding:12px 24px;background:#25d366;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;margin:10px 0">Falar no WhatsApp</a>
+Nome: ${data.name}
+Email: ${data.email}
+WhatsApp: ${data.phone || 'Não informado'}
+Serviço: ${serviceName}
 
-        <p style="margin-top:24px;color:#666;font-size:13px">Lucas Designer Web — Marabá, PA</p>
-      </div>
-      <div style="text-align:center;padding:16px;color:#999;font-size:12px">
-        © 2026 Lucas Designer Web. Todos os direitos reservados.
-      </div>
-    </div>
-  `;
+Mensagem:
+${data.message}`;
 }
 
 function getOwnerEmailHTML(data) {
   const serviceName = SERVICES[data.service] || 'Não especificado';
-  return `
-    <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#333">
-      <div style="background:#3b82f6;padding:20px;text-align:center;border-radius:12px 12px 0 0">
-        <h1 style="color:#fff;margin:0;font-size:20px">Nova mensagem no site</h1>
-      </div>
-      <div style="background:#fff;padding:20px;border:1px solid #e5e7eb;border-top:none;border-radius:0 0 12px 12px">
-        <p><strong>Nome:</strong> ${sanitize(data.name)}</p>
-        <p><strong>Email:</strong> ${sanitize(data.email)}</p>
-        <p><strong>WhatsApp:</strong> ${sanitize(data.phone) || 'Não informado'}</p>
-        <p><strong>Serviço:</strong> ${sanitize(serviceName)}</p>
-        <p><strong>Mensagem:</strong></p>
-        <div style="background:#f8fafc;padding:12px;border-radius:6px;border-left:3px solid #3b82f6">${sanitize(data.message)}</div>
-      </div>
-    </div>
-  `;
+  return `<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"></head>
+<body style="margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:#f4f4f4">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:24px 0">
+  <tr><td align="center">
+    <table width="600" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb">
+      <tr>
+        <td style="background:#3b82f6;padding:20px 24px">
+          <h1 style="margin:0;color:#fff;font-size:18px;font-weight:600">Nova mensagem no site</h1>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:24px">
+          <p style="margin:0 0 8px;color:#333;font-size:14px"><strong>Nome:</strong> ${sanitize(data.name)}</p>
+          <p style="margin:0 0 8px;color:#333;font-size:14px"><strong>Email:</strong> ${sanitize(data.email)}</p>
+          <p style="margin:0 0 8px;color:#333;font-size:14px"><strong>WhatsApp:</strong> ${sanitize(data.phone) || 'Não informado'}</p>
+          <p style="margin:0 0 8px;color:#333;font-size:14px"><strong>Serviço:</strong> ${sanitize(serviceName)}</p>
+          <p style="margin:16px 0 4px;color:#333;font-size:14px"><strong>Mensagem:</strong></p>
+          <p style="margin:0;color:#333;font-size:14px;background:#f8fafc;padding:12px;border-radius:4px;border-left:3px solid #3b82f6">${sanitize(data.message)}</p>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+</table>
+</body>
+</html>`;
 }
 
 module.exports = async (req, res) => {
@@ -152,20 +188,35 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: 'Telefone inválido' });
   }
 
+  const serviceName = SERVICES[service] || 'Contato';
+
   try {
     await transporter.sendMail({
       from: `"Lucas Designer Web" <${process.env.GMAIL_USER}>`,
       to: process.env.GMAIL_USER,
       replyTo: email,
-      subject: `Nova mensagem de ${name} — ${SERVICES[service] || 'Contato'}`,
-      html: getOwnerEmailHTML({ name, email, phone, service, message })
+      subject: `Nova mensagem de ${name} — ${serviceName}`,
+      text: getOwnerEmailText({ name, email, phone, service, message }),
+      html: getOwnerEmailHTML({ name, email, phone, service, message }),
+      headers: {
+        'X-Mailer': 'Lucas Designer Web Contact Form',
+        'X-Auto-Response-Suppress': 'All',
+        'Precedence': 'transactional'
+      }
     });
 
     await transporter.sendMail({
       from: `"Lucas Designer Web" <${process.env.GMAIL_USER}>`,
       to: email,
       subject: `Recebemos sua mensagem — Lucas Designer Web`,
-      html: getClientEmailHTML(name, service)
+      text: getClientEmailText(name, service),
+      html: getClientEmailHTML(name, service),
+      headers: {
+        'X-Mailer': 'Lucas Designer Web Contact Form',
+        'X-Auto-Response-Suppress': 'All',
+        'Precedence': 'transactional',
+        'List-Unsubscribe': `<mailto:${process.env.GMAIL_USER}?subject=Cancelar%20inscricao>`
+      }
     });
 
     return res.status(200).json({ success: true });
