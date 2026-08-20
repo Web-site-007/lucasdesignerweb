@@ -9,7 +9,7 @@
 - ⏳ Lucas vai refazer os portfólios em 30 minutos
 
 ## Credenciais
-- **Web3Forms Access Key:** `03e6252f-b384-405e-ad34-fd949c9a83f8`
+- **Web3Forms Access Key:** `08344ee7-0b46-47e5-a6b8-c234e0e2b886`
 - **Email:** Inteligencia20072000@gmail.com
 - **WhatsApp:** (91) 98150-4951
 - **Google Analytics:** G-YXNPQDS5EB
