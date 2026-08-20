@@ -186,7 +186,7 @@
   });
 
   // ============================================
-  // CONTACT FORM — Web3Forms
+  // CONTACT FORM — Vercel API
   // ============================================
   var contactForm = document.getElementById('contactForm');
   var formSuccess = document.getElementById('formSuccess');
@@ -211,7 +211,6 @@
         return;
       }
 
-      // Email validation
       var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
         alert('Por favor, insira um e-mail válido.');
@@ -224,11 +223,18 @@
         submitBtn.disabled = true;
       }
 
-      var formData = new FormData(contactForm);
+      var payload = {
+        name: name,
+        email: email,
+        phone: contactForm.querySelector('[name="phone"]') ? contactForm.querySelector('[name="phone"]').value.trim() : '',
+        service: contactForm.querySelector('[name="service"]') ? contactForm.querySelector('[name="service"]').value : '',
+        message: message
+      };
 
-      fetch('https://api.web3forms.com/submit', {
+      fetch('https://lucas-devagency-api.vercel.app/api/contact', {
         method: 'POST',
-        body: formData
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
       })
       .then(function(response) { return response.json(); })
       .then(function(data) {
