@@ -42,50 +42,16 @@ const SERVICES = {
 
 function getClientEmailText(name, service) {
   const serviceName = SERVICES[service] || 'projeto personalizado';
-  return `Olá, ${name}!
+  return `Olá ${name}, tudo bem?
 
-Recebemos sua mensagem e já estamos analisando seu interesse em ${serviceName}.
+Vi sua mensagem sobre ${serviceName} no site. Obrigado pelo contato!
 
-Em até 24 horas entraremos em contato com um orçamento personalizado.
+Vou analisar e te respondo em até 24 horas com mais detalhes.
 
-Enquanto isso, você pode falar diretamente comigo pelo WhatsApp:
-https://wa.me/5591981504951?text=Olá, enviei um formulário pelo site e quero saber sobre ${encodeURIComponent(serviceName)}
+Qualquer coisa, pode me chamar no WhatsApp: (91) 98150-4951
 
-Lucas Designer Web
-Marabá, PA
-https://lucasdesignerweb.com.br`;
-}
-
-function getClientEmailHTML(name, service) {
-  const serviceName = SERVICES[service] || 'projeto personalizado';
-  return `<!DOCTYPE html>
-<html lang="pt-BR">
-<head><meta charset="utf-8"></head>
-<body style="margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:#f4f4f4">
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:24px 0">
-  <tr><td align="center">
-    <table width="600" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb">
-      <tr>
-        <td style="background:#3b82f6;padding:20px 24px">
-          <h1 style="margin:0;color:#fff;font-size:18px;font-weight:600">Lucas Designer Web</h1>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding:24px">
-          <p style="margin:0 0 12px;color:#333;font-size:15px">Olá, ${sanitize(name)}!</p>
-          <p style="margin:0 0 12px;color:#333;font-size:15px">Recebemos sua mensagem sobre <strong>${sanitize(serviceName)}</strong> e entraremos em contato em até 24 horas com um orçamento personalizado.</p>
-          <p style="margin:0 0 12px;color:#333;font-size:15px">Se preferir, fale diretamente comigo pelo WhatsApp:</p>
-          <p style="margin:0 0 20px">
-            <a href="https://wa.me/5591981504951?text=Olá, enviei um formulário pelo site e quero saber sobre ${encodeURIComponent(serviceName)}" style="color:#25d366;font-size:15px;font-weight:600;text-decoration:none">(91) 98150-4951</a>
-          </p>
-          <p style="margin:20px 0 0;color:#666;font-size:13px;border-top:1px solid #e5e7eb;padding-top:16px">Lucas Designer Web — lucasdesignerweb.com.br</p>
-        </td>
-      </tr>
-    </table>
-  </td></tr>
-</table>
-</body>
-</html>`;
+Abraço,
+Lucas`;
 }
 
 function getOwnerEmailText(data) {
@@ -103,33 +69,15 @@ ${data.message}`;
 
 function getOwnerEmailHTML(data) {
   const serviceName = SERVICES[data.service] || 'Não especificado';
-  return `<!DOCTYPE html>
-<html lang="pt-BR">
-<head><meta charset="utf-8"></head>
-<body style="margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:#f4f4f4">
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:24px 0">
-  <tr><td align="center">
-    <table width="600" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb">
-      <tr>
-        <td style="background:#3b82f6;padding:20px 24px">
-          <h1 style="margin:0;color:#fff;font-size:18px;font-weight:600">Nova mensagem no site</h1>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding:24px">
-          <p style="margin:0 0 8px;color:#333;font-size:14px"><strong>Nome:</strong> ${sanitize(data.name)}</p>
-          <p style="margin:0 0 8px;color:#333;font-size:14px"><strong>Email:</strong> ${sanitize(data.email)}</p>
-          <p style="margin:0 0 8px;color:#333;font-size:14px"><strong>WhatsApp:</strong> ${sanitize(data.phone) || 'Não informado'}</p>
-          <p style="margin:0 0 8px;color:#333;font-size:14px"><strong>Serviço:</strong> ${sanitize(serviceName)}</p>
-          <p style="margin:16px 0 4px;color:#333;font-size:14px"><strong>Mensagem:</strong></p>
-          <p style="margin:0;color:#333;font-size:14px;background:#f8fafc;padding:12px;border-radius:4px;border-left:3px solid #3b82f6">${sanitize(data.message)}</p>
-        </td>
-      </tr>
-    </table>
-  </td></tr>
-</table>
-</body>
-</html>`;
+  return `<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#333">
+<h2 style="margin:0 0 16px;color:#333;font-size:16px">Nova mensagem no site</h2>
+<p style="margin:0 0 6px;font-size:14px"><b>Nome:</b> ${sanitize(data.name)}</p>
+<p style="margin:0 0 6px;font-size:14px"><b>Email:</b> ${sanitize(data.email)}</p>
+<p style="margin:0 0 6px;font-size:14px"><b>WhatsApp:</b> ${sanitize(data.phone) || 'Não informado'}</p>
+<p style="margin:0 0 6px;font-size:14px"><b>Serviço:</b> ${sanitize(serviceName)}</p>
+<p style="margin:12px 0 4px;font-size:14px"><b>Mensagem:</b></p>
+<p style="margin:0;font-size:14px;background:#f5f5f5;padding:12px;border-radius:4px">${sanitize(data.message)}</p>
+</div>`;
 }
 
 module.exports = async (req, res) => {
@@ -192,30 +140,29 @@ module.exports = async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from: `"Lucas Designer Web" <${process.env.GMAIL_USER}>`,
+      from: `"Site" <${process.env.GMAIL_USER}>`,
       to: process.env.GMAIL_USER,
       replyTo: email,
-      subject: `Nova mensagem de ${name} — ${serviceName}`,
+      subject: `Novo contato: ${name} — ${serviceName}`,
       text: getOwnerEmailText({ name, email, phone, service, message }),
       html: getOwnerEmailHTML({ name, email, phone, service, message }),
       headers: {
-        'X-Mailer': 'Lucas Designer Web Contact Form',
         'X-Auto-Response-Suppress': 'All',
-        'Precedence': 'transactional'
+        'Precedence': 'notification',
+        'Auto-Submitted': 'auto-generated'
       }
     });
 
     await transporter.sendMail({
-      from: `"Lucas Designer Web" <${process.env.GMAIL_USER}>`,
+      from: `"Lucas" <${process.env.GMAIL_USER}>`,
       to: email,
-      subject: `Recebemos sua mensagem — Lucas Designer Web`,
+      replyTo: process.env.GMAIL_USER,
+      subject: `Re: sua mensagem sobre ${serviceName}`,
       text: getClientEmailText(name, service),
-      html: getClientEmailHTML(name, service),
       headers: {
-        'X-Mailer': 'Lucas Designer Web Contact Form',
         'X-Auto-Response-Suppress': 'All',
-        'Precedence': 'transactional',
-        'List-Unsubscribe': `<mailto:${process.env.GMAIL_USER}?subject=Cancelar%20inscricao>`
+        'Precedence': 'notification',
+        'Auto-Submitted': 'auto-generated'
       }
     });
 
