@@ -155,6 +155,14 @@
     }
     .lp-whatsapp-float:hover { transform:scale(1.1); }
 
+    .lp-footer {
+      border-top:1px solid var(--border);
+      padding:48px 20px;
+      text-align:center;
+    }
+    .lp-footer__logo { width:200px;height:auto;display:block;margin:0 auto 14px; }
+    .lp-footer__copy { font-size:0.85rem;color:var(--text-secondary); }
+
     @media(max-width:768px) {
       .lp-hero h1 { font-size:2rem; }
       .lp-services { grid-template-columns:1fr; }
@@ -348,6 +356,27 @@
       &#128737; Orçamento 100% gratuito sem compromisso
     </div>
   </section>
+
+  <footer class="lp-footer">
+    <svg class="lp-footer__logo" viewBox="0 0 420 120" aria-hidden="true">
+      <defs>
+        <linearGradient id="lpGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#3b82f6"/>
+          <stop offset="100%" stop-color="#8b5cf6"/>
+        </linearGradient>
+        <linearGradient id="lpGradV" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#3b82f6"/>
+          <stop offset="100%" stop-color="#8b5cf6"/>
+        </linearGradient>
+      </defs>
+      <rect x="8" y="18" width="80" height="80" rx="18" fill="none" stroke="url(#lpGrad)" stroke-width="3.5"/>
+      <text x="48" y="76" font-family="'Arial Black', sans-serif" font-size="50" font-weight="900" fill="url(#lpGrad)" text-anchor="middle">L</text>
+      <rect x="104" y="22" width="2.5" height="72" fill="url(#lpGradV)" rx="1"/>
+      <text x="124" y="62" font-family="'Arial Black', 'Impact', sans-serif" font-size="52" font-weight="900" fill="url(#lpGrad)" letter-spacing="3">LUCAS</text>
+      <text x="124" y="92" font-family="'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="500" fill="#a0a0a0" letter-spacing="1">Designer &amp; Desenvolvedor Web</text>
+    </svg>
+    <div class="lp-footer__copy">&copy; 2026 Lucas. Todos os direitos reservados.</div>
+  </footer>
 
   <a href="https://wa.me/5591981504951?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20e%20quero%20um%20or%C3%A7amento%20de%20site" target="_blank" class="lp-whatsapp-float" aria-label="Falar no WhatsApp" rel="noopener noreferrer">&#128172;</a>
 
