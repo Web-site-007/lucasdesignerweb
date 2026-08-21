@@ -258,7 +258,7 @@ input,textarea,select{font-family:inherit;outline:none}
 .footer{border-top:1px solid var(--border);padding:var(--space-2xl) 0 var(--space-lg)}
 .footer__inner{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--space-md);text-align:center}
 .footer__brand{display:flex;align-items:center;justify-content:center}
-.footer__logo{height:80px;width:auto}
+  .footer__logo{height:56px;width:auto}
 .footer__brand:hover{opacity:0.8}
 .footer__links{display:flex;gap:var(--space-lg)}
 .footer__link{font-size:var(--text-sm);color:var(--text-muted);transition:color var(--transition-fast)}
