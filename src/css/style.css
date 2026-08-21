@@ -291,7 +291,11 @@ input,textarea,select{font-family:inherit;outline:none}
   .navbar__logo{height:70px}
   .hero__title{font-size:var(--text-3xl)}
   .services-grid,.portfolio-grid,.testimonials-grid{grid-template-columns:1fr}
-  .section{padding:var(--space-3xl) 0}
+  .section{padding:var(--space-2xl) 0}
+  .hero{padding-bottom:var(--space-2xl)}
+  .section-header{margin-bottom:var(--space-xl)}
+  .cta{padding:var(--space-2xl) 0}
+  .contact-grid{gap:var(--space-xl)}
   .section-header__title{font-size:var(--text-3xl)}
   .form-row{grid-template-columns:1fr}
   .cta__title{font-size:var(--text-3xl)}
