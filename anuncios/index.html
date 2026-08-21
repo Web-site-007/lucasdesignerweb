@@ -160,6 +160,11 @@
       padding:48px 20px;
       text-align:center;
     }
+    .lp-footer__photo {
+      display:block;width:min(320px,80%);height:auto;
+      border-radius:16px;border:1px solid var(--border);
+      margin:0 auto 28px;
+    }
     .lp-footer__logo { width:200px;height:auto;display:block;margin:0 auto 14px; }
     .lp-footer__copy { font-size:0.85rem;color:var(--text-secondary); }
 
@@ -358,6 +363,11 @@
   </section>
 
   <footer class="lp-footer">
+    <picture>
+      <source srcset="../src/images/capa-do-site.avif" type="image/avif"/>
+      <source srcset="../src/images/capa-do-site.webp" type="image/webp"/>
+      <img src="../src/images/capa-do-site.jpg" alt="Lucas — Designer e Desenvolvedor Web" class="lp-footer__photo" width="1200" height="656" loading="lazy"/>
+    </picture>
     <svg class="lp-footer__logo" viewBox="0 0 420 120" aria-hidden="true">
       <defs>
         <linearGradient id="lpGrad" x1="0%" y1="0%" x2="100%" y2="0%">
