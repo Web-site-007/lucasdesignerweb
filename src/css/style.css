@@ -199,8 +199,9 @@ input,textarea,select{font-family:inherit;outline:none}
 .about-grid{max-width:800px;margin:0 auto}
 .about__content .badge{margin-bottom:var(--space-lg)}
 .about__title{font-size:var(--text-3xl);font-weight:var(--weight-bold);margin-bottom:var(--space-lg)}
-.about__text{font-size:var(--text-base);color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-xl)}
-.about__features{display:flex;flex-direction:column;gap:var(--space-md)}
+.about__text{font-size:var(--text-base);color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-md)}
+.about__text:last-of-type{margin-bottom:var(--space-xl)}
+.about__features{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-lg) var(--space-md)}
 .about__feature{display:flex;align-items:flex-start;gap:var(--space-md)}
 .about__feature-icon{width:40px;height:40px;border-radius:var(--radius-md);background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--primary)}
 .about__feature-text strong{display:block;font-size:var(--text-sm);margin-bottom:2px}
@@ -301,6 +302,7 @@ input,textarea,select{font-family:inherit;outline:none}
   .hero__title{font-size:var(--text-3xl)}
   .services-grid,.portfolio-grid,.testimonials-grid{grid-template-columns:1fr}
   .steps-grid{grid-template-columns:1fr}
+  .about__features{grid-template-columns:1fr}
   .section{padding:var(--space-2xl) 0}
   .hero{padding-bottom:var(--space-2xl)}
   .section-header{margin-bottom:var(--space-xl)}
