@@ -187,6 +187,14 @@ input,textarea,select{font-family:inherit;outline:none}
 .testimonial-card__name{font-size:var(--text-sm);font-weight:var(--weight-semibold)}
 .testimonial-card__role{font-size:var(--text-xs);color:var(--text-muted)}
 
+/* COMO FUNCIONA */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-lg)}
+.step-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-xl);position:relative;transition:all var(--transition-base)}
+.step-card:hover{border-color:var(--primary);transform:translateY(-4px);box-shadow:var(--shadow-glow)}
+.step-card__num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--primary-light);color:var(--primary);font-weight:var(--weight-bold);font-size:var(--text-lg);margin-bottom:var(--space-md)}
+.step-card__title{font-size:var(--text-lg);font-weight:var(--weight-semibold);margin-bottom:var(--space-sm)}
+.step-card__desc{font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--leading-relaxed)}
+
 /* ABOUT */
 .about-grid{max-width:800px;margin:0 auto}
 .about__content .badge{margin-bottom:var(--space-lg)}
@@ -278,6 +286,7 @@ input,textarea,select{font-family:inherit;outline:none}
 /* RESPONSIVE */
 @media(max-width:1024px){
   .services-grid,.portfolio-grid,.testimonials-grid{grid-template-columns:repeat(2,1fr)}
+  .steps-grid{grid-template-columns:repeat(2,1fr)}
   .about-grid,.contact-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
@@ -291,6 +300,7 @@ input,textarea,select{font-family:inherit;outline:none}
   .navbar__logo{height:70px}
   .hero__title{font-size:var(--text-3xl)}
   .services-grid,.portfolio-grid,.testimonials-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr}
   .section{padding:var(--space-2xl) 0}
   .hero{padding-bottom:var(--space-2xl)}
   .section-header{margin-bottom:var(--space-xl)}
