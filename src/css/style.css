@@ -78,8 +78,8 @@
 
 /* RESET */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:var(--leading-normal);transition:background var(--transition-base),color var(--transition-base)}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:var(--leading-normal);transition:background var(--transition-base),color var(--transition-base);overflow-x:hidden;max-width:100%}
 a{color:var(--primary);text-decoration:none;transition:color var(--transition-fast)}
 a:hover{color:var(--primary-hover)}
 img{max-width:100%;height:auto;display:block}
@@ -301,9 +301,10 @@ input,textarea,select{font-family:inherit;outline:none}
   .cta__title{font-size:var(--text-3xl)}
 }
 @media(max-width:480px){
-  .navbar__logo{height:56px}
+  .navbar__logo{height:56px;max-width:64vw}
   .hero__title{font-size:var(--text-2xl)}
   .hero__actions{flex-direction:column}
   .hero__actions .btn{width:100%}
   .container{padding:0 var(--space-md)}
+  .contact__method-value{word-break:break-word}
 }
