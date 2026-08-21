@@ -231,7 +231,7 @@
         message: message
       };
 
-      fetch('https://lucas-devagency-api.vercel.app/api/contact', {
+      fetch('https://lucasdesignerweb-api.vercel.app/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
