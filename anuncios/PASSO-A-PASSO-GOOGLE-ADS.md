@@ -23,14 +23,16 @@
 
 ---
 
-## 3. Localização (IMPORTANTE)
-1. Em **"Locais"**, pesquise **Marabá, PA** e selecione
-2. Clique em **"Configurações de local"** (ou "Opções avançadas"):
+## 3. Localização (IMPORTANTE) — ATUALIZADO: TODO O BRASIL
+> Mudança decidida em 21/ago à noite: o usuário optou por anunciar em **todo o Brasil**, não mais só Marabá/região.
+
+1. Em **"Locais"**, pesquise **Brasil** e selecione
+2. Clique em **"Configurações de local"**:
    - Em **"Tipo de local"** escolha: **"Presença: pessoas em ou regularmente na localização incluída"**
-   - ⚠️ Desmarque a opção de "presença ou interesse" — ela mostra anúncio pra gente de FORA que só pesquisou pelo nome da cidade
-3. Raio: use **Marabá + raio de ~130 km** (cobre Parauapebas, Canaã dos Carajás, Redenção, Itupiranga, São Félix do Xingu)
-   - Alternativa: adicionar cidade por cidade: Marabá, Parauapebas, Canaã dos Carajás, Redenção, Tucumã, Itupiranga
-4. Idioma: **Português**
+   - ⚠️ Desmarque "presença **ou interesse**"
+3. Idioma: **Português**
+
+Expectativa com alcance nacional + R$15/dia + CPC máx R$3: ~4–6 cliques/dia no começo. Normal.
 
 ---
 
@@ -60,11 +62,8 @@ As aspas = correspondência de frase. Sem aspas = ampla (evite no começo).
 "preço de site profissional"
 "criar loja virtual"
 "criação de landing page"
-[criação de sites marabá]
-[criação de sites em marabá]
-[desenvolvedor web marabá]
-[web designer marabá]
 ```
+> Removidas as 4 palavras-chave locais de Marabá (21/ago — alvo agora é todo o Brasil).
 
 ### Palavras-chave NEGATIVAS (economizam dinheiro)
 Em **Palavras-chave → Negativas** do grupo/campanha, cole:
@@ -98,7 +97,7 @@ URL final: `https://lucasdesignerweb.com.br/anuncios/?utm_source=google&utm_medi
 Só Paga Se Aprovar o Site
 Você Só Paga Quando Aprovar
 Criação de Sites Profissionais
-Criação de Sites em Marabá
+Criação de Sites Para Negócios
 Orçamento Grátis em 24h
 Sites Modernos e Responsivos
 Preço Fechado Sem Surpresa
@@ -116,7 +115,7 @@ Sites modernos, rápidos e que funcionam bem no celular.
 Fale direto com o designer, sem intermediários nem enrolação.
 Site institucional, landing page ou loja virtual pro seu negócio.
 Eu crio seu site, mostro o andamento e ajusto até você aprovar.
-Criação de sites para negócios de Marabá e região.
+Criação de sites para negócios de todo o Brasil.
 Pagamento só no final, quando estiver tudo pronto e aprovado.
 Peça seu orçamento agora: é grátis e respondo em até 24h.
 ```

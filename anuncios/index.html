@@ -111,15 +111,6 @@
     .lp-benefit__text strong { display:block;font-size:0.95rem;margin-bottom:2px; }
     .lp-benefit__text span { font-size:0.85rem;color:var(--text-secondary); }
 
-    .lp-testimonials { display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:800px;margin:0 auto; }
-    .lp-testimonial {
-      background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;
-    }
-    .lp-testimonial__stars { color:#f59e0b;font-size:0.9rem;margin-bottom:8px; }
-    .lp-testimonial__text { font-size:0.9rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;font-style:italic; }
-    .lp-testimonial__name { font-size:0.85rem;font-weight:600; }
-    .lp-testimonial__role { font-size:0.75rem;color:var(--text-secondary); }
-
     .lp-form-section { max-width:600px;margin:0 auto; }
     .lp-form {
       background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;
@@ -167,7 +158,6 @@
     @media(max-width:768px) {
       .lp-hero h1 { font-size:2rem; }
       .lp-services { grid-template-columns:1fr; }
-      .lp-testimonials { grid-template-columns:1fr; }
       .form-row { grid-template-columns:1fr; }
       .lp-ctas { flex-direction:column;align-items:center; }
       .lp-ctas .btn { width:100%;max-width:300px;justify-content:center; }
@@ -183,7 +173,7 @@
     <div class="lp-hero__content">
       <span class="lp-badge">Criação de Sites Profissionais</span>
       <h1>Seu negócio merece um site que <span>converte visitantes em clientes</span></h1>
-      <p>Crio sites modernos, rápidos e profissionais para empresas e empreendedores que querem crescer online.</p>
+      <p>Crio sites profissionais, modernos e responsivos para empresas e profissionais apresentarem seus serviços, gerar contatos e melhorar sua presença digital.</p>
       <div class="lp-ctas">
         <a href="#contato" class="btn btn--primary">Solicitar Orçamento Grátis</a>
         <a href="https://wa.me/5591981504951?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20e%20quero%20um%20or%C3%A7amento%20de%20site" target="_blank" class="btn btn--whatsapp" rel="noopener noreferrer">Falar no WhatsApp</a>
@@ -218,20 +208,20 @@
 
   <section class="lp-section">
     <h2>Por que me escolher</h2>
-    <p class="subtitle">Resultados reais que geram crescimento</p>
+    <p class="subtitle">O que está incluso em todo projeto</p>
     <div class="lp-benefits">
       <article class="lp-benefit">
         <div class="lp-benefit__icon" aria-hidden="true">&#9889;</div>
         <div class="lp-benefit__text">
-          <strong>Entrega em até 15 dias</strong>
-          <span>Seu site pronto rápido, sem enrolação</span>
+          <strong>Prazo definido no orçamento</strong>
+          <span>Você sabe quando recebe o site antes de começar</span>
         </div>
       </article>
       <article class="lp-benefit">
         <div class="lp-benefit__icon" aria-hidden="true">&#128200;</div>
         <div class="lp-benefit__text">
-          <strong>Otimizado para Google (SEO)</strong>
-          <span>Seu site aparece nas buscas do Google</span>
+          <strong>Estrutura pensada para o Google (SEO)</strong>
+          <span>Fundamentos técnicos de SEO aplicados desde a criação</span>
         </div>
       </article>
       <article class="lp-benefit">
@@ -259,32 +249,36 @@
   </section>
 
   <section class="lp-section lp-section--alt">
-    <h2>O que meus clientes dizem</h2>
-    <p class="subtitle">Exemplos do tipo de resultado que posso entregar</p>
-    <div class="lp-testimonials">
-      <article class="lp-testimonial">
-        <div class="lp-testimonial__stars" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="lp-testimonial__text">"Meu faturamento triplicou depois que lancei o site novo. Profissional e entregou antes do prazo. Recomendo demais!"</p>
-        <div class="lp-testimonial__name">Marcos Costa</div>
-        <div class="lp-testimonial__role">CEO — Costa Consultoria</div>
+    <h2>Como funciona</h2>
+    <p class="subtitle">Simples, direto e sem surpresa</p>
+    <div class="lp-benefits">
+      <article class="lp-benefit">
+        <div class="lp-benefit__icon" aria-hidden="true" style="font-weight:700;">1</div>
+        <div class="lp-benefit__text">
+          <strong>Você me passa o que precisa</strong>
+          <span>Me conta do seu negócio e pede um orçamento grátis</span>
+        </div>
       </article>
-      <article class="lp-testimonial">
-        <div class="lp-testimonial__stars" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="lp-testimonial__text">"A loja virtual ficou exatamente como eu imaginava. Meus clientes elogiam a facilidade de compra e as vendas aumentaram 40%."</p>
-        <div class="lp-testimonial__name">Ana Silva</div>
-        <div class="lp-testimonial__role">Owner — Boutique Floral</div>
+      <article class="lp-benefit">
+        <div class="lp-benefit__icon" aria-hidden="true" style="font-weight:700;">2</div>
+        <div class="lp-benefit__text">
+          <strong>Eu desenvolvo o seu site</strong>
+          <span>Design moderno, rápido e que funciona bem no celular</span>
+        </div>
       </article>
-      <article class="lp-testimonial">
-        <div class="lp-testimonial__stars" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="lp-testimonial__text">"Profissionalismo do início ao fim. O site ficou rápido no celular e no computador. Já indiquei para vários amigos."</p>
-        <div class="lp-testimonial__name">Ricardo Pereira</div>
-        <div class="lp-testimonial__role">Diretor — RP Engenharia</div>
+      <article class="lp-benefit">
+        <div class="lp-benefit__icon" aria-hidden="true" style="font-weight:700;">3</div>
+        <div class="lp-benefit__text">
+          <strong>Você acompanha e aprova</strong>
+          <span>Mostro o andamento e ajusto até você gostar de tudo</span>
+        </div>
       </article>
-      <article class="lp-testimonial">
-        <div class="lp-testimonial__stars" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="lp-testimonial__text">"Precisava de um site rápido e bonito pro meu escritório. Entregou tudo antes do prazo. Estou muito satisfeito!"</p>
-        <div class="lp-testimonial__name">Fernanda Lima</div>
-        <div class="lp-testimonial__role">Advogada — FL Advocacia</div>
+      <article class="lp-benefit">
+        <div class="lp-benefit__icon" aria-hidden="true" style="font-weight:700;">4</div>
+        <div class="lp-benefit__text">
+          <strong>Só depois você paga</strong>
+          <span>O pagamento só acontece quando você aprovar o site pronto</span>
+        </div>
       </article>
     </div>
   </section>
