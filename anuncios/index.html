@@ -60,6 +60,12 @@
       background:radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.15) 0%, transparent 60%);
     }
     .lp-hero__content { max-width:700px; }
+    .lp-hero__photo {
+      display:block;width:min(340px,86%);height:auto;
+      border-radius:16px;border:1px solid var(--border);
+      margin:0 auto 28px;
+      box-shadow:0 8px 32px rgba(59,130,246,0.15);
+    }
     .lp-badge {
       display:inline-block;padding:8px 20px;
       background:var(--primary-light);color:var(--primary);
@@ -85,6 +91,11 @@
     .btn--primary:hover { background:var(--primary-hover);transform:translateY(-2px);color:#fff; }
     .btn--whatsapp { background:#25d366;color:#fff; }
     .btn--whatsapp:hover { background:#1da851;transform:translateY(-2px);color:#fff; }
+    .btn--site {
+      background:linear-gradient(135deg,var(--primary),#8b5cf6);
+      color:#fff;box-shadow:0 4px 20px var(--primary-glow);
+    }
+    .btn--site:hover { transform:translateY(-2px);color:#fff;filter:brightness(1.1); }
 
     .lp-section { padding:80px 20px; }
     .lp-section--alt { background:rgba(255,255,255,0.02); }
@@ -160,11 +171,6 @@
       padding:48px 20px;
       text-align:center;
     }
-    .lp-footer__photo {
-      display:block;width:min(320px,80%);height:auto;
-      border-radius:16px;border:1px solid var(--border);
-      margin:0 auto 28px;
-    }
     .lp-footer__logo { width:200px;height:auto;display:block;margin:0 auto 14px; }
     .lp-footer__copy { font-size:0.85rem;color:var(--text-secondary); }
     .lp-footer__link {
@@ -189,11 +195,17 @@
 
   <section class="lp-hero" id="main-content">
     <div class="lp-hero__content">
+      <picture>
+        <source srcset="../src/images/capa-do-site.avif" type="image/avif"/>
+        <source srcset="../src/images/capa-do-site.webp" type="image/webp"/>
+        <img src="../src/images/capa-do-site.jpg" alt="Lucas — Designer e Desenvolvedor Web" class="lp-hero__photo" width="1200" height="656" fetchpriority="high"/>
+      </picture>
       <span class="lp-badge">Criação de Sites Profissionais</span>
       <h1>Seu negócio merece um site que <span>converte visitantes em clientes</span></h1>
       <p>Crio sites profissionais, modernos e responsivos para empresas e profissionais apresentarem seus serviços, gerar contatos e melhorar sua presença digital.</p>
       <div class="lp-ctas">
         <a href="#contato" class="btn btn--primary">Solicitar Orçamento Grátis</a>
+        <a href="https://lucasdesignerweb.com.br/" class="btn btn--site">Conhecer o Site Completo</a>
         <a href="https://wa.me/5591981504951?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20e%20quero%20um%20or%C3%A7amento%20de%20site" target="_blank" class="btn btn--whatsapp" rel="noopener noreferrer">Falar no WhatsApp</a>
       </div>
     </div>
@@ -368,11 +380,6 @@
   </section>
 
   <footer class="lp-footer">
-    <picture>
-      <source srcset="../src/images/capa-do-site.avif" type="image/avif"/>
-      <source srcset="../src/images/capa-do-site.webp" type="image/webp"/>
-      <img src="../src/images/capa-do-site.jpg" alt="Lucas — Designer e Desenvolvedor Web" class="lp-footer__photo" width="1200" height="656" loading="lazy"/>
-    </picture>
     <svg class="lp-footer__logo" viewBox="0 0 420 120" aria-hidden="true">
       <defs>
         <linearGradient id="lpGrad" x1="0%" y1="0%" x2="100%" y2="0%">
