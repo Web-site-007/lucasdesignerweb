@@ -145,9 +145,6 @@ input,textarea,select{font-family:inherit;outline:none}
 .hero__title span{background:linear-gradient(135deg,var(--primary),#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero__desc{font-size:var(--text-lg);color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-xl);max-width:540px}
 .hero__actions{display:flex;gap:var(--space-md);flex-wrap:wrap}
-.hero__payment-methods{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-sm);margin-top:var(--space-lg)}
-.hero__payment-label{font-size:var(--text-sm);color:var(--text-secondary);margin-right:var(--space-xs)}
-.hero__payment-methods span:not(.hero__payment-label){font-size:var(--text-xs);padding:4px 14px;background:var(--primary-light);color:var(--primary);border-radius:var(--radius-full);font-weight:var(--weight-medium)}
 
 /* SECTION HEADER */
 .section-header{text-align:center;margin-bottom:var(--space-3xl)}
