@@ -1,3 +1,6 @@
+<!-- ⚠️ NOTA DE SEGURANÇA: IDs/contas abaixo foram REMOVIDOS do arquivo público por auditoria (29/ago).
+Todos os valores reais vivem em /public/.env (e no CREDENCIAIS-MESTRE) - nao re-escrever IDs aqui em texto puro. -->
+
 # PROGRESSO — Google Ads (recomeço pelos meios oficiais · 23/ago)
 
 > Arquivo vivo: topo = onde paramos.
@@ -5,8 +8,8 @@
 ## 🔑 24/ago — CHAVES PERDIDAS E RECUPERADAS
 - `.oauth-keys.json` se perdeu (cache do Android limpou) → TODAS as chaves agora vivem em `/public/.env` (chmod 600) e gads.sh/meta.sh leem de lá
 - Ads: client ID + secret + refresh token NOVOS obtidos via fluxo manual example.com → API 100% funcional de novo
-- Meta: token novo do api-lucas gerado (nunca expira) — testado /me + contas + campanha 52573367415372 OK · falta META_APP_SECRET (Configurações > Básico)
-- Acesso BÁSICO Ads: PENDENTE — conta real 5244514027 ainda retorna DEVELOPER_TOKEN_NOT_APPROVED (testado 24/ago)
+- Meta: token novo do api-lucas gerado (nunca expira) — testado /me + contas + campanha [ID-CAMPANHA-META] OK · falta META_APP_SECRET (Configurações > Básico)
+- Acesso BÁSICO Ads: PENDENTE — conta real [CONTA-ADS-REAL] ainda retorna DEVELOPER_TOKEN_NOT_APPROVED (testado 24/ago)
 
 ## 🆕 NOVA FRENTE — META API (Facebook/Instagram) · 23/ago noite
 
@@ -18,17 +21,17 @@
 
 **✅ 24/ago — SETUP COMPLETO E FUNCIONANDO:**
 - Registro dev concluído (telefone validado) · App **Lucas Ads API** criado (tipo Negócios, Marketing API)
-- App ID `2277605273002870` · App Secret salvo no `.oauth-keys.json`
+- App ID `[META_APP_ID]` · App Secret salvo no `.oauth-keys.json`
 - System user **api-lucas** (admin) · token **NUNCA expira** c/ 12 permissões (inclui as 3 essenciais) — salvo como `meta_token` no `.oauth-keys.json`
 - Portfólio empresarial vinculado ao app (nome tipo "Lucas Designer Web")
-- Conta de anúncios **act_2249020155858081** ("Lucas Ads", BRL, ativa) atribuída ao api-lucas c/ controle total
+- Conta de anúncios **act_[META_ACT_ID]** ("Lucas Ads", BRL, ativa) atribuída ao api-lucas c/ controle total
 - ⚠️ Fuso da conta saiu `America/Los_Angeles` (não muda depois) — na conta REAL criar c/ `America/Belem`
 - **`meta.sh` NO AR:** `token | eu | contas | negocios | get <caminho> [query] | post <caminho> [params]` · Graph v23.0
 - Lição: token novo formato de 32 chars espaçados (XXXX XXXX…) que a UI mostra é só visual; o real começa com `EAA…` e sai do botão COPIAR
 - Lição: `/me/adaccounts` vazio = system user sem ativo "conta de anúncios" atribuído (permissão do token não basta)
 
 **✅ 24/ago — CAMPANHA DE TESTE CRIADA POR API:**
-- Campanha `52573367415372` ("Teste API Meta", OUTCOME_TRAFFIC, PAUSED) + conjunto `52573367446372` ("Conjunto Teste BR": Brasil 18+, R$6/dia, REACH/IMPRESSIONS, bid_amount=30) — tudo via `meta.sh post`
+- Campanha `[ID-CAMPANHA-META]` ("Teste API Meta", OUTCOME_TRAFFIC, PAUSED) + conjunto `[ID-CONJUNTO-META]` ("Conjunto Teste BR": Brasil 18+, R$6/dia, REACH/IMPRESSIONS, bid_amount=30) — tudo via `meta.sh post`
 - Anúncio NÃO criado ainda: exige **Página do Facebook** (regra da Meta; anúncio veicula em nome de página)
 - **Lições v24 Meta (campos obrigatórios):** `is_adset_budget_sharing_enabled=false` na campanha (sem orçamento de campanha) · `daily_budget` mínimo >R$5,14 · `bid_amount` exigido mesmo com LOWEST_COST
 - **Plano de páginas (decidido c/ usuário):** criar Página NOVA "Lucas Designer Web" p/ o nicho (sites/serviços); a página antiga da **roça (~1.023 seguidores, em OUTRO perfil)** fica como projeto separado — seguidores não importam pra targeting de anúncio. Usuário quer crescer seguidores orgânico ANTES de publicar ads
@@ -50,13 +53,13 @@
 ## ✅ GOOGLE ADS 23/08 NOITE — MILESTONE: API DO ADS FUNCIONANDO + CAMPANHA DE TESTE COMPLETA
 
 - Refresh token OBTIDO e salvo no `.oauth-keys.json` (fluxo manual example.com → curl)
-- **CONTA DE TESTE (gerenciadora):** `6508466392` (`testAccount: true`, BRL, America/Belem) — criada pelo usuário na UI
-- **CONTA CLIENTE DE TESTE:** `3011698113` ("Cliente Teste API") — criada POR API (`createCustomerClient` c/ campo `customerClient`)
-- **CAMPANHA COMPLETA CRIADA POR API** na cliente: budget `15813369257` · campanha `24166709007` (Teste API - Pesquisa, SEARCH, PAUSED, só Rede Pesquisa) · grupo `199713904019` · anúncio responsivo com os textos reais da LP · 3 palavras-chave
+- **CONTA DE TESTE (gerenciadora):** `[GADS_CONTA_TESTE]` (`testAccount: true`, BRL, America/Belem) — criada pelo usuário na UI
+- **CONTA CLIENTE DE TESTE:** `[GADS_CLIENTE_TESTE]` ("Cliente Teste API") — criada POR API (`createCustomerClient` c/ campo `customerClient`)
+- **CAMPANHA COMPLETA CRIADA POR API** na cliente: budget `[TESTE-BUDGET]` · campanha `[TESTE-CAMPANHA]` (Teste API - Pesquisa, SEARCH, PAUSED, só Rede Pesquisa) · grupo `[TESTE-ADGROUP]` · anúncio responsivo com os textos reais da LP · 3 palavras-chave
 - **Scripts prontos em `/public/lucasdesignerweb/anuncios/api/`:** `gads.sh` (token | contas | gaql <id> "<query>") + `raio-x.sh <id>` — validados 100% incluindo métricas
 
 ### Lições técnicas v22 (NÃO esquecer)
-- **Gerenciadora NÃO aceita campanhas** → `OPERATION_NOT_PERMITTED_FOR_CONTEXT`; criar sempre em conta CLIENTE com header `login-customer-id: <gerenciadora>` (no script: `LOGIN_CUST=6508466392 bash raio-x.sh <id-cliente>`)
+- **Gerenciadora NÃO aceita campanhas** → `OPERATION_NOT_PERMITTED_FOR_CONTEXT`; criar sempre em conta CLIENTE com header `login-customer-id: <gerenciadora>` (no script: `LOGIN_CUST=[GADS_CONTA_TESTE] bash raio-x.sh <id-cliente>`)
 - `MAXIMIZE_CLICKS` removido; `MANUAL_CPC` PROIBIDO em campanha nova → usar inline `targetSpend:{}` (= maximizar cliques) ou estratégia de portfólio (`biddingStrategyOperation` → campo `biddingStrategy`)
 - Campo OBRIGATÓRIO em campanha nova: `containsEuPoliticalAdvertising: DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING`
 - `createCustomerClient` usa wrapper `customerClient` (não `customer`) · `customerOperation` no mutate é update-only
@@ -67,21 +70,21 @@
 - ⏳ Conta REAL ainda limitada pelo acesso BÁSICO pendente
 
 **Próximos passos (quando acesso básico aprovar):**
-1. `LOGIN_CUST=4931850309 bash api/raio-x.sh 5244514027` (se a MCC linkar a conta; senão sem LOGIN_CUST) → raio-x completo da campanha real
+1. `LOGIN_CUST=[MCC_ID] bash api/raio-x.sh [CONTA-ADS-REAL]` (se a MCC linkar a conta; senão sem LOGIN_CUST) → raio-x completo da campanha real
 2. Linkar conta de anúncios à MCC se necessário
 3. Verificação completa do escopo (vídeo YouTube) → publicar app → refresh token permanente
 
 ### 💰 PRODUTO: Gerador de Relatório de Auditoria (23/ago noite)
 - **`api/relatorio.js <id>`**: coleta dados via gads.sh → aplica regras de detecção de desperdício → gera HTML pronto pra PDF em `api/relatorios/raio-x-<id>-<data>.html`
 - Detecta: Display ligado, PMax não intencional, parceiros de pesquisa, campanha pausada, conversão ausente/inativa, gasto sem conversão, palavras gastando sem retorno · Score de saúde 0–100
-- Validado na conta teste 3011698113 (achou os 2 problemas corretamente; score 74/100)
+- Validado na conta teste [GADS_CLIENTE_TESTE] (achou os 2 problemas corretamente; score 74/100)
 - Uso: `LOGIN_CUST=<gerenciadora> node api/relatorio.js <id-cliente>` → abrir HTML no Chrome → Imprimir → Salvar como PDF → enviar pro cliente
 - Ideia de negócio validada c/ usuário: auditoria avulsa R$150 + gestão mensal R$400–800 + pacote site+tráfego + nicho barbearias
 
 ### 🧪 BATERIA DE TESTES (23/ago noite) — `api/testes.sh <id> [login-cust]`
 - 10 verificações: token · contas acessíveis · leitura da conta · estrutura (5 recursos) · **ciclo de vida completo por API** (cria budget→campanha→renomeia→remove→limpa, SÓ em conta teste) · gerador de relatório
-- Estado: **10/10 PASSANDO** na conta cliente de teste `3011698113`
-- Quando o acesso básico aprovar: rodar `bash api/testes.sh 5244514027` → se der 🟢, ambiente validado pra operar a conta real
+- Estado: **10/10 PASSANDO** na conta cliente de teste `[GADS_CLIENTE_TESTE]`
+- Quando o acesso básico aprovar: rodar `bash api/testes.sh [CONTA-ADS-REAL]` → se der 🟢, ambiente validado pra operar a conta real
 - Lições v22 extras: GAQL quer recursos em snake_case (`ad_group`, não `adGroup`) · `resource_name` não é selecionável explícito · campanhas REMOVED continuam aparecendo em FROM campaign (filtrar status != 'REMOVED' pra contar vivas)
 
 ---
@@ -90,7 +93,7 @@
 
 **DIAGNÓSTICO DEFINITIVO do invalid_scope/erro antigo (23/ago noite):**
 - Escopo adwords **APROVADO na análise** ✅ → autorização PASSA (comprovado: consentimento concedido, `scope=adwords` na URL de retorno)
-- ❌ O erro real era o **Playground trocando o code com as credenciais DELE** (`client_id 407408718192` = padrão do Playground) porque "Use your own OAuth credentials" não estava marcado no auto-exchange → `unauthorized_client` + code queimado
+- ❌ O erro real era o **Playground trocando o code com as credenciais DELE** (`client_id [CLIENT_ID-PLAYGROUND]` = padrão do Playground) porque "Use your own OAuth credentials" não estava marcado no auto-exchange → `unauthorized_client` + code queimado
 - Codes são **uso único** — Playground queimou 2 codes assim. NÃO reabrir URL antiga de retorno
 
 **SOLUÇÃO MONTADA E JÁ CONFIGURADA:**
@@ -100,7 +103,7 @@
 
 **PRÓXIMO PASSO quando voltar ("retomar teste"):**
 1. Usuário cola no Chrome a URL de autorização (redirect example.com):
-   `https://accounts.google.com/o/oauth2/v2/auth?client_id=1091693747365-rq2dpidj0a77j83lm3nrjnsl2f55q9ge.apps.googleusercontent.com&redirect_uri=https%3A//www.example.com/&response_type=code&scope=https%3A//www.googleapis.com/auth/adwords&access_type=offline&prompt=consent`
+   `https://accounts.google.com/o/oauth2/v2/auth?client_id=[GADS_CLIENT_ID - valor em /public/.env].apps.googleusercontent.com&redirect_uri=https%3A//www.example.com/&response_type=code&scope=https%3A//www.googleapis.com/auth/adwords&access_type=offline&prompt=consent`
 2. Autoriza → página example.com abre → copia trecho depois de `code=` (para no `&scope`) → manda pro assistente
 3. Assistente roda o curl IMEDIATAMENTE (code expira em ~10 min e é uso único)
 4. Recebeu `refresh_token` → salvar no `.oauth-keys.json` → testar Ads API (`customers:listAccessibleCustomers` com dev token)
@@ -123,7 +126,7 @@
 - Ideia arquivada: auto-resposta de emails de cliente (Apps Script simples primeiro; versão IA depois)
 
 **Detalhes técnicos pra retomar em outro aparelho (tablet):**
-- `.oauth-keys.json` (neste Android): client Web `1091693747365-rq2dpidj0a77j83lm3nrjnsl2f55q9ge...` + secret + dev token + MCC
+- `.oauth-keys.json` (neste Android): client Web `[GADS_CLIENT_ID - valor em /public/.env]...` + secret + dev token + MCC
 - Fluxo NÃO depende mais do Playground: URL manual → example.com → copiar code → curl do assistente (ver bloco 🟡 no topo)
 - Redirects registrados no client Web: oauthplayground + `https://www.example.com/` — não apagar nenhum dos dois
 - Ao autorizar: login com **contato.lucasdesignerweb@gmail.com**
@@ -132,8 +135,8 @@
 
 ### O que EXISTE hoje (validado com o usuário)
 - Formulário de acesso básico ENVIADO → aguardando aprovação do Google (resposta por email)
-- Projeto Cloud **Lucas Ads API** — nº `1091693747365` (id `lucas-ads-api`)
-- MCC **"lucas designer web"** — `493-185-0309`
+- Projeto Cloud **Lucas Ads API** — nº `[GOOGLE_CLOUD_PROJECT_ID]` (id `lucas-ads-api`)
+- MCC **"lucas designer web"** — `[MCC_ID]`
 - Dev token `[REMOVIDO-POR-SEGURANÇA — salvo localmente em /public/.env e AGENTS.md]` (nível conta de teste) — ⚠️ **NUNCA APAGAR**
 - Brand verification ✅ · consent screen publicado em produção (AGORA em teste) · `privacidade.html` no ar (commit `5b01871`)
 - Chaves salvas em: `/data/user/150/com.foxdebug.acodefree/cache/opencode/.oauth-keys.json` (nunca commitar)
@@ -156,7 +159,7 @@
 - Alertas vistos em print (21/ago ~18h34) — consertar no raio-x por API:
   - Performance Max "1 Qualificada (limitada)" — possível criação por engano no fluxo guiado
   - Conversão automática "Enviar formulário de lead" com tag inativa/não verificada
-- Perfil de pagamentos RESOLVIDO (antigo `3326-4327-0576` encerrado; novo criado com número do suporte Google)
+- Perfil de pagamentos RESOLVIDO (antigo `[PERFIL-PAGAMENTOS-ANTIGO]` encerrado; novo criado com número do suporte Google)
 
 ## Decisões NÃO reverter
 1. Alvo TODO O BRASIL (não Marabá)
