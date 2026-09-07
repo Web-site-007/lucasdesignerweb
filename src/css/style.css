@@ -135,7 +135,7 @@ input,textarea,select{font-family:inherit;outline:none}
 
 /* COVER */
 .cover{width:100%;overflow:hidden;margin-top:var(--nav-height);margin-bottom:0}
-.cover__img{width:100%;height:auto;display:block}
+.cover__img{width:100%;height:auto;aspect-ratio:1200/656;display:block}
 
 /* HERO */
 .hero{padding:var(--space-md) 0 var(--space-4xl);position:relative}
