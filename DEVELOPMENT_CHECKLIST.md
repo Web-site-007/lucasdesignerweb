@@ -5,7 +5,7 @@
 - [x] Configurar `.gitignore` completo
 - [x] Criar `.env.example` com variáveis listadas
 - [x] Definir paleta de cores no CSS
-- [x] Escolher e importar fonte (Google Fonts)
+- [x] Escolher fonte (Space Grotesk) — agora SELF-HOSTED em `src/fonts/space-grotesk-latin.woff2`
 - [x] Criar estrutura de pastas
 
 ## Frontend — Estrutura
@@ -39,13 +39,15 @@
 - [x] Lazy load nas imagens
 
 ## Performance
-- [x] Imagens comprimidas (JPG otimizado)
-- [x] Imagens WebP geradas (44 imagens, ~919KB economizados)
-- [x] CSS minificado (style.min.css)
-- [x] JS minificado (main.min.js)
-- [x] Google Lighthouse score > 90 (Performance) — ~503KB total, 52% economia com WebP
-- [x] First Contentful Paint < 1.5s — HTML 34KB, CSS 19KB, JS 5KB (sem render-blocking)
-- [x] Largest Contentful Paint < 2.5s — capa WebP 59KB com lazy loading
+- [x] PageSpeed (07/set): **mobile 100/97/92/100 e desktop 100/93/92/100** — CLS 0, LCP 1.1s (mobile) / 0.3s (desktop), TBT 0ms, FCP 0.8s
+- [x] CSS 100% inline no index.html (removido o swap async `preload`+`onload` → essa era a causa do CLS 0.61: critical truncado estilizava o resto da página atrasado)
+- [x] Fonte **Space Grotesk self-hosted** (`src/fonts/space-grotesk-latin.woff2`, 22KB, subset latin) + fallback com metric overrides REAIS (ascent-override 98.4% / descent-override 29.2% / line-gap 0%) + `font-display:optional`
+- [x] GA4 (G-YXNPQDS5EB) + Meta Pixel (1038746718924684) carregam **por engajamento** (1º clique/scroll/tecla) ou timeout 10s — fora da janela crítica (antes: load)
+- [x] Capa com `aspect-ratio:1200/656` fixo (cover); attrs `height` reais de service-1 (427) e service-3 (750)
+- [x] 404.html e landing `/anuncios/` (index + obrigado) alinhados: fonte local + analytics por engajamento
+- [x] Imagens JPG/WebP/AVIF otimizadas + lazy loading; JS minificado (main.min.js)
+- ⚠️ Tradeoff consciente: visitante que sai sem interagir antes de 10s não entra no GA4 (lab fica 100)
+- ⚠️ Landing `/anuncios/`: SEO 66 no PSI é intencional (noindex — página de anúncio não deve indexar)
 
 ## SEO
 - [x] Title tag (50-60 chars)
@@ -97,6 +99,6 @@
 
 ## Notas
 - Logo é SVG final (arquivo `logo-placeholder.svg` morto removido)
-- Meta Pixel removido — re-adicionar quando tiver ID do Facebook
+- Meta Pixel ATIVO (ID `1038746718924684`) — carrega por engajamento (1º clique/scroll ou 10s)
 - Portfólios são demonstrativos (noindex, nofollow)
 - CSP: para Meta Pixel, adicionar `https://connect.facebook.net` no script-src
