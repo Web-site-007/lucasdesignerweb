@@ -13,26 +13,43 @@
   <meta property="og:image" content="https://lucasdesignerweb.com.br/src/images/og-image.jpg"/>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://lucasdesignerweb-api.vercel.app https://www.google-analytics.com https://connect.facebook.net; frame-ancestors 'none';"/>
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1038746718924684');
-    fbq('track', 'PageView');
+    (function() {
+      var loaded = false;
+      function loadAnalytics() {
+        if (loaded) return; loaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YXNPQDS5EB';
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){dataLayer.push(arguments);};
+        gtag('js', new Date());
+        gtag('config', 'G-YXNPQDS5EB');
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1038746718924684');
+        fbq('track', 'PageView');
+      }
+      ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(e) {
+        window.addEventListener(e, loadAnalytics, { once: true, passive: true });
+      });
+      setTimeout(loadAnalytics, 10000);
+      document.addEventListener('pagehide', loadAnalytics);
+    })();
   </script>
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1038746718924684&ev=PageView&noscript=1"
   /></noscript>
   <link rel="icon" type="image/svg+xml" href="../src/images/favicon.svg"/>
   <link rel="apple-touch-icon" href="../src/images/apple-touch-icon.png"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" href="../src/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin/>
   <link rel="dns-prefetch" href="https://lucasdesignerweb-api.vercel.app"/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --primary: #3b82f6;
@@ -46,7 +63,7 @@
       --border: rgba(255,255,255,0.08);
       --success: #22c55e;
       --error: #ef4444;
-      --font: 'Space Grotesk', sans-serif;
+      --font: 'Space Grotesk','Space Grotesk Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     }
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior:smooth; }
@@ -71,7 +88,7 @@
     }
     .lp-hero__content { max-width:700px; }
     .lp-hero__photo {
-      display:block;width:min(340px,86%);height:auto;
+      display:block;width:min(340px,86%);height:auto;aspect-ratio:1200/656;
       border-radius:16px;border:1px solid var(--border);
       margin:0 auto 20px;
       box-shadow:0 8px 32px rgba(59,130,246,0.15);
@@ -199,6 +216,9 @@
     }
     .skip-link{position:absolute;top:-100%;left:16px;background:var(--primary);color:#fff;padding:12px 24px;border-radius:12px;font-weight:600;z-index:10000;transition:top .3s}
     .skip-link:focus{top:16px}
+
+    @font-face{font-family:'Space Grotesk';font-style:normal;font-display:optional;font-weight:100 900;src:url(../src/fonts/space-grotesk-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Space Grotesk Fallback';font-style:normal;font-display:optional;font-weight:100 900;src:local('Roboto'),local('Arial'),local('Segoe UI'),local('Helvetica Neue'),local('DejaVu Sans');ascent-override:98.4%;descent-override:29.2%;line-gap-override:0%}
   </style>
 </head>
 <body>
@@ -433,16 +453,6 @@
   </footer>
 
   <a href="https://wa.me/5591981504951?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20e%20quero%20um%20or%C3%A7amento%20de%20site" target="_blank" class="lp-whatsapp-float" aria-label="Falar no WhatsApp" rel="noopener noreferrer">&#128172;</a>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXNPQDS5EB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YXNPQDS5EB');
-  </script>
-
-
 
   <script>
     (function() {
