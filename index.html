@@ -193,8 +193,8 @@
    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
    .portfolio-item{position:relative;background:var(--bg-2);overflow:hidden;transition:background var(--dur-s)}
    .portfolio-item:hover{background:var(--bg-3)}
-   .portfolio-item--glow{box-shadow:0 0 14px var(--glow),0 0 2px var(--accent);animation:glowPulse 2.4s ease-in-out infinite;z-index:1}
-   @keyframes glowPulse{0%,100%{box-shadow:0 0 10px var(--glow),0 0 2px var(--accent)}50%{box-shadow:0 0 30px var(--glow),0 0 8px var(--accent)}}
+   .portfolio-item--glow{box-shadow:0 0 0 4px var(--accent),0 0 40px 6px var(--glow),inset 0 0 18px var(--accent-bg);animation:glowPulse 1.8s ease-in-out infinite;z-index:1}
+   @keyframes glowPulse{0%,100%{box-shadow:0 0 0 3px var(--accent),0 0 22px 4px var(--glow),inset 0 0 10px var(--accent-bg)}50%{box-shadow:0 0 0 6px var(--accent),0 0 60px 14px var(--glow),inset 0 0 28px var(--accent-bg)}}
    .portfolio-media{position:relative;overflow:hidden;aspect-ratio:800/500}
    .portfolio-img{width:100%;height:100%;object-fit:cover;transition:transform var(--dur-l) var(--ease-o),filter var(--dur-s)}
    .portfolio-item__overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;padding:20px;background:linear-gradient(180deg,rgba(10,10,10,0) 30%,rgba(10,10,10,.82) 100%);opacity:0;transition:opacity var(--dur-s)}
