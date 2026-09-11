@@ -117,7 +117,11 @@ module.exports = async (req, res) => {
     }
   }
 
-  const { name, email, phone, service, message } = req.body;
+  const { name, email, phone, service, message, botcheck } = req.body;
+
+  if (botcheck) {
+    return res.status(200).json({ success: true });
+  }
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Nome, email e mensagem são obrigatórios' });
