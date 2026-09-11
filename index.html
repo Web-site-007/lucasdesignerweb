@@ -109,7 +109,7 @@
     .cover{position:relative;width:100%;overflow:hidden;margin-top:var(--nav-height);border-bottom:1px solid var(--line)}
     .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.12) 0%,rgba(10,10,10,.5) 100%);pointer-events:none}
     .cover::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0px,transparent 3px,rgba(0,0,0,0.14) 3px,rgba(0,0,0,0.14) 4px);pointer-events:none;z-index:1}
-    .cover__img{width:100%;height:auto;aspect-ratio:1236/768;display:block;object-fit:cover;filter:contrast(1.04) saturate(.96)}
+    .cover__img{width:100%;height:auto;display:block;filter:contrast(1.04) saturate(.96)}
 
     /* ---------- HERO ---------- */
     .hero{position:relative;padding:clamp(28px,4vw,48px) 0;overflow:hidden;border-bottom:1px solid var(--line)}
@@ -327,7 +327,6 @@
     @media (max-width:600px){
       .portfolio-item__overlay{opacity:1}
       .portfolio-img{filter:grayscale(.2) contrast(1.05)}
-      .cover__img{aspect-ratio:1236/560}
       .container{width:calc(100% - 32px)}
       :is(.services-grid,.portfolio-grid,.steps-grid){grid-template-columns:1fr}
       .form-row{grid-template-columns:1fr}
@@ -437,7 +436,7 @@
     <picture>
       <source srcset="src/images/capa-patricia.avif" type="image/avif"/>
       <source srcset="src/images/capa-patricia.webp" type="image/webp"/>
-      <img src="src/images/capa-patricia.webp" alt="" class="cover__img" width="1236" height="768" fetchpriority="high"/>
+            <img src="src/images/capa-patricia.webp" alt="" class="cover__img" width="1236" height="824" fetchpriority="high"/>
     </picture>
   </section>
 
