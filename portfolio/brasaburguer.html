@@ -16,7 +16,7 @@
 	<link rel="preload" as="style" onload="this.rel='stylesheet'" type="text/css" href="brasaburguer-assets/lib/common/lib/bootstrap/dist/css/bootstrap.min.css"/>
 	<link rel="preload" as="style" onload="this.rel='stylesheet'" type="text/css" href="brasaburguer-assets/lib/common/lib/select2/css/select2.min.css"/>
 	<link rel="preload" as="style" onload="this.rel='stylesheet'" type="text/css" href="brasaburguer-assets/lib/common/lib/jquery.gritter/css/jquery.gritter.css"/>
-	<link rel="preload" as="style" onload="this.rel='stylesheet'" type="text/css" href="brasaburguer-assets/theme/custom/css/custom.min.css?v=0.114.0.4"/>
+	<link rel="preload" as="style" onload="this.rel='stylesheet'" type="text/css" href="brasaburguer-assets/theme/custom/css/custom.min.css?v=0.114.0.5"/>
 	<link rel="preload" as="style" onload="this.rel='stylesheet'" type="text/css" href="brasaburguer-assets/lib/common/lib/mprogress/css/mprogress.min.css"/>
 	<link rel="preload" as="style" onload="this.rel='stylesheet'" type="text/css" href="brasaburguer-assets/lib/common/lib/swiper/css/swiper-bundle.min.css"/>
 
@@ -7340,6 +7340,7 @@
            .then((data) => {
 
                scope_cliente.itens_site = data.itens;
+               document.body.classList.add('brasa-content-loaded');
                scope_cliente.$apply();
 
                if (data.itens.length > 0) {
@@ -7369,6 +7370,7 @@
                }, 200);
            })
            .catch((error) => {
+               document.body.classList.add('brasa-content-loaded');
                window.alertMessage('danger', 'Erro na consulta do saldo!', error);
            })
            .finally(() => {
@@ -7394,6 +7396,7 @@
            }
 
            $('.loading-produtos-home').addClass('d-none');
+           document.body.classList.add('brasa-content-loaded');
 
            /* Caso for "desktop" verifica o top do carrinho */
            if ($('.home').length > 0) {
