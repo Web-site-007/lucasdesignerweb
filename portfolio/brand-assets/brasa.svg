@@ -1,8 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
- <title id="title">Brasa Burguer</title><desc id="desc">Brasa Burguer, hamburgueria</desc>
- <rect width="720" height="190" rx="30" fill="#171313"/>
- <path d="M99 28c-26 25-39 43-39 65 0 25 18 47 43 47 28 0 48-20 48-47 0-19-12-38-34-57 2 17-5 28-16 36 1-17 0-29-2-44Z" fill="#f47b20"/>
- <path d="M101 78c-12 12-17 21-17 31 0 11 7 20 18 20 13 0 22-9 22-21 0-8-6-17-15-25 0 7-3 11-8 15 1-8 1-13 0-20Z" fill="#ffd166"/>
- <text x="185" y="106" fill="#fff" font-family="Arial,sans-serif" font-size="53" font-weight="900" letter-spacing="1">BRASA</text>
- <text x="187" y="150" fill="#f47b20" font-family="Arial,sans-serif" font-size="35" font-weight="800" letter-spacing="3">BURGUER</text>
+  <title id="title">Brasa Burguer</title><desc id="desc">Brasa Burguer, hamburgueria</desc>
+  <defs>
+    <linearGradient id="bun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd98a"/><stop offset="1" stop-color="#f1a63f"/>
+    </linearGradient>
+    <linearGradient id="patty" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a4b28"/><stop offset="1" stop-color="#5f2f17"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="190" rx="30" fill="#171313"/>
+  <g transform="translate(40,26)">
+    <path d="M6 88 C6 34 30 12 55 12 C80 12 104 34 104 88 Z" fill="url(#bun)"/>
+    <path d="M6 78 C6 34 30 15 55 15 C80 15 104 34 104 78 L104 88 L6 88 Z" fill="#fff" opacity="0.22"/>
+    <ellipse cx="32" cy="40" rx="5" ry="7" fill="#fff" opacity="0.75" transform="rotate(25 32 40)"/>
+    <ellipse cx="55" cy="30" rx="5" ry="7" fill="#fff" opacity="0.7" transform="rotate(-15 55 30)"/>
+    <ellipse cx="78" cy="42" rx="5" ry="7" fill="#fff" opacity="0.75" transform="rotate(20 78 42)"/>
+    <path d="M6 88 C14 84 20 92 28 88 C36 84 42 94 50 88 C58 82 64 92 72 88 C80 84 86 94 94 88 C100 84 102 90 104 88 L104 98 L6 98 Z" fill="#6ea63f"/>
+    <path d="M6 98 C12 96 18 102 26 98 C34 94 40 104 48 98 C56 92 62 102 70 98 C78 94 86 104 92 98 C98 94 102 100 104 98 L104 104 L6 104 Z" fill="#82bd50"/>
+    <path d="M8 104 L96 104 C100 110 94 116 88 116 L16 116 C10 116 4 110 8 104 Z" fill="#ffcf4d"/>
+    <path d="M22 116 L82 116 L78 124 C76 130 70 132 66 130 L38 130 C34 132 30 130 28 124 Z" fill="#ffb830"/>
+    <rect x="10" y="126" width="84" height="30" rx="14" fill="url(#patty)"/>
+    <rect x="24" y="126" width="56" height="8" rx="4" fill="#fff" opacity="0.12"/>
+    <path d="M12 156 H92 L88 164 H16 Z" fill="#e58a2e"/>
+    <path d="M12 156 C20 150 32 160 40 154 C50 147 60 160 68 154 C76 148 84 158 92 156 L92 168 C60 172 40 172 12 168 Z" fill="#f7a541"/>
+    <circle cx="20" cy="174" r="6" fill="#d63a2f"/>
+    <circle cx="44" cy="178" r="4.5" fill="#f47b20"/>
+    <circle cx="66" cy="175" r="5" fill="#d63a2f" opacity="0.85"/>
+    <circle cx="88" cy="179" r="3.6" fill="#f47b20" opacity="0.75"/>
+    <path d="M30 178 C34 182 38 186 34 190 C30 186 28 182 30 178 Z" fill="#d63a2f" opacity="0.6"/>
+    <path d="M58 176 C62 180 66 184 62 188 C58 184 56 180 58 176 Z" fill="#f47b20" opacity="0.6"/>
+  </g>
+  <text x="196" y="106" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="56" font-weight="900" letter-spacing="2">BRASA</text>
+  <text x="199" y="152" fill="#f47b20" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="800" letter-spacing="5">BURGUER</text>
 </svg>
