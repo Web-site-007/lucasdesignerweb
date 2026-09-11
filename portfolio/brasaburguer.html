@@ -67,32 +67,7 @@
 		<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DEMO0DEMO0D');</script>
 
 
-	<!-- Facebook Pixel Code -->
 	
-			
-			
-	<script>
-		!function(f,b,e,v,n,t,s)
-		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-		n.queue=[];t=b.createElement(e);t.async=!0;
-		t.src=v;s=b.getElementsByTagName(e)[0];
-		s.parentNode.insertBefore(t,s)}(window, document,'script',
-		'https://connect.facebook.net/en_US/fbevents.js');
-
-		/* Pixel DT */
-		fbq('init', '000000000000000');
-
-				fbq('track', 'PageView');
-	</script>
-	<noscript>
-		<img height="1" width="1" style="display:none" src="about:blank"/>
-			</noscript>
-
-	
-			<meta name="facebook-domain-verification" content="nqqha9qoxgamb6kxedwkxc8cvzek8m" />
-		<!-- End Facebook Pixel Code -->
 
 	<!-- para ocultar as tags do angular -->
 	<style>
@@ -15196,6 +15171,17 @@
    $(document).ready(function () {
 
        var map = null;
+       window.__loadQrDeps = function () {
+            return new Promise(function (res, rej) {
+                if (document.getElementById('html5-qrcode-lib')) return res();
+                var e = document.createElement('script');
+                e.id = 'html5-qrcode-lib';
+                e.src = 'brasaburguer-assets/lib/common/lib/html5qrcode/html5-qrcode.min.js';
+                e.defer = true;
+                e.onload = res; e.onerror = rej;
+                document.head.appendChild(e);
+            });
+        };
        window.__loadMapDeps = async function () {
             function load(src, id, isCss) {
                 return new Promise(function (res, rej) {
@@ -17234,7 +17220,7 @@
        }
    });
 </script>
-   <script type="text/javascript" defer src="brasaburguer-assets/lib/common/lib/html5qrcode/html5-qrcode.min.js"></script>
+   
 <script>
    $(document).ready(function () {
        
@@ -17451,7 +17437,8 @@
 
                    modal.modal('show');
 
-                   html5QrCode = new Html5Qrcode("qr-reader-modal");
+                   await window.__loadQrDeps();
+                    html5QrCode = new Html5Qrcode("qr-reader-modal");
 
                    var is_scan_started   = false;
                    var erro_scan_started = '';
