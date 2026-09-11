@@ -85,7 +85,7 @@
     .navbar__inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav-height);gap:24px}
     .navbar__brand{display:flex;align-items:baseline;gap:10px;letter-spacing:.04em}
     .navbar__mark{font-family:var(--mono);color:var(--accent);font-size:.9rem;border:1px solid var(--accent);padding:3px 7px;line-height:1;transform:translateY(2px)}
-    .navbar__name{font-family:var(--font);font-weight:700;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em}
+    .navbar__name{font-family:var(--font);font-weight:700;font-size:clamp(.62rem,1.4vw,1rem);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
     .navbar__name em{font-style:normal;color:var(--accent)}
     .navbar__sub{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3)}
     .navbar__right{display:flex;align-items:center;gap:22px}
@@ -410,9 +410,9 @@
 
   <nav class="navbar" role="navigation" aria-label="Menu principal">
     <div class="navbar__inner container">
-      <a href="#" class="navbar__brand" aria-label="Patricia Designer Web — Página inicial">
-        <span class="navbar__mark navbar__logo" aria-hidden="true">P&lt;/&gt;</span>
-        <span class="navbar__name">PATRICIA<em>/&gt;</em></span>
+      <a href="#" class="navbar__brand" aria-label="Lucas Designer Desenvolvedor Web — Página inicial">
+        <span class="navbar__mark navbar__logo" aria-hidden="true">L</span>
+        <span class="navbar__name">LUCAS <em>|</em> DESIGNER / DESENVOLVEDOR WEB</span>
       </a>
       <div class="navbar__right">
         <div class="status-pill"><i aria-hidden="true"></i><span>online // aceita projetos</span></div>
@@ -931,7 +931,7 @@
       <div class="footer__inner">
         <div class="footer__brand">
           <span class="dot" aria-hidden="true"></span>
-          PATRICIA<b>/&gt;</b>
+          LUCAS <b>| DESIGNER / DESENVOLVEDOR WEB</b>
         </div>
         <div class="footer__links">
           <a href="#servicos" class="footer__link">Serviços</a>
