@@ -41,7 +41,7 @@
 
 	<!-- OG Tags (Facebook) -->
 	<meta property="og:locale" content="pt_br">
-	<meta property="og:url" content="https://biguacu.route41burgers.com.br">
+	<meta property="og:url" content="https://seu-restaurante.com.br">
 	<meta property="og:title" content="BrasaBurguer - Peça online!" />
 	<meta property="og:site_name" content="BrasaBurguer - Peça online!">
 	<meta property="og:description" content="Site de pedidos oficial do BrasaBurguer em Biguaçu, SC. Confira nossos pratos no cardápio on-line com preços e promoções exclusivas para entrega." />
@@ -68,9 +68,9 @@
 	
 			
 			
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YXNPQDS5EB"></script>
-	<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YXNPQDS5EB');</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YXNPQDS5EB"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-DEMO0DEMO0D"></script>
+	<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DEMO0DEMO0D');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DEMO0DEMO0D"></script>
 
 
 	<!-- Facebook Pixel Code -->
@@ -88,7 +88,7 @@
 		'https://connect.facebook.net/en_US/fbevents.js');
 
 		/* Pixel DT */
-		fbq('init', '1645274142288281');
+		fbq('init', '000000000000000');
 
 				fbq('track', 'PageView');
 	</script>
@@ -137,7 +137,7 @@
 						<div class="row align-items-center">
 							<div class="col-auto">
 								<div class="logo bg-dark-blur">
-									<a href="https://biguacu.route41burgers.com.br">
+									<a href="https://seu-restaurante.com.br">
 																					<img src="brasaburguer-assets/store/c7c71e51-e90a-45ab-82eb-7d76aa4f8f07/logo/84349980-5cb2-40a6-9510-73f4d07dc2d5.png">
 																			</a>
 								</div>
@@ -156,8 +156,8 @@
 									<div class="dropdown float-right" ng-if="cliente.id > 0">
 										<button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Olá [% cliente.ds_nome %],</button>
 										<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-											<a class="dropdown-item link_header_fixed" href="https://biguacu.route41burgers.com.br/account#v-dados-pessoais">Dados Pessoais</a>
-											<a class="dropdown-item link_header_fixed" href="https://biguacu.route41burgers.com.br/account#v-ultimos-pedidos">Últimos Pedidos</a>
+											<a class="dropdown-item link_header_fixed" href="https://seu-restaurante.com.br/account#v-dados-pessoais">Dados Pessoais</a>
+											<a class="dropdown-item link_header_fixed" href="https://seu-restaurante.com.br/account#v-ultimos-pedidos">Últimos Pedidos</a>
 											
 											<a class="dropdown-item btn-cancelar-modo-presencial" href="#" ng-if="info_pedido.tp_pedido == 'presencial'">Sair do pedido presencial</a>
 											<a class="dropdown-item btn-logout-cliente" href="#">Sair da Conta</a>
@@ -189,7 +189,7 @@
 						</div>
 													<div class="loginButton">
 								<button class="btn btn-dark fw-700 btn-login-cadastro" href="#" data-toggle="modal" data-target="#modal-signup" ng-if="cliente.id == 0" disabled>Entrar</button>
-								<a href="https://biguacu.route41burgers.com.br/account#v-dados-pessoais" class="btn btn-dark fw-700" ng-if="cliente.id > 0">Olá [% (cliente.ds_nome).split(' ', 1)[0] %],</a>
+								<a href="https://seu-restaurante.com.br/account#v-dados-pessoais" class="btn btn-dark fw-700" ng-if="cliente.id > 0">Olá [% (cliente.ds_nome).split(' ', 1)[0] %],</a>
 								<a href="#" class="btn btn-dark fw-700 a-prevent-default" ng-if="cliente.id == -999 && cliente.ds_nome">Olá [% (cliente.ds_nome).split(' ', 1)[0] %],</a>
 							</div>
 																<div class="container_min_nav">
@@ -197,11 +197,11 @@
 						<ul class="menu">
 							<li class="py-2 btn-burger-login" ng-if="cliente.id == 0"><a href="#" class="py-2" data-toggle="modal" data-target="#modal-signup">Entre ou Cadastre-se!</a></li>
 							<li>
-								<a class="py-2" href="https://biguacu.route41burgers.com.br" class="link_mobile">Início</a>
+								<a class="py-2" href="https://seu-restaurante.com.br" class="link_mobile">Início</a>
 							</li>
 							
 															<li>
-									<a class="py-2" href="https://biguacu.route41burgers.com.br" class="link_mobile">Cardápio</a>
+									<a class="py-2" href="https://seu-restaurante.com.br" class="link_mobile">Cardápio</a>
 									<ul class="submenu-1" ng-if="itens_site.length > 0">
 										<li ng-repeat="grupo in itens_site">
 											<a href="#" class="py-2 itens-grupo-link" data-grupo="[% grupo.id_grupo %]" data-ds_grupo="[% grupo.ds_grupo %]">
@@ -217,8 +217,8 @@
 										</li>
 									</ul>
 								</li>
-																						<li ng-if="cliente.id > 0"><a href="https://biguacu.route41burgers.com.br/account#v-dados-pessoais" class="py-2 link_mobile">Meu Cadastro</a></li>
-								<li ng-if="cliente.id > 0"><a href="https://biguacu.route41burgers.com.br/account#v-ultimos-pedidos" class="py-2 link_mobile">Últimos Pedidos</a></li>
+																						<li ng-if="cliente.id > 0"><a href="https://seu-restaurante.com.br/account#v-dados-pessoais" class="py-2 link_mobile">Meu Cadastro</a></li>
+								<li ng-if="cliente.id > 0"><a href="https://seu-restaurante.com.br/account#v-ultimos-pedidos" class="py-2 link_mobile">Últimos Pedidos</a></li>
 														<li ng-if="cliente.id > 0 && info_pedido.tp_pedido == 'presencial'"><a href="#" class="py-2 btn-cancelar-modo-presencial">Sair do pedido presencial</a></li>
 							<li ng-if="cliente.id > 0"><a href="#" class="py-2 btn-logout-cliente">Sair</a></li>
 							<li ng-if="cliente.id == -999"><a href="#" class="py-2 btn-cancelar-modo-presencial">Sair</a></li>
@@ -241,8 +241,8 @@
 								<div class="dropdown float-right mr-4 mt-4" ng-if="cliente.id > 0">
 									<button class="btn btn-light bg-dark-blur border-0 color-white dropdown-toggle font-15" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Olá [% cliente.ds_nome %],</button>
 									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-										<a class="dropdown-item" href="https://biguacu.route41burgers.com.br/account#v-dados-pessoais">Dados Pessoais</a>
-										<a class="dropdown-item" href="https://biguacu.route41burgers.com.br/account#v-ultimos-pedidos">Últimos Pedidos</a>
+										<a class="dropdown-item" href="https://seu-restaurante.com.br/account#v-dados-pessoais">Dados Pessoais</a>
+										<a class="dropdown-item" href="https://seu-restaurante.com.br/account#v-ultimos-pedidos">Últimos Pedidos</a>
 										<!-- <a class="dropdown-item" href="./account#v-fidelidade">Programa de Fidelidade</a> -->
 										
 										<a class="dropdown-item btn-cancelar-modo-presencial" href="#" ng-if="info_pedido.tp_pedido == 'presencial'">Sair do pedido presencial</a>
@@ -1581,7 +1581,7 @@
 					<div class="row m-0 justify-content-center mb-3">
 													
 							<div class="col-12 col-md-auto px-1 mt-2 d-md-none">
-								<a target="_blank" href="https://wa.me/5548999166923">
+								<a target="_blank" href="https://wa.me/5500000000000">
 									<div class="contact-button whatsapp">
 										<i class="fab fa-whatsapp"></i>
 										<p class="mb-0 fw-400 text-uppercase text-center text-md-left">Clique aqui para chamar</p>
@@ -1591,7 +1591,7 @@
 							</div>
 							
 							<div class="col-12 col-md-auto px-1 mt-2 d-none d-md-block">
-								<a target="_blank" href="https://wa.me/5548999166923">
+								<a target="_blank" href="https://wa.me/5500000000000">
 									<div class="contact-button whatsapp">
 										<i class="fab fa-whatsapp"></i>
 										<p class="mb-0 fw-400 text-uppercase text-center text-md-left">Chame no WhatsApp</p>
@@ -1601,7 +1601,7 @@
 							</div>
 																			
 							<div class="col-12 col-md-auto px-1 mt-2 d-md-none">
-								<a href="tel:+5548999166923">
+								<a href="tel:+5500000000000">
 									<div class="contact-button phone">
 										<i class="fas fa-phone"></i>
 										<p class="mb-0 fw-400 text-uppercase text-center text-md-left">Ou se preferir, nos ligue:</p>
@@ -1611,7 +1611,7 @@
 							</div>
 							
 							<div class="col-12 col-md-auto px-1 mt-2 d-none d-md-block">
-								<a href="tel:+5548999166923">
+								<a href="tel:+5500000000000">
 									<div class="contact-button phone">
 										<i class="fas fa-phone"></i>
 										<p class="mb-0 fw-400 text-uppercase text-center text-md-left">Nosso Telefone</p>
@@ -1626,10 +1626,10 @@
 					<p class="font-14 text-center mb-0">Fique por dentro de nossas novidades e promoções.</p>
 					<div class="row my-2 no-gutters justify-content-center">
 													<div class="col-auto px-2">
-								<a class="social-link" target="_blank" href="https://www.facebook.com/route41burgers"><img src="brasaburguer-assets/lib/common/images/default/social_facebook.png" alt="Facebook"></a>
+								<a class="social-link" target="_blank" href="https://www.facebook.com/seu-restaurante"><img src="brasaburguer-assets/lib/common/images/default/social_facebook.png" alt="Facebook"></a>
 							</div>
 																			<div class="col-auto px-2">
-								<a class="social-link" target="_blank" href="https://instagram.com/route41burgers"><img src="brasaburguer-assets/lib/common/images/default/social_instagram.png" alt="Instagram"></a>
+								<a class="social-link" target="_blank" href="https://instagram.com/seu-restaurante"><img src="brasaburguer-assets/lib/common/images/default/social_instagram.png" alt="Instagram"></a>
 							</div>
 																							</div>
 							</div>
@@ -1816,7 +1816,7 @@
                                <label>CPF/CNPJ: (Opcional)</label>
                                <input type="text" class="form-control form-control-lg nr_cpf_cnpj" data-mask-for-cpf-cnpj placeholder="000.000.000-00" name="input[nr_cpf_cnpj]" value="[% login.nr_cpf_cnpj %]">
                            </div>
-                           <p class="text-muted">Ao clicar em "Confirmar", confirmo que li e concordo com os <a href="https://deliveryturbo.com.br/site/termos/" target="_blank" title="Termos de Uso"><strong>Termos de Uso</strong></a> e a <a href="https://deliveryturbo.com.br/site/privacidade/" target="_blank" title="Política de Privacidade"><strong>Política de Privacidade</strong></a>.</p>
+                           <p class="text-muted">Ao clicar em "Confirmar", confirmo que li e concordo com os <a href="https://seu-restaurante.com.br/site/termos/" target="_blank" title="Termos de Uso"><strong>Termos de Uso</strong></a> e a <a href="https://seu-restaurante.com.br/site/privacidade/" target="_blank" title="Política de Privacidade"><strong>Política de Privacidade</strong></a>.</p>
                            <div class="msg text-center color-red mb-2"></div>
                            <button type="button" class="btn btn-success btn-lg btn-block btn-env-cad-cliente btn-cliente">Confirmar</button>
                        </form>
@@ -5968,7 +5968,7 @@
        $('.mask_cvv_card').mask('9999');
 
        /* Validador CPF CPNJ */
-       /* Função obtida em: https://irias.com.br/blog/como-validar-cpf-cnpj-em-node-js/ (Anderson Irias <contato@irias.com.br>)*/
+       /* Função obtida em: https://irias.com.br/blog/como-validar-cpf-cnpj-em-node-js/ (Anderson Irias <email@seu-restaurante.com.br>)*/
        window.validaCpfCnpj = function(val) {
 
            var cpfcnpj = val.trim();
@@ -6727,7 +6727,7 @@
 
        /* Possibilidade a ser avaliada -> redirecionar listagem do pedido no click pros detalhes do pedido */
        $scope.redirectOrder = function(id) {
-           window.location.href = "https://biguacu.route41burgers.com.br"+"/account/orders/"+id;
+           window.location.href = "https://seu-restaurante.com.br"+"/account/orders/"+id;
        };
 
        $scope.formatData = function(datatime) {
@@ -6796,7 +6796,7 @@
            return new Promise((resolve, reject) => {
 
                if (in_login) {
-                   var session = $('#carrinho-home').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'setVinculoEnderecoSessionCliente'});
+                   var session = $('#carrinho-home').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'setVinculoEnderecoSessionCliente'});
                    session.getDados(returnVerifyVinculoEnderecoSessionLogin);
                }
                resolve('ok');
@@ -6816,7 +6816,7 @@
                'id': 0
            }
 
-           var resClear = $('#profile_ctrl').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'requestClearDadosClienteAppEmpresa'});
+           var resClear = $('#profile_ctrl').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'requestClearDadosClienteAppEmpresa'});
 
            await resClear.sendDadosPromise(JSON.stringify(dados_clear))
            .then((data) => {
@@ -6862,7 +6862,7 @@
                'id': 0
            }
 
-           var resAlteracoes = $('#profile_ctrl').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'getAlteracoesClienteVinculoEmpresa'});
+           var resAlteracoes = $('#profile_ctrl').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'getAlteracoesClienteVinculoEmpresa'});
 
            await resAlteracoes.getDadosPromise(JSON.stringify(info))
            .then((data) => {
@@ -6947,7 +6947,7 @@
 
            var success = false;
 
-           var resUpdateProfile = $('#profile_ctrl').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'requestUpdateProfile'});
+           var resUpdateProfile = $('#profile_ctrl').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'requestUpdateProfile'});
 
            await resUpdateProfile.sendDadosPromise(JSON.stringify(dados))
            .then(async (data) => {
@@ -7017,7 +7017,7 @@
                        /* Evento Google Analytics */
                        gtag("event", "begin_checkout");
 
-                       window.location.href = "https://biguacu.route41burgers.com.br"+"/checkout";
+                       window.location.href = "https://seu-restaurante.com.br"+"/checkout";
                    }, 500);
                } else {
 
@@ -7104,7 +7104,7 @@
        /* Botão para Sair da conta do cliente */
        $(document).delegate('.btn-logout-cliente', 'click', function(e) {
            e.preventDefault();
-           var a = $(this).ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'logoutCliente'});
+           var a = $(this).ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'logoutCliente'});
            a.logoutCliente();
        });
 
@@ -7189,10 +7189,10 @@
 
            if (local == '#login') {
                if(path.replace('/','') == 'account') {
-                   window.location.href = "https://biguacu.route41burgers.com.br"+'/'+local;
+                   window.location.href = "https://seu-restaurante.com.br"+'/'+local;
                }
            }
-           window.location.href = "https://biguacu.route41burgers.com.br"+path+'/'+local;
+           window.location.href = "https://seu-restaurante.com.br"+path+'/'+local;
        }
 
        /* Navegação no browser e no mobile, para caso "voltar" fechar o modal caso esteja aberto */
@@ -7287,7 +7287,7 @@
                    'id_empresa': 0
                }
 
-               var get_saldo = $('body').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'requestSaldoClienteEmpresa'});
+               var get_saldo = $('body').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'requestSaldoClienteEmpresa'});
 
                await get_saldo.getDadosPromise(JSON.stringify(info))
                .then((data) => {
@@ -7309,7 +7309,7 @@
 
        window.getParametrosCashback = async function(saldo_cliente = true) {
 
-           var get_cash = $('body').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'requestParametrosCashback'});
+           var get_cash = $('body').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'requestParametrosCashback'});
 
            await get_cash.getDadosPromise('')
            .then((data) => {
@@ -7363,7 +7363,7 @@
 
        window.getItensSite = async function() {
 
-           var getItens = $('body').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'getItens'});
+           var getItens = $('body').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'getItens'});
 
            mp.start();
 
@@ -7478,7 +7478,7 @@
 
                mp.start();
                var info = JSON.stringify(array_ids);
-               var cliente = $('.home').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'getPrecosProdutos'});
+               var cliente = $('.home').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'getPrecosProdutos'});
                cliente.getDados(returnGetPrecos, info);
 
            } else {
@@ -7512,7 +7512,7 @@
 
            /* if(location.pathname != '') { */
            if (('/'+array_url.slice(-1)[0]) != path_site) {
-               window.location.href = "https://biguacu.route41burgers.com.br"+"/#grupo-"+id+"-"+desc;
+               window.location.href = "https://seu-restaurante.com.br"+"/#grupo-"+id+"-"+desc;
 
            } else {
 
@@ -7996,7 +7996,7 @@
                vl_verificador: nr_fone
            }
 
-           var resCliente = modal_login.ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'getClienteByVerificador'});
+           var resCliente = modal_login.ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'getClienteByVerificador'});
 
            await resCliente.getDadosPromise(JSON.stringify(info))
            .then((data) => {
@@ -8083,7 +8083,7 @@
                'id': token_cliente
            }
 
-           var resLogin = $('#home').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'requestLoginClienteById'});
+           var resLogin = $('#home').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'requestLoginClienteById'});
 
            await resLogin.getDadosPromise(JSON.stringify(info))
            .then((data) => {
@@ -8290,7 +8290,7 @@
 
                    window.loadingInButtons($(this), 'add');
 
-                   var resCodeAuth = $(this).ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileAuthController', ajax_function: 'sendCodigoAuth'});
+                   var resCodeAuth = $(this).ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileAuthController', ajax_function: 'sendCodigoAuth'});
 
                    await resCodeAuth.sendDadosPromise(JSON.stringify(dados))
                    .then((data) => {
@@ -8341,7 +8341,7 @@
 
                window.loadingInButtons($(this), 'add');
 
-               var resCodeValid = $(this).ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileAuthController', ajax_function: 'validCodigoAuth'});
+               var resCodeValid = $(this).ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileAuthController', ajax_function: 'validCodigoAuth'});
 
                await resCodeValid.sendDadosPromise(JSON.stringify(dados))
                .then(async (data) => {
@@ -8478,7 +8478,7 @@
            form.parsley().validate();
 
            if (form.parsley().isValid()){
-               $('#form-cad-cliente').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'setCliente'}).setCliente();
+               $('#form-cad-cliente').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'setCliente'}).setCliente();
            } else {
                return;
            }
@@ -8643,7 +8643,7 @@
 
            /* Verificar se o Cliente já está logado no site através do Id. */
            setTimeout(function(){
-               var valid_facebook = modal_face.ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'getClienteFacebook'});
+               var valid_facebook = modal_face.ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'getClienteFacebook'});
                valid_facebook.getDados(returnSetLoginFacebook, JSON.stringify(dados));
            }, timeout);
        }
@@ -8659,7 +8659,7 @@
                                    localStorage.setItem("@delivery-turbo-redirect-to", "checkout");
                            }
 
-           var url_connect = 'https://www.facebook.com/v7.0/dialog/oauth?client_id='+app_id+'&display=popup&response_type=code&redirect_uri=https://deliveryturbo.com.br/fblogin&scope=email&state='+url_loja;
+           var url_connect = 'https://www.facebook.com/v7.0/dialog/oauth?client_id='+app_id+'&display=popup&response_type=code&redirect_uri=https://seu-restaurante.com.br/fblogin&scope=email&state='+url_loja;
 
            /* window.open(url_connect, '_blank'); */
            location.href = url_connect;
@@ -8698,7 +8698,7 @@
            info['token'] = token;
            info          = JSON.stringify(info);
 
-           var login_facebook = $('.home').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'getIntegrationLoginFB'});
+           var login_facebook = $('.home').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'getIntegrationLoginFB'});
            login_facebook.getDados(returnLoginFacebook, info);
        }
 
@@ -8806,8 +8806,8 @@
            }
 
            /* Função definir o produto ($scope.produto) as informações necessárias para o carrinho
-           * Jonatan Kroenke <jonatan@datamais.com.br>
-           * Carlos Rodolfo <rodolfo@datamais.com.br>
+           * Jonatan Kroenke <>
+           * Carlos Rodolfo <>
            */
            $scope.selection = function($event,type,valor, qtd_ms = 0) {
 
@@ -9138,12 +9138,12 @@
            if($('#modal-produto').length > 0) {
 
                var scope_modalproduto = angular.element(document.querySelector('#modal-produto-wrap')).scope();
-               var item_inf_edicao = $('#modal-produto').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'getItem'});
+               var item_inf_edicao = $('#modal-produto').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'getItem'});
                var item_inf = item_inf_edicao;
                var isMobile = $(window).width();
 
                if ($('#checkout').length > 0) {
-                   item_inf = $('#modal-produto').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'getItemCupom'});
+                   item_inf = $('#modal-produto').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'getItemCupom'});
                }
 
                function getMensagemEdicaoIndisponivelSite() {
@@ -10683,7 +10683,7 @@
                /**
                 * Função para inclusão do produto no carrinho, fazendo o envio das informações por AJAX para criação ou edição da sessão
                 * e retorno das informações necessárias para o carrinho.
-                * [Jonatan Kroenke <jonatan@datamais.com.br>]
+                * [Jonatan Kroenke <>]
                */
                window.includeProdutoCarrinho = function() {
 
@@ -10779,7 +10779,7 @@
                                }
                            }
 
-                           var send_prod = $('#modal-produto').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'setProdutoCarrinho'}).setProdutoCarrinho(dados);
+                           var send_prod = $('#modal-produto').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'setProdutoCarrinho'}).setProdutoCarrinho(dados);
 
                            if (send_prod && typeof send_prod.done === 'function') {
                                send_prod.done(function(data) {
@@ -11048,7 +11048,7 @@
            /**
            * Função para inclusão do produto da categoria no carrinho, fazendo o envio das informações por AJAX para criação ou edição da sessão
            * e retorno das informações necessárias para o carrinho.
-           * [Jonatan Kroenke <jonatan@datamais.com.br>]
+           * [Jonatan Kroenke <>]
            */
            window.includeProdutoCategoriaCarrinho = function() {
 
@@ -11100,7 +11100,7 @@
                            return value;
                        });
 
-                       var send_prod = $('#modal-agrupador-wrap').find('.modal').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'setProdutoCarrinho'}).setProdutoCarrinho(dados);
+                       var send_prod = $('#modal-agrupador-wrap').find('.modal').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'setProdutoCarrinho'}).setProdutoCarrinho(dados);
 
                        if (send_prod && typeof send_prod.done === 'function') {
                            send_prod.done(function() {
@@ -11566,7 +11566,7 @@
 
        /* Retirada balcão no carrinho da hoje */
        window.setRetiradaHome = function() {
-           var retirada = $('#carrinho-home').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setRetiradaBalcao'});
+           var retirada = $('#carrinho-home').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setRetiradaBalcao'});
            retirada.getDados(returnRetirada);
        }
 
@@ -11707,7 +11707,7 @@
                    'cardapio_sugestivo': cardapio_sugestivo
                }
 
-               var resVendaSugestiva = $('#profile_ctrl').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'getProdutosVendaSugestiva'});
+               var resVendaSugestiva = $('#profile_ctrl').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'getProdutosVendaSugestiva'});
 
                await resVendaSugestiva.getDadosPromise(JSON.stringify(info))
                .then((data) => {
@@ -11742,7 +11742,7 @@
 
        /**
         * Função JS para passar informações ao carrinho e calculo dos totais do mesmo.
-        * [Jonatan Kroenke <jonatan@datamais.com.br>]
+        * [Jonatan Kroenke <>]
        */
        window.makeCarrinho = function(dados) {
 
@@ -11761,7 +11761,7 @@
                var cart = dados.cart;
 
                if (((cart == '') || (cart == undefined) || (cart.length == 0)) && ($('#checkout').length > 0)) {
-                   window.location.href = "https://biguacu.route41burgers.com.br";
+                   window.location.href = "https://seu-restaurante.com.br";
                } else {
 
                    arr = cart;
@@ -11809,7 +11809,7 @@
                        if($('#checkout').length > 0) {
 
                            alert('Pedido máximo permitido é de R$ '+(scope_carrinho.vl_pedido_max).toFixed(2).replace('.',',')+'. Em caso de dúvidas, por favor entre em contato conosco.');
-                           window.location.href="https://biguacu.route41burgers.com.br";
+                           window.location.href="https://seu-restaurante.com.br";
                        }
                    }
 
@@ -12186,7 +12186,7 @@
                id_vv = 0;
                id_gp_vv = 0;
            }
-           $(this).ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'remProdutoCarrinho'}).remProdutoCarrinho(key, id_vv, id_gp_vv);
+           $(this).ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'remProdutoCarrinho'}).remProdutoCarrinho(key, id_vv, id_gp_vv);
        });
 
        /* Botão para finalização do pedido (redirecionar ao checkout)*/
@@ -12211,7 +12211,7 @@
                // Zy Analytics
                await window.trackEvent('go_to_checkout');
 
-               var url_checkout = "https://biguacu.route41burgers.com.br"+"/checkout";
+               var url_checkout = "https://seu-restaurante.com.br"+"/checkout";
                window.location = url_checkout;
 
                setTimeout(() => {
@@ -12392,7 +12392,7 @@
                        var info = [];
                        info.push({ id_endereco: parseInt(id_endereco), dados: arr_dados});
 
-                       var end = $('.edit-address').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'setAtualizacaoEnderecoCliente'});
+                       var end = $('.edit-address').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'setAtualizacaoEnderecoCliente'});
                        end.getDados(returnConfirmIdArea, JSON.stringify(info));
                    }
                }
@@ -12424,7 +12424,7 @@
            if (set_endereco) {
 
                /* Setar o endereço na sessão. */
-               var end = $('.edit-address').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setEnderecoCepUnico'});
+               var end = $('.edit-address').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setEnderecoCepUnico'});
                endereco_selecao[0].id_regiao_entrega_area = endereco_selecao[0].fk_id_regiao_entrega_area;
 
                /* Definir informações da entrega */
@@ -12711,7 +12711,7 @@
                'agendamento': scope_carrinho.cart.agendamento
            }
 
-           var resSession = $('#modal-agendamento').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setAgendamentoSession'});
+           var resSession = $('#modal-agendamento').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setAgendamentoSession'});
 
            await resSession.sendDadosPromise(JSON.stringify(dados))
            .then((data) => {
@@ -12736,7 +12736,7 @@
                    'page': page_agendamentos
                }
 
-               var resPeriodosAgendamento = $('#modal-agendamento').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'requestPeriodoAgendamento'});
+               var resPeriodosAgendamento = $('#modal-agendamento').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'requestPeriodoAgendamento'});
 
                await resPeriodosAgendamento.getDadosPromise(JSON.stringify(info))
                .then(async (data) => {
@@ -12856,7 +12856,7 @@
                    'dt_periodo': agendamento.dt_periodo
                }
 
-               var resPedidosPeriodosAgendamento = $('#modal-agendamento').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'requestPedidosPeriodoAgendamento'});
+               var resPedidosPeriodosAgendamento = $('#modal-agendamento').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\HomeController', ajax_function: 'requestPedidosPeriodoAgendamento'});
 
                await resPedidosPeriodosAgendamento.getDadosPromise(JSON.stringify(info))
                .then(async (data) => {
@@ -13629,7 +13629,7 @@
                    'forma_pagamento': { ...scope_checkout.cart.forma_pagamento, vl_troco: scope_checkout.cart.vl_troco }
                }
 
-               var resSession = checkout_element.ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setFormaPagamentoSession'});
+               var resSession = checkout_element.ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setFormaPagamentoSession'});
 
                await resSession.sendDadosPromise(JSON.stringify(dados))
                .then((data) => {
@@ -14007,11 +14007,11 @@
                            }
                        }
 
-                       var ped = checkout_element.ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setPedidoCliente'});
+                       var ped = checkout_element.ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setPedidoCliente'});
                        ped.setPedidoCliente(dados);
 
                    } else {
-                       window.location.href = "https://biguacu.route41burgers.com.br";
+                       window.location.href = "https://seu-restaurante.com.br";
                    }
                } else {
                    /* Caso o cliente não esteja logado, */
@@ -14256,7 +14256,7 @@
                try {
                    if((scope_checkout.cart.cupom.id_cupom != 0) && (scope_checkout.cart.cupom.ds_cupom != '')) {
 
-                       var rem = $('#modal-cupom').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'remCupomDesconto'});
+                       var rem = $('#modal-cupom').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'remCupomDesconto'});
 
                        await rem.sendDadosPromise('')
                        .then(async (data) => {
@@ -14615,7 +14615,7 @@
 
                    dados.push({'cupom': cupom.toUpperCase(), 'total_pedido' : total_pedido, 'tp_entrega': tp_entrega});
 
-                   var cp = $(this).ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'getCupomDesconto'});
+                   var cp = $(this).ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'getCupomDesconto'});
                    cp.getCupomDesconto(dados);
 
                } else {
@@ -15210,7 +15210,7 @@
        
        function getMapsGeocode(query_address) {
            return $.ajax({
-               url: 'https://biguacu.route41burgers.com.br/ajax-modulo-site',
+               url: 'https://seu-restaurante.com.br/ajax-modulo-site',
                type: 'GET',
                dataType: 'json',
                data: {
@@ -15510,7 +15510,7 @@
                    /* Disabled no botão de salvar/confirmar no modal-footer */
                    $('.btn-save-endereco').attr('disabled', 'disabled');
 
-                   var i = form.ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'setEnderecoCliente'});
+                   var i = form.ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'setEnderecoCliente'});
                    i.sendInfo(id);
 
                } else {
@@ -15542,7 +15542,7 @@
                            $('.line-endereco.endereco-' + scope_carrinho.endereco[0].id_endereco).addClass('a-disabled');
                        }
 
-                       var end = $('#form-address-cep-unico').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setEnderecoCepUnico'});
+                       var end = $('#form-address-cep-unico').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setEnderecoCepUnico'});
                        end.getDados(returnEnderecoSessionCheckout, JSON.stringify(scope_carrinho.endereco));
 
                    } else {
@@ -15604,7 +15604,7 @@
            e.preventDefault();
            var id_endereco = $(this).data('id_end');
 
-           var f = $(this).ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'favoritarEnderecoCliente'});
+           var f = $(this).ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'favoritarEnderecoCliente'});
            f.alterInfo(id_endereco);
        });
 
@@ -15640,7 +15640,7 @@
            e.preventDefault();
            var id_endereco = $(this).data('id_end');
 
-           var d = $(this).ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'destroyEndereco'});
+           var d = $(this).ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'destroyEndereco'});
            d.alterInfo(id_endereco);
        });
 
@@ -16064,12 +16064,12 @@
                    var info_update = [];
                    info_update.push({ id_endereco: parseInt(id_endereco), dados: arr_dados});
 
-                   var end = $('#form-address-cep-unico').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'setAtualizacaoEnderecoCliente'});
+                   var end = $('#form-address-cep-unico').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'setAtualizacaoEnderecoCliente'});
                    await end.getDados(returnUpdateEnderecos, JSON.stringify(info_update));
                }
 
                /* Setar o endereço na sessão. */
-               var end = $('#form-address-cep-unico').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setEnderecoCepUnico'});
+               var end = $('#form-address-cep-unico').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setEnderecoCepUnico'});
                await end.getDados(returnEnderecoSessao, JSON.stringify(info));
 
            } else {
@@ -16115,7 +16115,7 @@
                    var info = [];
                    info.push({ id_endereco: parseInt(id_endereco), dados: arr_dados});
 
-                   var end = $('#form-address-cep-unico').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'setAtualizacaoEnderecoCliente'});
+                   var end = $('#form-address-cep-unico').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Account\\ProfileController', ajax_function: 'setAtualizacaoEnderecoCliente'});
                    end.getDados(returnSetLatLngEndereco, JSON.stringify(info));
                }
            }
@@ -16616,7 +16616,7 @@
        /* Setar retirada na sessão do checkout */
        window.setRetiradaCheckout = function() {
 
-           var retirada = $('#checkout').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setRetiradaBalcao'});
+           var retirada = $('#checkout').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'setRetiradaBalcao'});
            retirada.getDados(returnRetiradaCheckout);
        }
 
@@ -17038,7 +17038,7 @@
        /* Buscar áreas de entrega da empresa */
        window.initEnderecoAreas = async function() {
 
-           var areas = $('#carrinho-home').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'getAreasEntrega'});
+           var areas = $('#carrinho-home').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Checkout\\CheckoutController', ajax_function: 'getAreasEntrega'});
            await areas.getDados(returnAreasEntrega);
        }
 
@@ -17242,7 +17242,7 @@
 
                window.loadingInButtons($(this), 'add');
 
-               var resCliente = form.ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\PresencialController', ajax_function: 'confirmDadosCliente'});
+               var resCliente = form.ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\PresencialController', ajax_function: 'confirmDadosCliente'});
        
                await resCliente.sendDadosPromise(JSON.stringify(dados))
                .then((data) => {
@@ -17323,7 +17323,7 @@
                'referencia': URL_REFER
            }
 
-           var resSairModo = $(this).ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\PresencialController', ajax_function: 'cancelarModoPresencial'});
+           var resSairModo = $(this).ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\PresencialController', ajax_function: 'cancelarModoPresencial'});
    
            resSairModo.sendDadosPromise(JSON.stringify(dados))
            .then((data) => {
@@ -17590,7 +17590,7 @@
                            'url_validacao': scanText
                        }
                        
-                       var resValidacao = modal.ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\PresencialController', ajax_function: 'confirmMesaComandaModoPresencial'});
+                       var resValidacao = modal.ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\PresencialController', ajax_function: 'confirmMesaComandaModoPresencial'});
        
                        await resValidacao.sendDadosPromise(JSON.stringify(dados))
                        .then((data) => {
@@ -17824,7 +17824,7 @@
 
        let session_created = false;
 
-       let resSession = $('body').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\ConversaoController', ajax_function: 'startSession'});
+       let resSession = $('body').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\ConversaoController', ajax_function: 'startSession'});
 
        await resSession.sendDadosPromise(JSON.stringify(dados))
        .then((data) => {
@@ -17865,7 +17865,7 @@
 
        let session_confirmed = false;
 
-       let resConfirm = $('body').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\ConversaoController', ajax_function: 'confirmStartSession'});
+       let resConfirm = $('body').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\ConversaoController', ajax_function: 'confirmStartSession'});
 
        await resConfirm.sendDadosPromise(JSON.stringify(data))
        .then((data) => {
@@ -17914,7 +17914,7 @@
 
        let event_confirmed = false;
 
-       let resEvent = $('body').ajaxform({url:'https://biguacu.route41burgers.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\ConversaoController', ajax_function: 'registerEvent'});
+       let resEvent = $('body').ajaxform({url:'https://seu-restaurante.com.br/ajax-modulo-site', token: 'token-demo-local' , ajax_controller: 'Common\\ConversaoController', ajax_function: 'registerEvent'});
 
        await resEvent.sendDadosPromise(JSON.stringify(data))
        .then((data) => {
@@ -18023,7 +18023,7 @@
            }
 
            const domains_auth_permission = [
-               "https://myserver", "https://sandbox.deliveryturbo.com.br", "https://deliveryturbo.com.br", "https://hubzy.pro"
+               "https://myserver", "https://sandbox.seu-restaurante.com.br", "https://seu-restaurante.com.br", "https://hubzy.pro"
            ]
 
            $('#auth__profile_iframe').attr('src','https://hubzy.pro/external/storage/auth/profile');
