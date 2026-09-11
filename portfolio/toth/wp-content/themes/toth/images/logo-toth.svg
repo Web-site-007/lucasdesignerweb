@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
-  <title id="title">Juris Advogados</title><desc id="desc">Juris Advogados</desc>
-  <rect width="720" height="190" rx="30" fill="#162a3a"/>
-  <path d="M99 29 145 50v50c0 27-19 47-46 58-27-11-46-31-46-58V50Z" fill="none" stroke="#d8b56a" stroke-width="5"/>
-  <path d="M81 73h36v30c0 13-7 20-19 20-10 0-17-6-17-16" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7"/>
-  <text x="185" y="108" fill="#fff" font-family="Georgia,serif" font-size="67" font-weight="700" letter-spacing="5">JURIS</text>
-  <text x="190" y="145" fill="#d8b56a" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="5">ADVOGADOS</text>
+ <title id="title">Juris Advogados</title><desc id="desc">Juris Advogados</desc>
+ <rect width="720" height="190" rx="30" fill="#162a3a"/>
+ <path d="M99 29 145 50v50c0 27-19 47-46 58-27-11-46-31-46-58V50Z" fill="none" stroke="#d8b56a" stroke-width="5"/>
+ <path d="M81 73h36v30c0 13-7 20-19 20-10 0-17-6-17-16" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7"/>
+ <text x="185" y="108" fill="#fff" font-family="Georgia,serif" font-size="67" font-weight="700" letter-spacing="5">JURIS</text>
+ <text x="190" y="145" fill="#d8b56a" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="5">ADVOGADOS</text>
 </svg>

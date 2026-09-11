@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
-  <title id="title">Alvo Clube de Tiro</title><desc id="desc">Alvo Clube de Tiro</desc>
-  <rect width="720" height="190" rx="30" fill="#16191b"/>
-  <circle cx="98" cy="95" r="61" fill="none" stroke="#d7a632" stroke-width="10"/><circle cx="98" cy="95" r="37" fill="none" stroke="#f2d06b" stroke-width="9"/><circle cx="98" cy="95" r="13" fill="#d7a632"/>
-  <path d="m135 54 25-22-5 38" fill="none" stroke="#d7a632" stroke-linecap="round" stroke-width="8"/>
-  <text x="185" y="108" fill="#fff" font-family="Arial,sans-serif" font-size="70" font-weight="900" letter-spacing="5">ALVO</text>
-  <text x="190" y="145" fill="#d7a632" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="4">CLUBE DE TIRO</text>
+ <title id="title">Alvo Clube de Tiro</title><desc id="desc">Alvo Clube de Tiro</desc>
+ <rect width="720" height="190" rx="30" fill="#16191b"/>
+ <circle cx="98" cy="95" r="61" fill="none" stroke="#d7a632" stroke-width="10"/><circle cx="98" cy="95" r="37" fill="none" stroke="#f2d06b" stroke-width="9"/><circle cx="98" cy="95" r="13" fill="#d7a632"/>
+ <path d="m135 54 25-22-5 38" fill="none" stroke="#d7a632" stroke-linecap="round" stroke-width="8"/>
+ <text x="185" y="108" fill="#fff" font-family="Arial,sans-serif" font-size="70" font-weight="900" letter-spacing="5">ALVO</text>
+ <text x="190" y="145" fill="#d7a632" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="4">CLUBE DE TIRO</text>
 </svg>

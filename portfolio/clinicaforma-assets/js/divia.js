@@ -25,44 +25,44 @@ n=-1===n.indexOf("url(")?"url("+n+")":n,1===i.length?t.style.backgroundImage=n:t
 
 $(document).ready(function(){
 	$('.phone').mask('(99) 99999-9999');
-  $('input, textarea').placeholder();
-  $('.scroll').click(function(event) {
-    event.preventDefault();
-    var $anchor = $(this);
-    $.smoothScroll({
+ $('input, textarea').placeholder();
+ $('.scroll').click(function(event) {
+   event.preventDefault();
+   var $anchor = $(this);
+   $.smoothScroll({
 	    speed: 900,
 	    offset: $($anchor.attr('href')).offset().top + 20
-    });
-  });
+   });
+ });
 });
 
 
 $('.zoom2').magnificPopup({
-    type: 'image',
-    gallery:{
-        enabled: true
-    },
-    mainClass: 'mfp-fade',
-    removalDelay: 160,
-    preloader: false,
-    fixedContentPos: true
+   type: 'image',
+   gallery:{
+       enabled: true
+   },
+   mainClass: 'mfp-fade',
+   removalDelay: 160,
+   preloader: false,
+   fixedContentPos: true
 });
 
 $('.video_iframe').magnificPopup({
-    type: 'iframe',
-    gallery:{
-        enabled: true
-    },
-    mainClass: 'mfp-fade',
-    removalDelay: 160,
-    preloader: false,
-    fixedContentPos: true
-  });
+   type: 'iframe',
+   gallery:{
+       enabled: true
+   },
+   mainClass: 'mfp-fade',
+   removalDelay: 160,
+   preloader: false,
+   fixedContentPos: true
+ });
 
 
 
 $(document).ready(function() {
-    diviaGDPR.init();
+   diviaGDPR.init();
 });
 
 
@@ -70,34 +70,34 @@ const observer = lozad();
 observer.observe();
 
 jQuery.fn.preventDoubleSubmission = function() {
-  var last_clicked, time_since_clicked;
-  jQuery(this).bind('submit', function(event) {
-    if(last_clicked) {
-      time_since_clicked = jQuery.now() - last_clicked;
-    }
-    last_clicked = jQuery.now();
-    if(time_since_clicked < 2000) {
-      event.preventDefault();
-    }
-    return true;
-  });
+ var last_clicked, time_since_clicked;
+ jQuery(this).bind('submit', function(event) {
+   if(last_clicked) {
+     time_since_clicked = jQuery.now() - last_clicked;
+   }
+   last_clicked = jQuery.now();
+   if(time_since_clicked < 2000) {
+     event.preventDefault();
+   }
+   return true;
+ });
 }
 $('form').preventDoubleSubmission();
 
 // STICKY MENU
 document.addEventListener("DOMContentLoaded", function(){
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 200) {
-            document.getElementById('header_01').classList.add('fixed-top');
-            // add padding top to show content behind navbar
-            navbar_height = document.querySelector('.navbar').offsetHeight;
-            document.body.style.paddingTop = navbar_height + 'px';
-        } else {
-            document.getElementById('header_01').classList.remove('fixed-top');
-                // remove padding top from body
-            document.body.style.paddingTop = '0';
-        } 
-    });
+   window.addEventListener('scroll', function() {
+       if (window.scrollY > 200) {
+           document.getElementById('header_01').classList.add('fixed-top');
+           // add padding top to show content behind navbar
+           navbar_height = document.querySelector('.navbar').offsetHeight;
+           document.body.style.paddingTop = navbar_height + 'px';
+       } else {
+           document.getElementById('header_01').classList.remove('fixed-top');
+               // remove padding top from body
+           document.body.style.paddingTop = '0';
+       } 
+   });
 }); 
 
 
@@ -105,155 +105,155 @@ document.addEventListener("DOMContentLoaded", function(){
 const menuBtn = document.querySelector('.navbar-toggler');
 let menuOpen = false;
 menuBtn.addEventListener('click', () => {
-  if(!menuOpen) {
-    menuBtn.classList.add('open');
-    menuOpen = true;
-  } else {
-    menuBtn.classList.remove('open');
-    menuOpen = false;
-  }
+ if(!menuOpen) {
+   menuBtn.classList.add('open');
+   menuOpen = true;
+ } else {
+   menuBtn.classList.remove('open');
+   menuOpen = false;
+ }
 });
 
 
 // MENU DE DOIS NIVEIS  
 document.addEventListener("DOMContentLoaded", function(){
-    // make it as accordion for smaller screens
-    if (window.innerWidth < 992) {
-    
-      // close all inner dropdowns when parent is closed
-      document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
-        everydropdown.addEventListener('hidden.bs.dropdown', function () {
-          // after dropdown is hidden, then find all submenus
-            this.querySelectorAll('.submenu').forEach(function(everysubmenu){
-              // hide every submenu as well
-              everysubmenu.style.display = 'none';
-            });
-        })
-      });
-    
-      document.querySelectorAll('.dropdown-menu a').forEach(function(element){
-        element.addEventListener('click', function (e) {
-            let nextEl = this.nextElementSibling;
-            if(nextEl && nextEl.classList.contains('submenu')) {	
-              // prevent opening link if link needs to open dropdown
-              e.preventDefault();
-              if(nextEl.style.display == 'block'){
-                nextEl.style.display = 'none';
-              } else {
-                nextEl.style.display = 'block';
-              }
-    
-            }
-        });
-      })
-    }
-    // end if innerWidth
+   // make it as accordion for smaller screens
+   if (window.innerWidth < 992) {
+   
+     // close all inner dropdowns when parent is closed
+     document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+       everydropdown.addEventListener('hidden.bs.dropdown', function () {
+         // after dropdown is hidden, then find all submenus
+           this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+             // hide every submenu as well
+             everysubmenu.style.display = 'none';
+           });
+       })
+     });
+   
+     document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+       element.addEventListener('click', function (e) {
+           let nextEl = this.nextElementSibling;
+           if(nextEl && nextEl.classList.contains('submenu')) {	
+             // prevent opening link if link needs to open dropdown
+             e.preventDefault();
+             if(nextEl.style.display == 'block'){
+               nextEl.style.display = 'none';
+             } else {
+               nextEl.style.display = 'block';
+             }
+   
+           }
+       });
+     })
+   }
+   // end if innerWidth
 }); 
 
 
 // POU-UP GALERIA DE IMAGENS 
 $('.popup-media-02').magnificPopup({
-  type: 'image',
-  gallery: {
-      enabled:true
-  }
+ type: 'image',
+ gallery: {
+     enabled:true
+ }
 });
 
 
 // SLIDER BLOG HOME PAGE
 $(document).ready(function(){
-  $('#carrousel_01 .owl-carousel').owlCarousel({
-      loop:false,
-      margin:10,
-      nav:true,
-      dots: true,
-      autoplay: false,
-      autoplayTimeout:3000,
-      autoplayHoverPause:true,
-      navText : ["<i class='bi bi-chevron-left'></i>","<i class='bi bi-chevron-right'></i>"],
-      responsive:{
-          0:{
-              items:1
-          },
-          600:{
-              items:2
-          },
-          1000:{
-              items:3
-          }
-      },
-  });
+ $('#carrousel_01 .owl-carousel').owlCarousel({
+     loop:false,
+     margin:10,
+     nav:true,
+     dots: true,
+     autoplay: false,
+     autoplayTimeout:3000,
+     autoplayHoverPause:true,
+     navText : ["<i class='bi bi-chevron-left'></i>","<i class='bi bi-chevron-right'></i>"],
+     responsive:{
+         0:{
+             items:1
+         },
+         600:{
+             items:2
+         },
+         1000:{
+             items:3
+         }
+     },
+ });
 
 })
 
 
 // SLIDER SERVICE HOME PAGE
 $(document).ready(function(){
-  $('.services_carousel .owl-carousel').owlCarousel({
-      loop:true,
-      margin:10,
-      nav:true,
-      dots: true,
-      autoplay: false,
-      autoplayTimeout:3000,
-      autoplayHoverPause:true,
-      navText : ["<i class='bi bi-chevron-left'></i>","<i class='bi bi-chevron-right'></i>"],
-      responsive:{
-          0:{
-              items:2
-          },
-          600:{
-              items:3
-          },
-          1000:{
-              items:4
-          }
-      },
-  });
+ $('.services_carousel .owl-carousel').owlCarousel({
+     loop:true,
+     margin:10,
+     nav:true,
+     dots: true,
+     autoplay: false,
+     autoplayTimeout:3000,
+     autoplayHoverPause:true,
+     navText : ["<i class='bi bi-chevron-left'></i>","<i class='bi bi-chevron-right'></i>"],
+     responsive:{
+         0:{
+             items:2
+         },
+         600:{
+             items:3
+         },
+         1000:{
+             items:4
+         }
+     },
+ });
 
 })
 
 
 $(document).ready(function(){
-  $('#brands-3 .owl-carousel').owlCarousel({
-      loop: true,
-      margin: 30,
-      nav: false,
-      dots: false,
-      autoplay: true,
-      autoplayTimeout: 3000,
-      autoplaySpeed: 5000,
-      smartSpeed: 5000,
-      autoplayHoverPause: false,
-      slideTransition: 'linear',
-      responsive: {
-        0: { items: 2 },
-        576: { items: 3 },
-        768: { items: 4 },
-        992: { items: 8 }
-      }
-    });
-  });
+ $('#brands-3 .owl-carousel').owlCarousel({
+     loop: true,
+     margin: 30,
+     nav: false,
+     dots: false,
+     autoplay: true,
+     autoplayTimeout: 3000,
+     autoplaySpeed: 5000,
+     smartSpeed: 5000,
+     autoplayHoverPause: false,
+     slideTransition: 'linear',
+     responsive: {
+       0: { items: 2 },
+       576: { items: 3 },
+       768: { items: 4 },
+       992: { items: 8 }
+     }
+   });
+ });
 
 
 // MODAL YOUTUBE - UMA MODAL RODA QUALQUER VIDEO
 // Gets the video src from the data-src on each button
-  var $videoSrc;  
-  $('.video-btn').click(function() {
-      $videoSrc = $(this).data( "src" );
-  });
+ var $videoSrc;  
+ $('.video-btn').click(function() {
+     $videoSrc = $(this).data( "src" );
+ });
 
-  // when the modal is opened autoplay it  
-  $('#about_movie').on('shown.bs.modal', function (e) {
-      
-  // set the video src to autoplay and not to show related video.
-  $("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0" ); 
-  })
+ // when the modal is opened autoplay it  
+ $('#about_movie').on('shown.bs.modal', function (e) {
+     
+ // set the video src to autoplay and not to show related video.
+ $("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0" ); 
+ })
 
-  // stop playing the youtube video when I close the modal
-  $('#about_movie').on('hide.bs.modal', function (e) {
-      // a poor man's stop video
-      $("#video").attr('src',$videoSrc); 
-  }) 
+ // stop playing the youtube video when I close the modal
+ $('#about_movie').on('hide.bs.modal', function (e) {
+     // a poor man's stop video
+     $("#video").attr('src',$videoSrc); 
+ }) 
 
-  
+ 
