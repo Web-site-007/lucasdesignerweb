@@ -5268,6 +5268,27 @@ span.round-tab {
  color: #fff;
 }
 
+@media (max-width: 767px) {
+ #accept-cookie {
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  padding: 8px 10px;
+  font-size: 11px;
+ }
+ #accept-cookie .box-message {
+  gap: 8px;
+ }
+ #accept-cookie .message {
+  flex: 1;
+  line-height: 1.3;
+ }
+ #accept-cookie .btn {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+ }
+}
+
 .rastrear-pedido {
  padding-top: 15px;
 }
