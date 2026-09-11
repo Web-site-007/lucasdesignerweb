@@ -106,10 +106,9 @@
    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
 
    /* ---------- COVER (foto no topo, como no site original) ---------- */
-   .cover{position:relative;margin-top:var(--nav-height);padding:clamp(8px,2.4vw,20px);border-bottom:1px solid var(--line)}
-   .cover-frame{position:relative;overflow:hidden;animation:glowPulse 1.8s ease-in-out infinite}
-   .cover-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.12) 0%,rgba(10,10,10,.5) 100%);pointer-events:none}
-   .cover-frame::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0px,transparent 3px,rgba(0,0,0,0.14) 3px,rgba(0,0,0,0.14) 4px);pointer-events:none;z-index:1}
+   .cover{position:relative;width:100%;overflow:hidden;margin-top:var(--nav-height);border-bottom:1px solid var(--line)}
+   .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.12) 0%,rgba(10,10,10,.5) 100%);pointer-events:none}
+   .cover::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0px,transparent 3px,rgba(0,0,0,0.14) 3px,rgba(0,0,0,0.14) 4px);pointer-events:none;z-index:1}
    .cover__img{width:100%;height:auto;display:block;filter:contrast(1.04) saturate(.96)}
 
    /* ---------- HERO ---------- */
@@ -436,13 +435,11 @@
  </nav>
 
 <section class="cover" aria-hidden="true">
-   <div class="cover-frame">
     <picture>
        <source srcset="src/images/capa-lucas.avif" type="image/avif"/>
        <source srcset="src/images/capa-lucas.webp" type="image/webp"/>
              <img src="src/images/capa-lucas.webp" alt="" class="cover__img" width="1236" height="824" fetchpriority="high"/>
     </picture>
-   </div>
  </section>
 
  <main id="main-content">
