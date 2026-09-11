@@ -2,3 +2,6 @@
 
 .img-produto{aspect-ratio:1;width:110px;max-width:100%;height:auto;object-fit:cover}
 .container-produtos{min-height:500px}
+
+.home{position:relative}
+.loading-produtos-home{position:absolute;left:0;right:0;top:0;z-index:5;background:#fff;min-height:60vh}
