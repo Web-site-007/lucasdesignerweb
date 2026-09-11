@@ -9,21 +9,20 @@
  <link rel="canonical" href="https://lucasdesignerweb.com.br/privacidade.html"/>
  <link rel="icon" type="image/svg+xml" href="src/images/favicon.svg"/>
  <meta name="theme-color" content="#0a0a0a"/>
- <link rel="preconnect" href="https://fonts.googleapis.com"/>
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
- <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
- <style>
+  <link rel="preload" href="src/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin/>
+  <style>
+    @font-face{font-family:'Space Grotesk';font-style:normal;font-display:swap;font-weight:100 900;src:url(src/fonts/space-grotesk-latin.woff2) format('woff2')}
    *{margin:0;padding:0;box-sizing:border-box}
    body{font-family:'Space Grotesk',sans-serif;background:#0a0a0a;color:#e8e8e8;line-height:1.7;padding:48px 20px}
    .wrap{max-width:720px;margin:0 auto}
-   .logo{font-size:22px;font-weight:700;margin-bottom:40px;display:block;text-decoration:none;background:linear-gradient(135deg,#4f8cff,#8f5cff);-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content}
+    .logo{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;margin-bottom:40px;display:block;text-decoration:none;color:#4af626;width:fit-content}
    h1{font-size:30px;font-weight:700;color:#fff;margin-bottom:24px}
    h2{font-size:19px;font-weight:600;color:#fff;margin:32px 0 12px}
    p{margin-bottom:14px;color:#b8b8b8}
    ul{margin:0 0 14px 22px;color:#b8b8b8}
    li{margin-bottom:6px}
-   a{color:#6ea3ff}
-   .back{display:inline-block;margin-top:40px;padding:12px 24px;border-radius:10px;background:linear-gradient(135deg,#4f8cff,#8f5cff);color:#fff;text-decoration:none;font-weight:600}
+    a{color:#4af626}
+    .back{display:inline-block;margin-top:40px;padding:12px 24px;border-radius:4px;background:#4af626;color:#071006;text-decoration:none;font-weight:600}
    @media(max-width:480px){h1{font-size:25px}body{padding:32px 16px}}
  </style>
 </head>
