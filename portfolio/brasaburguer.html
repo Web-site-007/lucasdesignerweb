@@ -56,11 +56,7 @@
 
 	<!-- Google Tag Manager -->
 	
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-W8NFH2V');</script>
+		
 
 		<!-- End Google Tag Manager -->
 
@@ -68,9 +64,7 @@
 	
 			
 			
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-DEMO0DEMO0D"></script>
-	<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DEMO0DEMO0D');</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DEMO0DEMO0D"></script>
+		<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DEMO0DEMO0D');</script>
 
 
 	<!-- Facebook Pixel Code -->
@@ -111,8 +105,7 @@
 
 	<!-- Google Tag Manager (noscript) -->
 	
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8NFH2V"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		
 
 		<!-- End Google Tag Manager (noscript) -->
 
@@ -15196,13 +15189,30 @@
 </script>
 
 
-<script defer src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
-<script defer src='brasaburguer-assets/lib/common/lib/turf/turf.min.js'></script>
-<link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"/>
+
+
+
 <script>
    $(document).ready(function () {
 
        var map = null;
+       window.__loadMapDeps = async function () {
+            function load(src, id, isCss) {
+                return new Promise(function (res, rej) {
+                    if (id && document.getElementById(id)) return res();
+                    var e = isCss ? document.createElement('link') : document.createElement('script');
+                    if (isCss) { e.rel = 'stylesheet'; e.href = src; }
+                    else { e.src = src; e.defer = true; }
+                    e.id = id;
+                    e.onload = res; e.onerror = rej;
+                    document.head.appendChild(e);
+                });
+            }
+            await load('https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js', 'mapbox-gl-js', false);
+            await load('https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css', 'mapbox-gl-css', true);
+            await load('brasaburguer-assets/lib/common/lib/turf/turf.min.js', 'turf-min-js', false);
+        };
+
        var tp_calculo_taxa_entrega = 'raio';
        var nr_limite_raio_entrega = 100;
 
@@ -15825,6 +15835,7 @@
 
        /* Iniciar mapa para o cliente confirmar sua posição geográfica */
        window.enableMapEndereco = async function(lat, lng) {
+           if (window.__loadMapDeps) await window.__loadMapDeps();
 
            map = null;
            $('#map_center_endereco').html('');
@@ -16790,6 +16801,8 @@
 
        /* Autocomplete das Ruas (API Google Maps) */
        window.makeAutoComplete = function() {
+
+           if (window.__loadMapDeps) { window.__loadMapDeps(); }
 
            if (autocompleteMaps) {
                return;
