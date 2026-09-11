@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
  <title id="title">Voltare</title><desc id="desc">Voltare, soluções elétricas</desc>
-  <rect x="8" y="8" width="704" height="174" rx="22" fill="#102a43"/>
-  <rect x="31" y="31" width="128" height="128" rx="28" fill="#f6c344"/>
-  <path d="M112 40 75 99h27l-15 51 48-68h-29z" fill="#102a43"/>
-  <text x="190" y="108" fill="#fff" font-family="Arial,sans-serif" font-size="62" font-weight="800" letter-spacing="2">VOLTARE</text>
-  <text x="194" y="143" fill="#f6c344" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="3">SOLUÇÕES ELÉTRICAS</text>
+ <rect width="720" height="190" rx="30" fill="#102a43"/>
+ <circle cx="98" cy="95" r="63" fill="#f6c344"/>
+ <path d="M112 31 68 101h31l-17 58 57-82h-34z" fill="#102a43"/>
+ <text x="185" y="111" fill="#fff" font-family="Arial,sans-serif" font-size="64" font-weight="800" letter-spacing="3">VOLTARE</text>
+ <text x="189" y="145" fill="#f6c344" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="4">SOLUÇÕES ELÉTRICAS</text>
 </svg>

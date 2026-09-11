@@ -1,9 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
  <title id="title">Mobilar</title><desc id="desc">Mobilar, design para sua casa</desc>
-  <rect x="8" y="8" width="704" height="174" rx="22" fill="#fffaf3"/>
-  <rect x="31" y="31" width="128" height="128" rx="22" fill="#f5eadc"/>
-  <path d="M54 133V67l44 31 44-31v66h-17V101l-27 20-27-20v32Z" fill="#d56b3b"/>
-  <path d="m54 67 44-30 44 30-44 31Z" fill="#edb85b"/>
-  <text x="190" y="108" fill="#3c3b36" font-family="Arial,sans-serif" font-size="63" font-weight="800" letter-spacing="2">MOBILAR</text>
-  <text x="194" y="143" fill="#d56b3b" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="3">DESIGN COM VALOR</text>
+ <rect width="720" height="190" rx="30" fill="#fffaf3"/>
+ <path d="M48 132V62l50 35 50-35v70h-18V95l-32 23-32-23v37Z" fill="#d56b3b"/>
+ <path d="M47 62 98 27l51 35-51 35Z" fill="#edb85b"/>
+ <text x="185" y="108" fill="#3c3b36" font-family="Arial,sans-serif" font-size="65" font-weight="800" letter-spacing="2">MOBILAR</text>
+ <text x="190" y="145" fill="#d56b3b" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="4">DESIGN COM VALOR</text>
 </svg>

@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
  <title id="title">Sorrio</title><desc id="desc">Clínica Sorrio</desc>
-  <rect x="8" y="8" width="704" height="174" rx="22" fill="#f7fbfa"/>
-  <rect x="31" y="31" width="128" height="128" rx="64" fill="#15a9a0"/>
-  <path d="M62 96c21 25 45 25 66 0" fill="none" stroke="#f7fbfa" stroke-linecap="round" stroke-width="9"/>
-  <circle cx="73" cy="76" r="5" fill="#f7fbfa"/><circle cx="117" cy="76" r="5" fill="#f7fbfa"/>
-  <text x="190" y="108" fill="#174b55" font-family="Arial,sans-serif" font-size="65" font-weight="800" letter-spacing="1">SORRIO</text>
-  <text x="194" y="143" fill="#15a9a0" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="3">ODONTOLOGIA INTEGRADA</text>
+ <rect width="720" height="190" rx="30" fill="#f7fbfa"/>
+ <path d="M101 30c-31 0-54 25-54 58 0 39 25 70 54 70s54-31 54-70c0-33-23-58-54-58Z" fill="#15a9a0"/>
+ <path d="M70 93c17 24 45 24 62 0" fill="none" stroke="#f7fbfa" stroke-linecap="round" stroke-width="9"/>
+ <circle cx="80" cy="76" r="5" fill="#f7fbfa"/><circle cx="122" cy="76" r="5" fill="#f7fbfa"/>
+ <text x="185" y="111" fill="#174b55" font-family="Arial,sans-serif" font-size="68" font-weight="800" letter-spacing="1">SORRIO</text>
+ <text x="190" y="145" fill="#15a9a0" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="4">ODONTOLOGIA INTEGRADA</text>
 </svg>
