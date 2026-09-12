@@ -162,7 +162,8 @@ $('.popup-media-02').magnificPopup({
 
 // SLIDER BLOG HOME PAGE
 $(document).ready(function(){
- $('#carrousel_01 .owl-carousel').owlCarousel({
+ if (window.jQuery && $.fn.owlCarousel) {
+  $('#carrousel_01 .owl-carousel').owlCarousel({
      loop:false,
      margin:10,
      nav:true,
@@ -181,14 +182,16 @@ $(document).ready(function(){
          1000:{
              items:3
          }
-     },
+},
  });
-
-})
+ }
+ 
+ })
 
 
 // SLIDER SERVICE HOME PAGE
 $(document).ready(function(){
+ if (window.jQuery && $.fn.owlCarousel) {
  $('.services_carousel .owl-carousel').owlCarousel({
      loop:true,
      margin:10,
@@ -210,11 +213,13 @@ $(document).ready(function(){
          }
      },
  });
+ }
 
 })
 
 
 $(document).ready(function(){
+ if (window.jQuery && $.fn.owlCarousel) {
  $('#brands-3 .owl-carousel').owlCarousel({
      loop: true,
      margin: 30,
@@ -233,6 +238,7 @@ $(document).ready(function(){
        992: { items: 8 }
      }
    });
+ }
  });
 
 

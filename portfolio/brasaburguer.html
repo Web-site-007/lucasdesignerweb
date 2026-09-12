@@ -690,7 +690,7 @@
 														</div>
 													</div>
 													
-													<img class="img-produto" ng-if="prod.im_item" src="brasaburguer-assets/[% prod.im_item %]">
+													<img class="img-produto" ng-if="prod.im_item" ng-src="brasaburguer-assets/[% (prod.im_item_webp || prod.im_item) %]">
 												</div>
 											</div>
 										</a>
@@ -703,7 +703,7 @@
 											</div>
 											<div class="col-auto p-0">
 												
-												<img ng-if="prod.im_item" src="brasaburguer-assets/[% prod.im_item %]">
+												<img ng-if="prod.im_item" ng-src="brasaburguer-assets/[% (prod.im_item_webp || prod.im_item) %]">
 											</div>
 										</div>
 									</div>
@@ -738,7 +738,7 @@
 													<p class="pl-10px pr-10px text-produto" ng-if="categoria.ds_grupo_texto_web">[% categoria.ds_grupo_texto_web %]</p>
 												</div>
 												<div class="col-auto p-0" ng-if="categoria.im_grupo">
-													<img class="img-grupo" src="brasaburguer-assets/[% categoria.im_grupo %]">
+													<img class="img-grupo" ng-src="brasaburguer-assets/[% categoria.im_grupo %]">
 												</div>
 											</div>
 										</a>
@@ -750,7 +750,7 @@
 												<p class="pl-10px pr-10px" ng-if="categoria.ds_grupo_texto_web">[% categoria.ds_grupo_texto_web %]</p>
 											</div>
 											<div class="col-auto p-0" ng-if="categoria.im_grupo">
-												<img src="brasaburguer-assets/[% categoria.im_grupo %]">
+												<img ng-src="brasaburguer-assets/[% categoria.im_grupo %]">
 											</div>
 										</div>
 									</div>
@@ -1959,7 +1959,7 @@
                                        <div class="col-auto pl-3" ng-if="cartao.ds_bandeira.length > 0">
                                            <input type="hidden" class="card_brand" ng-value="cartao.ds_bandeira"/>
                                            <input type="hidden" class="card_last_four_digits" ng-value="cartao.nr_digitos_fim"/>
-                                           <img class="payment-logo" src="brasaburguer-assets/lib/common/images/payment/svg/credit-[% (cartao.ds_bandeira).toLowerCase() %].svg">
+                                           <img class="payment-logo" ng-src="brasaburguer-assets/lib/common/images/payment/svg/credit-[% (cartao.ds_bandeira).toLowerCase() %].svg">
                                        </div>
                                        <div class="col p-3">
                                            <h4 class="mt-0 mb-2 font-16 fw-700">[% cartao.ds_bandeira %]</h4>
@@ -2146,7 +2146,7 @@
                                        <div class="listOptions listOptionsPayments" ng-if="forma_pagamento_selected.length > 0" style="max-height: calc(100vh - 153px) !important;">
                                            <div class="option row m-0 no-gutters align-items-center" ng-repeat="bandeira in forma_pagamento_selected[0].bandeiras" ng-click="confirmCartao(bandeira, forma_pagamento_selected[0].in_especie)" ng-class="cart.forma_pagamento.id_forma_pagamento === bandeira.id_forma_pagamento ? 'active' : ''">
                                                <div class="col-auto pl-3">
-                                                   <img class="payment-logo" src="brasaburguer-assets/lib/common/images/[% bandeira.im_bandeira %]" >
+                                                   <img class="payment-logo" ng-src="brasaburguer-assets/lib/common/images/[% bandeira.im_bandeira %]" >
                                                </div>
                                                <div class="col px-3 py-4">
                                                    <h4 class="my-0 font-16 fw-700">[% bandeira.ds_bandeira_operadora %]</h4>
@@ -3198,7 +3198,7 @@
                                            <div class="box-white h-100">
                                                <div class="row p-0 m-0 h-100">
                                                    <div class="col-12 p-0" ng-if="produto.im_item.length > 0">
-                                                       <img src="brasaburguer-assets/[% produto.im_item %]" alt="">
+                                                       <img ng-src="brasaburguer-assets/[% produto.im_item %]" alt="">
                                                    </div>
                                                    <div class="col-auto p-0" ng-if="(produto.in_desconto_ativo == 'S') && (produto.vl_desconto > 0)">
                                                        <div class="ribbon-horizontal p-percent-desc">
@@ -3222,7 +3222,7 @@
                                        <div class="box-white h-100">
                                            <div class="row p-0 m-0 h-100">
                                                <div class="col-12 p-0" ng-if="produto.im_item.length > 0">
-                                                   <img src="brasaburguer-assets/[% produto.im_item %]" alt="">
+                                                   <img ng-src="brasaburguer-assets/[% produto.im_item %]" alt="">
                                                </div>
                                                <div  class="col-12 p-0">
                                                    <h2 class="pl-10px pt-10px mb-0">[% produto.ds_titulo_item%]</h2>
@@ -3300,7 +3300,7 @@
                                </h4>
                            </div>
                            <div class="col-auto p-0" ng-if="produto.im_item">
-                               <img class="img-produto" src="brasaburguer-assets/[% produto.im_item %]">
+                               <img class="img-produto" ng-src="brasaburguer-assets/[% produto.im_item %]">
                            </div>
                            <div class="col-auto p-0" ng-if="produto.in_desconto_ativo == 'S' && produto.vl_percentual_desconto > 0">
                                <div class="ribbon-horizontal p-percent-desc">
