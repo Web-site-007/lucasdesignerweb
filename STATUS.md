@@ -1,12 +1,12 @@
 # Status Lucas Designer Web
 
-Atualizado: 2026-09-11
+Atualizado: 2026-09-13
 
 ## Estado
 
 - Projeto ativo: `lucasdesignerweb.com.br` via GitHub Pages.
 - Patricia esta fora do escopo atual ate o Vercel Security Checkpoint normalizar.
-- Ultimo commit do site: `6f7bc58` (perf: minifica CSS do sorrio e reduz cover webp do brasa).
+- Ultimo commit do site: `e46c119` (fix: imagem service-1 com `www.lucasdesignerweb.com.br` em vez de "PATRICIA").
 
 ## Ultimas Mudancas
 
