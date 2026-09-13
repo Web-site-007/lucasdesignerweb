@@ -6,7 +6,7 @@ Atualizado: 2026-09-13
 
 - Projeto ativo: `lucasdesignerweb.com.br` via GitHub Pages.
 - Patricia esta fora do escopo atual ate o Vercel Security Checkpoint normalizar.
-- Ultimo commit do site: `e46c119` (fix: imagem service-1 com `www.lucasdesignerweb.com.br` em vez de "PATRICIA").
+- Ultimo commit do site: `01f6e3e` (fix: imagem service-1 com `www.lucasdesignerweb.com.br` em vez de "PATRICIA" — pill reconstruida, sem residuo).
 
 ## Ultimas Mudancas
 
