@@ -42,4 +42,4 @@ Atualizado: 2026-09-13
 - Custo: gratuito para mensagens de servico dentro das 24h ate 30/09/2026; a partir de 01/10/2026 tarifa por mensagem; fora das 24h so com template aprovado.
 - Ferramenta: MCP oficial `WhatsApp Business Tools MCP` da Meta (15/09/2026) ajuda no setup/teste (registro de numero, templates, webhook), mas a producao e codigo proprio.
 - Tambem sera instalado no opencode: o MCP oficial do WhatsApp (`WhatsApp Business Tools MCP`, tenant Meta) para setup/teste da API; assim o assistente de IA responde cliente dentro da propria ferramenta.
-- Status: nao iniciado — aguarda definicao de servico/projeto piloto.
+- Status: nao iniciado — plano completo consolidado em `IDEIA-WHATSAPP-AI.md` (painel por cliente, custos/tarifas, MCP oficial, arquitetura). Aguarda definicao de servico/projeto piloto.
