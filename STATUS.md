@@ -5,8 +5,7 @@ Atualizado: 2026-09-13
 ## Estado
 
 - Projeto ativo: `lucasdesignerweb.com.br` via GitHub Pages.
-- Patricia esta fora do escopo atual ate o Vercel Security Checkpoint normalizar.
-- Ultimo commit do site: `01f6e3e` (fix: imagem service-1 com `www.lucasdesignerweb.com.br` em vez de "PATRICIA" — pill reconstruida, sem residuo).
+- Ultimo commit do site: `01f6e3e` (fix: imagem service-1 com `www.lucasdesignerweb.com.br` — pill reconstruida, sem residuo).
 
 ## Ultimas Mudancas
 
@@ -35,4 +34,11 @@ Atualizado: 2026-09-13
 - Inline do CSS critico do hero do Sorrio com async do restante (afeta FOUC — testar visual).
 - SEO e acessibilidade prioritarios em Juris e Mobilar.
 - Considerar substituir recurso LCP do Sorrio por versao menor/equivalentes com preload ja existente.
-- Publicar somente no Lucas; nao alterar Patricia sem nova autorizacao.
+
+## Ideia: Assistente de IA no WhatsApp (a ser instalado)
+
+- Lucas quer oferecer aos clientes um assistente de IA personalizado que responde cliente direto no WhatsApp Business.
+- Base: WhatsApp Cloud API oficial (Meta) + webhook no backend + LLM (responde sobre pedido/rastreio/trocas; fluxos sensiveis como pagamento/estorno caem pra humano).
+- Custo: gratuito para mensagens de servico dentro das 24h ate 30/09/2026; a partir de 01/10/2026 tarifa por mensagem; fora das 24h so com template aprovado.
+- Ferramenta: MCP oficial `WhatsApp Business Tools MCP` da Meta (15/09/2026) ajuda no setup/teste (registro de numero, templates, webhook), mas a producao e codigo proprio.
+- Status: nao iniciado — aguarda definicao de servico/projeto piloto.
