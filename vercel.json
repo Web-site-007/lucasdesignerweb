@@ -3,6 +3,7 @@
  "builds": [
    { "src": "api/contact.js", "use": "@vercel/node" },
    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "demo.html", "use": "@vercel/static" },
    { "src": "404.html", "use": "@vercel/static" },
    { "src": "privacidade.html", "use": "@vercel/static" },
    { "src": "robots.txt", "use": "@vercel/static" },

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevQuality | Avaliação de Código</title>
+  <meta name="description" content="Landing page de demonstração criada para avaliação de qualidade de código. Construída com HTML5 semântico, CSS modular responsivo e boas práticas de desenvolvimento web."/>
+
+  <link rel="icon" type="image/svg+xml" href="src/images/favicon.svg"/>
+  <link rel="preload" href="src/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="stylesheet" href="src/css/style.min.css"/>
+
+  <style>
+    @font-face {
+      font-family: 'Space Grotesk';
+      font-style: normal;
+      font-display: optional;
+      font-weight: 100 900;
+      src: url(src/fonts/space-grotesk-latin.woff2) format('woff2');
+    }
+    @font-face {
+      font-family: 'Space Grotesk Fallback';
+      font-style: normal;
+      font-display: optional;
+      font-weight: 100 900;
+      src: local('Roboto'), local('Arial'), local('Segoe UI'), sans-serif;
+    }
+    .text-center { text-align: center; }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Menu principal">
+    <div class="navbar__inner container">
+      <div class="navbar__actions--left">
+        <!-- left content if any, or leave empty if we don't have left actions -->
+      </div>
+
+      <a href="#" class="navbar__brand" aria-label="DevQuality Início">
+        <span style="font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text);">&lt;DevQuality/&gt;</span>
+      </a>
+
+      <div class="navbar__right">
+        <div class="navbar__menu" id="navMenu" role="menubar">
+          <a href="#funcionalidades" class="navbar__link" role="menuitem">Funcionalidades</a>
+          <a href="#como-funciona" class="navbar__link" role="menuitem">Processo</a>
+          <a href="#sobre" class="navbar__link" role="menuitem">Sobre</a>
+          <a href="#contato" class="navbar__link" role="menuitem">Contato</a>
+        </div>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema" type="button">
+          <span aria-hidden="true">◑</span>
+        </button>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero fade-in">
+      <div class="container text-center">
+        <div class="hero__content" style="margin: 0 auto; margin-top: 60px;">
+          <div class="hero__badge badge">Projeto de Avaliação</div>
+          <h1 class="hero__title">
+            Qualidade de código que você pode <span>ver e confiar</span>
+          </h1>
+          <p class="hero__desc" style="margin-left: auto; margin-right: auto;">
+            Uma landing page construída com foco em acessibilidade, performance e arquitetura modular. Código limpo para negócios que exigem o melhor da web.
+          </p>
+          <div class="hero__actions" style="justify-content: center;">
+            <a href="#funcionalidades" class="btn btn--primary btn--lg">Explorar Funcionalidades</a>
+            <a href="#sobre" class="btn btn--outline btn--lg">Ver Detalhes Técnicos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNCIONALIDADES / SERVICES -->
+    <section class="section section--alt" id="funcionalidades">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-header__badge badge">Arquitetura</div>
+          <h2 class="section-header__title">Fundamentos Técnicos</h2>
+          <p class="section-header__desc">
+            Cada linha de código foi pensada para entregar a melhor experiência tanto para os usuários quanto para os desenvolvedores.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card fade-in">
+            <h3 class="service-card__title">Design Mobile-First</h3>
+            <p class="service-card__desc">
+              Interfaces pensadas primeiramente para dispositivos móveis, garantindo fluidez e usabilidade em telas de todos os tamanhos através de breakpoints inteligentes.
+            </p>
+          </article>
+
+          <article class="service-card fade-in">
+            <h3 class="service-card__title">Acessibilidade Padrão</h3>
+            <p class="service-card__desc">
+              Uso estrito de HTML5 semântico, atributos ARIA, navegação por teclado e contraste adequado (WCAG) para incluir todos os visitantes.
+            </p>
+          </article>
+
+          <article class="service-card fade-in">
+            <h3 class="service-card__title">Performance Focada</h3>
+            <p class="service-card__desc">
+              CSS minificado, variáveis nativas em vez de pré-processadores pesados e imagens otimizadas para carregamento instantâneo.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA / STEPS -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-header__badge badge">O Processo</div>
+          <h2 class="section-header__title">Como o Código é Feito</h2>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card fade-in">
+            <span class="step-card__num" aria-hidden="true">1</span>
+            <h3 class="step-card__title">Planejamento Semântico</h3>
+            <p class="step-card__desc">Estruturação das tags HTML para criar uma fundação sólida para SEO e leitores de tela.</p>
+          </article>
+
+          <article class="step-card fade-in">
+            <span class="step-card__num" aria-hidden="true">2</span>
+            <h3 class="step-card__title">Estilização Modular</h3>
+            <p class="step-card__desc">Aplicação de CSS moderno com variáveis (Custom Properties) para temas dinâmicos.</p>
+          </article>
+
+          <article class="step-card fade-in">
+            <span class="step-card__num" aria-hidden="true">3</span>
+            <h3 class="step-card__title">Interações Leves</h3>
+            <p class="step-card__desc">JavaScript Vanilla sem dependências desnecessárias, focado em performance e interatividade essencial.</p>
+          </article>
+
+          <article class="step-card fade-in">
+            <span class="step-card__num" aria-hidden="true">4</span>
+            <h3 class="step-card__title">Revisão e Deploy</h3>
+            <p class="step-card__desc">Verificação rigorosa através do build serverless e hospedagem global segura via Vercel.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE O PROJETO -->
+    <section class="section section--alt" id="sobre">
+      <div class="container">
+        <div class="about-grid fade-in">
+          <div class="about__content">
+            <div class="badge">Avaliação de Qualidade</div>
+            <h2 class="about__title">Por que construir sem frameworks?</h2>
+            <p class="about__text">
+              Para landing pages focadas em conversão e campanhas rápidas, carregar grandes bibliotecas JavaScript muitas vezes resulta em métricas de Core Web Vitals inferiores.
+            </p>
+            <p class="about__text">
+              Abraçamos as capacidades modernas dos navegadores, como CSS Grid, Custom Properties e APIs nativas (como IntersectionObserver), entregando a mesma robustez visual sem o custo do carregamento inicial (bundle size).
+            </p>
+
+            <div class="about__features mt-4" style="margin-top: var(--space-xl)">
+              <div class="about__feature">
+                <div class="about__feature-icon" aria-hidden="true">✓</div>
+                <div class="about__feature-text">
+                  <strong>Zero Configuração</strong>
+                  <span>Foco direto no código que importa.</span>
+                </div>
+              </div>
+              <div class="about__feature">
+                <div class="about__feature-icon" aria-hidden="true">✓</div>
+                <div class="about__feature-text">
+                  <strong>Padrões da Web</strong>
+                  <span>Código que dura anos, não meses.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta section">
+      <div class="container fade-in">
+        <h2 class="cta__title">Pronto para elevar o nível do seu código?</h2>
+        <p class="cta__desc">Analise o repositório, inspecione a estrutura e sinta a performance.</p>
+        <a href="#contato" class="btn btn--primary btn--lg">Avaliar Código</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span style="font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em;">&lt;DevQuality/&gt;</span>
+        </div>
+        <div class="footer__links">
+          <a href="#funcionalidades" class="footer__link">Funcionalidades</a>
+          <a href="#como-funciona" class="footer__link">Processo</a>
+          <a href="#sobre" class="footer__link">Sobre</a>
+        </div>
+        <div class="footer__copy">
+          &copy; 2026 DevQuality. Página de demonstração construída para avaliação de qualidade de código.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo" type="button">↑</button>
+
+  <script src="src/js/main.min.js"></script>
+  <script>
+    // Intersection Observer to add the .visible class to .fade-in elements
+    document.addEventListener('DOMContentLoaded', function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      var fadeElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+      fadeElements.forEach(function(el) {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
