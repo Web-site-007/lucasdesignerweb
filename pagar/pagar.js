@@ -132,8 +132,12 @@
     mostrar(el('aba-pix'), temPix);
     mostrar(el('aba-cartao'), temCartao);
 
-    if (!temCartao && temPix) trocarAba('pix');
-    else if (!temPix && temCartao) trocarAba('cartao');
+    // Escolhe a aba inicial e monta o Brick correspondente.
+    // Sem esta chamada, nenhum painel fica marcado como visivel e o Brick
+    // nunca era montado — o painel ficava em "Preparando pagamento seguro".
+    if (temPix) trocarAba('pix');
+    else if (temCartao) trocarAba('cartao');
+    else return; // nenhum metodo habilitado: nada a mostrar
 
     // Estado da cobrança já resolvida.
     if (c.status === 'pago') mostrarFinal(true, c);
@@ -152,6 +156,7 @@
     mostrar(el('painel-cartao'), !ehPix);
 
     if (!ehPix) montarBrick();
+    else estado.brickPendente = false;
   }
 
   function mostrarFinal(deuCerto, c) {
