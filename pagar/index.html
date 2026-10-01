@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="escuro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Pagina privada: nunca deve entrar em indice de busca. -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Area de pagamento — LucasDesignerWeb</title>
+<meta name="description" content="Area de pagamento segura da LucasDesignerWeb.">
+<link rel="preconnect" href="https://sdk.mercadopago.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="pagar.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%233b82f6'/></svg>">
+</head>
+<body>
+
+<header class="topo">
+  <div class="marca">
+    <span class="marca__ponto" aria-hidden="true"></span>
+    <span>LucasDesignerWeb</span>
+  </div>
+  <span class="topo__seguro">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+    </svg>
+    Pagamento seguro
+  </span>
+</header>
+
+<main class="cartao">
+
+  <!-- Estado: carregando -->
+  <div id="tela-carregando" class="cartao__corpo">
+    <div class="carregando"><span class="girando" aria-hidden="true"></span> Carregando sua cobran&ccedil;a&hellip;</div>
+  </div>
+
+  <!-- Estado: erro / link invalido -->
+  <div id="tela-erro" class="cartao__corpo" hidden>
+    <div class="final">
+      <div class="final__icone final__icone--erro">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5v.01"/>
+        </svg>
+      </div>
+      <h1 class="final__titulo" id="erro-titulo">Link indispon&iacute;vel</h1>
+      <p class="final__texto" id="erro-texto">
+        Este link de pagamento n&atilde;o &eacute; v&aacute;lido ou expirou.
+      </p>
+      <p class="final__texto" style="margin-top:16px">
+        Fale com a LucasDesignerWeb para receber um novo link.
+      </p>
+    </div>
+  </div>
+
+  <!-- Estado: pagamento -->
+  <div id="tela-pagamento" hidden>
+
+    <div class="cartao__topo">
+      <p class="rotulo">Voc&ecirc; est&aacute; pagando</p>
+      <h1 class="servico" id="servico">&mdash;</h1>
+      <p class="valor" id="valor">&mdash;</p>
+      <p class="valor-parcelado" id="valor-parcelado" hidden></p>
+      <div class="cliente" id="cliente" hidden></div>
+    </div>
+
+    <div class="cartao__corpo">
+
+      <div class="mensagem mensagem--erro" id="msg-erro" role="alert">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5v.01"/>
+        </svg>
+        <span id="msg-erro-texto"></span>
+      </div>
+
+      <div class="abas" role="tablist" aria-label="Forma de pagamento">
+        <button class="aba" id="aba-pix" role="tab" aria-selected="true" aria-controls="painel-pix" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+            <path d="M14 14h3v3h-3zM20 14h1M14 20h3M20 17v4"/>
+          </svg>
+          Pix
+        </button>
+        <button class="aba" id="aba-cartao" role="tab" aria-selected="false" aria-controls="painel-cartao" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/>
+          </svg>
+          Cart&atilde;o
+        </button>
+      </div>
+
+      <!-- Painel Pix -->
+      <section class="painel" id="painel-pix" role="tabpanel" aria-labelledby="aba-pix">
+        <div id="pix-inicial" class="pix-caixa">
+          <p class="final__texto" style="margin-bottom:18px">
+            Gere o QR Code Pix para pagar. A confirma&ccedil;&atilde;o aparece aqui na tela.
+          </p>
+          <button class="btn btn--primario" id="btn-gerar-pix" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3z"/>
+            </svg>
+            Gerar QR Code Pix
+          </button>
+        </div>
+
+        <div id="pix-qr-area" class="pix-caixa" hidden>
+          <div class="pix-qr">
+            <img id="pix-qr-img" alt="QR Code Pix para pagamento" width="208" height="208">
+          </div>
+          <p class="pix-aviso">
+            <span class="pix-aviso__ponto" aria-hidden="true"></span>
+            <span id="pix-status">Aguardando pagamento&hellip;</span>
+          </p>
+          <div class="codigo">
+            <textarea id="pix-codigo" readonly rows="2" aria-label="Codigo Pix copia e cola"></textarea>
+            <button class="btn btn--contorno" id="btn-copiar-pix" type="button">Copiar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Painel cartao (Brick oficial do Mercado Pago) -->
+      <section class="painel" id="painel-cartao" role="tabpanel" aria-labelledby="aba-cartao" hidden>
+        <div id="brick_container" class="area-brick"></div>
+        <div id="brick-carregando" class="carregando">
+          <span class="girando" aria-hidden="true"></span> Preparando pagamento seguro&hellip;
+        </div>
+      </section>
+
+      <!-- Estado final -->
+      <div id="tela-final" hidden>
+        <div class="final">
+          <div class="final__icone" id="final-icone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+          </div>
+          <h2 class="final__titulo" id="final-titulo">Pagamento aprovado</h2>
+          <p class="final__texto" id="final-texto">Recebemos seu pagamento. Obrigado!</p>
+          <div class="identificador" id="final-id" hidden>
+            <span>Identificador da cobran&ccedil;a</span>
+            <strong id="final-id-valor">&mdash;</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="rodape">
+  <p>
+    Ambiente protegido pelo Mercado Pago. N&atilde;o armazenamos os dados do seu cart&atilde;o.
+  </p>
+  <p style="margin-top:6px">
+    D&uacute;vidas? <a href="https://lucasdesignerweb.com.br/#contato">Fale com a LucasDesignerWeb</a>.
+  </p>
+</footer>
+
+<script src="https://sdk.mercadopago.com/js/v2" async></script>
+<script src="pagar.js"></script>
+</body>
+</html>

@@ -48,5 +48,24 @@
    <p class="error-desc">O link que você acessou não existe ou foi movido. Volte para a página inicial.</p>
    <a href="index.html" class="error-btn">Voltar ao Início</a>
  </main>
+
+ <!--
+   GitHub Pages é estático: não existe /pagar/<token> no disco, então o
+   servidor entrega esta página com status 404 mas a URL do navegador
+   permanece /pagar/<token>. Detectamos o prefixo e carregamos a área de
+   pagamento de verdade, mantendo o link curto que vai para o cliente.
+ -->
+ <script>
+  (function () {
+    var partes = window.location.pathname.split('/').filter(Boolean);
+    var i = partes.indexOf('pagar');
+    if (i === -1 || !partes[i + 1]) return;
+
+    var token = partes[i + 1];
+    if (!/^[23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{22}$/.test(token)) return;
+
+    window.location.replace('/pagar/?t=' + encodeURIComponent(token));
+  })();
+ </script>
 </body>
 </html>

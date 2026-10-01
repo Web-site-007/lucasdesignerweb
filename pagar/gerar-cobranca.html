@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="escuro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Gerar link de pagamento — LucasDesignerWeb</title>
+<meta name="description" content="Painel privado para gerar links de pagamento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="pagar.css">
+<style>
+  .painel-l { max-width: 520px; margin: 0 auto; width: 100%; }
+  .campo { margin-bottom: 18px; }
+  .campo label {
+    display: block; font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--text-muted); font-weight: 600; margin-bottom: 8px;
+  }
+  .campo input, .campo textarea, .campo select {
+    width: 100%; padding: 12px 14px; border-radius: var(--radius-sm);
+    border: 1px solid var(--border); background: var(--bg-input); color: var(--text);
+    font-family: inherit; font-size: 0.9375rem;
+  }
+  .campo input:focus, .campo textarea:focus { outline: none; border-color: var(--primary); }
+  .linha { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .checks { display: flex; gap: 10px; flex-wrap: wrap; }
+  .check {
+    display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px;
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    cursor: pointer; font-size: 0.9375rem; font-weight: 500; flex: 1; min-width: 120px;
+  }
+  .check:has(input:checked) { border-color: var(--primary); background: var(--primary-light); }
+  .check input { accent-color: var(--primary); width: 17px; height: 17px; }
+  .caixa-senha {
+    display: flex; gap: 10px; align-items: center;
+    font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 20px;
+  }
+  .caixa-senha input { flex: 1; }
+  .link-gerado { margin-top: 6px; }
+  .link-gerado .identificador strong {
+    display: block; color: var(--primary); font-size: 0.8125rem;
+    word-break: break-all; margin: 6px 0 12px; line-height: 1.5;
+  }
+  .historico { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--border); }
+  .historico__item {
+    display: flex; justify-content: space-between; gap: 12px; align-items: baseline;
+    padding: 11px 0; border-bottom: 1px dashed var(--border); font-size: 0.8125rem;
+  }
+  .historico__item:last-child { border-bottom: none; }
+  .historico__item span { color: var(--text-secondary); }
+  .historico__item b { color: var(--text); font-weight: 600; }
+  .nota { font-size: 0.75rem; color: var(--text-muted); margin-top: 14px; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="marca">
+    <span class="marca__ponto" aria-hidden="true"></span>
+    <span>LucasDesignerWeb</span>
+  </div>
+  <span class="topo__seguro">Painel privado</span>
+</header>
+
+<main class="cartao painel-l">
+  <div class="cartao__topo">
+    <p class="rotulo">Cobran&ccedil;a</p>
+    <h1 class="servico">Gerar link de pagamento</h1>
+    <p class="final__texto">O link gerado s&oacute; fica gravado uma vez. Guarde-o para enviar ao cliente.</p>
+  </div>
+
+  <div class="cartao__corpo">
+
+    <div class="mensagem mensagem--erro" id="msg-erro" role="alert">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5v.01"/>
+      </svg>
+      <span id="msg-erro-texto"></span>
+    </div>
+
+    <form id="form">
+      <div class="caixa-senha">
+        <label for="senha" style="flex:none;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:600">Senha</label>
+        <input type="password" id="senha" autocomplete="current-password" required>
+      </div>
+
+      <div class="campo">
+        <label for="descricao">Servi&ccedil;o</label>
+        <input type="text" id="descricao" required maxlength="120" placeholder="Ex.: Site institucional 5 p&aacute;ginas">
+      </div>
+
+      <div class="linha">
+        <div class="campo">
+          <label for="valor">Valor (R$)</label>
+          <input type="number" id="valor" required min="0.01" step="0.01" placeholder="1500.00">
+        </div>
+        <div class="campo">
+          <label for="validade">V&aacute;lido por (dias)</label>
+          <input type="number" id="validade" min="1" max="90" value="7" required>
+        </div>
+      </div>
+
+      <div class="linha">
+        <div class="campo">
+          <label for="cliente">Cliente</label>
+          <input type="text" id="cliente" maxlength="80" placeholder="Nome">
+        </div>
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" maxlength="120" placeholder="cliente@exemplo.com">
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>M&eacute;todos de pagamento</label>
+        <div class="checks">
+          <label class="check"><input type="checkbox" id="m-pix" checked> Pix</label>
+          <label class="check"><input type="checkbox" id="m-cartao" checked> Cart&atilde;o</label>
+        </div>
+      </div>
+
+      <button class="btn btn--primario" type="submit" id="btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/>
+          <path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>
+        </svg>
+        Gerar link
+      </button>
+    </form>
+
+    <div id="resultado" class="link-gerado" hidden>
+      <div class="identificador">
+        <span>Link para enviar ao cliente</span>
+        <strong id="link-valor">&mdash;</strong>
+      </div>
+      <button class="btn btn--contorno" id="btn-copiar" type="button" style="width:100%">Copiar link</button>
+      <p class="nota">
+        Este link n&atilde;o aparece no site. Envie por WhatsApp ou e-mail.
+        Guarde o link: ele n&atilde;o pode ser recuperado depois.
+      </p>
+    </div>
+
+    <div class="historico" id="historico" hidden>
+      <p class="rotulo">Criadas nesta sess&atilde;o</p>
+      <div id="historico-lista"></div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="rodape">
+  <p>Painel privado &middot; n&atilde;o indexado por buscadores</p>
+</footer>
+
+<script src="gerar-cobranca.js"></script>
+</body>
+</html>
