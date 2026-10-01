@@ -240,7 +240,10 @@
     var bricksBuilder = mp.bricks();
 
     bricksBuilder
-      .create('card', 'brick_container', {
+      // O nome do componente e 'cardPayment', nao 'card'. O SDK rejeita
+      // qualquer outro com "[BRICKS]: component name: X is invalid" e
+      // resolve com null sem renderizar nada — erro silencioso.
+      .create('cardPayment', 'brick_container', {
         initialization: {
           // Valor informado pelo backend, nunca digitado aqui.
           amount: estado.cobranca.valorCentavos / 100
