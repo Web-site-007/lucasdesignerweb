@@ -385,7 +385,7 @@
                   tokenCartao: formData.token,
                   parcelas: formData.installments,
                   metodoCartao: formData.paymentMethodId,
-                  issuerId: formData.issuerId,
+                  issuerId: formData.issuer_id || formData.issuerId,
                   email: (formData.payer && formData.payer.email) || estado.dados.email,
                   identificacao:
                     formData.payer && formData.payer.identification
