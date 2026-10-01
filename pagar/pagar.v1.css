@@ -440,3 +440,69 @@ p { margin: 0; }
   white-space: nowrap;
   border: 0;
 }
+
+/* ------------------------------------------- passo de dados do pagador */
+
+.campo { margin-bottom: 18px; }
+
+.campo label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.rotulo-inline {
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.7rem;
+}
+
+.campo input {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-input);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.campo input[aria-invalid='true'] { border-color: var(--danger); }
+
+.campo-ajuda {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 7px;
+  line-height: 1.45;
+}
+
+.campo-ajuda--erro { color: var(--danger); }
+
+.texto-suave {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 8px 0 18px;
+  line-height: 1.5;
+}
+
+#passo-dados .rotulo { margin-bottom: 14px; }
+
+#brick-espera-cpf {
+  text-align: left;
+  padding: 22px 0 4px;
+}
+
+#brick-espera-cpf p:first-child { font-size: 0.9375rem; margin-bottom: 4px; }

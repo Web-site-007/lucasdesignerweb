@@ -76,7 +76,33 @@
         <span id="msg-erro-texto"></span>
       </div>
 
-      <div class="abas" role="tablist" aria-label="Forma de pagamento">
+      <!-- Passo 1: dados do pagador. O Brick de cartao so monta depois que
+           estes dados existem — e o mesmo desenho do checkout do projeto NYA. -->
+      <section id="passo-dados" hidden>
+        <p class="rotulo">Seus dados</p>
+        <div class="campo">
+          <label for="cli-nome">Nome completo</label>
+          <input type="text" id="cli-nome" autocomplete="name" maxlength="120" placeholder="Como podemos te chamar">
+        </div>
+        <div class="campo">
+          <label for="cli-email">E-mail</label>
+          <input type="email" id="cli-email" autocomplete="email" maxlength="200" placeholder="Para enviar o comprovante">
+        </div>
+        <div class="campo">
+          <label for="cli-cpf">
+            CPF <span class="rotulo-inline">obrigatório para pagar com cartão</span>
+          </label>
+          <input type="text" id="cli-cpf" inputmode="numeric" maxlength="14"
+                 autocomplete="off" placeholder="000.000.000-00">
+          <p class="campo-ajuda" id="ajuda-cpf">No Pix o CPF não é exigido.</p>
+        </div>
+        <button class="btn btn--primario" id="btn-continuar" type="button">
+          Continuar para o pagamento
+        </button>
+      </section>
+
+      <div id="escolha-modo" hidden>
+        <div class="abas" role="tablist" aria-label="Forma de pagamento">
         <button class="aba" id="aba-pix" role="tab" aria-selected="true" aria-controls="painel-pix" type="button">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
@@ -128,7 +154,19 @@
         <div id="brick-carregando" class="carregando">
           <span class="girando" aria-hidden="true"></span> Preparando pagamento seguro&hellip;
         </div>
+        <div id="brick-espera-cpf" hidden>
+          <p><strong>Para pagar com cartão, preencha o CPF.</strong></p>
+          <p class="texto-suave">
+            O Mercado Pago exige o documento do titular para aprovar pagamento com cartão.
+            Volte ao passo anterior e informe o CPF, ou use o Pix.
+          </p>
+          <button class="btn btn--contorno" id="btn-voltar-dados" type="button" style="width:100%">
+            Preencher meu CPF
+          </button>
+        </div>
       </section>
+
+      </div><!-- /escolha-modo -->
 
       <!-- Estado final -->
       <div id="tela-final" hidden>

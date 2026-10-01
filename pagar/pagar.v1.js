@@ -22,6 +22,8 @@
     pagamentoCriado: false,
     brickTentado: false,
     brickPendente: false,
+    dados: { nome: '', email: '', cpf: '' },
+    mostrarDados: false,
     timer: null,
     tentativas: 0
   };
@@ -135,9 +137,17 @@
     // Escolhe a aba inicial e monta o Brick correspondente.
     // Sem esta chamada, nenhum painel fica marcado como visivel e o Brick
     // nunca era montado — o painel ficava em "Preparando pagamento seguro".
-    if (temPix) trocarAba('pix');
-    else if (temCartao) trocarAba('cartao');
-    else return; // nenhum metodo habilitado: nada a mostrar
+    // Primeiro passo: dados do pagador. Depois aparecem as formas de
+    // pagamento. Sem isso o Brick de cartao abre sem CPF e e recusado.
+    if (temPix || temCartao) {
+      estado.mostrarDados = false;
+      mostrar(el('passo-dados'), true);
+      mostrar(el('escolha-modo'), false);
+      trocarAba('pix');
+      el('aba-pix').style.visibility = 'hidden';
+    } else {
+      return; // nenhum metodo habilitado
+    }
 
     // Estado da cobrança já resolvida.
     if (c.status === 'pago') mostrarFinal(true, c);
@@ -155,7 +165,9 @@
     mostrar(el('painel-pix'), ehPix);
     mostrar(el('painel-cartao'), !ehPix);
 
-    if (!ehPix) montarBrick();
+    // O Brick so entra depois que o cliente preencheu os dados.
+    if (!ehPix && estado.mostrarDados) montarBrick();
+    else if (!ehPix) estado.brickPendente = true;
     else estado.brickPendente = false;
   }
 
@@ -186,6 +198,55 @@
     mostrar(telaFinal, true);
   }
 
+  /**
+   * Valida os dados e libera as formas de pagamento.
+   * CPF so e exigido quando o cliente vai pagar com cartao.
+   */
+  function avancarParaPagamento() {
+    var dados = lerDados();
+    limparAviso();
+
+    var querCartao = estado.cobranca.metodos.indexOf('cartao') !== -1;
+    var querPix = estado.cobranca.metodos.indexOf('pix') !== -1;
+
+    if (!dados.nome) {
+      avisoCampo('cli-nome', 'Informe seu nome.');
+      return;
+    }
+    if (!emailValido(dados.email)) {
+      avisoCampo('cli-email', 'Informe um e-mail válido.');
+      return;
+    }
+
+    // Sem outro metodo, o CPF e obrigatorio porque so resta cartao.
+    if (querCartao && !querPix && dados.cpf.length !== 11) {
+      avisoCampo('cli-cpf', 'O CPF é obrigatório para pagar com cartão.');
+      return;
+    }
+
+    estado.dados = dados;
+    estado.mostrarDados = true;
+    mostrar(el('passo-dados'), false);
+    mostrar(el('escolha-modo'), true);
+    el('aba-pix').style.visibility = 'visible';
+    el('aba-cartao').style.visibility = 'visible';
+
+    trocarAba(dados.cpf ? 'cartao' : 'pix');
+  }
+
+  function avisoCampo(id, mensagem) {
+    var c = el(id);
+    if (c) c.setAttribute('aria-invalid', 'true');
+    if (id === 'cli-cpf') {
+      var a = el('ajuda-cpf');
+      a.textContent = mensagem;
+      a.classList.add('campo-ajuda--erro');
+    } else {
+      erroAviso(mensagem);
+    }
+    if (c) c.focus();
+  }
+
   // -------------------------------------------------------------------- pix
 
   function gerarPix() {
@@ -194,7 +255,10 @@
     btn.disabled = true;
     btn.innerHTML = '<span class="girando" aria-hidden="true"></span> Gerando&hellip;';
 
-    api('/api/pagamento-criar', { method: 'POST', corpo: { token: estado.token, metodo: 'pix' } })
+    api('/api/pagamento-criar', {
+      method: 'POST',
+      corpo: { token: estado.token, metodo: 'pix', email: estado.dados.email || undefined }
+    })
       .then(function (c) {
         estado.cobranca = c;
         estado.pagamentoCriado = true;
@@ -216,10 +280,53 @@
       });
   }
 
+  // ------------------------------------------------------- dados do pagador
+
+  function digitosCpf(v) {
+    return String(v || '').replace(/\D/g, '');
+  }
+
+  function emailValido(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v || '').trim());
+  }
+
+  function lerDados() {
+    return {
+      nome: el('cli-nome').value.trim(),
+      email: el('cli-email').value.trim(),
+      cpf: digitosCpf(el('cli-cpf').value)
+    };
+  }
+
+  /**
+   * Mascara o CPF enquanto digita. So 11 digitos sao aceitos.
+   */
+  function mascararCpf() {
+    var campo = el('cli-cpf');
+    var d = digitosCpf(campo.value).slice(0, 11);
+    var out = d;
+    if (d.length > 6) out = d.slice(0, 3) + '.' + d.slice(3, 6) + '.' + d.slice(6, 9) + '-' + d.slice(9);
+    else if (d.length > 3) out = d.slice(0, 3) + '.' + d.slice(3);
+    campo.value = out;
+  }
+
   // ---------------------------------------------------------------- cartao
 
   function montarBrick() {
     registrar('montar-brick-iniciado', { temConfig: Boolean(estado.config && estado.config.publicKey) });
+
+    // O Mercado Pago exige o documento do titular para cartao. Sem CPF o
+    // Brick nem e montado — mesmo desenho do checkout do projeto NYA.
+    if (!estado.dados.cpf) {
+      estado.brickPendente = true;
+      mostrar(el('brick-espera-cpf'), true);
+      mostrar(el('brick-carregando'), false);
+      return;
+    }
+
+    mostrar(el('brick-espera-cpf'), false);
+    mostrar(el('brick-carregando'), true);
+
     if (!estado.config || !estado.config.publicKey) {
       // A config (Public Key) pode ainda não ter chegado do backend. Marca que
       // quer o Brick e tenta de novo quando ela chegar — sem isso, clicar na
@@ -246,7 +353,13 @@
       .create('cardPayment', 'brick_container', {
         initialization: {
           // Valor informado pelo backend, nunca digitado aqui.
-          amount: estado.cobranca.valorCentavos / 100
+          amount: estado.cobranca.valorCentavos / 100,
+          // payer vai na inicializacao: e o CPF que o Brick usa para
+          // validar o titular. Sem isso o pagamento e recusado.
+          payer: {
+            email: estado.dados.email || undefined,
+            identification: { type: 'CPF', number: estado.dados.cpf }
+          }
         },
         customization: {
           style: {
@@ -271,7 +384,7 @@
                   parcelas: formData.installments,
                   metodoCartao: formData.paymentMethodId,
                   issuerId: formData.issuerId,
-                  email: formData.payer && formData.payer.email,
+                  email: (formData.payer && formData.payer.email) || estado.dados.email,
                   identificacao:
                     formData.payer && formData.payer.identification
                       ? {
@@ -424,6 +537,20 @@
       erroFatal('Link inválido', 'Este endereço de pagamento não é válido.');
       return;
     }
+
+    el('cli-cpf').addEventListener('input', function () {
+      mascararCpf();
+      el('ajuda-cpf').classList.remove('campo-ajuda--erro');
+      el('cli-cpf').removeAttribute('aria-invalid');
+    });
+
+    el('btn-continuar').addEventListener('click', avancarParaPagamento);
+
+    el('btn-voltar-dados').addEventListener('click', function () {
+      mostrar(el('passo-dados'), true);
+      mostrar(el('escolha-modo'), false);
+      el('cli-cpf').focus();
+    });
 
     el('btn-gerar-pix').addEventListener('click', gerarPix);
     el('btn-copiar-pix').addEventListener('click', copiarPix);
