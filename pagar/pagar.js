@@ -233,40 +233,59 @@
         customization: {
           style: {
             theme: 'dark'
-          },
-          visual: {
-            hideSandboxBox: true
           }
         },
         callbacks: {
           onReady: function () {
             el('brick-carregando').hidden = true;
           },
-          onSubmit: function (dados) {
+          onSubmit: function (formData, additionalData) {
             limparAviso();
-            enviarCartao(dados);
+            // A doc exige devolver uma Promise: é o que segura o Brick
+            // enquanto o backend responde. Sem isso o Brick dá timeout.
+            return new Promise(function (resolve, reject) {
+              api('/api/pagamento-criar', {
+                method: 'POST',
+                corpo: {
+                  token: estado.token,
+                  metodo: 'cartao',
+                  tokenCartao: formData.token,
+                  parcelas: formData.installments,
+                  metodoCartao: formData.paymentMethodId,
+                  issuerId: formData.issuerId,
+                  email: formData.payer && formData.payer.email,
+                  identificacao:
+                    formData.payer && formData.payer.identification
+                      ? {
+                          tipo: formData.payer.identification.type,
+                          numero: formData.payer.identification.number
+                        }
+                      : null
+                }
+              })
+                .then(function (c) {
+                  estado.cobranca = c;
+                  estado.pagamentoCriado = true;
+                  if (c.parcelas) {
+                    var vp = el('valor-parcelado');
+                    vp.textContent = c.parcelas.quantity + 'x de ' + moeda(c.parcelas.amount);
+                    mostrar(vp, true);
+                  }
+                  monitorar();
+                  resolve({ approved: true });
+                })
+                .catch(function (e) {
+                  erroAviso(e.message || 'Não foi possível processar o cartão.');
+                  // reject devolve o Brick ao cliente com a mensagem,
+                  // permitindo corrigir e tentar de novo sem recarregar.
+                  reject(e);
+                });
+            });
           },
           onError: function (erro) {
-            var m = (erro && erro.message) || '';
-            // O Brick usa o email do pagador; o backend valida o resto.
-            api('/api/pagamento-criar', {
-              method: 'POST',
-              corpo: {
-                token: estado.token,
-                metodo: 'cartao',
-                tokenCartao: dados.token,
-                parcelas: dados.installments,
-                email: (dados.payer && dados.payer.email) || ''
-              }
-            })
-              .then(function (c) {
-                estado.cobranca = c;
-                estado.pagamentoCriado = true;
-                monitorar();
-              })
-              .catch(function (e) {
-                erroAviso(e.message || 'Não foi possível processar o cartão.');
-              });
+            // Erro do proprio Brick (validação de campo, cartão inválido).
+            var m = (erro && erro.message) || 'Verifique os dados do cartão.';
+            erroAviso(m);
           }
         }
       })
@@ -276,32 +295,6 @@
       .catch(function () {
         el('brick-carregando').innerHTML =
           '<span>Não foi possível carregar o pagamento por cartão.</span>';
-      });
-  }
-
-  function enviarCartao(dados) {
-    api('/api/pagamento-criar', {
-      method: 'POST',
-      corpo: {
-        token: estado.token,
-        metodo: 'cartao',
-        tokenCartao: dados.token,
-        parcelas: dados.installments,
-        email: (dados.payer && dados.payer.email) || ''
-      }
-    })
-      .then(function (c) {
-        estado.cobranca = c;
-        estado.pagamentoCriado = true;
-        if (c.parcelas) {
-          var vp = el('valor-parcelado');
-          vp.textContent = c.parcelas.quantity + 'x de ' + moeda(c.parcelas.amount);
-          mostrar(vp, true);
-        }
-        monitorar();
-      })
-      .catch(function (e) {
-        erroAviso(e.message || 'Não foi possível processar o cartão.');
       });
   }
 

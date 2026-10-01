@@ -161,7 +161,9 @@
   </p>
 </footer>
 
-<script src="https://sdk.mercadopago.com/js/v2" async></script>
+<!-- O SDK precisa estar carregado antes do pagar.js rodar: sem async/defer,
+     conforme a documentacao de Bricks. -->
+<script src="https://sdk.mercadopago.com/js/v2"></script>
 <script src="pagar.js"></script>
 </body>
 </html>
