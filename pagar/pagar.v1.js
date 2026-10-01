@@ -426,6 +426,8 @@
       .then(function (controller) {
         estado.controllerBrick = controller;
         registrar('brick-montado', { id: controller && controller.id });
+        // Garante que o banner suma mesmo se o onReady nao vier.
+        el('brick-carregando').hidden = true;
       })
       .catch(function (erro) {
         registrar('brick-falhou', {
@@ -540,6 +542,7 @@
       return;
     }
 
+    el('cli-cpf').addEventListener('blur', mascararCpf);
     el('cli-cpf').addEventListener('input', function () {
       mascararCpf();
       el('ajuda-cpf').classList.remove('campo-ajuda--erro');
