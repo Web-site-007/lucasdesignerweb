@@ -20,6 +20,8 @@
     config: null,
     metodo: 'pix',
     pagamentoCriado: false,
+    brickTentado: false,
+    brickPendente: false,
     timer: null,
     tentativas: 0
   };
@@ -149,7 +151,7 @@
     mostrar(el('painel-pix'), ehPix);
     mostrar(el('painel-cartao'), !ehPix);
 
-    if (!ehPix && !estado.pagamentoCriado) montarBrick();
+    if (!ehPix) montarBrick();
   }
 
   function mostrarFinal(deuCerto, c) {
@@ -212,7 +214,15 @@
   // ---------------------------------------------------------------- cartao
 
   function montarBrick() {
-    if (!estado.config || !estado.config.publicKey || estado.brickTentado) return;
+    registrar('montar-brick-iniciado', { temConfig: Boolean(estado.config && estado.config.publicKey) });
+    if (!estado.config || !estado.config.publicKey) {
+      // A config (Public Key) pode ainda não ter chegado do backend. Marca que
+      // quer o Brick e tenta de novo quando ela chegar — sem isso, clicar na
+      // aba "Cartão" antes da config|resultava em Brick nunca montado.
+      estado.brickPendente = true;
+      return;
+    }
+    if (estado.brickTentado) return;
     estado.brickTentado = true;
 
     if (typeof MercadoPago === 'undefined') {
@@ -285,17 +295,43 @@
           onError: function (erro) {
             // Erro do proprio Brick (validação de campo, cartão inválido).
             var m = (erro && erro.message) || 'Verifique os dados do cartão.';
+            registrar('onError', { mensagem: m, tipo: erro && erro.type, codigo: erro && erro.code });
             erroAviso(m);
           }
         }
       })
       .then(function (controller) {
         estado.controllerBrick = controller;
+        registrar('brick-montado', { id: controller && controller.id });
       })
-      .catch(function () {
+      .catch(function (erro) {
+        registrar('brick-falhou', {
+          mensagem: (erro && erro.message) || String(erro),
+          tipo: erro && erro.type,
+          codigo: erro && erro.code
+        });
         el('brick-carregando').innerHTML =
           '<span>Não foi possível carregar o pagamento por cartão.</span>';
       });
+  }
+
+  /**
+   * Diagnostico: manda o estado do Brick para um endpoint meu, para eu
+   * conseguir ler o erro real sem depender de console do navegador.
+   * Nunca leva dado de cartao.
+   */
+  function registrar(evento, dados) {
+    try {
+      navigator.sendBeacon &&
+        navigator.sendBeacon(
+          API + '/api/pagamento-diagnostico',
+          new Blob([JSON.stringify({ evento: dados, url: window.location.pathname })], {
+            type: 'application/json'
+          })
+        );
+    } catch (e) {
+      /* diagnostico e opcional */
+    }
   }
 
   // -------------------------------------------------------------- monitorar
@@ -394,8 +430,17 @@
         mostrar(telaPagamento, true);
         if (c.status === 'pago' || c.status === 'recusado') return;
         return api('/api/pagamento-config?t=' + encodeURIComponent(estado.token))
-          .then(function (cfg) { estado.config = cfg; })
-          .catch(function () { /* cartão pode ficar indisponível; Pix segue */ });
+          .then(function (cfg) {
+            estado.config = cfg;
+            // A aba de cartao pode ja estar visivel enquanto a config
+            // chegava; agora que ela existe, monta o Brick.
+            if (estado.brickPendente || estado.metodo === 'cartao') montarBrick();
+          })
+          .catch(function () {
+            // Sem config nao da para montar o Brick. O Pix continua valendo.
+            el('brick-carregando').innerHTML =
+              '<span>Não foi possível carregar o pagamento por cartão agora. O Pix segue disponível.</span>';
+          });
       })
       .catch(function (e) {
         if (e.status === 404) erroFatal('Link indisponível', 'Este link de pagamento não é válido ou expirou.');
