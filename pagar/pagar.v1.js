@@ -143,8 +143,10 @@
       estado.mostrarDados = false;
       mostrar(el('passo-dados'), true);
       mostrar(el('escolha-modo'), false);
-      trocarAba('pix');
+      // Nao chama trocarAba aqui: ele mexe nos paineis e esconderia o
+      // formulario. As abas so aparecem depois de Continuar.
       el('aba-pix').style.visibility = 'hidden';
+      el('aba-cartao').style.visibility = 'hidden';
     } else {
       return; // nenhum metodo habilitado
     }
@@ -567,9 +569,11 @@
         return api('/api/pagamento-config?t=' + encodeURIComponent(estado.token))
           .then(function (cfg) {
             estado.config = cfg;
-            // A aba de cartao pode ja estar visivel enquanto a config
-            // chegava; agora que ela existe, monta o Brick.
-            if (estado.brickPendente || estado.metodo === 'cartao') montarBrick();
+            // Monta o Brick apenas se o cliente ja passou pelo passo de
+            // dados. Antes disso, montarBrick() esconderia o formulario.
+            if (estado.mostrarDados && (estado.brickPendente || estado.metodo === 'cartao')) {
+              montarBrick();
+            }
           })
           .catch(function () {
             // Sem config nao da para montar o Brick. O Pix continua valendo.
