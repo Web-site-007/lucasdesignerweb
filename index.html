@@ -26,7 +26,7 @@
  <link rel="apple-touch-icon" href="src/images/apple-touch-icon.png"/>
  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
  <meta name="theme-color" content="#e9e8e3" media="(prefers-color-scheme: light)"/>
- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://connect.facebook.net; frame-ancestors 'none';"/>
+ <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' https://lucasdesignerweb-api.vercel.app https://www.google-analytics.com https://connect.facebook.net; frame-ancestors 'none';"/>
  <meta name="google-site-verification" content="HaRbq3nkLnrzzEcsRzVc0pUoKfWmLjeUggEkOKzve60"/>
  <link rel="preload" href="src/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin/>
  <link rel="preload" as="image" href="src/images/capa-lucas.avif" type="image/avif" fetchpriority="high"/>
@@ -446,6 +446,47 @@
 
  <main id="main-content">
 
+   <section class="hero" id="inicio">
+     <div class="container">
+       <div class="hero__content">
+         <div>
+            <div class="hero__eyebrow" aria-hidden="true">&gt; lucas@dev:~$ <b>render --futuro_</b></div>
+           <h1 class="hero__title">
+             Seu neg&oacute;cio precisa de um site?<span>Voc&ecirc; s&oacute; paga quando ele estiver pronto e aprovado<span class="cursor" aria-hidden="true"></span></span>
+           </h1>
+           <p class="hero__desc">
+             Sem entrada antecipada: voc&ecirc; me passa o que precisa, eu desenvolvo e refino at&eacute; chegar ao seu agrado. O pagamento s&oacute; acontece no final.
+           </p>
+           <div class="hero__actions">
+             <a href="#contato" class="btn btn--primary btn--lg">Quero Meu Site_</a>
+             <a href="#portfolio" class="btn btn--outline btn--lg">Ver Projetos</a>
+           </div>
+         </div>
+         <div class="hero__media">
+           <span class="term-chip term-chip--1" aria-hidden="true">&lt;design/&gt;</span>
+           <span class="term-chip term-chip--2" aria-hidden="true">&lt;build/&gt;</span>
+            <figure class="term-shot" role="img" aria-label="Terminal de trabalho do Lucas, designer e desenvolvedor web">
+              <div class="term-shot__bar" aria-hidden="true"><span></span><b>lucas@dev:~/projetos</b></div>
+             <div class="term-shot__code" aria-hidden="true">
+               <div><span class="ln">01</span> &gt; whoami</div>
+                <div><span class="ln">02</span> lucas — designer &amp; desenvolvedor web</div>
+               <div><span class="ln">03</span> &nbsp;</div>
+               <div><span class="ln">04</span> &gt; ls ./servicos/</div>
+               <div><span class="ln">05</span> sites/ lojas/ landing/ <span class="cm">sistemas/ apps/</span></div>
+               <div><span class="ln">06</span> &nbsp;</div>
+               <div><span class="ln">07</span> &gt; ./projeto.sh --seu-negocio</div>
+               <div><span class="ln">08</span> acompanhe o andamento, peça ajustes.</div>
+               <div><span class="ln">09</span> só pague depois de <span class="ok">[aprovado]</span></div>
+               <div><span class="ln">10</span> &nbsp;</div>
+               <div><span class="ln">11</span> &gt; <span id="heroTyper" data-text="pronta para o seu projeto_"></span><span class="cursor"></span></div>
+             </div>
+             <div class="term-shot__scan" aria-hidden="true"></div>
+           </figure>
+         </div>
+       </div>
+     </div>
+   </section>
+
    <section class="section" id="portfolio">
      <div class="container">
        <div class="section-header">
@@ -525,46 +566,6 @@
    </section>
 
 
-   <section class="hero" id="inicio">
-     <div class="container">
-       <div class="hero__content">
-         <div>
-            <div class="hero__eyebrow" aria-hidden="true">&gt; lucas@dev:~$ <b>render --futuro_</b></div>
-           <h1 class="hero__title">
-             Seu neg&oacute;cio precisa de um site?<span>Voc&ecirc; s&oacute; paga quando ele estiver pronto e aprovado<span class="cursor" aria-hidden="true"></span></span>
-           </h1>
-           <p class="hero__desc">
-             Sem entrada antecipada: voc&ecirc; me passa o que precisa, eu desenvolvo e refino at&eacute; chegar ao seu agrado. O pagamento s&oacute; acontece no final.
-           </p>
-           <div class="hero__actions">
-             <a href="#contato" class="btn btn--primary btn--lg">Quero Meu Site_</a>
-             <a href="#portfolio" class="btn btn--outline btn--lg">Ver Projetos</a>
-           </div>
-         </div>
-         <div class="hero__media">
-           <span class="term-chip term-chip--1" aria-hidden="true">&lt;design/&gt;</span>
-           <span class="term-chip term-chip--2" aria-hidden="true">&lt;build/&gt;</span>
-            <figure class="term-shot" role="img" aria-label="Terminal de trabalho do Lucas, designer e desenvolvedor web">
-              <div class="term-shot__bar" aria-hidden="true"><span></span><b>lucas@dev:~/projetos</b></div>
-             <div class="term-shot__code" aria-hidden="true">
-               <div><span class="ln">01</span> &gt; whoami</div>
-                <div><span class="ln">02</span> lucas — designer &amp; desenvolvedor web</div>
-               <div><span class="ln">03</span> &nbsp;</div>
-               <div><span class="ln">04</span> &gt; ls ./servicos/</div>
-               <div><span class="ln">05</span> sites/ lojas/ landing/ <span class="cm">sistemas/ apps/</span></div>
-               <div><span class="ln">06</span> &nbsp;</div>
-               <div><span class="ln">07</span> &gt; ./projeto.sh --seu-negocio</div>
-               <div><span class="ln">08</span> acompanhe o andamento, peça ajustes.</div>
-               <div><span class="ln">09</span> só pague depois de <span class="ok">[aprovado]</span></div>
-               <div><span class="ln">10</span> &nbsp;</div>
-               <div><span class="ln">11</span> &gt; <span id="heroTyper" data-text="pronta para o seu projeto_"></span><span class="cursor"></span></div>
-             </div>
-             <div class="term-shot__scan" aria-hidden="true"></div>
-           </figure>
-         </div>
-       </div>
-     </div>
-   </section>
 
    <div class="marquee" aria-hidden="true">
      <div class="marquee__track">
